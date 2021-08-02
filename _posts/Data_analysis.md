@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: Data analysis with Python
-categories: [markdown]
+categories: [data, python]
 title: Data analysis
 sticky_rank: 4
 ---
