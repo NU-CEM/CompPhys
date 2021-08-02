@@ -2,6 +2,17 @@
   
     
         "post0": {
+            "title": "Open science",
+            "content": "Open science .",
+            "url": "https://nu-cem.github.io/CompPhys/unix/github/2021/08/02/Open_science.html",
+            "relUrl": "/unix/github/2021/08/02/Open_science.html",
+            "date": " • Aug 2, 2021"
+        }
+        
+    
+  
+    
+        ,"post1": {
             "title": "Modelling with Ordinary Differential Equations",
             "content": "Modelling with Ordinary Differential Equations .",
             "url": "https://nu-cem.github.io/CompPhys/mathematics/numerical%20recipes/2021/08/02/ODEs.html",
@@ -12,7 +23,7 @@
     
   
     
-        ,"post1": {
+        ,"post2": {
             "title": "Introduction and Setup",
             "content": "Introduction .",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/Introduction.html",
@@ -23,7 +34,7 @@
     
   
     
-        ,"post2": {
+        ,"post3": {
             "title": "Data analysis",
             "content": "Data analysis .",
             "url": "https://nu-cem.github.io/CompPhys/data/python/2021/08/02/Data_analysis.html",
