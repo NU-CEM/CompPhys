@@ -4,17 +4,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>An Introduction to Computational Physics | Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.</title>
+<title>Modelling with Ordinary Differential Equations | An Introduction to Computational Physics</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="An Introduction to Computational Physics" />
+<meta property="og:title" content="Modelling with Ordinary Differential Equations" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
-<meta property="og:description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
-<link rel="canonical" href="https://nu-cem.github.io/CompPhys/" />
-<meta property="og:url" content="https://nu-cem.github.io/CompPhys/" />
+<meta name="description" content="Ordinary Differential Equations using Euler’s method" />
+<meta property="og:description" content="Ordinary Differential Equations using Euler’s method" />
+<link rel="canonical" href="https://nu-cem.github.io/CompPhys/mathematics/numerical%20recipes/2021/08/02/ODEs.html" />
+<meta property="og:url" content="https://nu-cem.github.io/CompPhys/mathematics/numerical%20recipes/2021/08/02/ODEs.html" />
 <meta property="og:site_name" content="An Introduction to Computational Physics" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","url":"https://nu-cem.github.io/CompPhys/","@type":"WebSite","headline":"An Introduction to Computational Physics","name":"An Introduction to Computational Physics","@context":"https://schema.org"}</script>
+{"description":"Ordinary Differential Equations using Euler’s method","url":"https://nu-cem.github.io/CompPhys/mathematics/numerical%20recipes/2021/08/02/ODEs.html","@type":"BlogPosting","headline":"Modelling with Ordinary Differential Equations","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/mathematics/numerical%20recipes/2021/08/02/ODEs.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nu-cem.github.io/CompPhys/feed.xml" title="An Introduction to Computational Physics" /><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -82,47 +84,32 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home"><p><img src="/CompPhys/images/oscillating_charge.gif" width="300" alt="Oscillating charge" />
-Animation generated using <a href="https://pycharge.readthedocs.io/en/latest/">pycharge</a>.</p>
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-<h1 id="course-content">Course content</h1>
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Modelling with Ordinary Differential Equations</h1><p class="page-description">Ordinary Differential Equations using Euler's method</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-08-02T00:00:00-05:00" itemprop="datePublished">
+        Aug 2, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#modelling-with-ordinary-differential-equations">Modelling with Ordinary Differential Equations</a></li>
+</ul><h1 id="modelling-with-ordinary-differential-equations">
+<a class="anchor" href="#modelling-with-ordinary-differential-equations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Modelling with Ordinary Differential Equations</h1>
 
 
-
-  
-
-  <!-- Hide posts if front matter flag hide:true -->
-  
-  
-
-  <!-- Sort posts by rank, then date -->
-  
-  
-  
-
- 
-  
-
-   <!-- Assemble final sorted posts array -->
-  
-  <ul class="post-list"><li><h3>
-    <a class="post-link" href="/CompPhys/2021/08/02/Introduction.html">
-    Introduction and Setup
-    </a>
-</h3><p class="post-meta-description">Introduction to course and computer setup</p><p class="post-meta">Aug 2, 2021</p>
-</li><li><h3>
-    <a class="post-link" href="/CompPhys/data/python/2021/08/02/Data_analysis.html">
-    Data analysis
-    </a>
-</h3><p class="post-meta-description">Data analysis with Python</p><p class="post-meta">Aug 2, 2021</p>
-</li><li><h3>
-    <a class="post-link" href="/CompPhys/mathematics/numerical%20recipes/2021/08/02/ODEs.html">
-    Modelling with Ordinary Differential Equations
-    </a>
-</h3><p class="post-meta-description">Ordinary Differential Equations using Euler's method</p><p class="post-meta">Aug 2, 2021</p>
-</li></ul>
-
-    </div>
+  </div><a class="u-url" href="/CompPhys/mathematics/numerical%20recipes/2021/08/02/ODEs.html" hidden></a>
+</article>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/CompPhys/"></data>
