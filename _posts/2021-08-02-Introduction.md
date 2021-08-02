@@ -32,7 +32,7 @@ This course is split into three sections - *Getting started*, *Getting results* 
      - Version control and Github
      - Open science and build-your-own website
 
-{% include warning.html text="An eye for detail is important. If you include an extra full-stop, or forget a space, then your code may not run. Don't let these Error messages worry you - they won't break the computer! - but do double check the steps you have taken and the code you have written for typos or "silly" mistakes. " %}
+{% include warning.html text="An eye for detail is important. If you include an extra full-stop, or forget a space, then your code may not run. Don't let these Error messages worry you - they won't break the computer! - but do double check the steps you have taken and the code you have written for typos or 'silly' mistakes." %}
 
 
 ### Setup
