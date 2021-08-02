@@ -2,6 +2,17 @@
   
     
         "post0": {
+            "title": "Version control and Github",
+            "content": "Version control and Github .",
+            "url": "https://nu-cem.github.io/CompPhys/version%20control/unix/2021/08/02/Version_control.html",
+            "relUrl": "/version%20control/unix/2021/08/02/Version_control.html",
+            "date": " • Aug 2, 2021"
+        }
+        
+    
+  
+    
+        ,"post1": {
             "title": "Sharing your code",
             "content": "",
             "url": "https://nu-cem.github.io/CompPhys/documentation/testing/2021/08/02/Sharing_code.html",
@@ -12,7 +23,7 @@
     
   
     
-        ,"post1": {
+        ,"post2": {
             "title": "Python scripts and the Unix terminal",
             "content": "Python scripts and the Unix terminal .",
             "url": "https://nu-cem.github.io/CompPhys/mathematics/numerical%20recipes/2021/08/02/Scripting.html",
@@ -23,7 +34,7 @@
     
   
     
-        ,"post2": {
+        ,"post3": {
             "title": "Python basics - part two",
             "content": "Python basics - part two .",
             "url": "https://nu-cem.github.io/CompPhys/markdown/2021/08/02/Python_basics_two.html",
@@ -34,7 +45,7 @@
     
   
     
-        ,"post3": {
+        ,"post4": {
             "title": "Python basics - part one",
             "content": "Python basics - part one .",
             "url": "https://nu-cem.github.io/CompPhys/python/2021/08/02/Python_basics_one.html",
@@ -45,7 +56,7 @@
     
   
     
-        ,"post4": {
+        ,"post5": {
             "title": "Plotting with Python",
             "content": "Plotting with Python .",
             "url": "https://nu-cem.github.io/CompPhys/data/python/2021/08/02/Plotting.html",
@@ -56,7 +67,7 @@
     
   
     
-        ,"post5": {
+        ,"post6": {
             "title": "Modelling with Partial Differential Equations",
             "content": "Modelling with Partial Differential Equations .",
             "url": "https://nu-cem.github.io/CompPhys/mathematics/numerical%20recipes/2021/08/02/PDEs.html",
@@ -67,7 +78,7 @@
     
   
     
-        ,"post6": {
+        ,"post7": {
             "title": "Open science",
             "content": "Open science .",
             "url": "https://nu-cem.github.io/CompPhys/unix/github/2021/08/02/Open_science.html",
@@ -78,7 +89,7 @@
     
   
     
-        ,"post7": {
+        ,"post8": {
             "title": "Modelling with Ordinary Differential Equations",
             "content": "Modelling with Ordinary Differential Equations .",
             "url": "https://nu-cem.github.io/CompPhys/mathematics/numerical%20recipes/2021/08/02/ODEs.html",
@@ -89,7 +100,7 @@
     
   
     
-        ,"post8": {
+        ,"post9": {
             "title": "Introduction and Setup",
             "content": "Introduction .",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/Introduction.html",
@@ -100,7 +111,7 @@
     
   
     
-        ,"post9": {
+        ,"post10": {
             "title": "Data analysis",
             "content": "Data analysis .",
             "url": "https://nu-cem.github.io/CompPhys/data/python/2021/08/02/Data_analysis.html",
