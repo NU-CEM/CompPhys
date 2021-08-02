@@ -2,6 +2,17 @@
   
     
         "post0": {
+            "title": "Introduction and Setup",
+            "content": "Introduction .",
+            "url": "https://nu-cem.github.io/CompPhys/2021/08/02/Introduction.html",
+            "relUrl": "/2021/08/02/Introduction.html",
+            "date": " • Aug 2, 2021"
+        }
+        
+    
+  
+    
+        ,"post1": {
             "title": "Data analysis",
             "content": "Data analysis .",
             "url": "https://nu-cem.github.io/CompPhys/data/python/2021/08/02/Data_analysis.html",
