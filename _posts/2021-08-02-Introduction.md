@@ -5,6 +5,36 @@ title: Introduction and Setup
 sticky_rank: 1
 ---
 
+### Introduction
+
+Computing has become central to virtually all research and development in academia and industry, 
+and with the advent of Machine Learning and High-Performance Computing this dominance is set to continue.
+
+Computational physics encompasses a wide number of areas including materials modelling, particle physics simulations, protein structure prediction and plasma modelling. In fact, it is possible to find a computational branch for every major field in physics.
+
+The focus of this course is to equip with you with the transferable skills needed for success in a range of computational disciplines.
+
+The software packages we will introduce in the first part of the course, *Getting started*, are applicable to all areas of research and industry - from game design to architecture. In the middle section of the course, *Getting results*, we will apply these tools to model the differential equations that are so central to both classical and quantum physics. In the final section of the course, *Getting it out there*, we will use modern software engineering techniques to document, test and share our code.
+ 
+This course is split into three sections - *Getting started*, *Getting results* and *Getting it out there*.
+
+ - **Getting started**
+     - Python part one
+     - Python part two
+     - Data analysis
+     - Plotting
+ - **Getting results**
+     - Modelling with partial differential equations
+     - Modelling with ordinary differential equations
+ - **Getting it out there**
+     - Python scripts and the Unix terminal
+     - Testing and documentation
+     - Version control and Github
+     - Open science and build-your-own website
+
+{% include warning.html text="An eye for detail is important. If you include an extra full-stop, or forget a space, then your code may not run. Don't let these Error messages worry you - they won't break the computer! - but do double check the steps you have taken and the code you have written for typos or "silly" mistakes. " %}
+
+
 ### Setup
   
 To participate in this course you will need access to the following software: Python, Bash, Git and Jupyter.
@@ -14,7 +44,7 @@ You will also need a user account at [github.com](https://github.com) - Basic Gi
 
 {% include info.html text="All of the software needed for this course is pre-installed in the MPEE computers at Northumbria University" %}
 
-{% include warning.html text="You can also run the Python Jupyter Notebook files remotely through the [binder] or [colab] services whenever you see an icon (e.g. like those at the top of [this page]()). But be warned! Any changes you make are not saved and the service can time-out after a period of inactivity (usually ~20 minutes). %}
+{% include warning.html text="You can also run the Python Jupyter Notebook files remotely through the [binder] or [colab] services whenever you see an icon (e.g. like those at the top of [this page]()). But be warned! Any changes you make are not saved and the service can time-out after a period of inactivity (usually ~20 minutes)." %}
 
 #### Python 
 
