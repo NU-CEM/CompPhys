@@ -2,6 +2,28 @@
   
     
         "post0": {
+            "title": "Python basics - part two",
+            "content": "Python basics - part two .",
+            "url": "https://nu-cem.github.io/CompPhys/markdown/2021/08/02/Python_basics_two.html",
+            "relUrl": "/markdown/2021/08/02/Python_basics_two.html",
+            "date": " • Aug 2, 2021"
+        }
+        
+    
+  
+    
+        ,"post1": {
+            "title": "Python basics - part one",
+            "content": "Python basics - part one .",
+            "url": "https://nu-cem.github.io/CompPhys/python/2021/08/02/Python_basics_one.html",
+            "relUrl": "/python/2021/08/02/Python_basics_one.html",
+            "date": " • Aug 2, 2021"
+        }
+        
+    
+  
+    
+        ,"post2": {
             "title": "Plotting with Python",
             "content": "Plotting with Python .",
             "url": "https://nu-cem.github.io/CompPhys/data/python/2021/08/02/Plotting.html",
@@ -12,7 +34,7 @@
     
   
     
-        ,"post1": {
+        ,"post3": {
             "title": "Modelling with Partial Differential Equations",
             "content": "Modelling with Partial Differential Equations .",
             "url": "https://nu-cem.github.io/CompPhys/mathematics/numerical%20recipes/2021/08/02/PDEs.html",
@@ -23,7 +45,7 @@
     
   
     
-        ,"post2": {
+        ,"post4": {
             "title": "Open science",
             "content": "Open science .",
             "url": "https://nu-cem.github.io/CompPhys/unix/github/2021/08/02/Open_science.html",
@@ -34,7 +56,7 @@
     
   
     
-        ,"post3": {
+        ,"post5": {
             "title": "Modelling with Ordinary Differential Equations",
             "content": "Modelling with Ordinary Differential Equations .",
             "url": "https://nu-cem.github.io/CompPhys/mathematics/numerical%20recipes/2021/08/02/ODEs.html",
@@ -45,7 +67,7 @@
     
   
     
-        ,"post4": {
+        ,"post6": {
             "title": "Introduction and Setup",
             "content": "Introduction .",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/Introduction.html",
@@ -56,7 +78,7 @@
     
   
     
-        ,"post5": {
+        ,"post7": {
             "title": "Data analysis",
             "content": "Data analysis .",
             "url": "https://nu-cem.github.io/CompPhys/data/python/2021/08/02/Data_analysis.html",
