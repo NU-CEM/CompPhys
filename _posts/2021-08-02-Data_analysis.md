@@ -5,6 +5,7 @@ description: Data analysis with Python
 categories: [data, python]
 title: Data analysis
 sticky_rank: 4
+hide: true
 ---
 
 # Data analysis
