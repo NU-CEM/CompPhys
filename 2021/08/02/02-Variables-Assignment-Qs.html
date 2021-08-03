@@ -176,19 +176,49 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<details>
-  <summary>Show answer</summary>
+<h1 id="collapse">collapse<a class="anchor-link" href="#collapse"> </a></h1><table>
+<thead><tr>
+<th>Command</th>
+<th>Value of x</th>
+<th>Value of y</th>
+<th>Value of swap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x = 1.0</td>
+<td>1.0</td>
+<td>not defined</td>
+<td>not defined</td>
+</tr>
+<tr>
+<td>y = 3.0</td>
+<td>1.0</td>
+<td>3.0</td>
+<td>not defined</td>
+</tr>
+<tr>
+<td>swap = x</td>
+<td>1.0</td>
+<td>3.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>x = y</td>
+<td>3.0</td>
+<td>3.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>y = swap</td>
+<td>3.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>These three lines exchange the values in <code>x</code> and <code>y</code> using the <code>swap</code> variable for temporary storage. This is a fairly common programming idiom.</p>
 
-| Command | Value of x   | Value of y   | Value of swap |
-| ------- | ----------   | ----------   | ------------- |
-|x = 1.0    | 1.0          | not defined  | not defined   |
-|y = 3.0    | 1.0          | 3.0          | not defined   |
-|swap = x   | 1.0          | 3.0          | 1.0           |
-|x = y      | 3.0          | 3.0          | 1.0           |
-|y = swap   | 3.0          | 1.0          | 1.0           |
-
-These three lines exchange the values in `x` and `y` using the `swap` variable for temporary storage. This is a fairly common programming idiom.   
-</details>
 </div>
 </div>
 </div>
