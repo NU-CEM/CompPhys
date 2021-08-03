@@ -20,8 +20,8 @@ This lesson is an introduction to programming in Python for people with little o
 
 | Topic | Objective | Quick test |
 |-------|-----------|-----------|
-|[Running Python](https://nu-cem.github.io/CompPhys/python/2021/08/02/01-Running_Python)|How can I run Python programs? | [:running:](https://nu-cem.github.io/CompPhys/python/quick-test/2021/08/02/01-Running_Python-Qs.html) |
-|[Variables and Assignment](https://nu-cem.github.io/CompPhys/python/2021/08/02/02-Variables-Assignment)| How can I store data in programs? | [:nail_care:](https://nu-cem.github.io/CompPhys/python/quick-test/2021/08/02/02-Variables-Assignment-Qs.html)|
+|[Running Python](https://nu-cem.github.io/CompPhys/2021/08/02/01-Running_Python)|How can I run Python programs? | [:running:](https://nu-cem.github.io/CompPhys/2021/08/02/01-Running_Python-Qs.html) |
+|[Variables and Assignment](https://nu-cem.github.io/CompPhys/2021/08/02/02-Variables-Assignment)| How can I store data in programs? | [:nail_care:](https://nu-cem.github.io/CompPhys/2021/08/02/02-Variables-Assignment-Qs.html)|
 | Data Types and Type Conversion| What kinds of data do programs store? <br/> How can I convert one type to another? | [:dancer:]() |
 | Built-in Functions, Help and Errors |  How can I use built-in functions?<br/> How can I find out what they do?<br/> What kind of errors can occur in programs? | [:droplet:]() |
 |Lists| How can I store multiple values? | [:ear:]() |
