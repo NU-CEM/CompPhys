@@ -1,9 +1,9 @@
 ---
-- toc:false
-- branch: master
-- comments: false
-- categories: 
-- hide: false
+toc:false
+categories: 
+hide: false
+layout: post
+title: Introduction and Setup
 ---
 
 ## Swapping Values
