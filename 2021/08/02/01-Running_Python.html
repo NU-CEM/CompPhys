@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/01-Running_Python.html","@type":"BlogPosting","headline":"Running Python","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/01-Running_Python.html"},"description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","@context":"https://schema.org"}</script>
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/01-Running_Python.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/01-Running_Python.html"},"headline":"Running Python","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -125,32 +125,39 @@ window.onload = wrap_img;
 -->
 
 <div class="container" id="notebook-container">
-        
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr />
-<h4 id="Questions:">Questions:<a class="anchor-link" href="#Questions:"> </a></h4><ul>
+
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <hr />
+
+        <h4 id="Questions:">Questions:<a class="anchor-link" href="#Questions:"> </a></h4>
+        <ul>
 <li>How can I run Python programs?</li>
 </ul>
-<h4 id="Objectives:">Objectives:<a class="anchor-link" href="#Objectives:"> </a></h4><ul>
+        <h4 id="Objectives:">Objectives:<a class="anchor-link" href="#Objectives:"> </a></h4>
+        <ul>
 <li>Launch the Jupyter Notebook, create new notebooks, and exit the Notebook.</li>
 <li>Create Markdown cells in a notebook.</li>
 <li>Create and run Python cells in a notebook.</li>
 </ul>
-<h4 id="Keypoints:">Keypoints:<a class="anchor-link" href="#Keypoints:"> </a></h4><ul>
+        <h4 id="Keypoints:">Keypoints:<a class="anchor-link" href="#Keypoints:"> </a></h4>
+        <ul>
 <li>Python programs are plain text files.</li>
 <li>Use the Jupyter Notebook for editing and running Python.</li>
 <li>Use the keyboard and mouse to select and edit cells.</li>
 <li>The Notebook will turn Markdown into pretty-printed documentation.</li>
 </ul>
-<hr />
+        <hr />
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="There-are-multiple-ways-to-run-Python-code">There are multiple ways to run Python code<a class="anchor-link" href="#There-are-multiple-ways-to-run-Python-code"> </a></h3><ul>
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <h3 id="There-are-multiple-ways-to-run-Python-code">There are multiple ways to run Python code<a class="anchor-link" href="#There-are-multiple-ways-to-run-Python-code"> </a></h3>
+        <ul>
 <li>Python programmes can be written as plain text files using a text editor</li>
 <li>They have the <code>.py</code> extension to let everyone (including the operating system) 
 know it is a Python program. This is convention, not a requirement. We will use plain text files for writing Python code towards the end of this course.</li>
@@ -160,12 +167,14 @@ know it is a Python program. This is convention, not a requirement. We will use 
 <li>Notebook files have the extension <code>.ipynb</code> to distinguish them from plain-text Python programs.</li>
 </ul>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="You-can-use-the-Jupyter-Notebook-for-editing-and-running-Python.">You can use the Jupyter Notebook for editing and running Python.<a class="anchor-link" href="#You-can-use-the-Jupyter-Notebook-for-editing-and-running-Python."> </a></h3><ul>
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <h3 id="You-can-use-the-Jupyter-Notebook-for-editing-and-running-Python.">You can use the Jupyter Notebook for editing and running Python.<a class="anchor-link" href="#You-can-use-the-Jupyter-Notebook-for-editing-and-running-Python."> </a></h3>
+        <ul>
 <li>When we type <code>jupyter notebook</code> in a terminal (or Git Bash) we start a Jupyter Notebook server and open the default web browser. </li>
 <li>The server runs locally on your machine only and does not use an internet connection.</li>
 <li>You can type code into the browser and see the result when the web page talks to the server.</li>
@@ -184,26 +193,30 @@ The notebook file is stored in a format called JSON.</li>
 </li>
 </ul>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><div class="flash flash-success">
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <p>&lt;div class="flash flash-success"&gt;
     <svg class="octicon octicon-checklist" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v7.736a.75.75 0 101.5 0V1.75A1.75 1.75 0 0011.25 0h-8.5A1.75 1.75 0 001 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 000-1.5H2.75a.25.25 0 01-.25-.25V1.75zM4.75 4a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM4 7.75A.75.75 0 014.75 7h2a.75.75 0 010 1.5h-2A.75.75 0 014 7.75zm11.774 3.537a.75.75 0 00-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 00-1.062 1.058l1.943 1.95a.75.75 0 001.055.008l4.557-4.45z"></path></svg>
     <strong>Tip: </strong>You can view this page as a Notebook by clicking on either the <code>Binder</code> or <code>Colab</code> button at the top of this page.
-</div></p>
+&lt;/div&gt;</p>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Use-the-keyboard-and-mouse-to-select-and-edit-cells.">Use the keyboard and mouse to select and edit cells.<a class="anchor-link" href="#Use-the-keyboard-and-mouse-to-select-and-edit-cells."> </a></h3><ul>
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <h3 id="Use-the-keyboard-and-mouse-to-select-and-edit-cells.">Use the keyboard and mouse to select and edit cells.<a class="anchor-link" href="#Use-the-keyboard-and-mouse-to-select-and-edit-cells."> </a></h3>
+        <ul>
 <li>You can create a new cell by clicking on <code>Insert</code> at the top of the Notebook.</li>
 <li>Pressing the "shift" and the "enter" key together will execute the contents of the cell.</li>
 </ul>
-<h3 id="Use-command-mode-to-speed-things-up">Use <em>command mode</em> to speed things up<a class="anchor-link" href="#Use-command-mode-to-speed-things-up"> </a></h3><ul>
+        <h3 id="Use-command-mode-to-speed-things-up">Use <em>command mode</em> to speed things up<a class="anchor-link" href="#Use-command-mode-to-speed-things-up"> </a></h3>
+        <ul>
 <li>You can also use keyboard shortcuts by entering <em>command mode</em> using the <code>esc</code> key.</li>
 <li>Notice that the border of your cell turns blue.</li>
 <li>Type a shortcut command - for example <code>b</code> to create a new cell.</li>
@@ -211,58 +224,63 @@ The notebook file is stored in a format called JSON.</li>
 <li>To exit <em>command mode</em> and start editing the cell press <code>enter</code>.</li>
 </ul>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-Notebook-will-turn-Markdown-into-pretty-printed-documentation.">The Notebook will turn Markdown into pretty-printed documentation.<a class="anchor-link" href="#The-Notebook-will-turn-Markdown-into-pretty-printed-documentation."> </a></h3><ul>
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <h3 id="The-Notebook-will-turn-Markdown-into-pretty-printed-documentation.">The Notebook will turn Markdown into pretty-printed documentation.<a class="anchor-link" href="#The-Notebook-will-turn-Markdown-into-pretty-printed-documentation."> </a></h3>
+        <ul>
 <li>Notebooks can also render [Markdown][markdown] which is a simple plain-text format for writing lists, links, and other things that might go into a web page.</li>
 <li>You can turn cell into a Markdown cell by selecting <code>Markdown</code> from the drop-down menu at the top of the Notebook</li>
 <li><code>In [ ]:</code> will disappear to show it is no longer a code cell
 and you will be able to write in Markdown.</li>
 </ul>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Lists">Lists<a class="anchor-link" href="#Lists"> </a></h3>
-<pre><code>    *   Use asterisks
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <h3 id="Lists">Lists<a class="anchor-link" href="#Lists"> </a></h3>
+        <pre><code>    *   Use asterisks
     *   to create
     *   bullet lists.</code></pre>
-<ul>
+        <ul>
 <li>Use asterisks</li>
 <li>to create</li>
 <li>bullet lists.</li>
 </ul>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
 
-<pre><code>1.  Use numbers
+        <pre><code>1.  Use numbers
 2.  to create
 3.  numbered lists.</code></pre>
-<ol>
+        <ol>
 <li>Use numbers</li>
 <li>to create</li>
 <li>numbered lists.</li>
 </ol>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
 
-<pre><code>1.  You can
+        <pre><code>1.  You can
 2.  also
     * create sub-lists</code></pre>
-<ol>
+        <ol>
 <li>You can</li>
 <li>also<ul>
 <li>create sub-lists</li>
@@ -270,63 +288,70 @@ and you will be able to write in Markdown.</li>
 </li>
 </ol>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Headings">Headings<a class="anchor-link" href="#Headings"> </a></h3>
-<pre><code># A Level-1 Heading</code></pre>
-<h1 id="A-Level-1-Heading">A Level-1 Heading<a class="anchor-link" href="#A-Level-1-Heading"> </a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <h3 id="Headings">Headings<a class="anchor-link" href="#Headings"> </a></h3>
+        <pre><code># A Level-1 Heading</code></pre>
+        <h1 id="A-Level-1-Heading">A Level-1 Heading<a class="anchor-link" href="#A-Level-1-Heading"> </a></h1>
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
 
-<pre><code>## A Level-2 Heading (etc)</code></pre>
-<h2 id="A-Level-2-Heading-(etc)">A Level-2 Heading (etc)<a class="anchor-link" href="#A-Level-2-Heading-(etc)"> </a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Whitespace">Whitespace<a class="anchor-link" href="#Whitespace"> </a></h3>
-<pre><code>Line breaks
+        <pre><code>## A Level-2 Heading (etc)</code></pre>
+        <h2 id="A-Level-2-Heading-(etc)">A Level-2 Heading (etc)<a class="anchor-link" href="#A-Level-2-Heading-(etc)"> </a></h2>
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <h3 id="Whitespace">Whitespace<a class="anchor-link" href="#Whitespace"> </a></h3>
+        <pre><code>Line breaks
 don't matter.
 
 But blank lines
 create new paragraphs.</code></pre>
-<p>Line breaks
-don't matter.</p>
-<p>But blank lines
+        <p>Line breaks
+don’t matter.</p>
+        <p>But blank lines
 create new paragraphs.</p>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Basic-formatting">Basic formatting<a class="anchor-link" href="#Basic-formatting"> </a></h3><p>You can easily:</p>
-<ul>
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <h3 id="Basic-formatting">Basic formatting<a class="anchor-link" href="#Basic-formatting"> </a></h3>
+        <p>You can easily:</p>
+        <ul>
 <li>use <em>italics</em> with <code>*italics*</code></li>
 <li>use <strong>bold</strong> with <code>**bold**</code></li>
 <li><a href="http://software-carpentry.org">Create links</a> with <code>[...](...)</code>.</li>
 </ul>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr />
-<p>Do <a href="https://nu-cem.github.io/CompPhys/2021/08/02/01-Running_python-Qs.html">the activities</a>.</p>
-<p>Back to <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_one.html">Python basics - part one</a>.</p>
-<hr />
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <hr />
 
-</div>
-</div>
-</div>
+        <p>Do <a href="https://nu-cem.github.io/CompPhys/2021/08/02/01-Running_python-Qs.html">the activities</a>.</p>
+        <p>Back to <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_one.html">Python basics - part one</a>.</p>
+        <hr />
+
+      </div>
+    </div>
+  </div>
 </div>
 
 

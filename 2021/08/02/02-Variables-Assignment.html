@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/02-Variables-Assignment.html","@type":"BlogPosting","headline":"Variables and assignment","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/02-Variables-Assignment.html"},"description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","@context":"https://schema.org"}</script>
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/02-Variables-Assignment.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/02-Variables-Assignment.html"},"headline":"Variables and assignment","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -125,21 +125,23 @@ window.onload = wrap_img;
 -->
 
 <div class="container" id="notebook-container">
-        
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr />
-<p>Questions:</p>
-<ul>
+
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <hr />
+
+        <p>Questions:</p>
+        <ul>
 <li>How can I store data in programs?</li>
 </ul>
-<p>Objectives:</p>
-<ul>
+        <p>Objectives:</p>
+        <ul>
 <li>Write programs that assign scalar values to variables and perform calculations with those values.</li>
 <li>Correctly trace value changes in programs that use scalar assignment.</li>
 </ul>
-<p>Keypoints:</p>
-<ul>
+        <p>Keypoints:</p>
+        <ul>
 <li>Use variables to store values.</li>
 <li>Use <code>print</code> to display values.</li>
 <li>Variables persist between cells.</li>
@@ -148,56 +150,64 @@ window.onload = wrap_img;
 <li>Python is case-sensitive.</li>
 <li>Use meaningful variable names.</li>
 </ul>
-<hr />
+        <hr />
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Use-variables-to-store-values.">Use variables to store values.<a class="anchor-link" href="#Use-variables-to-store-values."> </a></h3><ul>
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <h3 id="Use-variables-to-store-values.">Use variables to store values.<a class="anchor-link" href="#Use-variables-to-store-values."> </a></h3>
+        <ul>
 <li>Variables are names for values.</li>
 <li>In Python the <code>=</code> symbol assigns the value on the right to the name on the left.</li>
 <li>The variable is created when a value is assigned to it.</li>
 <li>Here, Python assigns an age to a variable <code>age</code> and a name in quotes to a variable <code>first_name</code>.</li>
 </ul>
 
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">42</span>
-<span class="n">first_name</span> <span class="o">=</span> <span class="s1">&#39;Ahmed&#39;</span>
-</pre></div>
-
+      </div>
     </div>
-</div>
-</div>
+  </div>
 
-</div>
-    
+  <div class="cell border-box-sizing code_cell rendered">
+    <div class="input">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Variable-names">Variable names<a class="anchor-link" href="#Variable-names"> </a></h3><ul>
+      <div class="inner_cell">
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="input_area"&gt;
+</code></pre></div>        </div>
+        <div class=" highlight hl-ipython3">
+          <pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">first_name</span> <span class="o">=</span> <span class="s1">&#39;Ahmed&#39;</span>
+</pre>
+        </div>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;/div&gt;
+</code></pre></div>        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <h3 id="Variable-names">Variable names<a class="anchor-link" href="#Variable-names"> </a></h3>
+        <ul>
 <li>can <strong>only</strong> contain letters, digits, and underscore <code>_</code> (typically used to separate words in long variable names)</li>
 <li>cannot start with a digit</li>
 <li>Variable names that start with underscores like <code>__bobbins_real_age</code> have a special meaning
 so we won't do that until we understand the convention.</li>
 </ul>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Use-print-to-display-values.">Use <code>print</code> to display values.<a class="anchor-link" href="#Use-print-to-display-values."> </a></h3><ul>
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <h3 id="Use-print-to-display-values.">Use <code>print</code> to display values.<a class="anchor-link" href="#Use-print-to-display-values."> </a></h3>
+        <ul>
 <li>Python has a built-in function called <code>print</code> that prints things as text.</li>
 <li>Call the function (i.e., tell Python to run it) by using its name.</li>
 <li>Provide values to the function (i.e., the things to print) in parentheses.</li>
@@ -205,80 +215,88 @@ so we won't do that until we understand the convention.</li>
 <li>The values passed to the function are called 'arguments'</li>
 </ul>
 
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s1">&#39;years old&#39;</span><span class="p">)</span>
-</pre></div>
-
+      </div>
     </div>
-</div>
-</div>
+  </div>
 
-<div class="output_wrapper">
-<div class="output">
+  <div class="cell border-box-sizing code_cell rendered">
+    <div class="input">
 
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Ahmed is 42 years old
+      <div class="inner_cell">
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="input_area"&gt;
+</code></pre></div>        </div>
+        <div class=" highlight hl-ipython3">
+          <pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s1">&#39;years old&#39;</span><span class="p">)</span>
 </pre>
-</div>
-</div>
+        </div>
 
-</div>
-</div>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;/div&gt;
+</code></pre></div>        </div>
+      </div>
+    </div>
 
-</div>
-    
+    <div class="output_wrapper">
+      <div class="output">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+        <div class="output_area">
+
+          <div class="output_subarea output_stream output_stdout output_text">
+            <pre>Ahmed is 42 years old
+</pre>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <ul>
 <li><code>print</code> automatically puts a single space between items to separate them.</li>
 <li>And wraps around to a new line at the end.</li>
 </ul>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Variables-must-be-created-before-they-are-used.">Variables must be created before they are used.<a class="anchor-link" href="#Variables-must-be-created-before-they-are-used."> </a></h3><ul>
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <h3 id="Variables-must-be-created-before-they-are-used.">Variables must be created before they are used.<a class="anchor-link" href="#Variables-must-be-created-before-they-are-used."> </a></h3>
+        <ul>
 <li>Unlike some languages, which "guess" a default value, if a variable doesn't exist yet, or if the name has been mis-spelled, Python reports an error.</li>
 </ul>
 
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">last_name</span><span class="p">)</span>
-</pre></div>
-
+      </div>
     </div>
-</div>
-</div>
+  </div>
 
-<div class="output_wrapper">
-<div class="output">
+  <div class="cell border-box-sizing code_cell rendered">
+    <div class="input">
 
-<div class="output_area">
+      <div class="inner_cell">
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="input_area"&gt;
+</code></pre></div>        </div>
+        <div class=" highlight hl-ipython3">
+          <pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">last_name</span><span class="p">)</span>
+</pre>
+        </div>
 
-<div class="output_subarea output_text output_error">
-<pre>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;/div&gt;
+</code></pre></div>        </div>
+      </div>
+    </div>
+
+    <div class="output_wrapper">
+      <div class="output">
+
+        <div class="output_area">
+
+          <div class="output_subarea output_text output_error">
+            <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
 <span class="ansi-green-fg">/var/folders/5q/mny3pg2n7h5g21h3v32rfj9wpykqrf/T/ipykernel_792/2256896230.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
@@ -286,180 +304,199 @@ so we won't do that until we understand the convention.</li>
 <span class="ansi-green-intense-fg ansi-bold">      2</span> 
 
 <span class="ansi-red-fg">NameError</span>: name &#39;last_name&#39; is not defined</pre>
-</div>
-</div>
+          </div>
+        </div>
 
-</div>
-</div>
+      </div>
+    </div>
 
-</div>
-    
+  </div>
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <ul>
 <li>The last line of an error message is usually the most informative.</li>
 <li>We will look at error messages in detail <a href="/15-scope/#reading-error-messages">later</a>.</li>
 </ul>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Variables-Persist-Between-Cells">Variables Persist Between Cells<a class="anchor-link" href="#Variables-Persist-Between-Cells"> </a></h3><p>Be aware that it is the order of <strong>execution</strong> of cells that is important in a Jupyter notebook, not the order
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <h3 id="Variables-Persist-Between-Cells">Variables Persist Between Cells<a class="anchor-link" href="#Variables-Persist-Between-Cells"> </a></h3>
+        <p>Be aware that it is the order of <strong>execution</strong> of cells that is important in a Jupyter notebook, not the order
 in which they appear. Python will remember <strong>all</strong> the code that was run previously, including any variables you have
 defined, irrespective of the order in the notebook. Therefore if you define variables lower down the notebook and then
 (re)run cells further up, those defined further down will still be present. As an example, we can create 2 cells with the following content, in this order:</p>
 
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">myval</span><span class="p">)</span>
-</pre></div>
-
+      </div>
     </div>
-</div>
-</div>
+  </div>
 
-</div>
-    
+  <div class="cell border-box-sizing code_cell rendered">
+    <div class="input">
 
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
+      <div class="inner_cell">
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="input_area"&gt;
+</code></pre></div>        </div>
+        <div class=" highlight hl-ipython3">
+          <pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">myval</span><span class="p">)</span>
+</pre>
+        </div>
 
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">myval</span> <span class="o">=</span> <span class="mi">1</span>
-</pre></div>
-
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;/div&gt;
+</code></pre></div>        </div>
+      </div>
     </div>
-</div>
-</div>
 
-</div>
-    
+  </div>
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If you execute this in order, the first cell will give an error. However, if you run the first cell <strong>after</strong> the second
+  <div class="cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+      <div class="inner_cell">
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="input_area"&gt;
+</code></pre></div>        </div>
+        <div class=" highlight hl-ipython3">
+          <pre><span></span><span class="n">myval</span> <span class="o">=</span> <span class="mi">1</span>
+</pre>
+        </div>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;/div&gt;
+</code></pre></div>        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <p>If you execute this in order, the first cell will give an error. However, if you run the first cell <strong>after</strong> the second
 cell it will print out ‘1’. To prevent confusion, it can be helpful to use the <code>Kernel</code> -&gt; <code>Restart &amp; Run All</code> option which
  clears the interpreter and runs everything from a clean slate going top to bottom.</p>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Variables-can-be-used-in-calculations.">Variables can be used in calculations.<a class="anchor-link" href="#Variables-can-be-used-in-calculations."> </a></h3><ul>
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <h3 id="Variables-can-be-used-in-calculations.">Variables can be used in calculations.<a class="anchor-link" href="#Variables-can-be-used-in-calculations."> </a></h3>
+        <ul>
 <li>We can use variables in calculations just as if they were values.</li>
 </ul>
 
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
+      </div>
+    </div>
+  </div>
 
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">42</span>
+  <div class="cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+      <div class="inner_cell">
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="input_area"&gt;
+</code></pre></div>        </div>
+        <div class=" highlight hl-ipython3">
+          <pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">42</span>
 <span class="n">age</span> <span class="o">=</span> <span class="n">age</span> <span class="o">+</span> <span class="mi">3</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Age in three years:&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Age in three years: 45
 </pre>
-</div>
-</div>
+        </div>
 
-</div>
-</div>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;/div&gt;
+</code></pre></div>        </div>
+      </div>
+    </div>
 
-</div>
-    
+    <div class="output_wrapper">
+      <div class="output">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Python-is-case-sensitive.">Python is case-sensitive.<a class="anchor-link" href="#Python-is-case-sensitive."> </a></h2><ul>
+        <div class="output_area">
+
+          <div class="output_subarea output_stream output_stdout output_text">
+            <pre>Age in three years: 45
+</pre>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <h2 id="Python-is-case-sensitive.">Python is case-sensitive.<a class="anchor-link" href="#Python-is-case-sensitive."> </a></h2>
+        <ul>
 <li>Python thinks that upper- and lower-case letters are different,
 so <code>Name</code> and <code>name</code> are different variables.</li>
 <li>There are conventions for using upper-case letters at the start of variable names so we will use lower-case letters for now.</li>
 </ul>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Use-meaningful-variable-names.">Use meaningful variable names.<a class="anchor-link" href="#Use-meaningful-variable-names."> </a></h2><ul>
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <h2 id="Use-meaningful-variable-names.">Use meaningful variable names.<a class="anchor-link" href="#Use-meaningful-variable-names."> </a></h2>
+        <ul>
 <li>Python doesn't care what you call variables as long as they obey the rules
 (alphanumeric characters and the underscore).</li>
 </ul>
 
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
+      </div>
+    </div>
+  </div>
 
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">flabadab</span> <span class="o">=</span> <span class="mi">42</span>
+  <div class="cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+      <div class="inner_cell">
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="input_area"&gt;
+</code></pre></div>        </div>
+        <div class=" highlight hl-ipython3">
+          <pre><span></span><span class="n">flabadab</span> <span class="o">=</span> <span class="mi">42</span>
 <span class="n">ewr_422_yY</span> <span class="o">=</span> <span class="s1">&#39;Ahmed&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ewr_422_yY</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="n">flabadab</span><span class="p">,</span> <span class="s1">&#39;years old&#39;</span><span class="p">)</span>
-</pre></div>
+</pre>
+        </div>
 
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;/div&gt;
+</code></pre></div>        </div>
+      </div>
     </div>
-</div>
-</div>
 
-</div>
-    
+  </div>
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <ul>
 <li>Use meaningful variable names to help other people understand what the program does.</li>
 <li>The most important "other person" is your future self.</li>
 </ul>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr />
-<p>Do <a href="https://nu-cem.github.io/CompPhys/2021/08/02/02-Variables-Assignment-Qs.html">the activities</a>.</p>
-<p>Back to <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_one.html">Python basics - part one</a>.</p>
-<hr />
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <hr />
 
-</div>
-</div>
-</div>
+        <p>Do <a href="https://nu-cem.github.io/CompPhys/2021/08/02/02-Variables-Assignment-Qs.html">the activities</a>.</p>
+        <p>Back to <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_one.html">Python basics - part one</a>.</p>
+        <hr />
+
+      </div>
+    </div>
+  </div>
 </div>
 
 

@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/01-Running_Python-Qs.html","@type":"BlogPosting","headline":"Running python - Quick test questions","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/01-Running_Python-Qs.html"},"description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","@context":"https://schema.org"}</script>
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/01-Running_Python-Qs.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/01-Running_Python-Qs.html"},"headline":"Running python - Quick test questions","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -125,11 +125,13 @@ window.onload = wrap_img;
 -->
 
 <div class="container" id="notebook-container">
-        
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Creating-Lists-in-Markdown">Creating Lists in Markdown<a class="anchor-link" href="#Creating-Lists-in-Markdown"> </a></h2><p>Create a nested list in a Markdown cell in a notebook that looks like this:</p>
-<ol>
+
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <h2 id="Creating-Lists-in-Markdown">Creating Lists in Markdown<a class="anchor-link" href="#Creating-Lists-in-Markdown"> </a></h2>
+        <p>Create a nested list in a Markdown cell in a notebook that looks like this:</p>
+        <ol>
 <li>Get funding.</li>
 <li>Do work.<ul>
 <li>Design experiment.</li>
@@ -141,83 +143,111 @@ window.onload = wrap_img;
 <li>Publish.</li>
 </ol>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<details>
-  <summary>Show answer</summary>
+      </div>
+    </div>
+  </div>
+  <div class="cell border-box-sizing text_cell rendered">
+    <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+        <details>
+          <summary>
+            <p>Show answer&lt;/summary&gt;</p>
 
-Note that the bullet list is indented 2 spaces so that it is inline with the items of the numbered list.
-~~~
-1.  Get funding.
+            <p>Note that the bullet list is indented 2 spaces so that it is inline with the items of the numbered list.</p>
+            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.  Get funding.
 2.  Do work.
     *   Design experiment.
     *   Collect data.
     *   Analyze.
 3.  Write up.
 4.  Publish.
-~~~
-</details>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Multiple-Maths">Multiple Maths<a class="anchor-link" href="#Multiple-Maths"> </a></h2><p>What is displayed when a Python cell in a notebook
+</code></pre></div>            </div>
+            <p>&lt;/details&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</p>
+            <div class="cell border-box-sizing text_cell rendered">
+              <div class="inner_cell">
+                <div class="text_cell_render border-box-sizing rendered_html">
+                  <h2 id="Multiple-Maths">Multiple Maths<a class="anchor-link" href="#Multiple-Maths"> </a></h2>
+                  <p>What is displayed when a Python cell in a notebook
 that contains several calculations is executed?
 For example, what happens when this cell is executed?</p>
-<div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">*</span> <span class="mi">3</span>
+                  <div class="highlight">
+                    <pre><span></span><span class="mi">7</span> <span class="o">*</span> <span class="mi">3</span>
 <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
-</pre></div>
+</pre>
+                  </div>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<details>
-  <summary>Show answer</summary>
+                </div>
+              </div>
+            </div>
+            <div class="cell border-box-sizing text_cell rendered">
+              <div class="inner_cell">
+                <div class="text_cell_render border-box-sizing rendered_html">
+                  <details>
+                    <summary>
+                      <p>Show answer&lt;/summary&gt;</p>
 
-Python returns the output of the last calculation. The output is:
-~~~python
-3
-~~~
-</details>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Equations">Equations<a class="anchor-link" href="#Equations"> </a></h2><p>Standard Markdown (such as we're using for these notes) won't render equations, but the Notebook will.
+                      <p>Python returns the output of the last calculation. The output is:</p>
+                      <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">3</span>
+</code></pre></div>                      </div>
+                      <p>&lt;/details&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</p>
+                      <div class="cell border-box-sizing text_cell rendered">
+                        <div class="inner_cell">
+                          <div class="text_cell_render border-box-sizing rendered_html">
+                            <h2 id="Equations">Equations<a class="anchor-link" href="#Equations"> </a></h2>
+                            <p>Standard Markdown (such as we’re using for these notes) won’t render equations, but the Notebook will.
 Create a new Markdown cell and enter the following:</p>
 
-<pre><code>$\sum_{i=1}^{N} 2^{-i} \approx 1$</code></pre>
-<p>(It's probably easier to copy and paste.) What does it display? What do you think the underscore, <code>_</code>, circumflex, <code>^</code>, and dollar sign, <code>$</code>, do?</p>
+                            <pre><code>$\sum_{i=1}^{N} 2^{-i} \approx 1$</code></pre>
+                            <p>(It’s probably easier to copy and paste.) What does it display? What do you think the underscore, <code>_</code>, circumflex, <code>^</code>, and dollar sign, <code>$</code>, do?</p>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<details>
-  <summary>Show answer</summary>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cell border-box-sizing text_cell rendered">
+                        <div class="inner_cell">
+                          <div class="text_cell_render border-box-sizing rendered_html">
+                            <details>
+                              <summary>
+                                <p>Show answer&lt;/summary&gt;</p>
 
-The notebook shows the equation as it would be rendered from [LaTeX]() equation syntax.
+                                <p>The notebook shows the equation as it would be rendered from <a href="">LaTeX</a> equation syntax.</p>
 
-- The dollar sign, `$`, is used to tell markdown that the text in between is a latex equation.
-- underscore, `_`, is used for subscripts
-- circumflex, `^`, is used for superscripts.
-- A pair of curly braces, `{` and `}`, is used to group text together so that the statement `i=1` becomes the the subscript and `N` becomes the superscript.
-- Similarly, `-i` is in curly braces to make the whole statement the superscript for `2`.
-- `\sum` and `\approx` are latex commands for "sum over" and "approximate" symbols. 
-</details>
-</div>
-</div>
-</div>
-</div>
+                                <ul>
+                                  <li>The dollar sign, <code class="language-plaintext highlighter-rouge">$</code>, is used to tell markdown that the text in between is a latex equation.</li>
+                                  <li>underscore, <code class="language-plaintext highlighter-rouge">_</code>, is used for subscripts</li>
+                                  <li>circumflex, <code class="language-plaintext highlighter-rouge">^</code>, is used for superscripts.</li>
+                                  <li>A pair of curly braces, <code class="language-plaintext highlighter-rouge">{</code> and <code class="language-plaintext highlighter-rouge">}</code>, is used to group text together so that the statement <code class="language-plaintext highlighter-rouge">i=1</code> becomes the the subscript and <code class="language-plaintext highlighter-rouge">N</code> becomes the superscript.</li>
+                                  <li>Similarly, <code class="language-plaintext highlighter-rouge">-i</code> is in curly braces to make the whole statement the superscript for <code class="language-plaintext highlighter-rouge">2</code>.</li>
+                                  <li><code class="language-plaintext highlighter-rouge">\sum</code> and <code class="language-plaintext highlighter-rouge">\approx</code> are latex commands for “sum over” and “approximate” symbols.</li>
+                                </ul>
+                                <p>&lt;/details&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</p>
 
+                              </summary>
+                            </details>
+                          </div>
+                        </div>
+                      </div>
+                    </summary>
+                  </details>
+                </div>
+              </div>
+            </div>
+          </summary>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
 
 
   </div><a class="u-url" href="/CompPhys/2021/08/02/01-Running_Python-Qs.html" hidden></a>
