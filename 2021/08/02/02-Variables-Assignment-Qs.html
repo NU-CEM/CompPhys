@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/02-Variables-Assignment-Qs.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/02-Variables-Assignment-Qs.html"},"headline":"Variables and assignment - Quick test questions","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","@context":"https://schema.org"}</script>
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/02-Variables-Assignment-Qs.html","@type":"BlogPosting","headline":"Variables and assignment - Quick test questions","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/02-Variables-Assignment-Qs.html"},"description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -125,13 +125,11 @@ window.onload = wrap_img;
 -->
 
 <div class="container" id="notebook-container">
-
-  <div class="cell border-box-sizing text_cell rendered">
-    <div class="inner_cell">
-      <div class="text_cell_render border-box-sizing rendered_html">
-        <h2 id="Swapping-Values">Swapping Values<a class="anchor-link" href="#Swapping-Values"> </a></h2>
-        <p>Fill the table showing the values of the variables in this program <strong>after</strong> each statement is executed.</p>
-        <table>
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Swapping-Values">Swapping Values<a class="anchor-link" href="#Swapping-Values"> </a></h2><p>Fill the table showing the values of the variables in this program <strong>after</strong> each statement is executed.</p>
+<table>
 <thead><tr>
 <th>Command</th>
 <th>Value of x</th>
@@ -173,142 +171,77 @@ window.onload = wrap_img;
 </tbody>
 </table>
 
-      </div>
-    </div>
-  </div>
-  <div class="cell border-box-sizing text_cell rendered">
-    <div class="inner_cell">
-      <div class="text_cell_render border-box-sizing rendered_html">
-        <details>
-          <summary>
-            <p>Show answer&lt;/summary&gt;</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<details>
+  <summary>Show answer</summary>
 
-            <table>
-              <thead>
-                <tr>
-                  <th>Command</th>
-                  <th>Value of x</th>
-                  <th>Value of y</th>
-                  <th>Value of swap</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>x = 1.0</td>
-                  <td>1.0</td>
-                  <td>not defined</td>
-                  <td>not defined</td>
-                </tr>
-                <tr>
-                  <td>y = 3.0</td>
-                  <td>1.0</td>
-                  <td>3.0</td>
-                  <td>not defined</td>
-                </tr>
-                <tr>
-                  <td>swap = x</td>
-                  <td>1.0</td>
-                  <td>3.0</td>
-                  <td>1.0</td>
-                </tr>
-                <tr>
-                  <td>x = y</td>
-                  <td>3.0</td>
-                  <td>3.0</td>
-                  <td>1.0</td>
-                </tr>
-                <tr>
-                  <td>y = swap</td>
-                  <td>3.0</td>
-                  <td>1.0</td>
-                  <td>1.0</td>
-                </tr>
-              </tbody>
-            </table>
+| Command | Value of x   | Value of y   | Value of swap |
+| ------- | ----------   | ----------   | ------------- |
+|x = 1.0  | 1.0          | not defined  | not defined   |
+|y = 3.0  | 1.0          | 3.0          | not defined   |
+|swap = x | 1.0          | 3.0          | 1.0           |
+|x = y    | 3.0          | 3.0          | 1.0           |
+|y = swap | 3.0          | 1.0          | 1.0           |
 
-            <p>These three lines exchange the values in <code class="language-plaintext highlighter-rouge">x</code> and <code class="language-plaintext highlighter-rouge">y</code> using the <code class="language-plaintext highlighter-rouge">swap</code> variable for temporary storage. 
-This is a fairly common programming idiom.<br />
-&lt;/details&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</p>
-            <div class="cell border-box-sizing text_cell rendered">
-              <div class="inner_cell">
-                <div class="text_cell_render border-box-sizing rendered_html">
-                  <h2 id="Predicting-Values">Predicting Values<a class="anchor-link" href="#Predicting-Values"> </a></h2>
-                  <p>What is the final value of <code>position</code> in the program below? (Try to predict the value without running the program,
+These three lines exchange the values in `x` and `y` using the `swap` variable for temporary storage. 
+This is a fairly common programming idiom.   
+</details>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Predicting-Values">Predicting Values<a class="anchor-link" href="#Predicting-Values"> </a></h2><p>What is the final value of <code>position</code> in the program below? (Try to predict the value without running the program,
 then check your prediction.)</p>
-                  <div class="highlight">
-                    <pre><span></span><span class="n">initial</span> <span class="o">=</span> <span class="s1">&#39;left&#39;</span>
+<div class="highlight"><pre><span></span><span class="n">initial</span> <span class="o">=</span> <span class="s1">&#39;left&#39;</span>
 <span class="n">position</span> <span class="o">=</span> <span class="n">initial</span>
 <span class="n">initial</span> <span class="o">=</span> <span class="s1">&#39;right&#39;</span>
-</pre>
-                  </div>
+</pre></div>
 
-                </div>
-              </div>
-            </div>
-            <div class="cell border-box-sizing text_cell rendered">
-              <div class="inner_cell">
-                <div class="text_cell_render border-box-sizing rendered_html">
-                  <details>
-                    <summary>
-                      <p>Show answer&lt;/summary&gt;</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<details>
+  <summary>Show answer</summary>
 
-                      <p>The final value of position is <code class="language-plaintext highlighter-rouge">'left'</code>.</p>
+The final value of position is `'left'`.
 
-                      <p>The <code class="language-plaintext highlighter-rouge">initial</code> variable is assigned the value ‘left’. In the second line, the <code class="language-plaintext highlighter-rouge">position</code> variable also receives the string value ‘left’. In third line, the <code class="language-plaintext highlighter-rouge">initial</code> variable is given the value ‘right’, but the <code class="language-plaintext highlighter-rouge">position</code> variable retains its string value of ‘left’.<br />
-&lt;/details&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</p>
-                      <div class="cell border-box-sizing text_cell rendered">
-                        <div class="inner_cell">
-                          <div class="text_cell_render border-box-sizing rendered_html">
-                            <h2 id="Choosing-a-Name">Choosing a Name<a class="anchor-link" href="#Choosing-a-Name"> </a></h2>
-                            <p>Which is a better variable name, <code>m</code>, <code>min</code>, or <code>minutes</code>?
+The `initial` variable is assigned the value 'left'. In the second line, the `position` variable also receives the string value 'left'. In third line, the `initial` variable is given the value 'right', but the `position` variable retains its string value of 'left'.  
+</details>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Choosing-a-Name">Choosing a Name<a class="anchor-link" href="#Choosing-a-Name"> </a></h2><p>Which is a better variable name, <code>m</code>, <code>min</code>, or <code>minutes</code>?
 Why?</p>
-                            <p>Hint: think about which code you would rather inherit from someone who is leaving the lab:</p>
-                            <div class="highlight">
-                              <pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="n">s</span>
+<p>Hint: think about which code you would rather inherit from someone who is leaving the lab:</p>
+<div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="n">s</span>
 <span class="n">tot_sec</span> <span class="o">=</span> <span class="nb">min</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="n">sec</span>
 <span class="n">total_seconds</span> <span class="o">=</span> <span class="n">minutes</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="n">seconds</span>
-</pre>
-                            </div>
+</pre></div>
 
-                          </div>
-                        </div>
-                      </div>
-                      <div class="cell border-box-sizing text_cell rendered">
-                        <div class="inner_cell">
-                          <div class="text_cell_render border-box-sizing rendered_html">
-                            <details>
-                              <summary>
-                                <p>Show answer&lt;/summary&gt;</p>
-
-                                <p><code class="language-plaintext highlighter-rouge">minutes</code> is better because <code class="language-plaintext highlighter-rouge">min</code> might mean something like “minimum” (and actually does in Python, but we haven’t seen that yet).
-&lt;/details&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</p>
-
-                              </summary>
-                            </details>
-                          </div>
-                        </div>
-                      </div>
-                    </summary>
-                  </details>
-                </div>
-              </div>
-            </div>
-          </summary>
-        </details>
-      </div>
-    </div>
-  </div>
 </div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<details>
+  <summary>Show answer</summary>
+
+`minutes` is better because `min` might mean something like "minimum" (and actually does in Python, but we haven't seen that yet).
+</details>
+</div>
+</div>
+</div>
+</div>
+
 
 
   </div><a class="u-url" href="/CompPhys/2021/08/02/02-Variables-Assignment-Qs.html" hidden></a>
