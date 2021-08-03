@@ -88,3 +88,11 @@ The notebook shows the equation as it would be rendered from [LaTeX]() equation 
 </details>
 
 {::options parse_block_html="false" /}
+
+---
+
+See [the notebook](https://nu-cem.github.io/CompPhys/2021/08/02/02-Variables-Assignment.html).
+
+Back to [Python basics - part one](https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_one.html).
+
+---
