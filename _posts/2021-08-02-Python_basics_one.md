@@ -14,12 +14,11 @@ This lesson is an introduction to programming in Python for people with little o
 - Download the UV-Vis data: [UVVis-01.csv]()
 - Launch a Jupyter notebook: open Git Bash (Windows) or a terminal (Mac) and type `jupyter notebook`
 
-> Tip: You should launch the Jupyter Notebook in the folder where you want to save your notebook files. You can find this folder using the Unix commands `cd` (change directory) and `pwd` (print working directory). We will learn more about Unix later in the course.
- 
+{% include info.html text="You should launch the Jupyter Notebook in the folder where you want to save your notebook files. You can find this folder using the Unix commands `cd` (change directory) and `pwd` (print working directory). We will learn more about Unix later in the course." %}
 
 ### Lesson outline
 
-| Topic | Questions | Activites |
+| Topic | Objective | Quick test |
 |-------|-----------|-----------|
 |[Running Python](https://nu-cem.github.io/CompPhys/python/2021/08/02/01-Running_Python)|How can I run Python programs? | [:running:]() |
 |[Variables and Assignment](https://nu-cem.github.io/CompPhys/python/2021/08/02/02-Variables-Assignment)| How can I store data in programs? | [:nail_care:](https://nu-cem.github.io/CompPhys/python/2021/08/02/02-Variables-Assignment-Qs)|
@@ -30,6 +29,8 @@ This lesson is an introduction to programming in Python for people with little o
 
 ### Resources
 
+- Lesson Exercises
+- Extension exercise
 - Presentation
 - Teaching notes
-- Exercises
+
