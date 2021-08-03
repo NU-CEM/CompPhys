@@ -54,7 +54,9 @@ initial = 'right'
 The final value of position is `'left'`.
 
 The `initial` variable is assigned the value 'left'. In the second line, the `position` variable also receives the string value 'left'. In third line, the `initial` variable is given the value 'right', but the `position` variable retains its string value of 'left'.  
+  
 </details>
+
 {::options parse_block_html="false" /}
 
 ## Choosing a Name
@@ -74,6 +76,8 @@ total_seconds = minutes * 60 + seconds
   <summary markdown="span">Show answer</summary>
     
 `minutes` is better because `min` might mean something like "minimum" (and actually does in Python, but we haven't seen that yet).
+  
 </details>
+
 {::options parse_block_html="false" /}
 
