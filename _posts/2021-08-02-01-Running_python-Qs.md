@@ -17,8 +17,9 @@ Create a nested list in a Markdown cell in a notebook that looks like this:
 3.  Write up.
 4.  Publish.
 
+{::options parse_block_html="true" /}
 <details>
-  <summary>Show answer</summary>
+  <summary markdown="span">Show answer</summary>
 
 Note that the bullet list is indented 2 spaces so that it is inline with the items of the numbered list.
 ~~~
@@ -32,6 +33,8 @@ Note that the bullet list is indented 2 spaces so that it is inline with the ite
 ~~~
 </details>
 
+{::options parse_block_html="false" /}
+
 ## Multiple Maths
 
 What is displayed when a Python cell in a notebook
@@ -44,14 +47,17 @@ For example, what happens when this cell is executed?
 ~~~
 
 
+{::options parse_block_html="true" /}
 <details>
-  <summary>Show answer</summary>
+  <summary markdown="span">Show answer</summary>
 
 Python returns the output of the last calculation. The output is:
 ~~~python
 3
 ~~~
 </details>
+
+{::options parse_block_html="false" /}
 
 ## Equations
 
@@ -64,8 +70,9 @@ $\sum_{i=1}^{N} 2^{-i} \approx 1$
 
 (It's probably easier to copy and paste.) What does it display? What do you think the underscore, `_`, circumflex, `^`, and dollar sign, `$`, do?
 
+{::options parse_block_html="true" /}
 <details>
-  <summary>Show answer</summary>
+  <summary markdown="span">Show answer</summary>
 
 The notebook shows the equation as it would be rendered from [LaTeX]() equation syntax.
 
@@ -76,3 +83,5 @@ The notebook shows the equation as it would be rendered from [LaTeX]() equation 
 - Similarly, `-i` is in curly braces to make the whole statement the superscript for `2`.
 - `\sum` and `\approx` are latex commands for "sum over" and "approximate" symbols. 
 </details>
+
+{::options parse_block_html="false" /}
