@@ -49,7 +49,7 @@ initial = 'right'
 
 {::options parse_block_html="true" /}
 <details>
-  <summary>Show answer</summary>
+  <summary markdown="span">Show answer</summary>
 
 The final value of position is `'left'`.
 
@@ -71,7 +71,7 @@ total_seconds = minutes * 60 + seconds
 
 {::options parse_block_html="true" /}
 <details>
-  <summary>Show answer</summary>
+  <summary markdown="span">Show answer</summary>
     
 `minutes` is better because `min` might mean something like "minimum" (and actually does in Python, but we haven't seen that yet).
 </details>
