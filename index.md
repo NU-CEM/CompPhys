@@ -1,0 +1,30 @@
+---
+layout: home
+search_exclude: true
+---
+
+
+<img src="{{site.baseurl}}/images/oscillating_charge.gif" width="300" alt="Oscillating charge"><br/>
+Animation generated using [pycharge](https://pycharge.readthedocs.io/en/latest/).
+
+# Course content
+
+**Part one: Getting started**
+
+- [Introduction and setup](https://nu-cem.github.io/CompPhys/2021/08/02/Introduction.html)
+- [Python part one](https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_one.html)
+- Python part two
+- Data analysis
+- Plotting
+     
+**Part two: Getting results**
+
+- Modelling with partial differential equations
+- Modelling with ordinary differential equations
+     
+**Part three: Getting it out there**
+
+- Python scripts and the Unix terminal
+- Testing and documentation
+- Version control and Github
+- Open science and build-your-own website
