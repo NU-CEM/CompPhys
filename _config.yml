@@ -121,5 +121,8 @@ feed:
   posts_limit: 5 #default posts_limit: 10
   excerpt_only: true
   
+# make linking by hand easier by overriding default dependence on categories
+permalink: /:year/:month/:day/:title:output_ext
+
 exclude:
   - settings.ini
