@@ -2,17 +2,6 @@
   
     
         "post0": {
-            "title": "Tes",
-            "content": "Swapping Values . Fill the table showing the values of the variables in this program after each statement is executed. . Command Value of x Value of y Value of swap . x = 1.0 |   |   |   | . y = 3.0 |   |   |   | . swap = x |   |   |   | . x = y |   |   |   | . y = swap |   |   |   | . Klicka här för python-exempel för att programmera en turtle. import turtle t = turtle.Turtle() t.color(&#39;pink&#39;) t.fillcolor(color) t.fill(True) t.width(5) t.forward(50) t.right(90) t.forward(300) . Show answer Command Value of x Value of y Value of swap . x = 1.0 | 1.0 | not defined | not defined | . y = 3.0 | 1.0 | 3.0 | not defined | . swap = x | 1.0 | 3.0 | 1.0 | . x = y | 3.0 | 3.0 | 1.0 | . y = swap | 3.0 | 1.0 | 1.0 | . These three lines exchange the values in x and y using the swap variable for temporary storage. This is a fairly common programming idiom. . Predicting Values . What is the final value of position in the program below? (Try to predict the value without running the program, then check your prediction.) . initial = &#39;left&#39; position = initial initial = &#39;right&#39; . Show answer The final value of position is `&#39;left&#39;`. The `initial` variable is assigned the value &#39;left&#39;. In the second line, the `position` variable also receives the string value &#39;left&#39;. In third line, the `initial` variable is given the value &#39;right&#39;, but the `position` variable retains its string value of &#39;left&#39;. Choosing a Name . Which is a better variable name, m, min, or minutes? Why? . Hint: think about which code you would rather inherit from someone who is leaving the lab: . ts = m * 60 + s tot_sec = min * 60 + sec total_seconds = minutes * 60 + seconds . Show answer `minutes` is better because `min` might mean something like &quot;minimum&quot; (and actually does in Python, but we haven&#39;t seen that yet).",
-            "url": "https://nu-cem.github.io/CompPhys/2021/08/02/test.html",
-            "relUrl": "/2021/08/02/test.html",
-            "date": " • Aug 2, 2021"
-        }
-        
-    
-  
-    
-        ,"post1": {
             "title": "Version control and Github",
             "content": "Version control and Github .",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/Version_control.html",
@@ -23,7 +12,7 @@
     
   
     
-        ,"post2": {
+        ,"post1": {
             "title": "Sharing your code",
             "content": "",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/Sharing_code.html",
@@ -34,7 +23,7 @@
     
   
     
-        ,"post3": {
+        ,"post2": {
             "title": "Python scripts and the Unix terminal",
             "content": "Python scripts and the Unix terminal .",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/Scripting.html",
@@ -45,7 +34,7 @@
     
   
     
-        ,"post4": {
+        ,"post3": {
             "title": "Python basics - part two",
             "content": "Python basics - part two .",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_two.html",
@@ -56,7 +45,7 @@
     
   
     
-        ,"post5": {
+        ,"post4": {
             "title": "Python basics - part one",
             "content": "This lesson is an introduction to programming in Python for people with little or no previous programming experience. It uses plotting UV-Vis data as its motivating example. This lesson references the Jupyter Notebook, but can be followed using a regular Python interpreter as well. Please note that this lesson, like all others in the course, uses Python 3 rather than Python 2. . Before you begin . Check that Python is installed: please see the setup instructions for details. | Download the UV-Vis data: UVVis-01.csv | Launch a Jupyter notebook: open Git Bash (Windows) or a terminal (Mac) and type jupyter notebook | . . You should launch the Jupyter Notebook in the folder where you want to save your notebook files. You can find this folder using the Unix commands `cd` (change directory) and `pwd` (print working directory). We will learn more about Unix later in the course. Lesson outline . Topic Objective Quick test . Running Python | How can I run Python programs? | :running: | . Variables and Assignment | How can I store data in programs? | :nail_care: | . Data Types and Type Conversion | What kinds of data do programs store? How can I convert one type to another? | :dancer: | . Built-in Functions, Help and Errors | How can I use built-in functions? How can I find out what they do? What kind of errors can occur in programs? | :droplet: | . Lists | How can I store multiple values? | :ear: | . Resources . Lesson Exercises | Extension exercise | Presentation | Teaching notes | .",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_one.html",
@@ -67,7 +56,7 @@
     
   
     
-        ,"post6": {
+        ,"post5": {
             "title": "Plotting with Python",
             "content": "Plotting with Python .",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/Plotting.html",
@@ -78,7 +67,7 @@
     
   
     
-        ,"post7": {
+        ,"post6": {
             "title": "Modelling with Partial Differential Equations",
             "content": "Modelling with Partial Differential Equations .",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/PDEs.html",
@@ -89,7 +78,7 @@
     
   
     
-        ,"post8": {
+        ,"post7": {
             "title": "Open science",
             "content": "Open science .",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/Open_science.html",
@@ -100,7 +89,7 @@
     
   
     
-        ,"post9": {
+        ,"post8": {
             "title": "Modelling with Ordinary Differential Equations",
             "content": "Modelling with Ordinary Differential Equations .",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/ODEs.html",
@@ -111,7 +100,7 @@
     
   
     
-        ,"post10": {
+        ,"post9": {
             "title": "Introduction and Setup",
             "content": "Introduction . Computing has become central to virtually all research and development in academia and industry, and with the advent of Machine Learning and High-Performance Computing this dominance is set to continue. . Computational physics encompasses a wide number of areas including materials modelling, particle physics simulations, protein structure prediction and plasma modelling. In fact, it is possible to find a computational branch for every major field in physics. . The focus of this course is to equip with you with the transferable skills needed for success in a range of computational disciplines. . The software packages we will introduce in the first part of the course, Getting started, are applicable to all areas of research and industry - from game design to architecture. In the middle section of the course, Getting results, we will apply these tools to model the differential equations that are so central to both classical and quantum physics. In the final section of the course, Getting it out there, we will use modern software engineering techniques to document, test and share our code. . This course is split into three sections - Getting started, Getting results and Getting it out there. . Getting started Python part one | Python part two | Data analysis | Plotting | . | Getting results Modelling with partial differential equations | Modelling with ordinary differential equations | . | Getting it out there Python scripts and the Unix terminal | Testing and documentation | Version control and Github | Open science and build-your-own website | . | . . An eye for detail is important. If you include an extra full-stop, or forget a space, then your code may not run. Don&#39;t let these Error messages worry you - they won&#39;t break the computer! - but do double check the steps you have taken and the code you have written for typos or &#39;silly&#39; mistakes. Setup . To participate in this course you will need access to the following software: Python, Bash, Git and Jupyter. To install this software on your personal laptop or desktop carefully follow the instructions listed below. . You will also need a user account at github.com - Basic GitHub accounts are free. . . All of the software needed for this course is pre-installed in the MPEE computers at Northumbria University . You can also run the Python Jupyter Notebook files remotely through the [binder] or [colab] services whenever you see an icon (e.g. like those at the top of [this page]()). But be warned! Any changes you make are not saved and the service can time-out after a period of inactivity (usually ~20 minutes). Python . [Python][python] is a popular language for scientific computing, and great for general-purpose programming as well. Installing all of its scientific packages individually can be a bit difficult, however, so we recommend the all-in-one installer [Anaconda][anaconda]. Please make sure you install Python version 3.x (e.g., 3.4 is fine). . Windows - [Video tutorial] . Open [https://www.anaconda.com/download] with your web browser. . | Download the Python 3 installer for Windows. . | Double-click the executable and install Python 3 using MOST of the default settings, the only exception is to check Add Anaconda to my PATH environment variable. . | Mac OS X - [Video tutorial] . Open [https://www.anaconda.com/download] with your web browser. . | Download the Python 3 installer for OS X. . | Install Python 3 using all of the defaults for installation. . | Bash and Git . Bash is a commonly-used shell that gives you the power to do simple tasks more quickly. Git is version-control software that allows to you to develop code more efficiently and share a public version of your code on github.com. In fact, this website is built using Bash, Git and github.com (amongst other tools) - the code can be found here. You can download both tools at the same time following the instructions below. . Windows - video tutorial . Download the Git for Windows installer . | Run the installer and follow the steps below: . a) Click on “Next” four times (two times if you’ve previously installed Git). You don’t need to change anything in the Information, location, components, and start menu screens. . b) Select “Use the nano editor by default” and click on “Next”. . c) Keep “Use Git from the command line and…” selected and click on “Next”. If you forgot to do this programs that you need for the workshop will not work properly. If this happens rerun the installer and select the appropriate option. . d) Click on “Next” . e) Keep “Checkout Windows-style, commit Unix-style line endings” selected and click on “Next”. . f) Select “Use Windows’ default console window” and click on “Next”. . g) Ensure that “Default (fast-forward or merge) is selected and click “Next” . h) Ensure that “Git Credential Manager Core” is selected and click on “Next”. . i) Ensure that “Enable file system caching” is selected and click on “Next”. . j) Click on “Install” . k) Click on “Finish” . | If your “HOME” environment variable is not set (or you don’t know what this is): . a) Open command prompt (Open Start Menu then type cmd and press [Enter]) . b) Type the following line into the command prompt window exactly as shown: setx HOME &quot;%USERPROFILE%&quot; . c) Press [Enter], you should see SUCCESS: Specified value was saved. . | d) Quit command prompt by typing exit then pressing [Enter] . This will provide you with both Git and Bash in the Git Bash program. . macOS . For macOS, install Git for Mac by downloading and running the most recent “mavericks” installer from this list. Because this installer is not signed by the developer, you may have to right click (control click) on the .pkg file, click Open, and click Open on the pop up window. After installing Git, there will not be anything in your /Applications folder, as Git is a command line program. For older versions of OS X (10.5-10.8) use the most recent available installer labelled “snow-leopard” available here. . See the Git installation video tutorial for an example on how to open the Terminal. . Jupyter . We will teach Python using the [Jupyter notebook][jupyter], a programming environment that runs in a web browser. Jupyter requires a reasonably up-to-date browser, preferably a current version of Chrome, Safari, or Firefox (note that Internet Explorer version 9 and below are not supported). Jupyter was installed as part of the Anaconda package for Python. . Test your Setup . To check that this software has installed correctly, open Git bash (or terminal) and type the command: . $ jupyter notebook . You should see a file browser pop up as a new tab on your browser. Select new and you should see Python 3 listed as an option. Clicking on this will create a new Python 3 notebook file. . To start the Python interpreter without the notebook, you can open a terminal or Git Bash and type the command: . $ python .",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/Introduction.html",
@@ -122,7 +111,7 @@
     
   
     
-        ,"post11": {
+        ,"post10": {
             "title": "Data analysis",
             "content": "Data analysis .",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/Data_analysis.html",
@@ -133,7 +122,7 @@
     
   
     
-        ,"post12": {
+        ,"post11": {
             "title": "Variables and assignment",
             "content": ". Questions: . How can I store data in programs? | . Objectives: . Write programs that assign scalar values to variables and perform calculations with those values. | Correctly trace value changes in programs that use scalar assignment. | . Keypoints: . Use variables to store values. | Use print to display values. | Variables persist between cells. | Variables must be created before they are used. | Variables can be used in calculations. | Python is case-sensitive. | Use meaningful variable names. | . . Use variables to store values. . Variables are names for values. | In Python the = symbol assigns the value on the right to the name on the left. | The variable is created when a value is assigned to it. | Here, Python assigns an age to a variable age and a name in quotes to a variable first_name. | . age = 42 first_name = &#39;Ahmed&#39; . Variable names . can only contain letters, digits, and underscore _ (typically used to separate words in long variable names) | cannot start with a digit | Variable names that start with underscores like __bobbins_real_age have a special meaning so we won&#39;t do that until we understand the convention. | . Use print to display values. . Python has a built-in function called print that prints things as text. | Call the function (i.e., tell Python to run it) by using its name. | Provide values to the function (i.e., the things to print) in parentheses. | To add a string to the printout, wrap the string in single or double quotes. | The values passed to the function are called &#39;arguments&#39; | . print(first_name, &#39;is&#39;, age, &#39;years old&#39;) . Ahmed is 42 years old . print automatically puts a single space between items to separate them. | And wraps around to a new line at the end. | . Variables must be created before they are used. . Unlike some languages, which &quot;guess&quot; a default value, if a variable doesn&#39;t exist yet, or if the name has been mis-spelled, Python reports an error. | . print(last_name) . NameError Traceback (most recent call last) /var/folders/5q/mny3pg2n7h5g21h3v32rfj9wpykqrf/T/ipykernel_792/2256896230.py in &lt;module&gt; -&gt; 1 print(last_name) 2 NameError: name &#39;last_name&#39; is not defined . The last line of an error message is usually the most informative. | We will look at error messages in detail later. | . Variables Persist Between Cells . Be aware that it is the order of execution of cells that is important in a Jupyter notebook, not the order in which they appear. Python will remember all the code that was run previously, including any variables you have defined, irrespective of the order in the notebook. Therefore if you define variables lower down the notebook and then (re)run cells further up, those defined further down will still be present. As an example, we can create 2 cells with the following content, in this order: . print(myval) . myval = 1 . If you execute this in order, the first cell will give an error. However, if you run the first cell after the second cell it will print out ‘1’. To prevent confusion, it can be helpful to use the Kernel -&gt; Restart &amp; Run All option which clears the interpreter and runs everything from a clean slate going top to bottom. . Variables can be used in calculations. . We can use variables in calculations just as if they were values. | . age = 42 age = age + 3 print(&#39;Age in three years:&#39;, age) . Age in three years: 45 . Python is case-sensitive. . Python thinks that upper- and lower-case letters are different, so Name and name are different variables. | There are conventions for using upper-case letters at the start of variable names so we will use lower-case letters for now. | . Use meaningful variable names. . Python doesn&#39;t care what you call variables as long as they obey the rules (alphanumeric characters and the underscore). | . flabadab = 42 ewr_422_yY = &#39;Ahmed&#39; print(ewr_422_yY, &#39;is&#39;, flabadab, &#39;years old&#39;) . Use meaningful variable names to help other people understand what the program does. | The most important &quot;other person&quot; is your future self. | . . Do the activities. . Back to Python basics - part one. . .",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/02-Variables-Assignment.html",
@@ -144,7 +133,7 @@
     
   
     
-        ,"post13": {
+        ,"post12": {
             "title": "Variables and assignment - Quick test questions",
             "content": "Swapping Values . Fill the table showing the values of the variables in this program after each statement is executed. . Command Value of x Value of y Value of swap . x = 1.0 | | | | . y = 3.0 | | | | . swap = x | | | | . x = y | | | | . y = swap | | | | . {::options parse_block_html=&quot;true&quot; /} . Show answer&lt;/summary&gt; | Command | Value of x | Value of y | Value of swap | | - | - | - | - | |x = 1.0 | 1.0 | not defined | not defined | |y = 3.0 | 1.0 | 3.0 | not defined | |swap = x | 1.0 | 3.0 | 1.0 | |x = y | 3.0 | 3.0 | 1.0 | |y = swap | 3.0 | 1.0 | 1.0 | These three lines exchange the values in `x` and `y` using the `swap` variable for temporary storage. This is a fairly common programming idiom. {::options parse_block_html=&quot;false&quot; /} . Predicting Values . What is the final value of position in the program below? (Try to predict the value without running the program, then check your prediction.) . initial = &#39;left&#39; position = initial initial = &#39;right&#39; . Show answer The final value of position is `&#39;left&#39;`. The `initial` variable is assigned the value &#39;left&#39;. In the second line, the `position` variable also receives the string value &#39;left&#39;. In third line, the `initial` variable is given the value &#39;right&#39;, but the `position` variable retains its string value of &#39;left&#39;. Choosing a Name . Which is a better variable name, m, min, or minutes? Why? . Hint: think about which code you would rather inherit from someone who is leaving the lab: . ts = m * 60 + s tot_sec = min * 60 + sec total_seconds = minutes * 60 + seconds . Show answer `minutes` is better because `min` might mean something like &quot;minimum&quot; (and actually does in Python, but we haven&#39;t seen that yet). {toggle} Click the button to reveal! :show: Some hidden toggle content! . .",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/02-Variables-Assignment-Qs.html",
@@ -155,7 +144,7 @@
     
   
     
-        ,"post14": {
+        ,"post13": {
             "title": "Running Python",
             "content": ". Questions: . How can I run Python programs? | . Objectives: . Launch the Jupyter Notebook, create new notebooks, and exit the Notebook. | Create Markdown cells in a notebook. | Create and run Python cells in a notebook. | . Keypoints: . Python programs are plain text files. | Use the Jupyter Notebook for editing and running Python. | Use the keyboard and mouse to select and edit cells. | The Notebook will turn Markdown into pretty-printed documentation. | . . There are multiple ways to run Python code . Python programmes can be written as plain text files using a text editor | They have the .py extension to let everyone (including the operating system) know it is a Python program. This is convention, not a requirement. We will use plain text files for writing Python code towards the end of this course. | For this part of the course we are going to use [Jupyter Notebooks][jupyter]. | The Notebook provides code completion and other helpful features. | Notebook files have the extension .ipynb to distinguish them from plain-text Python programs. | . You can use the Jupyter Notebook for editing and running Python. . When we type jupyter notebook in a terminal (or Git Bash) we start a Jupyter Notebook server and open the default web browser. | The server runs locally on your machine only and does not use an internet connection. | You can type code into the browser and see the result when the web page talks to the server. | This has several advantages: You can easily type, edit, and copy and paste blocks of code. | Tab complete allows you to easily access the names of things you are using and learn more about them. | It allows you to annotate your code with links, different sized text, bullets, etc. to make it more accessible to you and your collaborators. | It allows you to display figures next to the code that produces them to tell a complete story of the analysis. The notebook file is stored in a format called JSON. | Just like a webpage, what&#39;s saved looks different from what you see in your browser. | But this format allows Jupyter to mix source code, text, and images, all in one file. | . | . . Tip: You can view this page as a Notebook by clicking on either the Binder or Colab button at the top of this page. . Use the keyboard and mouse to select and edit cells. . You can create a new cell by clicking on Insert at the top of the Notebook. | Pressing the &quot;shift&quot; and the &quot;enter&quot; key together will execute the contents of the cell. | . Use command mode to speed things up . You can also use keyboard shortcuts by entering command mode using the esc key. | Notice that the border of your cell turns blue. | Type a shortcut command - for example b to create a new cell. | The list of shortcuts can be found using h. | To exit command mode and start editing the cell press enter. | . The Notebook will turn Markdown into pretty-printed documentation. . Notebooks can also render [Markdown][markdown] which is a simple plain-text format for writing lists, links, and other things that might go into a web page. | You can turn cell into a Markdown cell by selecting Markdown from the drop-down menu at the top of the Notebook | In [ ]: will disappear to show it is no longer a code cell and you will be able to write in Markdown. | . Lists . * Use asterisks * to create * bullet lists. . Use asterisks | to create | bullet lists. | . 1. Use numbers 2. to create 3. numbered lists. . Use numbers | to create | numbered lists. | 1. You can 2. also * create sub-lists . You can | also create sub-lists | . | Headings . # A Level-1 Heading . A Level-1 Heading . ## A Level-2 Heading (etc) . A Level-2 Heading (etc) . Whitespace . Line breaks don&#39;t matter. But blank lines create new paragraphs. . Line breaks don&#39;t matter. . But blank lines create new paragraphs. . Basic formatting . You can easily: . use italics with *italics* | use bold with **bold** | Create links with [...](...). | . . Do the activities. . Back to Python basics - part one. . .",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/01-Running_Python.html",
@@ -166,7 +155,7 @@
     
   
     
-        ,"post15": {
+        ,"post14": {
             "title": "Running python - Quick test questions",
             "content": "Creating Lists in Markdown . Create a nested list in a Markdown cell in a notebook that looks like this: . Get funding. | Do work. Design experiment. | Collect data. | Analyze. | . | Write up. | Publish. | Show answer Note that the bullet list is indented 2 spaces so that it is inline with the items of the numbered list. ~~~ 1. Get funding. 2. Do work. * Design experiment. * Collect data. * Analyze. 3. Write up. 4. Publish. ~~~ Multiple Maths . What is displayed when a Python cell in a notebook that contains several calculations is executed? For example, what happens when this cell is executed? . 7 * 3 2 + 1 . Show answer Python returns the output of the last calculation. The output is: ~~~python 3 ~~~ Equations . Standard Markdown (such as we&#39;re using for these notes) won&#39;t render equations, but the Notebook will. Create a new Markdown cell and enter the following: . $ sum_{i=1}^{N} 2^{-i} approx 1$ . (It&#39;s probably easier to copy and paste.) What does it display? What do you think the underscore, _, circumflex, ^, and dollar sign, $, do? . Show answer The notebook shows the equation as it would be rendered from [LaTeX]() equation syntax. - The dollar sign, `$`, is used to tell markdown that the text in between is a latex equation. - underscore, `_`, is used for subscripts - circumflex, `^`, is used for superscripts. - A pair of curly braces, `{` and `}`, is used to group text together so that the statement `i=1` becomes the the subscript and `N` becomes the superscript. - Similarly, `-i` is in curly braces to make the whole statement the superscript for `2`. - ` sum` and ` approx` are latex commands for &quot;sum over&quot; and &quot;approximate&quot; symbols.",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/01-Running_Python-Qs.html",
@@ -210,12 +199,10 @@
   
 
   
-
-  
   
 
   
-      ,"page11": {
+      ,"page10": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://nu-cem.github.io/CompPhys/robots.txt",
