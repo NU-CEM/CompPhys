@@ -10,6 +10,13 @@ This lesson is an introduction to programming in Python for people with little o
 
 ### Before you begin
 
+- Check that Python is installed: please see the setup instructions for details.
+- Download the UV-Vis data: [UVVis-01.csv]()
+- Launch a Jupyter notebook: open Git Bash (Windows) or a terminal (Mac) and type `jupyter notebook`
+
+{% include info.html text="You should launch the Jupyter Notebook in the folder where you want to save your notebook files. You can find this folder using the Unix commands `cd` (change directory) and `pwd` (print working directory). We will learn more about Unix later in the course." %}
+ 
+
 ### Lesson outline
 
 | Topic | Questions |
