@@ -17,25 +17,6 @@ Fill the table showing the values of the variables in this program **after** eac
 |x = y      |                         |              |               |
 |y = swap   |                       |              |               |
 
-
-<details>
-  <summary markdown="span">
-    Klicka här för python-exempel för att programmera en turtle.
-  </summary>
-  <pre>
-    import turtle
-    t = turtle.Turtle()
-    t.color('pink')
-    t.fillcolor(color)
-    t.fill(True)
-    t.width(5)
-    t.forward(50)
-    t.right(90)
-    t.forward(300)
-  </pre>
-</details>
-
-
 {::options parse_block_html="true" /}
 <details>
   <summary markdown="span">Show answer</summary>
