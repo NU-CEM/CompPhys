@@ -9,12 +9,12 @@
 {% block input_group -%}
 {%- if cell.metadata.collapse_show -%}
     <details class="description" open>
-      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+      <summary class="btn btn-sm" data-open="Hide Cell" data-close="Show Cell"></summary>
         <p>{{ super() }}</p>
     </details>
 {%- elif cell.metadata.collapse_hide -%}
     <details class="description">
-      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+      <summary class="btn btn-sm" data-open="Hide Cell" data-close="Show Cell"></summary>
         <p>{{ super() }}</p>
     </details>
 {%- elif cell.metadata.hide_input or nb.metadata.hide_input -%}
