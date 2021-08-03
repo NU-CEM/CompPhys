@@ -1,8 +1,8 @@
 ---
 toc: false
 layout: post
-title: Tes
-sticky_rank: 1
+title: Variables and assignment - quick test
+hide: true
 ---
 
 ## Swapping Values
