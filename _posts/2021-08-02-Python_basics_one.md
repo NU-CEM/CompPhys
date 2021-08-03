@@ -4,6 +4,7 @@ layout: post
 categories: [python]
 title: Python basics - part one
 sticky_rank: 2
+hide: true
 ---
 
 This lesson is an introduction to programming in Python for people with little or no previous programming experience. It uses plotting UV-Vis data as its motivating example. This lesson references the Jupyter Notebook, but can be followed using a regular Python interpreter as well. Please note that this lesson, like all others in the course, uses Python 3 rather than Python 2.
