@@ -8,15 +8,15 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Python basics - part one" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Python basics part one" />
-<meta property="og:description" content="Python basics part one" />
+<meta name="description" content="This lesson is an introduction to programming in Python for people with little or no previous programming experience. It uses plotting UV-Vis data as its motivating example. This lesson references the Jupyter Notebook, but can be followed using a regular Python interpreter as well. Please note that this lesson, like all others in the course, uses Python 3 rather than Python 2." />
+<meta property="og:description" content="This lesson is an introduction to programming in Python for people with little or no previous programming experience. It uses plotting UV-Vis data as its motivating example. This lesson references the Jupyter Notebook, but can be followed using a regular Python interpreter as well. Please note that this lesson, like all others in the course, uses Python 3 rather than Python 2." />
 <link rel="canonical" href="https://nu-cem.github.io/CompPhys/python/2021/08/02/Python_basics_one.html" />
 <meta property="og:url" content="https://nu-cem.github.io/CompPhys/python/2021/08/02/Python_basics_one.html" />
 <meta property="og:site_name" content="An Introduction to Computational Physics" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"Python basics part one","url":"https://nu-cem.github.io/CompPhys/python/2021/08/02/Python_basics_one.html","@type":"BlogPosting","headline":"Python basics - part one","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/python/2021/08/02/Python_basics_one.html"},"@context":"https://schema.org"}</script>
+{"description":"This lesson is an introduction to programming in Python for people with little or no previous programming experience. It uses plotting UV-Vis data as its motivating example. This lesson references the Jupyter Notebook, but can be followed using a regular Python interpreter as well. Please note that this lesson, like all others in the course, uses Python 3 rather than Python 2.","url":"https://nu-cem.github.io/CompPhys/python/2021/08/02/Python_basics_one.html","@type":"BlogPosting","headline":"Python basics - part one","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/python/2021/08/02/Python_basics_one.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -87,7 +87,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Python basics - part one</h1><p class="page-description">Python basics part one</p><p class="post-meta post-meta-title">
+    <h1 class="post-title p-name" itemprop="name headline">Python basics - part one</h1><p class="post-meta post-meta-title">
     </p>
 
     
@@ -95,10 +95,50 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <ul class="section-nav">
-<li class="toc-entry toc-h1"><a href="#python-basics---part-one">Python basics - part one</a></li>
-</ul><h1 id="python-basics---part-one">
-<a class="anchor" href="#python-basics---part-one" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python basics - part one</h1>
+    <p>This lesson is an introduction to programming in Python for people with little or no previous programming experience. It uses plotting UV-Vis data as its motivating example. This lesson references the Jupyter Notebook, but can be followed using a regular Python interpreter as well. Please note that this lesson, like all others in the course, uses Python 3 rather than Python 2.</p>
+
+<h3 id="before-you-begin">Before you begin</h3>
+
+<h3 id="lesson-outline">Lesson outline</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Questions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Running Python</td>
+      <td>How can I run Python programs?</td>
+    </tr>
+    <tr>
+      <td>Variables and Assignment</td>
+      <td>How can I store data in programs?</td>
+    </tr>
+    <tr>
+      <td>Data Types and Type Conversion</td>
+      <td>What kinds of data do programs store? <br /> How can I convert one type to another?</td>
+    </tr>
+    <tr>
+      <td>Built-in Functions, Help and Errors</td>
+      <td>How can I use built-in functions?<br /> How can I find out what they do?<br /> What kind of errors can occur in programs?</td>
+    </tr>
+    <tr>
+      <td>Lists</td>
+      <td>How can I store multiple values?</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="resources">Resources</h3>
+
+<ul>
+  <li>Presentation</li>
+  <li>Teaching notes</li>
+  <li>Exercises</li>
+</ul>
 
   </div><a class="u-url" href="/CompPhys/python/2021/08/02/Python_basics_one.html" hidden></a>
 </article>
