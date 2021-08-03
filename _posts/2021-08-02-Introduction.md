@@ -32,7 +32,7 @@ This course is split into three sections - *Getting started*, *Getting results* 
      - Version control and Github
      - Open science and build-your-own website
 
-{% include warning.html text="An eye for detail is important. If you include an extra full-stop, or forget a space, then your code may not run. Don't let these Error messages worry you - they won't break the computer! - but do double check the steps you have taken and the code you have written for typos or 'silly' mistakes." %}
+{% include alert.html text="An eye for detail is important. If you include an extra full-stop, or forget a space, then your code may not run. Don't let these Error messages worry you - they won't break the computer! - but do double check the steps you have taken and the code you have written for typos or 'silly' mistakes." %}
 
 
 ### Setup
@@ -44,7 +44,7 @@ You will also need a user account at [github.com](https://github.com) - Basic Gi
 
 {% include info.html text="All of the software needed for this course is pre-installed in the MPEE computers at Northumbria University" %}
 
-{% include warning.html text="You can also run the Python Jupyter Notebook files remotely through the [binder] or [colab] services whenever you see an icon (e.g. like those at the top of [this page]()). But be warned! Any changes you make are not saved and the service can time-out after a period of inactivity (usually ~20 minutes)." %}
+{% include alert.html text="You can also run the Python Jupyter Notebook files remotely through the [binder] or [colab] services whenever you see an icon (e.g. like those at the top of [this page]()). But be warned! Any changes you make are not saved and the service can time-out after a period of inactivity (usually ~20 minutes)." %}
 
 #### Python 
 
