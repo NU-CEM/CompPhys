@@ -21,7 +21,7 @@ This lesson is an introduction to programming in Python for people with little o
 
 | Topic | Questions |
 |-------|-----------|
-|Running Python|How can I run Python programs? |
+|[Running Python](https://nu-cem.github.io/CompPhys/python/2021/08/02/01-Running_Python)|How can I run Python programs? |
 |Variables and Assignment| How can I store data in programs? |
 | Data Types and Type Conversion| What kinds of data do programs store? <br/> How can I convert one type to another? |
 | Built-in Functions, Help and Errors |  How can I use built-in functions?<br/> How can I find out what they do?<br/> What kind of errors can occur in programs? |
