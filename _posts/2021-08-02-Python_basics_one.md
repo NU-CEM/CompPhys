@@ -19,13 +19,13 @@ This lesson is an introduction to programming in Python for people with little o
 
 ### Lesson outline
 
-| Topic | Questions |
-|-------|-----------|
-|[Running Python](https://nu-cem.github.io/CompPhys/python/2021/08/02/01-Running_Python)|How can I run Python programs? |
-|Variables and Assignment| How can I store data in programs? |
-| Data Types and Type Conversion| What kinds of data do programs store? <br/> How can I convert one type to another? |
-| Built-in Functions, Help and Errors |  How can I use built-in functions?<br/> How can I find out what they do?<br/> What kind of errors can occur in programs? |
-|Lists| How can I store multiple values? |
+| Topic | Questions | Activites |
+|-------|-----------|-----------|
+|[Running Python](https://nu-cem.github.io/CompPhys/python/2021/08/02/01-Running_Python)|How can I run Python programs? | [:running:]() |
+|Variables and Assignment| How can I store data in programs? | [:nail_care:]() |
+| Data Types and Type Conversion| What kinds of data do programs store? <br/> How can I convert one type to another? | [:dancer:]() |
+| Built-in Functions, Help and Errors |  How can I use built-in functions?<br/> How can I find out what they do?<br/> What kind of errors can occur in programs? | [:droplet:]() |
+|Lists| How can I store multiple values? | [:ear:]() |
 
 
 ### Resources
