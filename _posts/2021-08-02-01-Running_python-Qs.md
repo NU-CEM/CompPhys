@@ -31,6 +31,7 @@ Note that the bullet list is indented 2 spaces so that it is inline with the ite
 3.  Write up.
 4.  Publish.
 ~~~
+   
 </details>
 
 {::options parse_block_html="false" /}
@@ -55,6 +56,7 @@ Python returns the output of the last calculation. The output is:
 ~~~python
 3
 ~~~
+   
 </details>
 
 {::options parse_block_html="false" /}
@@ -82,6 +84,7 @@ The notebook shows the equation as it would be rendered from [LaTeX]() equation 
 - A pair of curly braces, `{` and `}`, is used to group text together so that the statement `i=1` becomes the the subscript and `N` becomes the superscript.
 - Similarly, `-i` is in curly braces to make the whole statement the superscript for `2`.
 - `\sum` and `\approx` are latex commands for "sum over" and "approximate" symbols. 
+   
 </details>
 
 {::options parse_block_html="false" /}
