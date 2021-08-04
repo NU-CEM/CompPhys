@@ -4,19 +4,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Python basics - part two | An Introduction to Computational Physics</title>
+<title>Python part two | An Introduction to Computational Physics</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Python basics - part two" />
+<meta property="og:title" content="Python part two" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Python basics - part two" />
-<meta property="og:description" content="Python basics - part two" />
+<meta name="description" content="This lesson is part two of an introduction to programming in Python for people with little or no previous programming experience. This lesson references the Jupyter Notebook, but can be followed using a regular Python interpreter as well. Please note that this lesson, like all others in the course, uses Python 3 rather than Python 2." />
+<meta property="og:description" content="This lesson is part two of an introduction to programming in Python for people with little or no previous programming experience. This lesson references the Jupyter Notebook, but can be followed using a regular Python interpreter as well. Please note that this lesson, like all others in the course, uses Python 3 rather than Python 2." />
 <link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_two.html" />
 <meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_two.html" />
 <meta property="og:site_name" content="An Introduction to Computational Physics" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_two.html","@type":"BlogPosting","headline":"Python basics - part two","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_two.html"},"description":"Python basics - part two","@context":"https://schema.org"}</script>
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_two.html","@type":"BlogPosting","headline":"Python part two","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_two.html"},"description":"This lesson is part two of an introduction to programming in Python for people with little or no previous programming experience. This lesson references the Jupyter Notebook, but can be followed using a regular Python interpreter as well. Please note that this lesson, like all others in the course, uses Python 3 rather than Python 2.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -69,25 +69,30 @@ window.onload = wrap_img;
 </head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/CompPhys/">An Introduction to Computational Physics</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/CompPhys/">An Introduction to Computational Physics</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
         <label for="nav-trigger">
           <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
             </svg>
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/CompPhys/about/">About</a><a class="page-link" href="/CompPhys/search/">Search</a><a class="page-link" href="/CompPhys/categories/">Tags</a></div>
-      </nav></div>
+        <div class="trigger">
+<a class="page-link" href="/CompPhys/about/">About</a><a class="page-link" href="/CompPhys/search/">Search</a><a class="page-link" href="/CompPhys/categories/">Tags</a>
+</div>
+      </nav>
+</div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Python basics - part two</h1><p class="page-description">Python basics - part two</p><p class="post-meta post-meta-title">
+    <h1 class="post-title p-name" itemprop="name headline">Python part two</h1>
+<p class="post-meta post-meta-title">
     </p>
 
     
@@ -95,12 +100,68 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <ul class="section-nav">
-<li class="toc-entry toc-h1"><a href="#python-basics---part-two">Python basics - part two</a></li>
-</ul><h1 id="python-basics---part-two">
-<a class="anchor" href="#python-basics---part-two" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python basics - part two</h1>
+    <p>This lesson is part two of an introduction to programming in Python for people with little or no previous programming experience.  This lesson references the Jupyter Notebook, but can be followed using a regular Python interpreter as well. Please note that this lesson, like all others in the course, uses Python 3 rather than Python 2.</p>
 
-  </div><a class="u-url" href="/CompPhys/2021/08/02/Python_basics_two.html" hidden></a>
+<h3 id="before-you-begin">Before you begin</h3>
+
+<ul>
+  <li>Check that Python and Jupyter Notebook are installed</li>
+  <li>Launch a Jupyter notebook</li>
+</ul>
+
+<p>Please see the <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Setup">Setup</a> page for more details.</p>
+
+<h3 id="lesson-outline">Lesson outline</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Objective</th>
+      <th>Quick test</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/For-Loops">For loops</a></td>
+      <td>How can I make a program do many things?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/For-Loops-Qs.html"><img class="emoji" title=":ram:" alt=":ram:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f40f.png" height="20" width="20"></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Conditionals">Conditionals</a></td>
+      <td>How can programs do different things for different data?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Conditionals-Qs.html"><img class="emoji" title=":mouse:" alt=":mouse:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f42d.png" height="20" width="20"></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Writing-Functions">Writing functions</a></td>
+      <td>How can I create my own functions?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Writing-Functions-Qs"><img class="emoji" title=":palm_tree:" alt=":palm_tree:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f334.png" height="20" width="20"></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Variable-Scope">Variable scope</a></td>
+      <td>How do function calls actually work? &lt;/br&gt; How can I determine where errors occurred?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Variable-Scope-Qs"><img class="emoji" title=":mushroom:" alt=":mushroom:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f344.png" height="20" width="20"></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Libraries">Libraries</a></td>
+      <td>How can I use software that other people have written? &lt;/br&gt; How can I find out what that software does?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Libraries-Qs"><img class="emoji" title=":cactus:" alt=":cactus:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f335.png" height="20" width="20"></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="resources">Resources</h3>
+
+<ul>
+  <li>Lesson exercises</li>
+  <li>Extension exercise</li>
+  <li>Presentation</li>
+  <li>Teaching notes</li>
+</ul>
+
+
+  </div>
+<a class="u-url" href="/CompPhys/2021/08/02/Python_basics_two.html" hidden></a>
 </article>
 
       </div>
@@ -120,11 +181,12 @@ window.onload = wrap_img;
         </p>
       </div>
       <div class="footer-col">
-        <p>Resources for the second year course &quot;Theory, computation and experiment&quot; (KD5081) at Northumbria University, UK.</p>
+        <p>Resources for the second year course "Theory, computation and experiment" (KD5081) at Northumbria University, UK.</p>
       </div>
     </div>
 
-    <div class="social-links"><ul class="social-media-list"></ul>
+    <div class="social-links">
+<ul class="social-media-list"></ul>
 </div>
 
   </div>
