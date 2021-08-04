@@ -1,9 +1,8 @@
 ---
 toc: true
 layout: post
-description: Sharing your code
 categories: [documentation, testing]
-title: Sharing your code
+title: Documentation and testing
 sticky_rank: 9
 hide: true
 ---
