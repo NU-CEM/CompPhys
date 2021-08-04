@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Lists | An Introduction to Computational Physics</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Lists" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
+<meta property="og:description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
+<link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/02-Lists.html" />
+<meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/02-Lists.html" />
+<meta property="og:site_name" content="An Introduction to Computational Physics" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/02-Lists.html","@type":"BlogPosting","headline":"Lists","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/02-Lists.html"},"description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/CompPhys/">An Introduction to Computational Physics</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/CompPhys/about/">About</a><a class="page-link" href="/CompPhys/search/">Search</a><a class="page-link" href="/CompPhys/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Lists</h1><p class="post-meta post-meta-title">
+    </p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/NU-CEM/CompPhys/tree/master/_notebooks/2021-08-02-02-Lists.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/CompPhys/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/NU-CEM/CompPhys/master?filepath=_notebooks%2F2021-08-02-02-Lists.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/CompPhys/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/NU-CEM/CompPhys/blob/master/_notebooks/2021-08-02-02-Lists.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/CompPhys/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-08-02-02-Lists.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+<p>Questions:</p>
+<ul>
+<li>How can I store multiple values?</li>
+</ul>
+<p>Objectives:</p>
+<ul>
+<li>Explain why programs need collections of values.</li>
+<li>Write programs that create flat lists, index them, slice them, and modify them through assignment and method calls.</li>
+</ul>
+<p>Keypoints:</p>
+<ul>
+<li>A list stores many values in a single structure.</li>
+<li>Use an item's index to fetch it from a list.</li>
+<li>Lists' values can be replaced by assigning to them.</li>
+<li>Appending items to a list lengthens it.</li>
+<li>Use <code>del</code> to remove items from a list entirely.</li>
+<li>The empty list contains no values.</li>
+<li>Lists may contain values of different types.</li>
+<li>Character strings can be indexed like lists.</li>
+<li>Character strings are immutable.</li>
+<li>Indexing beyond the end of the collection is an error.</li>
+</ul>
+<hr />
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="A-list-stores-many-values-in-a-single-structure.">A list stores many values in a single structure.<a class="anchor-link" href="#A-list-stores-many-values-in-a-single-structure."> </a></h3><ul>
+<li>Doing calculations with a hundred variables called <code>pressure_001</code>, <code>pressure_002</code>, etc.,
+would be at least as slow as doing them by hand.</li>
+<li>Use a <em>list</em> to store many values together.<ul>
+<li>Contained within square brackets <code>[...]</code>.</li>
+<li>Values separated by commas <code>,</code>.</li>
+</ul>
+</li>
+<li>Use <code>len</code> to find out how many values are in a list.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pressures</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.273</span><span class="p">,</span> <span class="mf">0.275</span><span class="p">,</span> <span class="mf">0.277</span><span class="p">,</span> <span class="mf">0.275</span><span class="p">,</span> <span class="mf">0.276</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pressures:&#39;</span><span class="p">,</span> <span class="n">pressures</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;length:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">pressures</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>pressures: [0.273, 0.275, 0.277, 0.275, 0.276]
+length: 5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Use-an-item's-index-to-fetch-it-from-a-list.">Use an item's index to fetch it from a list.<a class="anchor-link" href="#Use-an-item's-index-to-fetch-it-from-a-list."> </a></h3><ul>
+<li>Just like strings.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;zeroth item of pressures:&#39;</span><span class="p">,</span> <span class="n">pressures</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fourth item of pressures:&#39;</span><span class="p">,</span> <span class="n">pressures</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>zeroth item of pressures: 0.273
+fourth item of pressures: 0.276
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Lists'-values-can-be-replaced-by-assigning-to-them.">Lists' values can be replaced by assigning to them.<a class="anchor-link" href="#Lists'-values-can-be-replaced-by-assigning-to-them."> </a></h3><ul>
+<li>Use an index expression on the left of assignment to replace a value.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pressures</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.265</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pressures is now:&#39;</span><span class="p">,</span> <span class="n">pressures</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>pressures is now: [0.265, 0.275, 0.277, 0.275, 0.276]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Appending-items-to-a-list-lengthens-it.">Appending items to a list lengthens it.<a class="anchor-link" href="#Appending-items-to-a-list-lengthens-it."> </a></h3><ul>
+<li>Use <code>list_name.append</code> to add items to the end of a list.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">primes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;primes is initially:&#39;</span><span class="p">,</span> <span class="n">primes</span><span class="p">)</span>
+<span class="n">primes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">primes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;primes has become:&#39;</span><span class="p">,</span> <span class="n">primes</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>primes is initially: [2, 3, 5]
+primes has become: [2, 3, 5, 7, 9]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>append</code> is a <em>method</em> of lists. A method is like a function, but tied to a particular object.</li>
+<li>Use <code>object_name.method_name</code> to call methods.</li>
+<li>We will meet other methods of lists as we go along - you can use <code>help(list)</code> for a preview.</li>
+<li><code>extend</code> is similar to <code>append</code>, but it allows you to combine two lists.  For example:</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">teen_primes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+<span class="n">middle_aged_primes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">37</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">47</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;primes is currently:&#39;</span><span class="p">,</span> <span class="n">primes</span><span class="p">)</span>
+<span class="n">primes</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">teen_primes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;primes has now become:&#39;</span><span class="p">,</span> <span class="n">primes</span><span class="p">)</span>
+<span class="n">primes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">middle_aged_primes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;primes has finally become:&#39;</span><span class="p">,</span> <span class="n">primes</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>primes is currently: [2, 3, 5, 7, 9]
+primes has now become: [2, 3, 5, 7, 9, 11, 13, 17, 19]
+primes has finally become: [2, 3, 5, 7, 9, 11, 13, 17, 19, [37, 41, 43, 47]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that while <code>extend</code> maintains the "flat" structure of the list, appending a list to a list makes the result two-dimensional.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Use-del-to-remove-items-from-a-list-entirely.">Use <code>del</code> to remove items from a list entirely.<a class="anchor-link" href="#Use-del-to-remove-items-from-a-list-entirely."> </a></h3><ul>
+<li><code>del list_name[index]</code> removes an item from a list and shortens the list.</li>
+<li>Not a function or a method, but a statement in the language.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;primes before removing last item:&#39;</span><span class="p">,</span> <span class="n">primes</span><span class="p">)</span>
+<span class="k">del</span> <span class="n">primes</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;primes after removing last item:&#39;</span><span class="p">,</span> <span class="n">primes</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>primes before removing last item: [2, 3, 5, 7, 9, 11, 13, 17, 19, [37, 41, 43, 47]]
+primes after removing last item: [2, 3, 5, 7, 11, 13, 17, 19, [37, 41, 43, 47]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-empty-list-contains-no-values.">The empty list contains no values.<a class="anchor-link" href="#The-empty-list-contains-no-values."> </a></h3><ul>
+<li>Use <code>[]</code> on its own to represent a list that doesn't contain any values.<ul>
+<li>"The zero of lists."</li>
+</ul>
+</li>
+<li>Helpful as a starting point for collecting values
+(which we will see in the <a href="/09-for-loops/">next episode</a>).</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Lists-may-contain-values-of-different-types.">Lists may contain values of different types.<a class="anchor-link" href="#Lists-may-contain-values-of-different-types."> </a></h3><ul>
+<li>A single list may contain numbers, strings, and anything else.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">goals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Create lists.&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Extract items from lists.&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Modify lists.&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Character-strings-can-be-indexed-like-lists.">Character strings can be indexed like lists.<a class="anchor-link" href="#Character-strings-can-be-indexed-like-lists."> </a></h3><ul>
+<li>Get single characters from a character string using indexes in square brackets.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">element</span> <span class="o">=</span> <span class="s1">&#39;carbon&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;zeroth character:&#39;</span><span class="p">,</span> <span class="n">element</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;third character:&#39;</span><span class="p">,</span> <span class="n">element</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>zeroth character: c
+third character: b
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Character-strings-are-immutable.">Character strings are immutable.<a class="anchor-link" href="#Character-strings-are-immutable."> </a></h3><ul>
+<li>Cannot change the characters in a string after it has been created.<ul>
+<li><em>Immutable</em> data types can't be changed after creation.</li>
+<li>In contrast, lists are <em>mutable</em>: they can be modified in place.</li>
+</ul>
+</li>
+<li>Python considers the string to be a single value with parts,
+not a collection of values.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">element</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">/var/folders/5q/mny3pg2n7h5g21h3v32rfj9wpykqrf/T/ipykernel_11747/1676686116.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>element<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#39;C&#39;</span>
+
+<span class="ansi-red-fg">TypeError</span>: &#39;str&#39; object does not support item assignment</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Indexing-beyond-the-end-of-the-list-or-string-is-an-error.">Indexing beyond the end of the list or string is an error.<a class="anchor-link" href="#Indexing-beyond-the-end-of-the-list-or-string-is-an-error."> </a></h3><ul>
+<li>Python reports an <code>IndexError</code> if we attempt to access a value that doesn't exist.<ul>
+<li>This is a kind of <a href="/05-error-messages/">runtime error</a>.</li>
+<li>This cannot be detected as the code is parsed
+because the index might be calculated based on data.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;99th element of element is:&#39;</span><span class="p">,</span> <span class="n">element</span><span class="p">[</span><span class="mi">99</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+<p>Do <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Lists-Qs.html">the quick-test</a>.</p>
+<p>Back to <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_one.html">Python part one</a>.</p>
+<hr />
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/CompPhys/2021/08/02/02-Lists.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/CompPhys/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/CompPhys/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/CompPhys/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Resources for the second year course &quot;Theory, computation and experiment&quot; (KD5081) at Northumbria University, UK.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
