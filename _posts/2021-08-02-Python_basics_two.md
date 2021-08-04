@@ -23,8 +23,8 @@ Please see the [Setup](https://nu-cem.github.io/CompPhys/2021/08/02/Setup) page 
 |[For loops](https://nu-cem.github.io/CompPhys/2021/08/02/For-Loops)| 	How can I make a program do many things?  | [:ram:](https://nu-cem.github.io/CompPhys/2021/08/02/For-Loops-Qs.html) |
 |[Conditionals](https://nu-cem.github.io/CompPhys/2021/08/02/Conditionals)| How can programs do different things for different data?  | [:mouse:](https://nu-cem.github.io/CompPhys/2021/08/02/Conditionals-Qs.html)|
 | [Writing functions](https://nu-cem.github.io/CompPhys/2021/08/02/Writing-Functions)|  	How can I create my own functions? | [:palm_tree:](https://nu-cem.github.io/CompPhys/2021/08/02/Writing-Functions-Qs) |
-| [Variable scope](https://nu-cem.github.io/CompPhys/2021/08/02/Variable-Scope) |  How do function calls actually work? </br> How can I determine where errors occurred? | [:mushroom:](https://nu-cem.github.io/CompPhys/2021/08/02/Variable-Scope-Qs) |
-|[Libraries](https://nu-cem.github.io/CompPhys/2021/08/02/Libraries)| How can I use software that other people have written? </br> How can I find out what that software does? | [:cactus:](https://nu-cem.github.io/CompPhys/2021/08/02/Libraries-Qs) |
+| [Variable scope](https://nu-cem.github.io/CompPhys/2021/08/02/Variable-Scope) |  How do function calls actually work? <br/> How can I determine where errors occurred? | [:mushroom:](https://nu-cem.github.io/CompPhys/2021/08/02/Variable-Scope-Qs) |
+|[Libraries](https://nu-cem.github.io/CompPhys/2021/08/02/Libraries)| How can I use software that other people have written? <br/> How can I find out what that software does? | [:cactus:](https://nu-cem.github.io/CompPhys/2021/08/02/Libraries-Qs) |
 
 
 ### Resources
