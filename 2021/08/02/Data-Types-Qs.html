@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Data types and type conversion - quick test | An Introduction to Computational Physics</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Data types and type conversion - quick test" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Slicing" />
+<meta property="og:description" content="Slicing" />
+<link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/Data-Types-Qs.html" />
+<meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/Data-Types-Qs.html" />
+<meta property="og:site_name" content="An Introduction to Computational Physics" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Data-Types-Qs.html","@type":"BlogPosting","headline":"Data types and type conversion - quick test","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Data-Types-Qs.html"},"description":"Slicing","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/CompPhys/">An Introduction to Computational Physics</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/CompPhys/about/">About</a><a class="page-link" href="/CompPhys/search/">Search</a><a class="page-link" href="/CompPhys/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Data types and type conversion - quick test</h1><p class="post-meta post-meta-title">
+    </p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="slicing">Slicing</h2>
+
+<p>If you assign <code class="language-plaintext highlighter-rouge">a = 123</code>,
+what happens if you try to get the second digit of <code class="language-plaintext highlighter-rouge">a</code> via <code class="language-plaintext highlighter-rouge">a[1]</code>?</p>
+
+<details>
+  <summary>Show answer</summary>
+
+  <p>Numbers are not stored in the written representation,
+so they can’t be treated like strings.</p>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div>  </div>
+
+  <pre><code class="language-output">TypeError: 'int' object is not subscriptable
+</code></pre>
+
+</details>
+
+<h2 id="more-slicing">More slicing</h2>
+
+<p>What does the following program print?</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">atom_name</span> <span class="o">=</span> <span class="s">'carbon'</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'atom_name[1:3] is:'</span><span class="p">,</span> <span class="n">atom_name</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+</code></pre></div></div>
+
+<details>
+  <summary>Show answer</summary>
+
+  <pre><code class="language-output">atom_name[1:3] is: ar
+</code></pre>
+
+</details>
+
+<h2 id="even-more-slicing">Even more slicing</h2>
+
+<p>Open a Notebook to help answer the following questions:</p>
+
+<ol>
+  <li>What does <code class="language-plaintext highlighter-rouge">thing[low:]</code> (without a value after the colon) do?</li>
+  <li>What does <code class="language-plaintext highlighter-rouge">thing[:high]</code> (without a value before the colon) do?</li>
+  <li>What does <code class="language-plaintext highlighter-rouge">thing[:]</code> (just a colon) do?</li>
+  <li>What does <code class="language-plaintext highlighter-rouge">thing[-2]</code> do?</li>
+</ol>
+
+<details>
+  <summary>Show answer</summary>
+
+  <ol>
+    <li>Slices from <code class="language-plaintext highlighter-rouge">low</code> to the end (inclusive)</li>
+    <li>Slices from the start to <code class="language-plaintext highlighter-rouge">high</code> (exclusive)</li>
+    <li>Slices from the start to the end</li>
+    <li>Selects the second last element</li>
+  </ol>
+
+</details>
+
+<h2 id="decimals">Decimals</h2>
+
+<p>What type of value is 3.4?
+How can you find out?</p>
+
+<details>
+  <summary>Show answer</summary>
+
+  <p>It is a floating-point number (often abbreviated “float”).</p>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">3.4</span><span class="p">))</span>
+</code></pre></div>  </div>
+
+  <pre><code class="language-output">&lt;class 'float'&gt;
+</code></pre>
+
+</details>
+
+<h2 id="choose-a-type">Choose a Type</h2>
+
+<p>What type of value (integer, floating point number, or character string)
+would you use to represent each of the following?</p>
+
+<ol>
+  <li>Number of days since the start of the year.</li>
+  <li>Time elapsed from the start of the year until now in days.</li>
+  <li>Serial number of a piece of lab equipment.</li>
+  <li>A lab specimen’s age</li>
+  <li>Current population of a city.</li>
+  <li>Average population of a city over time.</li>
+</ol>
+
+<details>
+  <summary>Show answer</summary>
+
+  <p>The answers to the questions are:</p>
+  <ol>
+    <li>Integer, since the number of days would lie between 1 and 365.</li>
+    <li>Floating point, since fractional days are required</li>
+    <li>Character string if serial number contains letters and numbers, otherwise integer if the serial number consists only of numerals</li>
+    <li>This will vary! How do you define a specimen’s age? whole days since collection (integer)? date and time (string)?</li>
+    <li>Choose floating point to represent population as large aggreates (eg millions), or integer to represent population in units of individuals.</li>
+    <li>Floating point number, since an average is likely to have a fractional part.</li>
+  </ol>
+
+</details>
+
+<h2 id="division-types">Division Types</h2>
+
+<p>In Python 3, the <code class="language-plaintext highlighter-rouge">//</code> operator performs integer (whole-number) floor division, the <code class="language-plaintext highlighter-rouge">/</code> operator performs floating-point
+division, and the ‘%’ (or <em>modulo</em>) operator calculates and returns the remainder from integer division:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'5 // 3:'</span><span class="p">,</span> <span class="mi">5</span><span class="o">//</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'5 / 3:'</span><span class="p">,</span> <span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'5 % 3:'</span><span class="p">,</span> <span class="mi">5</span><span class="o">%</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<pre class="output"><code class="language-output">5 // 3: 1
+5 / 3: 1.6666666666666667
+5 % 3: 2
+</code></pre>
+
+<p>However in Python 2 (and other languages), the <code class="language-plaintext highlighter-rouge">/</code> operator between two integer types perform a floor (<code class="language-plaintext highlighter-rouge">//</code>) division. To perform a float division, we have to convert one of the integers to float.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'5 // 3:'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'5 / 3:'</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'5 / float(3):'</span><span class="p">,</span> <span class="mf">1.6666667</span> <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'float(5) / 3:'</span><span class="p">,</span> <span class="mf">1.6666667</span> <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'float(5 / 3):'</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'5 % 3:'</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>If <code class="language-plaintext highlighter-rouge">num_subjects</code> is the number of subjects taking part in a study,
+and <code class="language-plaintext highlighter-rouge">num_per_survey</code> is the number that can take part in a single survey,
+write an expression that calculates the number of surveys needed
+to reach everyone once.</p>
+
+<details>
+  <summary>Show answer</summary>
+
+  <p>We want the minimum number of surveys that reaches everyone once, which is
+the rounded up value of <code class="language-plaintext highlighter-rouge">num_subjects / num_per_survey</code>. This is 
+equivalent to performing an integer division with <code class="language-plaintext highlighter-rouge">//</code> and adding 1.</p>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num_subjects</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="n">num_per_survey</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">num_surveys</span> <span class="o">=</span> <span class="n">num_subjects</span> <span class="o">//</span> <span class="n">num_per_survey</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">num_subjects</span><span class="p">,</span> <span class="s">'subjects,'</span><span class="p">,</span> <span class="n">num_per_survey</span><span class="p">,</span> <span class="s">'per survey:'</span><span class="p">,</span> <span class="n">num_surveys</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+  <pre><code class="language-outpu">600 subjects, 42 per survey: 15
+</code></pre>
+
+</details>
+
+<h2 id="arithmetic-with-different-types">Arithmetic with Different Types</h2>
+
+<p>Which of the following will print 2.0?
+Note: there may be more than one right answer.</p>
+
+<pre><code class="language-pythhon">first = 1.0
+second = "1"
+third = "1.1"
+</code></pre>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">first + float(second)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">float(second) + float(third)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">first + int(third)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">first + int(float(third))</code></li>
+  <li><code class="language-plaintext highlighter-rouge">int(first) + int(float(third))</code></li>
+  <li><code class="language-plaintext highlighter-rouge">2.0 * second</code></li>
+</ol>
+
+<details>
+  <summary>Show answer</summary>
+
+  <p>Answer: 1 and 4</p>
+
+</details>
+
+<h2 id="complex-numbers">Complex Numbers</h2>
+
+<p>Python provides complex numbers,
+which are written as <code class="language-plaintext highlighter-rouge">1.0+2.0j</code>.
+If <code class="language-plaintext highlighter-rouge">val</code> is an imaginary number,
+its real and imaginary parts can be accessed using <em>dot notation</em>
+as <code class="language-plaintext highlighter-rouge">val.real</code> and <code class="language-plaintext highlighter-rouge">val.imag</code>.</p>
+
+<ol>
+  <li>Why do you think Python uses <code class="language-plaintext highlighter-rouge">j</code> instead of <code class="language-plaintext highlighter-rouge">i</code> for the imaginary part?</li>
+  <li>What do you expect <code class="language-plaintext highlighter-rouge">1+2j + 3</code> to produce?</li>
+  <li>What do you expect ‘4j’ to be?  What about <code class="language-plaintext highlighter-rouge">4 j</code> or `4 + j’? &gt;</li>
+</ol>
+
+<details>
+  <summary>Show answer</summary>
+
+  <ol>
+    <li>Standard mathematics treatments typically use <code class="language-plaintext highlighter-rouge">i</code> to denote an imaginary number. However, from media reports it
+was an early convention established from electrical engineering that now presents a technically expensive area to
+change. <a href="http://stackoverflow.com/questions/24812444/why-are-complex-numbers-in-python-denoted-with-j-instead-of-i">Stack Overflow provides additional explanation and
+discussion</a></li>
+    <li>4+2j</li>
+    <li>4j, syntax error, depends on the value of j</li>
+  </ol>
+
+</details>
+
+<hr />
+
+<p>See <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Data-Types.html">the notebook</a>.</p>
+
+<p>Back to <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_one.html">Python basics - part one</a>.</p>
+
+<hr />
+
+  </div><a class="u-url" href="/CompPhys/2021/08/02/Data-Types-Qs.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/CompPhys/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/CompPhys/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/CompPhys/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Resources for the second year course &quot;Theory, computation and experiment&quot; (KD5081) at Northumbria University, UK.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
