@@ -4,19 +4,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Modelling with Ordinary Differential Equations | An Introduction to Computational Physics</title>
+<title>Modelling Ordinary Differential Equations | An Introduction to Computational Physics</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Modelling with Ordinary Differential Equations" />
+<meta property="og:title" content="Modelling Ordinary Differential Equations" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Ordinary Differential Equations using Euler’s method" />
-<meta property="og:description" content="Ordinary Differential Equations using Euler’s method" />
+<meta name="description" content="Broadly speaking, there are three ways to solve a differential equation: analytically, numerically (with a pre-existing function) or numerically (with a home-made function). Numerical approaches offer more flexibility but with the caveat that they are approximate and must be converged." />
+<meta property="og:description" content="Broadly speaking, there are three ways to solve a differential equation: analytically, numerically (with a pre-existing function) or numerically (with a home-made function). Numerical approaches offer more flexibility but with the caveat that they are approximate and must be converged." />
 <link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/ODEs.html" />
 <meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/ODEs.html" />
 <meta property="og:site_name" content="An Introduction to Computational Physics" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/ODEs.html","@type":"BlogPosting","headline":"Modelling with Ordinary Differential Equations","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/ODEs.html"},"description":"Ordinary Differential Equations using Euler’s method","@context":"https://schema.org"}</script>
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/ODEs.html","@type":"BlogPosting","headline":"Modelling Ordinary Differential Equations","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/ODEs.html"},"description":"Broadly speaking, there are three ways to solve a differential equation: analytically, numerically (with a pre-existing function) or numerically (with a home-made function). Numerical approaches offer more flexibility but with the caveat that they are approximate and must be converged.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -87,7 +87,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Modelling with Ordinary Differential Equations</h1><p class="page-description">Ordinary Differential Equations using Euler's method</p><p class="post-meta post-meta-title">
+    <h1 class="post-title p-name" itemprop="name headline">Modelling Ordinary Differential Equations</h1><p class="post-meta post-meta-title">
     </p>
 
     
@@ -96,11 +96,7 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-<li class="toc-entry toc-h1"><a href="#modelling-with-ordinary-differential-equations">Modelling with Ordinary Differential Equations</a></li>
-</ul><h1 id="modelling-with-ordinary-differential-equations">
-<a class="anchor" href="#modelling-with-ordinary-differential-equations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Modelling with Ordinary Differential Equations</h1>
-
-<p>Broadly speaking, there are three ways to solve a differential equation: analytically, numerically (with a pre-existing function) or numerically (with a home-made function). Numerical approaches offer more flexibility but with the caveat that they are approximate and must be converged.</p>
+</ul><p>Broadly speaking, there are three ways to solve a differential equation: analytically, numerically (with a pre-existing function) or numerically (with a home-made function). Numerical approaches offer more flexibility but with the caveat that they are approximate and must be converged.</p>
 
 <p>In this lesson we will use numerical approaches to solve ODE’s, but with a strong focus on home-made numerical functions, so that a greater understanding of the approximations and approaches (and a good chance to practice Python skills).</p>
 
