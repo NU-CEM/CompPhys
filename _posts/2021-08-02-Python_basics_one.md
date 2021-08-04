@@ -22,8 +22,8 @@ Please see the [Setup](https://nu-cem.github.io/CompPhys/2021/08/02/Setup) page 
 |-------|-----------|-----------|
 |[Running Python](https://nu-cem.github.io/CompPhys/2021/08/02/01-Running_Python)|How can I run Python programs? | [:running:](https://nu-cem.github.io/CompPhys/2021/08/02/01-Running_python-Qs.html) |
 |[Variables and Assignment](https://nu-cem.github.io/CompPhys/2021/08/02/02-Variables-Assignment)| How can I store data in programs? | [:nail_care:](https://nu-cem.github.io/CompPhys/2021/08/02/02-Variables-Assignment-Qs.html)|
-| [Data Types and Type Conversion(https://nu-cem.github.io/CompPhys/2021/08/02/Data-Types)| What kinds of data do programs store? <br/> How can I convert one type to another? | [:dancer:](https://nu-cem.github.io/CompPhys/2021/08/02/Data-Types-Qs) |
-| [Built-in Functions, Help and Errors]((https://nu-cem.github.io/CompPhys/2021/08/02/Functions)) |  How can I use built-in functions?<br/> How can I find out what they do?<br/> What kind of errors can occur in programs? | [:droplet:](https://nu-cem.github.io/CompPhys/2021/08/02/Functions-Qs) |
+| [Data Types and Type Conversion](https://nu-cem.github.io/CompPhys/2021/08/02/Data-Types)| What kinds of data do programs store? <br/> How can I convert one type to another? | [:dancer:](https://nu-cem.github.io/CompPhys/2021/08/02/Data-Types-Qs) |
+| [Built-in Functions, Help and Errors](https://nu-cem.github.io/CompPhys/2021/08/02/Functions) |  How can I use built-in functions?<br/> How can I find out what they do?<br/> What kind of errors can occur in programs? | [:droplet:](https://nu-cem.github.io/CompPhys/2021/08/02/Functions-Qs) |
 |[Lists](https://nu-cem.github.io/CompPhys/2021/08/02/Lists)| How can I store multiple values? | [:ear:](https://nu-cem.github.io/CompPhys/2021/08/02/Lists-Qs) |
 
 
