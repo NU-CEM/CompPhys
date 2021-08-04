@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>For loops - quick test | An Introduction to Computational Physics</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="For loops - quick test" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Classifying Errors Is an indentation error a syntax error or a runtime error? Solution An IndentationError is a syntax error. Programs with syntax errors cannot be started. A program with a runtime error will start but an error will be thrown under certain conditions." />
+<meta property="og:description" content="Classifying Errors Is an indentation error a syntax error or a runtime error? Solution An IndentationError is a syntax error. Programs with syntax errors cannot be started. A program with a runtime error will start but an error will be thrown under certain conditions." />
+<link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/For-Loops-Qs.html" />
+<meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/For-Loops-Qs.html" />
+<meta property="og:site_name" content="An Introduction to Computational Physics" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/For-Loops-Qs.html","@type":"BlogPosting","headline":"For loops - quick test","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/For-Loops-Qs.html"},"description":"Classifying Errors Is an indentation error a syntax error or a runtime error? Solution An IndentationError is a syntax error. Programs with syntax errors cannot be started. A program with a runtime error will start but an error will be thrown under certain conditions.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/CompPhys/">An Introduction to Computational Physics</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/CompPhys/about/">About</a><a class="page-link" href="/CompPhys/search/">Search</a><a class="page-link" href="/CompPhys/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">For loops - quick test</h1><p class="post-meta post-meta-title">
+    </p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <blockquote class="challenge">
+  <h2 id="classifying-errors">Classifying Errors</h2>
+
+  <p>Is an indentation error a syntax error or a runtime error?</p>
+  <blockquote class="solution">
+    <h2 id="solution">Solution</h2>
+    <p>An IndentationError is a syntax error. Programs with syntax errors cannot be started.
+A program with a runtime error will start but an error will be thrown under certain conditions.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="tracing-execution">Tracing Execution</h2>
+
+  <p>Create a table showing the numbers of the lines that are executed when this program runs,
+and the values of the variables after each line is executed.</p>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>total = 0
+for char in "tin":
+    total = total + 1
+</code></pre></div>  </div>
+  <blockquote class="solution">
+    <h2 id="solution-1">Solution</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Line no</th>
+          <th>Variables</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>total = 0</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>total = 0 char = ‘t’</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>total = 1 char = ‘t’</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>total = 1 char = ‘i’</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>total = 2 char = ‘i’</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>total = 2 char = ‘n’</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>total = 3 char = ‘n’</td>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="reversing-a-string">Reversing a String</h2>
+
+  <p>Fill in the blanks in the program below so that it prints “nit”
+(the reverse of the original character string “tin”).</p>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>original = "tin"
+result = ____
+for char in original:
+    result = ____
+print(result)
+</code></pre></div>  </div>
+  <blockquote class="solution">
+    <h2 id="solution-2">Solution</h2>
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>original = "tin"
+result = ""
+for char in original:
+    result = char + result
+print(result)
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="practice-accumulating">Practice Accumulating</h2>
+
+  <p>Fill in the blanks in each of the programs below
+to produce the indicated result.</p>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Total length of the strings in the list: ["red", "green", "blue"] =&gt; 12
+total = 0
+for word in ["red", "green", "blue"]:
+    ____ = ____ + len(word)
+print(total)
+</code></pre></div>  </div>
+  <blockquote class="solution">
+    <h2 id="solution-3">Solution</h2>
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>total = 0
+for word in ["red", "green", "blue"]:
+    total = total + len(word)
+print(total)
+</code></pre></div>    </div>
+  </blockquote>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code># List of word lengths: ["red", "green", "blue"] =&gt; [3, 5, 4]
+lengths = ____
+for word in ["red", "green", "blue"]:
+    lengths.____(____)
+print(lengths)
+</code></pre></div>  </div>
+  <blockquote class="solution">
+    <h2 id="solution-4">Solution</h2>
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lengths = []
+for word in ["red", "green", "blue"]:
+    lengths.append(len(word))
+print(lengths)
+</code></pre></div>    </div>
+  </blockquote>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Concatenate all words: ["red", "green", "blue"] =&gt; "redgreenblue"
+words = ["red", "green", "blue"]
+result = ____
+for ____ in ____:
+    ____
+print(result)
+</code></pre></div>  </div>
+  <blockquote class="solution">
+    <h2 id="solution-5">Solution</h2>
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>words = ["red", "green", "blue"]
+result = ""
+for word in words:
+    result = result + word
+print(result)
+</code></pre></div>    </div>
+  </blockquote>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Create acronym: ["red", "green", "blue"] =&gt; "RGB"
+# write the whole thing
+</code></pre></div>  </div>
+  <blockquote class="solution">
+    <h2 id="solution-6">Solution</h2>
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>acronym = ""
+for word in ["red", "green", "blue"]:
+    acronym = acronym + word[0].upper()
+print(acronym)
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="cumulative-sum">Cumulative Sum</h2>
+
+  <p>Reorder and properly indent the lines of code below
+so that they print an array with the cumulative sum of data.
+The result should be <code class="language-plaintext highlighter-rouge">[1, 3, 5, 10]</code>.</p>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cumulative += [sum]
+for number in data:
+cumulative = []
+sum += number
+sum = 0
+print(cumulative)
+data = [1,2,2,5]
+</code></pre></div>  </div>
+  <blockquote class="solution">
+    <h2 id="solution-7">Solution</h2>
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sum = 0
+data = [1,2,2,5]
+cumulative = []
+for number in data:
+    sum += number
+    cumulative.append(sum)
+print(cumulative)
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="identifying-variable-name-errors">Identifying Variable Name Errors</h2>
+
+  <ol>
+    <li>Read the code below and try to identify what the errors are
+<em>without</em> running it.</li>
+    <li>Run the code and read the error message.
+What type of <code class="language-plaintext highlighter-rouge">NameError</code> do you think this is?
+Is it a string with no quotes, a misspelled variable, or a 
+variable that should have been defined but was not?</li>
+    <li>Fix the error.</li>
+    <li>Repeat steps 2 and 3, until you have fixed all the errors.</li>
+  </ol>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for number in range(10):
+    # use a if the number is a multiple of 3, otherwise use b
+    if (Number % 3) == 0:
+        message = message + a
+    else:
+        message = message + "b"
+print(message)
+</code></pre></div>  </div>
+  <blockquote class="solution">
+    <h2 id="solution-8">Solution</h2>
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>message = ""
+for number in range(10):
+    # use a if the number is a multiple of 3, otherwise use b
+    if (number % 3) == 0:
+        message = message + "a"
+    else:
+        message = message + "b"
+print(message)
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="identifying-item-errors">Identifying Item Errors</h2>
+
+  <ol>
+    <li>Read the code below and try to identify what the errors are
+<em>without</em> running it.</li>
+    <li>Run the code, and read the error message. What type of error is it?</li>
+    <li>Fix the error.</li>
+  </ol>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+print('My favorite season is ', seasons[4])
+</code></pre></div>  </div>
+  <blockquote class="solution">
+    <h2 id="solution-9">Solution</h2>
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+print('My favorite season is ', seasons[3])
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<details>
+  <summary>Show answer</summary>
+
+</details>
+
+<hr />
+
+<p>See <a href="https://nu-cem.github.io/CompPhys/2021/08/02/For-Loops.html">the notebook</a>.</p>
+
+<p>Back to <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_two.html">Python part two</a>.</p>
+
+<hr />
+
+  </div><a class="u-url" href="/CompPhys/2021/08/02/For-Loops-Qs.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/CompPhys/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/CompPhys/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/CompPhys/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Resources for the second year course &quot;Theory, computation and experiment&quot; (KD5081) at Northumbria University, UK.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Libraries - quick test | An Introduction to Computational Physics</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Libraries - quick test" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Exploring the Math Module What function from the math module can you use to calculate a square root without using sqrt? Since the library contains this function, why does sqrt exist? Solution Using help(math) we see that we’ve got pow(x,y) in addition to sqrt(x), so we could use pow(x, 0.5) to find a square root. The sqrt(x) function is arguably more readable than pow(x, 0.5) when implementing equations. Readability is a cornerstone of good programming, so it makes sense to provide a special function for this specific common case. Also, the design of Python’s math library has its origin in the C standard, which includes both sqrt(x) and pow(x,y), so a little bit of the history of programming is showing in Python’s function names." />
+<meta property="og:description" content="Exploring the Math Module What function from the math module can you use to calculate a square root without using sqrt? Since the library contains this function, why does sqrt exist? Solution Using help(math) we see that we’ve got pow(x,y) in addition to sqrt(x), so we could use pow(x, 0.5) to find a square root. The sqrt(x) function is arguably more readable than pow(x, 0.5) when implementing equations. Readability is a cornerstone of good programming, so it makes sense to provide a special function for this specific common case. Also, the design of Python’s math library has its origin in the C standard, which includes both sqrt(x) and pow(x,y), so a little bit of the history of programming is showing in Python’s function names." />
+<link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/Libraries-Qs.html" />
+<meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/Libraries-Qs.html" />
+<meta property="og:site_name" content="An Introduction to Computational Physics" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Libraries-Qs.html","@type":"BlogPosting","headline":"Libraries - quick test","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Libraries-Qs.html"},"description":"Exploring the Math Module What function from the math module can you use to calculate a square root without using sqrt? Since the library contains this function, why does sqrt exist? Solution Using help(math) we see that we’ve got pow(x,y) in addition to sqrt(x), so we could use pow(x, 0.5) to find a square root. The sqrt(x) function is arguably more readable than pow(x, 0.5) when implementing equations. Readability is a cornerstone of good programming, so it makes sense to provide a special function for this specific common case. Also, the design of Python’s math library has its origin in the C standard, which includes both sqrt(x) and pow(x,y), so a little bit of the history of programming is showing in Python’s function names.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/CompPhys/">An Introduction to Computational Physics</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/CompPhys/about/">About</a><a class="page-link" href="/CompPhys/search/">Search</a><a class="page-link" href="/CompPhys/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Libraries - quick test</h1><p class="post-meta post-meta-title">
+    </p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <blockquote class="challenge">
+  <h2 id="exploring-the-math-module">Exploring the Math Module</h2>
+
+  <ol>
+    <li>What function from the <code class="language-plaintext highlighter-rouge">math</code> module can you use to calculate a square root
+<em>without</em> using <code class="language-plaintext highlighter-rouge">sqrt</code>?</li>
+    <li>Since the library contains this function, why does <code class="language-plaintext highlighter-rouge">sqrt</code> exist?</li>
+  </ol>
+
+  <blockquote class="solution">
+    <h2 id="solution">Solution</h2>
+    <ol>
+      <li>Using <code class="language-plaintext highlighter-rouge">help(math)</code> we see that we’ve got <code class="language-plaintext highlighter-rouge">pow(x,y)</code> in addition to <code class="language-plaintext highlighter-rouge">sqrt(x)</code>,
+so we could use <code class="language-plaintext highlighter-rouge">pow(x, 0.5)</code> to find a square root.</li>
+      <li>
+        <p>The <code class="language-plaintext highlighter-rouge">sqrt(x)</code> function is arguably more readable than <code class="language-plaintext highlighter-rouge">pow(x, 0.5)</code> when
+implementing equations. Readability is a cornerstone of good programming, so it
+makes sense to provide a special function for this specific common case.</p>
+
+        <p>Also, the design of Python’s <code class="language-plaintext highlighter-rouge">math</code> library has its origin in the C standard,
+which includes both <code class="language-plaintext highlighter-rouge">sqrt(x)</code> and <code class="language-plaintext highlighter-rouge">pow(x,y)</code>, so a little bit of the history
+of programming is showing in Python’s function names.</p>
+      </li>
+    </ol>
+
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="locating-the-right-module">Locating the Right Module</h2>
+
+  <p>You want to select a random character from a string:</p>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bases = 'ACTTGCTTGAC'
+</code></pre></div>  </div>
+
+  <ol>
+    <li>Which <a href="https://docs.python.org/3/library/">standard library</a> module could help you?</li>
+    <li>Which function would you select from that module? Are there alternatives?</li>
+    <li>Try to write a program that uses the function.</li>
+  </ol>
+
+  <blockquote class="solution">
+    <h2 id="solution-1">Solution</h2>
+
+    <p>The <a href="randommod">random module</a> seems like it could help you.</p>
+
+    <p>The string has 11 characters, each having a positional index from 0 to 10.
+You could use <code class="language-plaintext highlighter-rouge">random.randrange</code> function (or the alias <code class="language-plaintext highlighter-rouge">random.randint</code>
+if you find that easier to remember) to get a random integer between 0 and
+10, and then pick out the character at that position:</p>
+
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from random import randrange
+
+random_index = randrange(len(bases))
+print(bases[random_index])
+</code></pre></div>    </div>
+
+    <p>or more compactly:</p>
+
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from random import randrange
+
+print(bases[randrange(len(bases))])
+</code></pre></div>    </div>
+
+    <p>Perhaps you found the <code class="language-plaintext highlighter-rouge">random.sample</code> function? It allows for slightly
+less typing:</p>
+
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from random import sample
+
+print(sample(bases, 1)[0])
+</code></pre></div>    </div>
+
+    <p>Note that this function returns a list of values. We will learn about
+lists in episode 11.</p>
+
+    <p>There’s also other functions you could use, but with more convoluted
+code as a result.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="jigsaw-puzzle-parsons-problem-programming-example">Jigsaw Puzzle (Parson’s Problem) Programming Example</h2>
+
+  <p>Rearrange the following statements so that a random
+DNA base is printed and its index in the string.  Not all statements may be needed.  Feel free to use/add
+intermediate variables.</p>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bases="ACTTGCTTGAC"
+import math
+import random
+___ = random.randrange(n_bases)
+___ = len(bases)
+print("random base ", bases[___], "base index", ___)
+</code></pre></div>  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution-2">Solution</h2>
+
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import math 
+import random
+bases = "ACTTGCTTGAC" 
+n_bases = len(bases)
+idx = random.randrange(n_bases)
+print("random base", bases[idx], "base index", idx)
+</code></pre></div>    </div>
+
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="when-is-help-available">When Is Help Available?</h2>
+
+  <p>When a colleague of yours types <code class="language-plaintext highlighter-rouge">help(math)</code>,
+Python reports an error:</p>
+
+  <div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NameError: name 'math' is not defined
+</code></pre></div>  </div>
+
+  <p>What has your colleague forgotten to do?</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-3">Solution</h2>
+
+    <p>Importing the math module (<code class="language-plaintext highlighter-rouge">import math</code>)</p>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="importing-with-aliases">Importing With Aliases</h2>
+
+  <ol>
+    <li>Fill in the blanks so that the program below prints <code class="language-plaintext highlighter-rouge">90.0</code>.</li>
+    <li>Rewrite the program so that it uses <code class="language-plaintext highlighter-rouge">import</code> <em>without</em> <code class="language-plaintext highlighter-rouge">as</code>.</li>
+    <li>Which form do you find easier to read?</li>
+  </ol>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import math as m
+angle = ____.degrees(____.pi / 2)
+print(____)
+</code></pre></div>  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution-4">Solution</h2>
+
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import math as m
+angle = m.degrees(m.pi / 2)
+print(angle)
+</code></pre></div>    </div>
+
+    <p>can bewritten as</p>
+
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import math
+angle = math.degrees(math.pi / 2)
+print(angle)
+</code></pre></div>    </div>
+
+    <p>Since you just wrote the code and are familiar with it, you might actually
+find the first version easier to read. But when trying to read a huge piece
+of code written by someone else, or when getting back to your own huge piece
+of code after several months, non-abbreviated names are often easier, except
+where there are clear abbreviation conventions.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="there-are-many-ways-to-import-libraries">There Are Many Ways To Import Libraries!</h2>
+
+  <p>Match the following print statements with the appropriate library calls.</p>
+
+  <p>Print commands:</p>
+
+  <ol>
+    <li><code class="language-plaintext highlighter-rouge">print("sin(pi/2) =",sin(pi/2))</code></li>
+    <li><code class="language-plaintext highlighter-rouge">print("sin(pi/2) =",m.sin(m.pi/2))</code></li>
+    <li><code class="language-plaintext highlighter-rouge">print("sin(pi/2) =",math.sin(math.pi/2))</code></li>
+  </ol>
+
+  <p>Library calls:</p>
+
+  <ol>
+    <li><code class="language-plaintext highlighter-rouge">from math import sin,pi</code></li>
+    <li><code class="language-plaintext highlighter-rouge">import math</code></li>
+    <li><code class="language-plaintext highlighter-rouge">import math as m</code></li>
+    <li><code class="language-plaintext highlighter-rouge">from math import *</code></li>
+  </ol>
+
+  <blockquote class="solution">
+    <h2 id="solution-5">Solution</h2>
+
+    <ol>
+      <li>Library calls 1 and 4. In order to directly refer to <code class="language-plaintext highlighter-rouge">sin</code> and <code class="language-plaintext highlighter-rouge">pi</code> without
+the library name as prefix, you need to use the <code class="language-plaintext highlighter-rouge">from ... import ...</code>
+statement. Whereas library call 1 specifically imports the two functions
+<code class="language-plaintext highlighter-rouge">sin</code> and <code class="language-plaintext highlighter-rouge">pi</code>, library call 4 imports all functions in the <code class="language-plaintext highlighter-rouge">math</code> module.</li>
+      <li>Library call 3. Here <code class="language-plaintext highlighter-rouge">sin</code> and <code class="language-plaintext highlighter-rouge">pi</code> are referred to with a shortened library
+name <code class="language-plaintext highlighter-rouge">m</code> instead of <code class="language-plaintext highlighter-rouge">math</code>. Library call 3 does exactly that using the
+<code class="language-plaintext highlighter-rouge">import ... as ...</code> syntax - it creates an alias for <code class="language-plaintext highlighter-rouge">math</code> in the form of
+the shortened name <code class="language-plaintext highlighter-rouge">m</code>.</li>
+      <li>Library call 2. Here <code class="language-plaintext highlighter-rouge">sin</code> and <code class="language-plaintext highlighter-rouge">pi</code> are referred to with the regular library
+name <code class="language-plaintext highlighter-rouge">math</code>, so the regular <code class="language-plaintext highlighter-rouge">import ...</code> call suffices.</li>
+    </ol>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="importing-specific-items">Importing Specific Items</h2>
+
+  <ol>
+    <li>Fill in the blanks so that the program below prints <code class="language-plaintext highlighter-rouge">90.0</code>.</li>
+    <li>Do you find this version easier to read than preceding ones?</li>
+    <li>Why <em>wouldn’t</em> programmers always use this form of <code class="language-plaintext highlighter-rouge">import</code>?</li>
+  </ol>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>____ math import ____, ____
+angle = degrees(pi / 2)
+print(angle)
+</code></pre></div>  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution-6">Solution</h2>
+
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from math import degrees, pi
+angle = degrees(pi / 2)
+print(angle)
+</code></pre></div>    </div>
+
+    <p>Most likely you find this version easier to read since it’s less dense.
+The main reason not to use this form of import is to avoid name clashes.
+For instance, you wouldn’t import <code class="language-plaintext highlighter-rouge">degrees</code> this way if you also wanted to
+use the name <code class="language-plaintext highlighter-rouge">degrees</code> for a variable or function of your own. Or if you
+were to also import a function named <code class="language-plaintext highlighter-rouge">degrees</code> from another library.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="reading-error-messages">Reading Error Messages</h2>
+
+  <ol>
+    <li>Read the code below and try to identify what the errors are without running it.</li>
+    <li>Run the code, and read the error message. What type of error is it?</li>
+  </ol>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from math import log
+log(0)
+</code></pre></div>  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution-7">Solution</h2>
+
+    <ol>
+      <li>The logarithm of <code class="language-plaintext highlighter-rouge">x</code> is only defined for <code class="language-plaintext highlighter-rouge">x &gt; 0</code>, so 0 is outside the
+domain of the function.</li>
+      <li>You get an error of type “ValueError”, indicating that the function
+received an inappropriate argument value. The additional message
+“math domain error” makes it clearer what the problem is.</li>
+    </ol>
+  </blockquote>
+</blockquote>
+
+<details>
+  <summary>Show answer</summary>
+
+</details>
+
+<hr />
+
+<p>See <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Libraries.html">the notebook</a>.</p>
+
+<p>Back to <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_two.html">Python part two</a>.</p>
+
+<hr />
+
+  </div><a class="u-url" href="/CompPhys/2021/08/02/Libraries-Qs.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/CompPhys/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/CompPhys/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/CompPhys/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Resources for the second year course &quot;Theory, computation and experiment&quot; (KD5081) at Northumbria University, UK.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

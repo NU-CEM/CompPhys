@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Writing functions - quick test | An Introduction to Computational Physics</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Writing functions - quick test" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Identifying Syntax Errors Read the code below and try to identify what the errors are without running it. Run the code and read the error message. Is it a SyntaxError or an IndentationError? Fix the error. Repeat steps 2 and 3 until you have fixed all the errors. def another_function print(&quot;Syntax errors are annoying.&quot;) print(&quot;But at least python tells us about them!&quot;) print(&quot;So they are usually not too hard to fix.&quot;) Solution def another_function(): print(&quot;Syntax errors are annoying.&quot;) print(&quot;But at least Python tells us about them!&quot;) print(&quot;So they are usually not too hard to fix.&quot;)" />
+<meta property="og:description" content="Identifying Syntax Errors Read the code below and try to identify what the errors are without running it. Run the code and read the error message. Is it a SyntaxError or an IndentationError? Fix the error. Repeat steps 2 and 3 until you have fixed all the errors. def another_function print(&quot;Syntax errors are annoying.&quot;) print(&quot;But at least python tells us about them!&quot;) print(&quot;So they are usually not too hard to fix.&quot;) Solution def another_function(): print(&quot;Syntax errors are annoying.&quot;) print(&quot;But at least Python tells us about them!&quot;) print(&quot;So they are usually not too hard to fix.&quot;)" />
+<link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/Writing-Functions-Qs.html" />
+<meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/Writing-Functions-Qs.html" />
+<meta property="og:site_name" content="An Introduction to Computational Physics" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Writing-Functions-Qs.html","@type":"BlogPosting","headline":"Writing functions - quick test","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Writing-Functions-Qs.html"},"description":"Identifying Syntax Errors Read the code below and try to identify what the errors are without running it. Run the code and read the error message. Is it a SyntaxError or an IndentationError? Fix the error. Repeat steps 2 and 3 until you have fixed all the errors. def another_function print(&quot;Syntax errors are annoying.&quot;) print(&quot;But at least python tells us about them!&quot;) print(&quot;So they are usually not too hard to fix.&quot;) Solution def another_function(): print(&quot;Syntax errors are annoying.&quot;) print(&quot;But at least Python tells us about them!&quot;) print(&quot;So they are usually not too hard to fix.&quot;)","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/CompPhys/">An Introduction to Computational Physics</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/CompPhys/about/">About</a><a class="page-link" href="/CompPhys/search/">Search</a><a class="page-link" href="/CompPhys/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Writing functions - quick test</h1><p class="post-meta post-meta-title">
+    </p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <blockquote class="challenge">
+  <h2 id="identifying-syntax-errors">Identifying Syntax Errors</h2>
+
+  <ol>
+    <li>Read the code below and try to identify what the errors are
+<em>without</em> running it.</li>
+    <li>Run the code and read the error message.
+Is it a <code class="language-plaintext highlighter-rouge">SyntaxError</code> or an <code class="language-plaintext highlighter-rouge">IndentationError</code>?</li>
+    <li>Fix the error.</li>
+    <li>Repeat steps 2 and 3 until you have fixed all the errors.</li>
+  </ol>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def another_function
+  print("Syntax errors are annoying.")
+   print("But at least python tells us about them!")
+  print("So they are usually not too hard to fix.")
+</code></pre></div>  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution">Solution</h2>
+
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def another_function():
+  print("Syntax errors are annoying.")
+  print("But at least Python tells us about them!")
+  print("So they are usually not too hard to fix.")
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="definition-and-use">Definition and Use</h2>
+
+  <p>What does the following program print?</p>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def report(pressure):
+    print('pressure is', pressure)
+
+print('calling', report, 22.5)
+</code></pre></div>  </div>
+  <blockquote class="solution">
+    <h2 id="solution-1">Solution</h2>
+
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calling &lt;function report at 0x7fd128ff1bf8&gt; 22.5
+</code></pre></div>    </div>
+
+    <p>A function call always needs parenthesis, otherwise you get memory address of the function object. So, if we wanted to call the function named report, and give it the value 22.5 to report on, we could have our function call as follows</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print("calling")
+report(22.5)
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="order-of-operations">Order of Operations</h2>
+
+  <p>The example above:</p>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>result = print_date(1871, 3, 19)
+print('result of call is:', result)
+</code></pre></div>  </div>
+
+  <p>printed:</p>
+  <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1871/3/19
+result of call is: None
+</code></pre></div>  </div>
+
+  <p>Explain why the two lines of output appeared in the order they did.</p>
+
+  <p>What’s wrong in this example?</p>
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>result = print_date(1871,3,19)
+
+def print_date(year, month, day):
+   joined = str(year) + '/' + str(month) + '/' + str(day)
+   print(joined)
+</code></pre></div>  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution-2">Solution</h2>
+
+    <ol>
+      <li>The first line of output (<code class="language-plaintext highlighter-rouge">1871/3/19</code>) is from the print function inside <code class="language-plaintext highlighter-rouge">print_date()</code>, while the second line
+is from the print function below the function call. All of the code inside <code class="language-plaintext highlighter-rouge">print_date()</code> is executed first, and
+the program then “leaves” the function and executes the rest of the code.</li>
+      <li>The problem with the example is that the function is defined <em>after</em> the call to the function is made. Python
+therefore doesn’t understand the function call.</li>
+    </ol>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="find-the-first">Find the First</h2>
+
+  <p>Fill in the blanks to create a function that takes a list of numbers as an argument
+and returns the first negative value in the list.
+What does your function do if the list is empty?</p>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def first_negative(values):
+    for v in ____:
+        if ____:
+            return ____
+</code></pre></div>  </div>
+  <blockquote class="solution">
+    <h2 id="solution-3">Solution</h2>
+
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def first_negative(values):
+    for v in values:
+        if v&lt;0:
+            return v
+</code></pre></div>    </div>
+    <p>If an empty list is passed to this function, it returns <code class="language-plaintext highlighter-rouge">None</code>:</p>
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_list = []
+print(first_negative(my_list)
+</code></pre></div>    </div>
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>None
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="calling-by-name">Calling by Name</h2>
+
+  <p>Earlier we saw this function:</p>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def print_date(year, month, day):
+    joined = str(year) + '/' + str(month) + '/' + str(day)
+    print(joined)
+</code></pre></div>  </div>
+  <p>We saw that we can call the function using <em>named arguments</em>, like this:</p>
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print_date(day=1, month=2, year=2003)
+</code></pre></div>  </div>
+
+  <ol>
+    <li>What does <code class="language-plaintext highlighter-rouge">print_date(day=1, month=2, year=2003)</code> print?</li>
+    <li>When and why is it useful to call functions this way?</li>
+  </ol>
+
+  <blockquote class="solution">
+    <h2 id="solution-4">Solution</h2>
+
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">2003/2/1</code></li>
+      <li>Using named arguments can make code more readable since one can see from the function call what name the different arguments 
+have inside the function. It can also reduce the chances of passing arguments in the wrong order, since by using named arguments 
+the order doesn’t matter.</li>
+    </ol>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="encapsulate-of-ifprint-block">Encapsulate of If/Print Block</h2>
+
+  <p>The code below will run on a label-printer for chicken eggs.  A digital scale will report a chicken egg mass (in grams) to the computer and then the computer will print a label.</p>
+
+  <p>Please re-write the code so that the if-block is folded into a function.</p>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> import random
+ for i in range(10):
+
+    # simulating the mass of a chicken egg
+    # the (random) mass will be 70 +/- 20 grams
+    mass=70+20.0*(2.0*random.random()-1.0)
+
+    print(mass)
+   
+    #egg sizing machinery prints a label
+    if(mass&gt;=85):
+       print("jumbo")
+    elif(mass&gt;=70):
+       print("large")
+    elif(mass&lt;70 and mass&gt;=55):
+       print("medium")
+    else:
+       print("small")
+</code></pre></div>  </div>
+
+  <p>The simplified program  follows.  What function definition will make it functional?</p>
+
+  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # revised version
+ import random
+ for i in range(10):
+
+    # simulating the mass of a chicken egg
+    # the (random) mass will be 70 +/- 20 grams
+    mass=70+20.0*(2.0*random.random()-1.0)
+
+    print(mass,print_egg_label(mass))    
+
+</code></pre></div>  </div>
+
+  <ol>
+    <li>Create a function definition for <code class="language-plaintext highlighter-rouge">print_egg_label()</code> that will work with the revised program above.  Note, the function’s return value will be significant. Sample output might be <code class="language-plaintext highlighter-rouge">71.23 large</code>.</li>
+    <li>A dirty egg might have a mass of more than 90 grams, and a spoiled or broken egg will probably have a mass that’s less than 50 grams.  Modify your <code class="language-plaintext highlighter-rouge">print_egg_label()</code> function to account for these error conditions. Sample output could be <code class="language-plaintext highlighter-rouge">25 too light, probably spoiled</code>.</li>
+  </ol>
+
+  <blockquote class="solution">
+    <h2 id="solution-5">Solution</h2>
+
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def print_egg_label(mass):
+    #egg sizing machinery prints a label
+    if(mass&gt;=90):
+        return("warning: egg might be dirty")
+    elif(mass&gt;=85):
+        return("jumbo")
+    elif(mass&gt;=70):
+        return("large")
+    elif(mass&lt;70 and mass&gt;=55):
+        return("medium")
+    elif(mass&lt;50):
+        return("too light, probably spoiled")
+    else:
+        return("small")
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="simulating-a-dynamical-system">Simulating a dynamical system</h2>
+
+  <p>In mathematics, a <a href="https://en.wikipedia.org/wiki/Dynamical_system">dynamical system</a> is a system in which a function describes the time dependence of a point in a geometrical space.  A canonical example of a dynamical system is a system called the <a href="https://en.wikipedia.org/wiki/Logistic_map">logistic map</a>.</p>
+
+  <ol>
+    <li>
+      <p>Define a function called <code class="language-plaintext highlighter-rouge">logistic_map</code> that takes two inputs: <code class="language-plaintext highlighter-rouge">x</code>, representing the state of the system at time <em>t</em>, and a parameter <code class="language-plaintext highlighter-rouge">r</code>. This function should return a value representing the state of the system at time <em>t+1</em>.</p>
+    </li>
+    <li>
+      <p>Using a <code class="language-plaintext highlighter-rouge">for</code> loop, iterate the <code class="language-plaintext highlighter-rouge">logistic_map</code> function defined in part 1 starting from an initial condition of 0.5 for <code class="language-plaintext highlighter-rouge">t_final=10</code>, <code class="language-plaintext highlighter-rouge">100</code>, and <code class="language-plaintext highlighter-rouge">1000</code> periods. Store the intermediate results in a list so that after the <code class="language-plaintext highlighter-rouge">for</code> loop terminates you have accumulated a sequence of values representing the state of the logistic map at time <em>t=0,1,…,t_final</em>.</p>
+    </li>
+    <li>
+      <p>Encapsulate the logic of your <code class="language-plaintext highlighter-rouge">for</code> loop into a function called <code class="language-plaintext highlighter-rouge">iterate</code> that takes the initial condition as its first input, the parameter <code class="language-plaintext highlighter-rouge">t_final</code> as its second input and the parameter <code class="language-plaintext highlighter-rouge">r</code> as its third input. The function should return the list of values representing the state of the logistic map at time <em>t=0,1,…,t_final</em>.</p>
+    </li>
+  </ol>
+
+  <blockquote class="solution">
+    <h2 id="solution-6">Solution</h2>
+
+    <p>1.</p>
+
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def logistic_map(x, r):
+    return r * x * (1 - x)
+</code></pre></div>    </div>
+
+    <p>2.</p>
+
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>initial_condition = 0.5
+t_final = 10
+r = 1.0
+trajectory = [initial_condition]
+for t in range(1, t_final):
+    trajectory[t] = logistic_map(trajectory[t-1], r)
+</code></pre></div>    </div>
+
+    <p>3.</p>
+    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def iterate(initial_condition, t_final, r):
+    trajectory = [initial_condition]
+    for t in range(1, t_final):
+        trajectory[t] = logistic_map(trajectory[t-1], r)
+    return trajectorys
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<details>
+  <summary>Show answer</summary>
+
+</details>
+
+<hr />
+
+<p>See <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Writing-Functions.html">the notebook</a>.</p>
+
+<p>Back to <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_two.html">Python part two</a>.</p>
+
+<hr />
+
+  </div><a class="u-url" href="/CompPhys/2021/08/02/Writing-Functions-Qs.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/CompPhys/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/CompPhys/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/CompPhys/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Resources for the second year course &quot;Theory, computation and experiment&quot; (KD5081) at Northumbria University, UK.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
