@@ -1,9 +1,8 @@
 ---
 toc: false
 layout: post
-description: Data analysis and visualisation
+title: Data analysis and visualisation
 categories: [data, python]
-title: Data analysis
 sticky_rank: 4
 hide: true
 ---
