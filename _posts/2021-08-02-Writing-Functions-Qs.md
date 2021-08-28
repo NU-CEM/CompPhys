@@ -14,6 +14,7 @@ hide: true
 3. Fix the error.  
 4. Repeat steps 2 and 3 until you have fixed all the errors.  
 
+
 ~~~python
 def another_function
  print("Syntax errors are annoying.")
@@ -165,6 +166,7 @@ print_date(day=1, month=2, year=2003)
 1.  What does `print_date(day=1, month=2, year=2003)` print?
 2.  When and why is it useful to call functions this way?
 
+
 {::options parse_block_html="true" /}
 <details>
   <summary markdown="span">Show answer</summary>
@@ -205,7 +207,7 @@ for i in range(10):
       print("small")
 ~~~
 
-The simplified program  follows.  What function definition will make it functional?
+The simplified program follows.  What function definition will make it functional?
 
 ~~~python
 # revised version
@@ -222,6 +224,7 @@ for i in range(10):
 
 1. Create a function definition for `print_egg_label()` that will work with the revised program above.  Note, the function's return value will be significant. Sample output might be `71.23 large`.
 2.  A dirty egg might have a mass of more than 90 grams, and a spoiled or broken egg will probably have a mass that's less than 50 grams.  Modify your `print_egg_label()` function to account for these error conditions. Sample output could be `25 too light, probably spoiled`.
+
 
 {::options parse_block_html="true" /}
 <details>

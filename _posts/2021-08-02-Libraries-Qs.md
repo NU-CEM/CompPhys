@@ -11,6 +11,7 @@ hide: true
     *without* using `sqrt`?
 2. Since the library contains this function, why does `sqrt` exist?
 
+
 {::options parse_block_html="true" /}
 <details>
   <summary markdown="span">Show answer</summary>
@@ -41,6 +42,7 @@ bases = 'ACTTGCTTGAC'
 1. Which [standard library][stdlib] module could help you?
 2. Which function would you select from that module? Are there alternatives?
 3. Try to write a program that uses the function.
+
 
 {::options parse_block_html="true" /}
 <details>
@@ -203,6 +205,7 @@ Library calls:
 2. `import math`
 3. `import math as m`
 4. `from math import *`
+
 
 {::options parse_block_html="true" /}
 <details>
