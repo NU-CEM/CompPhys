@@ -153,6 +153,16 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="A-for-loop-executes-commands-once-for-each-value-in-a-collection.">A <em>for loop</em> executes commands once for each value in a collection.<a class="anchor-link" href="#A-for-loop-executes-commands-once-for-each-value-in-a-collection."> </a></h3><p>Doing calculations on the values in a list one by one
+    can be very time consuming and lead to repeated code (which should be avoided). A <em>for loop</em> tells Python to execute some statements once for each value in a list,
+    a character string,
+    or some other collection. A for loop can be translated as: "for each thing in this group, do these operations".</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -160,171 +170,414 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">*</span>   <span class="n">Doing</span> <span class="n">calculations</span> <span class="n">on</span> <span class="n">the</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">one</span> <span class="n">by</span> <span class="n">one</span>
-    <span class="ow">is</span> <span class="k">as</span> <span class="n">painful</span> <span class="k">as</span> <span class="n">working</span> <span class="k">with</span> <span class="err">`</span><span class="n">pressure_001</span><span class="err">`</span><span class="p">,</span> <span class="err">`</span><span class="n">pressure_002</span><span class="err">`</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">A</span> <span class="o">*</span><span class="k">for</span> <span class="n">loop</span><span class="o">*</span> <span class="n">tells</span> <span class="n">Python</span> <span class="n">to</span> <span class="n">execute</span> <span class="n">some</span> <span class="n">statements</span> <span class="n">once</span> <span class="k">for</span> <span class="n">each</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">a</span> <span class="nb">list</span><span class="p">,</span>
-    <span class="n">a</span> <span class="n">character</span> <span class="n">string</span><span class="p">,</span>
-    <span class="ow">or</span> <span class="n">some</span> <span class="n">other</span> <span class="n">collection</span><span class="o">.</span>
-<span class="o">*</span>   <span class="s2">&quot;for each thing in this group, do these operations&quot;</span>
-
-<span class="o">~~~</span>
-<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-
-<span class="o">*</span>   <span class="n">This</span> <span class="err">`</span><span class="k">for</span><span class="err">`</span> <span class="n">loop</span> <span class="ow">is</span> <span class="n">equivalent</span> <span class="n">to</span><span class="p">:</span>
-
-<span class="o">~~~</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-
-<span class="o">*</span>   <span class="n">And</span> <span class="n">the</span> <span class="err">`</span><span class="k">for</span><span class="err">`</span> <span class="n">loop</span><span class="s1">&#39;s output is:</span>
-
-<span class="o">~~~</span>
-<span class="mi">2</span>
-<span class="mi">3</span>
-<span class="mi">5</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
-
-<span class="c1">## The first line of the `for` loop must end with a colon, and the body must be indented.</span>
-
-<span class="o">*</span>   <span class="n">The</span> <span class="n">colon</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">the</span> <span class="n">first</span> <span class="n">line</span> <span class="n">signals</span> <span class="n">the</span> <span class="n">start</span> <span class="n">of</span> <span class="n">a</span> <span class="o">*</span><span class="n">block</span><span class="o">*</span> <span class="n">of</span> <span class="n">statements</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">Python</span> <span class="n">uses</span> <span class="n">indentation</span> <span class="n">rather</span> <span class="n">than</span> <span class="err">`</span><span class="p">{}</span><span class="err">`</span> <span class="ow">or</span> <span class="err">`</span><span class="n">begin</span><span class="err">`</span><span class="o">/</span><span class="err">`</span><span class="n">end</span><span class="err">`</span> <span class="n">to</span> <span class="n">show</span> <span class="o">*</span><span class="n">nesting</span><span class="o">*.</span>
-    <span class="o">*</span>   <span class="n">Any</span> <span class="n">consistent</span> <span class="n">indentation</span> <span class="ow">is</span> <span class="n">legal</span><span class="p">,</span> <span class="n">but</span> <span class="n">almost</span> <span class="n">everyone</span> <span class="n">uses</span> <span class="n">four</span> <span class="n">spaces</span><span class="o">.</span>
-
-<span class="o">~~~</span>
-<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]:</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-<span class="o">~~~</span>
-<span class="ne">IndentationError</span><span class="p">:</span> <span class="n">expected</span> <span class="n">an</span> <span class="n">indented</span> <span class="n">block</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">error</span><span class="p">}</span>
-
-<span class="o">*</span>   <span class="n">Indentation</span> <span class="ow">is</span> <span class="n">always</span> <span class="n">meaningful</span> <span class="ow">in</span> <span class="n">Python</span><span class="o">.</span>
-
-<span class="o">~~~</span>
-<span class="n">firstName</span><span class="o">=</span><span class="s2">&quot;Jon&quot;</span>
-  <span class="n">lastName</span><span class="o">=</span><span class="s2">&quot;Smith&quot;</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-<span class="o">~~~</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;ipython-input-7-f65f2962bf9c&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span>
-    <span class="n">lastName</span><span class="o">=</span><span class="s2">&quot;Smith&quot;</span>
-    <span class="o">^</span>
-<span class="ne">IndentationError</span><span class="p">:</span> <span class="n">unexpected</span> <span class="n">indent</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">error</span><span class="p">}</span>
-
-<span class="o">*</span>   <span class="n">This</span> <span class="n">error</span> <span class="n">can</span> <span class="n">be</span> <span class="n">fixed</span> <span class="n">by</span> <span class="n">removing</span> <span class="n">the</span> <span class="n">extra</span> <span class="n">spaces</span>
-    <span class="n">at</span> <span class="n">the</span> <span class="n">beginning</span> <span class="n">of</span> <span class="n">the</span> <span class="n">second</span> <span class="n">line</span><span class="o">.</span>
-
-<span class="c1">## A `for` loop is made up of a collection, a loop variable, and a body.</span>
-
-<span class="o">~~~</span>
-<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-
-<span class="o">*</span>   <span class="n">The</span> <span class="n">collection</span><span class="p">,</span> <span class="err">`</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span><span class="err">`</span><span class="p">,</span> <span class="ow">is</span> <span class="n">what</span> <span class="n">the</span> <span class="n">loop</span> <span class="ow">is</span> <span class="n">being</span> <span class="n">run</span> <span class="n">on</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">The</span> <span class="n">body</span><span class="p">,</span> <span class="err">`</span><span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span><span class="err">`</span><span class="p">,</span> <span class="n">specifies</span> <span class="n">what</span> <span class="n">to</span> <span class="n">do</span> <span class="k">for</span> <span class="n">each</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">collection</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">The</span> <span class="n">loop</span> <span class="n">variable</span><span class="p">,</span> <span class="err">`</span><span class="n">number</span><span class="err">`</span><span class="p">,</span> <span class="ow">is</span> <span class="n">what</span> <span class="n">changes</span> <span class="k">for</span> <span class="n">each</span> <span class="o">*</span><span class="n">iteration</span><span class="o">*</span> <span class="n">of</span> <span class="n">the</span> <span class="n">loop</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">The</span> <span class="s2">&quot;current thing&quot;</span><span class="o">.</span>
-
-<span class="c1">## Loop variables can be called anything.</span>
-
-<span class="o">*</span>   <span class="n">As</span> <span class="k">with</span> <span class="nb">all</span> <span class="n">variables</span><span class="p">,</span> <span class="n">loop</span> <span class="n">variables</span> <span class="n">are</span><span class="p">:</span>
-    <span class="o">*</span>   <span class="n">Created</span> <span class="n">on</span> <span class="n">demand</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">Meaningless</span><span class="p">:</span> <span class="n">their</span> <span class="n">names</span> <span class="n">can</span> <span class="n">be</span> <span class="n">anything</span> <span class="n">at</span> <span class="nb">all</span><span class="o">.</span>
-
-<span class="o">~~~</span>
-<span class="k">for</span> <span class="n">kitten</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">kitten</span><span class="p">)</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-
-<span class="c1">## The body of a loop can contain many statements.</span>
-
-<span class="o">*</span>   <span class="n">But</span> <span class="n">no</span> <span class="n">loop</span> <span class="n">should</span> <span class="n">be</span> <span class="n">more</span> <span class="n">than</span> <span class="n">a</span> <span class="n">few</span> <span class="n">lines</span> <span class="n">long</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">Hard</span> <span class="k">for</span> <span class="n">human</span> <span class="n">beings</span> <span class="n">to</span> <span class="n">keep</span> <span class="n">larger</span> <span class="n">chunks</span> <span class="n">of</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">mind</span><span class="o">.</span>
-
-<span class="o">~~~</span>
-<span class="n">primes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">primes</span><span class="p">:</span>
-    <span class="n">squared</span> <span class="o">=</span> <span class="n">p</span> <span class="o">**</span> <span class="mi">2</span>
-    <span class="n">cubed</span> <span class="o">=</span> <span class="n">p</span> <span class="o">**</span> <span class="mi">3</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">squared</span><span class="p">,</span> <span class="n">cubed</span><span class="p">)</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-<span class="o">~~~</span>
-<span class="mi">2</span> <span class="mi">4</span> <span class="mi">8</span>
-<span class="mi">3</span> <span class="mi">9</span> <span class="mi">27</span>
-<span class="mi">5</span> <span class="mi">25</span> <span class="mi">125</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
-
-<span class="c1">## Use `range` to iterate over a sequence of numbers.</span>
-
-<span class="o">*</span>   <span class="n">The</span> <span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="err">`</span><span class="nb">range</span><span class="err">`</span> <span class="n">produces</span> <span class="n">a</span> <span class="n">sequence</span> <span class="n">of</span> <span class="n">numbers</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="o">*</span><span class="n">Not</span><span class="o">*</span> <span class="n">a</span> <span class="nb">list</span><span class="p">:</span> <span class="n">the</span> <span class="n">numbers</span> <span class="n">are</span> <span class="n">produced</span> <span class="n">on</span> <span class="n">demand</span>
-        <span class="n">to</span> <span class="n">make</span> <span class="n">looping</span> <span class="n">over</span> <span class="n">large</span> <span class="n">ranges</span> <span class="n">more</span> <span class="n">efficient</span><span class="o">.</span>
-<span class="o">*</span>   <span class="err">`</span><span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="err">`</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">numbers</span> <span class="mf">0.</span><span class="o">.</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span>
-    <span class="o">*</span>   <span class="n">Exactly</span> <span class="n">the</span> <span class="n">legal</span> <span class="n">indices</span> <span class="n">of</span> <span class="n">a</span> <span class="nb">list</span> <span class="ow">or</span> <span class="n">character</span> <span class="n">string</span> <span class="n">of</span> <span class="n">length</span> <span class="n">N</span>
-
-<span class="o">~~~</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a range is not a list: range(0, 3)&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-<span class="o">~~~</span>
-<span class="n">a</span> <span class="nb">range</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="nb">list</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="mi">0</span>
-<span class="mi">1</span>
-<span class="mi">2</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
-
-<span class="c1">## The Accumulator pattern turns many values into one.</span>
-
-<span class="o">*</span>   <span class="n">A</span> <span class="n">common</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">programs</span> <span class="ow">is</span> <span class="n">to</span><span class="p">:</span>
-    <span class="mf">1.</span>  <span class="n">Initialize</span> <span class="n">an</span> <span class="o">*</span><span class="n">accumulator</span><span class="o">*</span> <span class="n">variable</span> <span class="n">to</span> <span class="n">zero</span><span class="p">,</span> <span class="n">the</span> <span class="n">empty</span> <span class="n">string</span><span class="p">,</span> <span class="ow">or</span> <span class="n">the</span> <span class="n">empty</span> <span class="nb">list</span><span class="o">.</span>
-    <span class="mf">2.</span>  <span class="n">Update</span> <span class="n">the</span> <span class="n">variable</span> <span class="k">with</span> <span class="n">values</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">collection</span><span class="o">.</span>
-
-<span class="o">~~~</span>
-<span class="c1"># Sum the first 10 integers.</span>
-<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-   <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="p">(</span><span class="n">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-<span class="o">~~~</span>
-<span class="mi">55</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
-
-<span class="o">*</span>   <span class="n">Read</span> <span class="err">`</span><span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="p">(</span><span class="n">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="err">`</span> <span class="k">as</span><span class="p">:</span>
-    <span class="o">*</span>   <span class="n">Add</span> <span class="mi">1</span> <span class="n">to</span> <span class="n">the</span> <span class="n">current</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="n">loop</span> <span class="n">variable</span> <span class="err">`</span><span class="n">number</span><span class="err">`</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">Add</span> <span class="n">that</span> <span class="n">to</span> <span class="n">the</span> <span class="n">current</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="n">accumulator</span> <span class="n">variable</span> <span class="err">`</span><span class="n">total</span><span class="err">`</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">Assign</span> <span class="n">that</span> <span class="n">to</span> <span class="err">`</span><span class="n">total</span><span class="err">`</span><span class="p">,</span> <span class="n">replacing</span> <span class="n">the</span> <span class="n">current</span> <span class="n">value</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">We</span> <span class="n">have</span> <span class="n">to</span> <span class="n">add</span> <span class="err">`</span><span class="n">number</span> <span class="o">+</span> <span class="mi">1</span><span class="err">`</span> <span class="n">because</span> <span class="err">`</span><span class="nb">range</span><span class="err">`</span> <span class="n">produces</span> <span class="mf">0.</span><span class="o">.</span><span class="mi">9</span><span class="p">,</span> <span class="ow">not</span> <span class="mf">1.</span><span class="o">.</span><span class="mf">10.</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2
+3
+5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This <code>for</code> loop is equivalent to:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2
+3
+5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-first-line-of-the-for-loop-must-end-with-a-colon,-and-the-body-must-be-indented.">The first line of the <code>for</code> loop must end with a colon, and the body must be indented.<a class="anchor-link" href="#The-first-line-of-the-for-loop-must-end-with-a-colon,-and-the-body-must-be-indented."> </a></h3><p>The colon at the end of the first line signals the start of a <em>block</em> of statements.
+Any consistent indentation is legal, but almost everyone uses four spaces.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-8-3a0b55365d6d&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">2</span>
+<span class="ansi-red-fg">    print(number)</span>
+    ^
+<span class="ansi-red-fg">IndentationError</span><span class="ansi-red-fg">:</span> expected an indented block
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Indentation is always meaningful in Python.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">firstName</span><span class="o">=</span><span class="s2">&quot;Jon&quot;</span>
+  <span class="n">lastName</span><span class="o">=</span><span class="s2">&quot;Smith&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-9-fac7a181dff6&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">2</span>
+<span class="ansi-red-fg">    lastName=&#34;Smith&#34;</span>
+    ^
+<span class="ansi-red-fg">IndentationError</span><span class="ansi-red-fg">:</span> unexpected indent
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This error can be fixed by removing the extra spaces
+    at the beginning of the second line.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="A-for-loop-is-made-up-of-a-collection,-a-loop-variable,-and-a-body.">A <code>for</code> loop is made up of a collection, a loop variable, and a body.<a class="anchor-link" href="#A-for-loop-is-made-up-of-a-collection,-a-loop-variable,-and-a-body."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2
+3
+5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The collection, <code>[2, 3, 5]</code>, is what the loop is being run on.</li>
+<li>The body, <code>print(number)</code>, specifies what to do for each value in the collection.</li>
+<li>The loop variable, <code>number</code>, is what changes for each <em>iteration</em> of the loop.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Loop-variables-can-be-called-anything.">Loop variables can be called anything.<a class="anchor-link" href="#Loop-variables-can-be-called-anything."> </a></h3><ul>
+<li>As with all variables, loop variables are:<ul>
+<li>Created on demand.</li>
+<li>Meaningless: their names can be anything at all.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">kitten</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">kitten</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2
+3
+5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-body-of-a-loop-can-contain-many-statements.">The body of a loop can contain many statements.<a class="anchor-link" href="#The-body-of-a-loop-can-contain-many-statements."> </a></h3><p>But no loop should be more than a few lines long as it is hard for human beings to keep larger chunks of code in mind.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">primes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">primes</span><span class="p">:</span>
+    <span class="n">squared</span> <span class="o">=</span> <span class="n">p</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="n">cubed</span> <span class="o">=</span> <span class="n">p</span> <span class="o">**</span> <span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">squared</span><span class="p">,</span> <span class="n">cubed</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2 4 8
+3 9 27
+5 25 125
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Use-range-to-iterate-over-a-sequence-of-numbers.">Use <code>range</code> to iterate over a sequence of numbers.<a class="anchor-link" href="#Use-range-to-iterate-over-a-sequence-of-numbers."> </a></h3><p>The built-in function <code>range</code> produces a sequence of numbers.
+This is <em>not</em> a list: the numbers are produced on demand to make looping over large ranges more efficient.
+<code>range(N)</code> is the numbers 0..N-1</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+1
+2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-Accumulator-pattern-turns-many-values-into-one.">The Accumulator pattern turns many values into one.<a class="anchor-link" href="#The-Accumulator-pattern-turns-many-values-into-one."> </a></h3><p>A common pattern in programs is to:</p>
+<ol>
+<li>Initialize an <em>accumulator</em> variable to zero, the empty string, or the empty list.</li>
+<li>Update the variable with values from a collection.</li>
+</ol>
+<p>For example, if we would like to sum the first 10 integers we could write:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+   <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="p">(</span><span class="n">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>55
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Read <code>total = total + (number + 1)</code> as:</p>
+<ul>
+<li>Add 1 to the current value of the loop variable <code>number</code>.</li>
+<li>Add that to the current value of the accumulator variable <code>total</code>.</li>
+<li>Assign that to <code>total</code>, replacing the current value.</li>
+</ul>
+<p>We have to add <code>number + 1</code> because <code>range</code> produces 0..9, not 1..10.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr />

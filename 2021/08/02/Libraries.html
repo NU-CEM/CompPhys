@@ -151,6 +151,35 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Most-of-the-power-of-a-programming-language-is-in-its-libraries.">Most of the power of a programming language is in its libraries.<a class="anchor-link" href="#Most-of-the-power-of-a-programming-language-is-in-its-libraries."> </a></h3><p>A <em>library</em> is a collection of files (called <em>modules</em>) that contains
+    functions for use by other programs. It may also contain data values (e.g., numerical constants) and other things. A library's contents are supposed to be related, but there's no way to enforce that.</p>
+<p>The Python standard library is an extensive suite of modules that comes
+    with Python itself. There are many additional libraries that are available from the Python Package Index and Conda.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>A library is a collection of modules, but the terms are often used
+</div>interchangeably, especially since many libraries only consist of a single
+module, so don't worry if you mix these words up.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="A-program-must-import-a-library-module-before-using-it.">A program must import a library module before using it.<a class="anchor-link" href="#A-program-must-import-a-library-module-before-using-it."> </a></h3><p>Use <code>import</code> to load a library module into a program's memory. Then refer to things from the module as <code>module_name.thing_name</code>.</p>
+<p>For example, using <code>math</code>, one of the modules in the standard library:</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -158,128 +187,440 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">*</span>   <span class="n">A</span> <span class="o">*</span><span class="n">library</span><span class="o">*</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">collection</span> <span class="n">of</span> <span class="n">files</span> <span class="p">(</span><span class="n">called</span> <span class="o">*</span><span class="n">modules</span><span class="o">*</span><span class="p">)</span> <span class="n">that</span> <span class="n">contains</span>
-    <span class="n">functions</span> <span class="k">for</span> <span class="n">use</span> <span class="n">by</span> <span class="n">other</span> <span class="n">programs</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">May</span> <span class="n">also</span> <span class="n">contain</span> <span class="n">data</span> <span class="n">values</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">numerical</span> <span class="n">constants</span><span class="p">)</span> <span class="ow">and</span> <span class="n">other</span> <span class="n">things</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">Library</span><span class="s1">&#39;s contents are supposed to be related, but there&#39;</span><span class="n">s</span> <span class="n">no</span> <span class="n">way</span> <span class="n">to</span> <span class="n">enforce</span> <span class="n">that</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">The</span> <span class="n">Python</span> <span class="p">[</span><span class="n">standard</span> <span class="n">library</span><span class="p">][</span><span class="n">stdlib</span><span class="p">]</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">extensive</span> <span class="n">suite</span> <span class="n">of</span> <span class="n">modules</span> <span class="n">that</span> <span class="n">comes</span>
-    <span class="k">with</span> <span class="n">Python</span> <span class="n">itself</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">Many</span> <span class="n">additional</span> <span class="n">libraries</span> <span class="n">are</span> <span class="n">available</span> <span class="kn">from</span> <span class="p">[</span><span class="n">PyPI</span><span class="p">][</span><span class="n">pypi</span><span class="p">]</span> <span class="p">(</span><span class="n">the</span> <span class="n">Python</span> <span class="n">Package</span> <span class="n">Index</span><span class="p">)</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">We</span> <span class="n">will</span> <span class="n">see</span> <span class="n">later</span> <span class="n">how</span> <span class="n">to</span> <span class="n">write</span> <span class="n">new</span> <span class="n">libraries</span><span class="o">.</span>
-
-<span class="o">&gt;</span> <span class="c1">## Libraries and modules</span>
-<span class="o">&gt;</span>
-<span class="o">&gt;</span> <span class="n">A</span> <span class="n">library</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">collection</span> <span class="n">of</span> <span class="n">modules</span><span class="p">,</span> <span class="n">but</span> <span class="n">the</span> <span class="n">terms</span> <span class="n">are</span> <span class="n">often</span> <span class="n">used</span>
-<span class="o">&gt;</span> <span class="n">interchangeably</span><span class="p">,</span> <span class="n">especially</span> <span class="n">since</span> <span class="n">many</span> <span class="n">libraries</span> <span class="n">only</span> <span class="n">consist</span> <span class="n">of</span> <span class="n">a</span> <span class="n">single</span>
-<span class="o">&gt;</span> <span class="n">module</span><span class="p">,</span> <span class="n">so</span> <span class="n">don</span><span class="s1">&#39;t worry if you mix them.</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">callout</span><span class="p">}</span>
-
-
-<span class="c1">## A program must import a library module before using it.</span>
-
-<span class="o">*</span>   <span class="n">Use</span> <span class="err">`</span><span class="n">import</span><span class="err">`</span> <span class="n">to</span> <span class="n">load</span> <span class="n">a</span> <span class="n">library</span> <span class="n">module</span> <span class="n">into</span> <span class="n">a</span> <span class="n">program</span><span class="s1">&#39;s memory.</span>
-<span class="o">*</span>   <span class="n">Then</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">things</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">module</span> <span class="k">as</span> <span class="err">`</span><span class="n">module_name</span><span class="o">.</span><span class="n">thing_name</span><span class="err">`</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">Python</span> <span class="n">uses</span> <span class="err">`</span><span class="o">.</span><span class="err">`</span> <span class="n">to</span> <span class="n">mean</span> <span class="s2">&quot;part of&quot;</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">Using</span> <span class="err">`</span><span class="n">math</span><span class="err">`</span><span class="p">,</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">modules</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">standard</span> <span class="n">library</span><span class="p">:</span>
-
-<span class="o">~~~</span>
-<span class="kn">import</span> <span class="nn">math</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pi is&#39;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cos(pi) is&#39;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-<span class="o">~~~</span>
-<span class="n">pi</span> <span class="ow">is</span> <span class="mf">3.141592653589793</span>
-<span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">1.0</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
-
-<span class="o">*</span>   <span class="n">Have</span> <span class="n">to</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">each</span> <span class="n">item</span> <span class="k">with</span> <span class="n">the</span> <span class="n">module</span><span class="s1">&#39;s name.</span>
-    <span class="o">*</span>   <span class="err">`</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span><span class="err">`</span> <span class="n">won</span><span class="s1">&#39;t work: the reference to `pi`</span>
-        <span class="n">doesn</span><span class="s1">&#39;t somehow &quot;inherit&quot; the function&#39;</span><span class="n">s</span> <span class="n">reference</span> <span class="n">to</span> <span class="err">`</span><span class="n">math</span><span class="err">`</span><span class="o">.</span>
-
-<span class="c1">## Use `help` to learn about the contents of a library module.</span>
-
-<span class="o">*</span>   <span class="n">Works</span> <span class="n">just</span> <span class="n">like</span> <span class="n">help</span> <span class="k">for</span> <span class="n">a</span> <span class="n">function</span><span class="o">.</span>
-
-<span class="o">~~~</span>
-<span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-<span class="o">~~~</span>
-<span class="n">Help</span> <span class="n">on</span> <span class="n">module</span> <span class="n">math</span><span class="p">:</span>
-
-<span class="n">NAME</span>
-    <span class="n">math</span>
-
-<span class="n">MODULE</span> <span class="n">REFERENCE</span>
-    <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">3.5</span><span class="o">/</span><span class="n">library</span><span class="o">/</span><span class="n">math</span>
-
-    <span class="n">The</span> <span class="n">following</span> <span class="n">documentation</span> <span class="ow">is</span> <span class="n">automatically</span> <span class="n">generated</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">Python</span>
-    <span class="n">source</span> <span class="n">files</span><span class="o">.</span>  <span class="n">It</span> <span class="n">may</span> <span class="n">be</span> <span class="n">incomplete</span><span class="p">,</span> <span class="n">incorrect</span> <span class="ow">or</span> <span class="n">include</span> <span class="n">features</span> <span class="n">that</span>
-    <span class="n">are</span> <span class="n">considered</span> <span class="n">implementation</span> <span class="n">detail</span> <span class="ow">and</span> <span class="n">may</span> <span class="n">vary</span> <span class="n">between</span> <span class="n">Python</span>
-    <span class="n">implementations</span><span class="o">.</span>  <span class="n">When</span> <span class="ow">in</span> <span class="n">doubt</span><span class="p">,</span> <span class="n">consult</span> <span class="n">the</span> <span class="n">module</span> <span class="n">reference</span> <span class="n">at</span> <span class="n">the</span>
-    <span class="n">location</span> <span class="n">listed</span> <span class="n">above</span><span class="o">.</span>
-
-<span class="n">DESCRIPTION</span>
-    <span class="n">This</span> <span class="n">module</span> <span class="ow">is</span> <span class="n">always</span> <span class="n">available</span><span class="o">.</span>  <span class="n">It</span> <span class="n">provides</span> <span class="n">access</span> <span class="n">to</span> <span class="n">the</span>
-    <span class="n">mathematical</span> <span class="n">functions</span> <span class="n">defined</span> <span class="n">by</span> <span class="n">the</span> <span class="n">C</span> <span class="n">standard</span><span class="o">.</span>
-
-<span class="n">FUNCTIONS</span>
-    <span class="n">acos</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-        <span class="n">acos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-        <span class="n">Return</span> <span class="n">the</span> <span class="n">arc</span> <span class="n">cosine</span> <span class="p">(</span><span class="n">measured</span> <span class="ow">in</span> <span class="n">radians</span><span class="p">)</span> <span class="n">of</span> <span class="n">x</span><span class="o">.</span>
-<span class="err">⋮</span> <span class="err">⋮</span> <span class="err">⋮</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
-
-<span class="c1">## Import specific items from a library module to shorten programs.</span>
-
-<span class="o">*</span>   <span class="n">Use</span> <span class="err">`</span><span class="kn">from</span> <span class="nn">...</span> <span class="kn">import</span> <span class="o">...</span><span class="err">`</span> <span class="n">to</span> <span class="n">load</span> <span class="n">only</span> <span class="n">specific</span> <span class="n">items</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">library</span> <span class="n">module</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">Then</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">them</span> <span class="n">directly</span> <span class="n">without</span> <span class="n">library</span> <span class="n">name</span> <span class="k">as</span> <span class="n">prefix</span><span class="o">.</span>
-
-<span class="o">~~~</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">pi</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cos(pi) is&#39;</span><span class="p">,</span> <span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="p">))</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-<span class="o">~~~</span>
-<span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">1.0</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
-
-<span class="c1">## Create an alias for a library module when importing it to shorten programs.</span>
-
-<span class="o">*</span>   <span class="n">Use</span> <span class="err">`</span><span class="kn">import</span> <span class="nn">...</span> <span class="k">as</span> <span class="nn">...</span><span class="err">`</span> <span class="n">to</span> <span class="n">give</span> <span class="n">a</span> <span class="n">library</span> <span class="n">a</span> <span class="n">short</span> <span class="o">*</span><span class="n">alias</span><span class="o">*</span> <span class="k">while</span> <span class="n">importing</span> <span class="n">it</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">Then</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">library</span> <span class="n">using</span> <span class="n">that</span> <span class="n">shortened</span> <span class="n">name</span><span class="o">.</span>
-
-<span class="o">~~~</span>
-<span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cos(pi) is&#39;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-<span class="o">~~~</span>
-<span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">1.0</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
-
-<span class="o">*</span>   <span class="n">Commonly</span> <span class="n">used</span> <span class="k">for</span> <span class="n">libraries</span> <span class="n">that</span> <span class="n">are</span> <span class="n">frequently</span> <span class="n">used</span> <span class="ow">or</span> <span class="n">have</span> <span class="n">long</span> <span class="n">names</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">E</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="err">`</span><span class="n">matplotlib</span><span class="err">`</span> <span class="n">plotting</span> <span class="n">library</span> <span class="ow">is</span> <span class="n">often</span> <span class="n">aliased</span> <span class="k">as</span> <span class="err">`</span><span class="n">mpl</span><span class="err">`</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">But</span> <span class="n">can</span> <span class="n">make</span> <span class="n">programs</span> <span class="n">harder</span> <span class="n">to</span> <span class="n">understand</span><span class="p">,</span>
-    <span class="n">since</span> <span class="n">readers</span> <span class="n">must</span> <span class="n">learn</span> <span class="n">your</span> <span class="n">program</span><span class="s1">&#39;s aliases.</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>pi is 3.141592653589793
+cos(pi) is -1.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We have to refer to each item with the module's name. <code>math.cos(pi)</code> won't work: the reference to <code>pi</code> doesn't somehow "inherit" the function's reference to <code>math</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Use-help-to-learn-about-the-contents-of-a-library-module.">Use <code>help</code> to learn about the contents of a library module.<a class="anchor-link" href="#Use-help-to-learn-about-the-contents-of-a-library-module."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Help on module math:
+
+NAME
+    math
+
+MODULE REFERENCE
+    https://docs.python.org/3.8/library/math
+    
+    The following documentation is automatically generated from the Python
+    source files.  It may be incomplete, incorrect or include features that
+    are considered implementation detail and may vary between Python
+    implementations.  When in doubt, consult the module reference at the
+    location listed above.
+
+DESCRIPTION
+    This module provides access to the mathematical functions
+    defined by the C standard.
+
+FUNCTIONS
+    acos(x, /)
+        Return the arc cosine (measured in radians) of x.
+    
+    acosh(x, /)
+        Return the inverse hyperbolic cosine of x.
+    
+    asin(x, /)
+        Return the arc sine (measured in radians) of x.
+    
+    asinh(x, /)
+        Return the inverse hyperbolic sine of x.
+    
+    atan(x, /)
+        Return the arc tangent (measured in radians) of x.
+    
+    atan2(y, x, /)
+        Return the arc tangent (measured in radians) of y/x.
+        
+        Unlike atan(y/x), the signs of both x and y are considered.
+    
+    atanh(x, /)
+        Return the inverse hyperbolic tangent of x.
+    
+    ceil(x, /)
+        Return the ceiling of x as an Integral.
+        
+        This is the smallest integer &gt;= x.
+    
+    comb(n, k, /)
+        Number of ways to choose k items from n items without repetition and without order.
+        
+        Evaluates to n! / (k! * (n - k)!) when k &lt;= n and evaluates
+        to zero when k &gt; n.
+        
+        Also called the binomial coefficient because it is equivalent
+        to the coefficient of k-th term in polynomial expansion of the
+        expression (1 + x)**n.
+        
+        Raises TypeError if either of the arguments are not integers.
+        Raises ValueError if either of the arguments are negative.
+    
+    copysign(x, y, /)
+        Return a float with the magnitude (absolute value) of x but the sign of y.
+        
+        On platforms that support signed zeros, copysign(1.0, -0.0)
+        returns -1.0.
+    
+    cos(x, /)
+        Return the cosine of x (measured in radians).
+    
+    cosh(x, /)
+        Return the hyperbolic cosine of x.
+    
+    degrees(x, /)
+        Convert angle x from radians to degrees.
+    
+    dist(p, q, /)
+        Return the Euclidean distance between two points p and q.
+        
+        The points should be specified as sequences (or iterables) of
+        coordinates.  Both inputs must have the same dimension.
+        
+        Roughly equivalent to:
+            sqrt(sum((px - qx) ** 2.0 for px, qx in zip(p, q)))
+    
+    erf(x, /)
+        Error function at x.
+    
+    erfc(x, /)
+        Complementary error function at x.
+    
+    exp(x, /)
+        Return e raised to the power of x.
+    
+    expm1(x, /)
+        Return exp(x)-1.
+        
+        This function avoids the loss of precision involved in the direct evaluation of exp(x)-1 for small x.
+    
+    fabs(x, /)
+        Return the absolute value of the float x.
+    
+    factorial(x, /)
+        Find x!.
+        
+        Raise a ValueError if x is negative or non-integral.
+    
+    floor(x, /)
+        Return the floor of x as an Integral.
+        
+        This is the largest integer &lt;= x.
+    
+    fmod(x, y, /)
+        Return fmod(x, y), according to platform C.
+        
+        x % y may differ.
+    
+    frexp(x, /)
+        Return the mantissa and exponent of x, as pair (m, e).
+        
+        m is a float and e is an int, such that x = m * 2.**e.
+        If x is 0, m and e are both 0.  Else 0.5 &lt;= abs(m) &lt; 1.0.
+    
+    fsum(seq, /)
+        Return an accurate floating point sum of values in the iterable seq.
+        
+        Assumes IEEE-754 floating point arithmetic.
+    
+    gamma(x, /)
+        Gamma function at x.
+    
+    gcd(x, y, /)
+        greatest common divisor of x and y
+    
+    hypot(...)
+        hypot(*coordinates) -&gt; value
+        
+        Multidimensional Euclidean distance from the origin to a point.
+        
+        Roughly equivalent to:
+            sqrt(sum(x**2 for x in coordinates))
+        
+        For a two dimensional point (x, y), gives the hypotenuse
+        using the Pythagorean theorem:  sqrt(x*x + y*y).
+        
+        For example, the hypotenuse of a 3/4/5 right triangle is:
+        
+            &gt;&gt;&gt; hypot(3.0, 4.0)
+            5.0
+    
+    isclose(a, b, *, rel_tol=1e-09, abs_tol=0.0)
+        Determine whether two floating point numbers are close in value.
+        
+          rel_tol
+            maximum difference for being considered &#34;close&#34;, relative to the
+            magnitude of the input values
+          abs_tol
+            maximum difference for being considered &#34;close&#34;, regardless of the
+            magnitude of the input values
+        
+        Return True if a is close in value to b, and False otherwise.
+        
+        For the values to be considered close, the difference between them
+        must be smaller than at least one of the tolerances.
+        
+        -inf, inf and NaN behave similarly to the IEEE 754 Standard.  That
+        is, NaN is not close to anything, even itself.  inf and -inf are
+        only close to themselves.
+    
+    isfinite(x, /)
+        Return True if x is neither an infinity nor a NaN, and False otherwise.
+    
+    isinf(x, /)
+        Return True if x is a positive or negative infinity, and False otherwise.
+    
+    isnan(x, /)
+        Return True if x is a NaN (not a number), and False otherwise.
+    
+    isqrt(n, /)
+        Return the integer part of the square root of the input.
+    
+    ldexp(x, i, /)
+        Return x * (2**i).
+        
+        This is essentially the inverse of frexp().
+    
+    lgamma(x, /)
+        Natural logarithm of absolute value of Gamma function at x.
+    
+    log(...)
+        log(x, [base=math.e])
+        Return the logarithm of x to the given base.
+        
+        If the base not specified, returns the natural logarithm (base e) of x.
+    
+    log10(x, /)
+        Return the base 10 logarithm of x.
+    
+    log1p(x, /)
+        Return the natural logarithm of 1+x (base e).
+        
+        The result is computed in a way which is accurate for x near zero.
+    
+    log2(x, /)
+        Return the base 2 logarithm of x.
+    
+    modf(x, /)
+        Return the fractional and integer parts of x.
+        
+        Both results carry the sign of x and are floats.
+    
+    perm(n, k=None, /)
+        Number of ways to choose k items from n items without repetition and with order.
+        
+        Evaluates to n! / (n - k)! when k &lt;= n and evaluates
+        to zero when k &gt; n.
+        
+        If k is not specified or is None, then k defaults to n
+        and the function returns n!.
+        
+        Raises TypeError if either of the arguments are not integers.
+        Raises ValueError if either of the arguments are negative.
+    
+    pow(x, y, /)
+        Return x**y (x to the power of y).
+    
+    prod(iterable, /, *, start=1)
+        Calculate the product of all the elements in the input iterable.
+        
+        The default start value for the product is 1.
+        
+        When the iterable is empty, return the start value.  This function is
+        intended specifically for use with numeric values and may reject
+        non-numeric types.
+    
+    radians(x, /)
+        Convert angle x from degrees to radians.
+    
+    remainder(x, y, /)
+        Difference between x and the closest integer multiple of y.
+        
+        Return x - n*y where n*y is the closest integer multiple of y.
+        In the case where x is exactly halfway between two multiples of
+        y, the nearest even value of n is used. The result is always exact.
+    
+    sin(x, /)
+        Return the sine of x (measured in radians).
+    
+    sinh(x, /)
+        Return the hyperbolic sine of x.
+    
+    sqrt(x, /)
+        Return the square root of x.
+    
+    tan(x, /)
+        Return the tangent of x (measured in radians).
+    
+    tanh(x, /)
+        Return the hyperbolic tangent of x.
+    
+    trunc(x, /)
+        Truncates the Real x to the nearest Integral toward 0.
+        
+        Uses the __trunc__ magic method.
+
+DATA
+    e = 2.718281828459045
+    inf = inf
+    nan = nan
+    pi = 3.141592653589793
+    tau = 6.283185307179586
+
+FILE
+    /Users/lucy/miniconda3/lib/python3.8/lib-dynload/math.cpython-38-darwin.so
+
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Import-specific-items-from-a-library-module-to-shorten-programs.">Import specific items from a library module to shorten programs.<a class="anchor-link" href="#Import-specific-items-from-a-library-module-to-shorten-programs."> </a></h3><p>Use <code>from ... import ...</code> to load only specific items from a library module. Then refer to them directly without library name as prefix.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">pi</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cos(pi) is&#39;</span><span class="p">,</span> <span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>cos(pi) is -1.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Create-an-alias-for-a-library-module-when-importing-it-to-shorten-programs.">Create an alias for a library module when importing it to shorten programs.<a class="anchor-link" href="#Create-an-alias-for-a-library-module-when-importing-it-to-shorten-programs."> </a></h3><p>Use <code>import ... as ...</code> to give a library a short <em>alias</em> while importing it.
+Then refer to items in the library using that shortened name.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cos(pi) is&#39;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>cos(pi) is -1.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Commonly used for libraries that are frequently used or have long names. - e.g., <code>matplotlib</code> plotting library is often aliased as <code>mpl</code>. But this can make programs harder to understand, since readers must learn your program's aliases.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr />

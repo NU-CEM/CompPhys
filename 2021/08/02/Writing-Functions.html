@@ -149,6 +149,25 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Break-programs-down-into-functions-to-make-them-easier-to-understand.">Break programs down into functions to make them easier to understand.<a class="anchor-link" href="#Break-programs-down-into-functions-to-make-them-easier-to-understand."> </a></h3><p>Human beings can only keep a few items in working memory at a time. We understand larger/more complicated ideas by understanding and combining pieces. Analogies for this include:</p>
+<ul>
+<li>Components in a machine.</li>
+<li>Lemmas when proving theorems.</li>
+</ul>
+<p>Functions serve the same purpose in programs - they <em>Encapsulate</em> complexity so that we can treat it as a single "thing". Functions also enables <em>re-use</em> - we write a function one time, anduse many times.</p>
+<h3 id="Define-a-function-using-def-with-a-name,-parameters,-and-a-block-of-code.">Define a function using <code>def</code> with a name, parameters, and a block of code.<a class="anchor-link" href="#Define-a-function-using-def-with-a-name,-parameters,-and-a-block-of-code."> </a></h3><ul>
+<li>Begin the definition of a new function with <code>def</code>.</li>
+<li>This is followed by the name of the function.</li>
+<li>Then <em>parameters</em> in parentheses.</li>
+<li>Then a colon.</li>
+<li>Then an indented block of code.</li>
+</ul>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -156,135 +175,286 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">*</span>   <span class="n">Human</span> <span class="n">beings</span> <span class="n">can</span> <span class="n">only</span> <span class="n">keep</span> <span class="n">a</span> <span class="n">few</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">memory</span> <span class="n">at</span> <span class="n">a</span> <span class="n">time</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">Understand</span> <span class="n">larger</span><span class="o">/</span><span class="n">more</span> <span class="n">complicated</span> <span class="n">ideas</span> <span class="n">by</span> <span class="n">understanding</span> <span class="ow">and</span> <span class="n">combining</span> <span class="n">pieces</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">Components</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">machine</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">Lemmas</span> <span class="n">when</span> <span class="n">proving</span> <span class="n">theorems</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">Functions</span> <span class="n">serve</span> <span class="n">the</span> <span class="n">same</span> <span class="n">purpose</span> <span class="ow">in</span> <span class="n">programs</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="o">*</span><span class="n">Encapsulate</span><span class="o">*</span> <span class="n">complexity</span> <span class="n">so</span> <span class="n">that</span> <span class="n">we</span> <span class="n">can</span> <span class="n">treat</span> <span class="n">it</span> <span class="k">as</span> <span class="n">a</span> <span class="n">single</span> <span class="s2">&quot;thing&quot;</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">Also</span> <span class="n">enables</span> <span class="o">*</span><span class="n">re</span><span class="o">-</span><span class="n">use</span><span class="o">*.</span>
-    <span class="o">*</span>   <span class="n">Write</span> <span class="n">one</span> <span class="n">time</span><span class="p">,</span> <span class="n">use</span> <span class="n">many</span> <span class="n">times</span><span class="o">.</span>
-
-<span class="c1">## Define a function using `def` with a name, parameters, and a block of code.</span>
-
-<span class="o">*</span>   <span class="n">Begin</span> <span class="n">the</span> <span class="n">definition</span> <span class="n">of</span> <span class="n">a</span> <span class="n">new</span> <span class="n">function</span> <span class="k">with</span> <span class="err">`</span><span class="n">def</span><span class="err">`</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">Followed</span> <span class="n">by</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">function</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">Must</span> <span class="n">obey</span> <span class="n">the</span> <span class="n">same</span> <span class="n">rules</span> <span class="k">as</span> <span class="n">variable</span> <span class="n">names</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">Then</span> <span class="o">*</span><span class="n">parameters</span><span class="o">*</span> <span class="ow">in</span> <span class="n">parentheses</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">Empty</span> <span class="n">parentheses</span> <span class="k">if</span> <span class="n">the</span> <span class="n">function</span> <span class="n">doesn</span><span class="s1">&#39;t take any inputs.</span>
-    <span class="o">*</span>   <span class="n">We</span> <span class="n">will</span> <span class="n">discuss</span> <span class="n">this</span> <span class="ow">in</span> <span class="n">detail</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">moment</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">Then</span> <span class="n">a</span> <span class="n">colon</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">Then</span> <span class="n">an</span> <span class="n">indented</span> <span class="n">block</span> <span class="n">of</span> <span class="n">code</span><span class="o">.</span>
-
-<span class="o">~~~</span>
-<span class="k">def</span> <span class="nf">print_greeting</span><span class="p">():</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_greeting</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello!&#39;</span><span class="p">)</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-
-<span class="c1">## Defining a function does not run it.</span>
-
-<span class="o">*</span>   <span class="n">Defining</span> <span class="n">a</span> <span class="n">function</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">run</span> <span class="n">it</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">Like</span> <span class="n">assigning</span> <span class="n">a</span> <span class="n">value</span> <span class="n">to</span> <span class="n">a</span> <span class="n">variable</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">Must</span> <span class="n">call</span> <span class="n">the</span> <span class="n">function</span> <span class="n">to</span> <span class="n">execute</span> <span class="n">the</span> <span class="n">code</span> <span class="n">it</span> <span class="n">contains</span><span class="o">.</span>
-
-<span class="o">~~~</span>
-<span class="n">print_greeting</span><span class="p">()</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-<span class="o">~~~</span>
-<span class="n">Hello</span><span class="err">!</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
-
-<span class="c1">## Arguments in call are matched to parameters in definition.</span>
-
-<span class="o">*</span>   <span class="n">Functions</span> <span class="n">are</span> <span class="n">most</span> <span class="n">useful</span> <span class="n">when</span> <span class="n">they</span> <span class="n">can</span> <span class="n">operate</span> <span class="n">on</span> <span class="n">different</span> <span class="n">data</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">Specify</span> <span class="o">*</span><span class="n">parameters</span><span class="o">*</span> <span class="n">when</span> <span class="n">defining</span> <span class="n">a</span> <span class="n">function</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">These</span> <span class="n">become</span> <span class="n">variables</span> <span class="n">when</span> <span class="n">the</span> <span class="n">function</span> <span class="ow">is</span> <span class="n">executed</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">Are</span> <span class="n">assigned</span> <span class="n">the</span> <span class="n">arguments</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">call</span> <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="p">,</span> <span class="n">the</span> <span class="n">values</span> <span class="n">passed</span> <span class="n">to</span> <span class="n">the</span> <span class="n">function</span><span class="p">)</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">If</span> <span class="n">you</span> <span class="n">don</span><span class="s1">&#39;t name the arguments when using them in the call, the arguments will be matched to</span>
-<span class="n">parameters</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">order</span> <span class="n">the</span> <span class="n">parameters</span> <span class="n">are</span> <span class="n">defined</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">function</span><span class="o">.</span>
-
-<span class="o">~~~</span>
-<span class="k">def</span> <span class="nf">print_date</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">):</span>
-    <span class="n">joined</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">month</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">day</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">joined</span><span class="p">)</span>
-
-<span class="n">print_date</span><span class="p">(</span><span class="mi">1871</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-<span class="o">~~~</span>
-<span class="mi">1871</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="mi">19</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
-
-<span class="n">Or</span><span class="p">,</span> <span class="n">we</span> <span class="n">can</span> <span class="n">name</span> <span class="n">the</span> <span class="n">arguments</span> <span class="n">when</span> <span class="n">we</span> <span class="n">call</span> <span class="n">the</span> <span class="n">function</span><span class="p">,</span> <span class="n">which</span> <span class="n">allows</span> <span class="n">us</span> <span class="n">to</span>
-<span class="n">specify</span> <span class="n">them</span> <span class="ow">in</span> <span class="nb">any</span> <span class="n">order</span><span class="p">:</span>
-<span class="o">~~~</span>
-<span class="n">print_date</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">19</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">1871</span><span class="p">)</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-<span class="o">~~~</span>
-<span class="mi">1871</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="mi">19</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
-
-<span class="o">*</span>   <span class="n">Via</span> <span class="p">[</span><span class="n">Twitter</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">twitter</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">minisciencegirl</span><span class="o">/</span><span class="n">status</span><span class="o">/</span><span class="mi">693486088963272705</span><span class="p">):</span>
-    <span class="err">`</span><span class="p">()</span><span class="err">`</span> <span class="n">contains</span> <span class="n">the</span> <span class="n">ingredients</span> <span class="k">for</span> <span class="n">the</span> <span class="n">function</span>
-    <span class="k">while</span> <span class="n">the</span> <span class="n">body</span> <span class="n">contains</span> <span class="n">the</span> <span class="n">recipe</span><span class="o">.</span>
-
-<span class="c1">## Functions may return a result to their caller using `return`.</span>
-
-<span class="o">*</span>   <span class="n">Use</span> <span class="err">`</span><span class="k">return</span> <span class="o">...</span><span class="err">`</span> <span class="n">to</span> <span class="n">give</span> <span class="n">a</span> <span class="n">value</span> <span class="n">back</span> <span class="n">to</span> <span class="n">the</span> <span class="n">caller</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">May</span> <span class="n">occur</span> <span class="n">anywhere</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">function</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">But</span> <span class="n">functions</span> <span class="n">are</span> <span class="n">easier</span> <span class="n">to</span> <span class="n">understand</span> <span class="k">if</span> <span class="err">`</span><span class="k">return</span><span class="err">`</span> <span class="n">occurs</span><span class="p">:</span>
-    <span class="o">*</span>   <span class="n">At</span> <span class="n">the</span> <span class="n">start</span> <span class="n">to</span> <span class="n">handle</span> <span class="n">special</span> <span class="n">cases</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">At</span> <span class="n">the</span> <span class="n">very</span> <span class="n">end</span><span class="p">,</span> <span class="k">with</span> <span class="n">a</span> <span class="n">final</span> <span class="n">result</span><span class="o">.</span>
-
-<span class="o">~~~</span>
-<span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">None</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-
-<span class="o">~~~</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">average</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;average of actual values:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-<span class="o">~~~</span>
-<span class="mf">2.6666666666666665</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
-
-<span class="o">~~~</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;average of empty list:&#39;</span><span class="p">,</span> <span class="n">average</span><span class="p">([]))</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-<span class="o">~~~</span>
-<span class="kc">None</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
-
-<span class="o">*</span>   <span class="n">Remember</span><span class="p">:</span> <span class="p">[</span><span class="n">every</span> <span class="n">function</span> <span class="n">returns</span> <span class="n">something</span><span class="p">]({{</span> <span class="n">page</span><span class="o">.</span><span class="n">root</span> <span class="p">}}</span><span class="o">/</span><span class="mi">04</span><span class="o">-</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span><span class="o">/</span><span class="p">)</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">A</span> <span class="n">function</span> <span class="n">that</span> <span class="n">doesn</span><span class="s1">&#39;t explicitly `return` a value automatically returns `None`.</span>
-
-<span class="o">~~~</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">print_date</span><span class="p">(</span><span class="mi">1871</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;result of call is:&#39;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-<span class="o">~~~</span>
-<span class="mi">1871</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="mi">19</span>
-<span class="n">result</span> <span class="n">of</span> <span class="n">call</span> <span class="ow">is</span><span class="p">:</span> <span class="kc">None</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Defining-a-function-does-not-run-it.">Defining a function does not run it.<a class="anchor-link" href="#Defining-a-function-does-not-run-it."> </a></h3><p>Defining a function does not run it - We must call the function to execute the code it contains.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">print_greeting</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-arguments-in-call-are-matched-to-parameters-in-definition.">The arguments in call are matched to parameters in definition.<a class="anchor-link" href="#The-arguments-in-call-are-matched-to-parameters-in-definition."> </a></h2><p>Functions are most useful when they can operate on different data. We can specify <em>parameters</em> when defining a function.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_date</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">):</span>
+    <span class="n">joined</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">month</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">day</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">joined</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we don't name the arguments when we call the function then they are assigned to the parameters in the order they were defined in the function.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">print_date</span><span class="p">(</span><span class="mi">1871</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1871/3/19
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Or, we can name the arguments when we call the function, which allows us to
+specify them in any order:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">print_date</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">19</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">1871</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1871/3/19
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Functions-may-return-a-result-to-their-caller-using-return.">Functions may return a result to their caller using <code>return</code>.<a class="anchor-link" href="#Functions-may-return-a-result-to-their-caller-using-return."> </a></h3><p>Use <code>return ...</code> to give a value back to the caller. This may occur anywhere in the function. But functions are easier to understand if <code>return</code> occurs:</p>
+<ul>
+<li>At the start to handle special cases.</li>
+<li>At the very end, with a final result.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">average</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;average of actual values:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>average of actual values: 2.6666666666666665
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;average of empty list:&#39;</span><span class="p">,</span> <span class="n">average</span><span class="p">([]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>average of empty list: None
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Every function returns something - a function that doesn't explicitly <code>return</code> a value automatically returns <code>None</code>.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">print_date</span><span class="p">(</span><span class="mi">1871</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;result of call is:&#39;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1871/3/19
+result of call is: None
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 

@@ -147,6 +147,14 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-scope-of-a-variable-is-the-part-of-a-program-that-can-'see'-that-variable.">The scope of a variable is the part of a program that can 'see' that variable.<a class="anchor-link" href="#The-scope-of-a-variable-is-the-part-of-a-program-that-can-'see'-that-variable."> </a></h3><p>There are only so many sensible names for variables. People using functions shouldn't have to worry about what variable names the author of the function used. Equally, people writing functions shouldn't have to worry about
+    what variable names the function's caller uses. The part of a program in which a variable is visible is called its <em>scope</em>.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -154,50 +162,68 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">*</span>   <span class="n">There</span> <span class="n">are</span> <span class="n">only</span> <span class="n">so</span> <span class="n">many</span> <span class="n">sensible</span> <span class="n">names</span> <span class="k">for</span> <span class="n">variables</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">People</span> <span class="n">using</span> <span class="n">functions</span> <span class="n">shouldn</span><span class="s1">&#39;t have to worry about</span>
-    <span class="n">what</span> <span class="n">variable</span> <span class="n">names</span> <span class="n">the</span> <span class="n">author</span> <span class="n">of</span> <span class="n">the</span> <span class="n">function</span> <span class="n">used</span><span class="o">.</span>
-<span class="o">*</span>   <span class="n">People</span> <span class="n">writing</span> <span class="n">functions</span> <span class="n">shouldn</span><span class="s1">&#39;t have to worry about</span>
-    <span class="n">what</span> <span class="n">variable</span> <span class="n">names</span> <span class="n">the</span> <span class="n">function</span><span class="s1">&#39;s caller uses.</span>
-<span class="o">*</span>   <span class="n">The</span> <span class="n">part</span> <span class="n">of</span> <span class="n">a</span> <span class="n">program</span> <span class="ow">in</span> <span class="n">which</span> <span class="n">a</span> <span class="n">variable</span> <span class="ow">is</span> <span class="n">visible</span> <span class="ow">is</span> <span class="n">called</span> <span class="n">its</span> <span class="o">*</span><span class="n">scope</span><span class="o">*.</span>
-
-<span class="o">~~~</span>
-<span class="n">pressure</span> <span class="o">=</span> <span class="mf">103.9</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pressure</span> <span class="o">=</span> <span class="mf">103.9</span>
 
 <span class="k">def</span> <span class="nf">adjust</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="n">temperature</span> <span class="o">=</span> <span class="n">t</span> <span class="o">*</span> <span class="mf">1.43</span> <span class="o">/</span> <span class="n">pressure</span>
     <span class="k">return</span> <span class="n">temperature</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-
-<span class="o">*</span>   <span class="err">`</span><span class="n">pressure</span><span class="err">`</span> <span class="ow">is</span> <span class="n">a</span> <span class="o">*</span><span class="k">global</span> <span class="n">variable</span><span class="o">*.</span>
-    <span class="o">*</span>   <span class="n">Defined</span> <span class="n">outside</span> <span class="nb">any</span> <span class="n">particular</span> <span class="n">function</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">Visible</span> <span class="n">everywhere</span><span class="o">.</span>
-<span class="o">*</span>   <span class="err">`</span><span class="n">t</span><span class="err">`</span> <span class="ow">and</span> <span class="err">`</span><span class="n">temperature</span><span class="err">`</span> <span class="n">are</span> <span class="o">*</span><span class="n">local</span> <span class="n">variables</span><span class="o">*</span> <span class="ow">in</span> <span class="err">`</span><span class="n">adjust</span><span class="err">`</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">Defined</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">function</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">Not</span> <span class="n">visible</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">main</span> <span class="n">program</span><span class="o">.</span>
-    <span class="o">*</span>   <span class="n">Remember</span><span class="p">:</span> <span class="n">a</span> <span class="n">function</span> <span class="n">parameter</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">variable</span>
-        <span class="n">that</span> <span class="ow">is</span> <span class="n">automatically</span> <span class="n">assigned</span> <span class="n">a</span> <span class="n">value</span> <span class="n">when</span> <span class="n">the</span> <span class="n">function</span> <span class="ow">is</span> <span class="n">called</span><span class="o">.</span>
-
-<span class="o">~~~</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;adjusted:&#39;</span><span class="p">,</span> <span class="n">adjust</span><span class="p">(</span><span class="mf">0.9</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;temperature after call:&#39;</span><span class="p">,</span> <span class="n">temperature</span><span class="p">)</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
-<span class="o">~~~</span>
-<span class="n">adjusted</span><span class="p">:</span> <span class="mf">0.01238691049085659</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
-<span class="o">~~~</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;/Users/swcarpentry/foo.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">8</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;temperature after call:&#39;</span><span class="p">,</span> <span class="n">temperature</span><span class="p">)</span>
-<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;temperature&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
-<span class="o">~~~</span>
-<span class="p">{:</span> <span class="o">.</span><span class="n">error</span><span class="p">}</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>pressure</code> is a <em>global variable</em> - it is defined outside any particular function and is visible everywhere.
+<code>t</code> and <code>temperature</code> are <em>local variables</em> in <code>adjust</code>. They are defined in the function, and not visible in the main program.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;adjusted:&#39;</span><span class="p">,</span> <span class="n">adjust</span><span class="p">(</span><span class="mf">0.9</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;temperature after call:&#39;</span><span class="p">,</span> <span class="n">temperature</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>adjusted: 0.01238691049085659
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-3-e73c01f89950&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;adjusted:&#39;</span><span class="ansi-blue-fg">,</span> adjust<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0.9</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;temperature after call:&#39;</span><span class="ansi-blue-fg">,</span> temperature<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;temperature&#39; is not defined</pre>
+</div>
+</div>
+
 </div>
 </div>
 
