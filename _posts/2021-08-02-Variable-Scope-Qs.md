@@ -52,7 +52,7 @@ Read the traceback below, and identify the following:
       13
 
  KeyError: 'Friday'
- ~~~
+~~~
 
 
 {::options parse_block_html="true" /}
