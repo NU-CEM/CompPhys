@@ -8,15 +8,15 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="For loops - quick test" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Classifying Errors Is an indentation error a syntax error or a runtime error? Solution An IndentationError is a syntax error. Programs with syntax errors cannot be started. A program with a runtime error will start but an error will be thrown under certain conditions." />
-<meta property="og:description" content="Classifying Errors Is an indentation error a syntax error or a runtime error? Solution An IndentationError is a syntax error. Programs with syntax errors cannot be started. A program with a runtime error will start but an error will be thrown under certain conditions." />
+<meta name="description" content="Classifying Errors" />
+<meta property="og:description" content="Classifying Errors" />
 <link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/For-Loops-Qs.html" />
 <meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/For-Loops-Qs.html" />
 <meta property="og:site_name" content="An Introduction to Computational Physics" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/For-Loops-Qs.html","@type":"BlogPosting","headline":"For loops - quick test","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/For-Loops-Qs.html"},"description":"Classifying Errors Is an indentation error a syntax error or a runtime error? Solution An IndentationError is a syntax error. Programs with syntax errors cannot be started. A program with a runtime error will start but an error will be thrown under certain conditions.","@context":"https://schema.org"}</script>
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/For-Loops-Qs.html","@type":"BlogPosting","headline":"For loops - quick test","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/For-Loops-Qs.html"},"description":"Classifying Errors","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -95,247 +95,242 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <blockquote class="challenge">
-  <h2 id="classifying-errors">Classifying Errors</h2>
+    <h2 id="classifying-errors">Classifying Errors</h2>
 
-  <p>Is an indentation error a syntax error or a runtime error?</p>
-  <blockquote class="solution">
-    <h2 id="solution">Solution</h2>
-    <p>An IndentationError is a syntax error. Programs with syntax errors cannot be started.
+<p>Is an indentation error a syntax error or a runtime error?</p>
+
+<details>
+  <summary>Show answer</summary>
+
+  <p>An IndentationError is a syntax error. Programs with syntax errors cannot be started.
 A program with a runtime error will start but an error will be thrown under certain conditions.</p>
-  </blockquote>
-</blockquote>
 
-<blockquote class="challenge">
-  <h2 id="tracing-execution">Tracing Execution</h2>
+</details>
 
-  <p>Create a table showing the numbers of the lines that are executed when this program runs,
+<h2 id="tracing-execution">Tracing Execution</h2>
+
+<p>Create a table showing the numbers of the lines that are executed when this program runs,
 and the values of the variables after each line is executed.</p>
 
-  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>total = 0
-for char in "tin":
-    total = total + 1
-</code></pre></div>  </div>
-  <blockquote class="solution">
-    <h2 id="solution-1">Solution</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="s">"tin"</span><span class="p">:</span>
+   <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div></div>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Line no</th>
-          <th>Variables</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>total = 0</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>total = 0 char = ‘t’</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>total = 1 char = ‘t’</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>total = 1 char = ‘i’</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>total = 2 char = ‘i’</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>total = 2 char = ‘n’</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>total = 3 char = ‘n’</td>
-        </tr>
-      </tbody>
-    </table>
-  </blockquote>
-</blockquote>
+<details>
+  <summary>Show answer</summary>
 
-<blockquote class="challenge">
-  <h2 id="reversing-a-string">Reversing a String</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Line no</th>
+        <th>Variables</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>total = 0</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>total = 0 char = ‘t’</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>total = 1 char = ‘t’</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>total = 1 char = ‘i’</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>total = 2 char = ‘i’</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>total = 2 char = ‘n’</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>total = 3 char = ‘n’</td>
+      </tr>
+    </tbody>
+  </table>
 
-  <p>Fill in the blanks in the program below so that it prints “nit”
+</details>
+
+<h2 id="reversing-a-string">Reversing a String</h2>
+
+<p>Fill in the blanks in the program below so that it prints “nit”
 (the reverse of the original character string “tin”).</p>
 
-  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>original = "tin"
-result = ____
-for char in original:
-    result = ____
-print(result)
-</code></pre></div>  </div>
-  <blockquote class="solution">
-    <h2 id="solution-2">Solution</h2>
-    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>original = "tin"
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">original</span> <span class="o">=</span> <span class="s">"tin"</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">____</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">original</span><span class="p">:</span>
+   <span class="n">result</span> <span class="o">=</span> <span class="n">____</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div></div>
+
+<details>
+  <summary>Show answer</summary>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>original = "tin"
 result = ""
 for char in original:
     result = char + result
 print(result)
-</code></pre></div>    </div>
-  </blockquote>
-</blockquote>
+</code></pre></div>  </div>
 
-<blockquote class="challenge">
-  <h2 id="practice-accumulating">Practice Accumulating</h2>
+</details>
 
-  <p>Fill in the blanks in each of the programs below
+<h2 id="practice-accumulating">Practice Accumulating</h2>
+
+<p>Fill in the blanks in each of the programs below
 to produce the indicated result.</p>
 
-  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Total length of the strings in the list: ["red", "green", "blue"] =&gt; 12
-total = 0
-for word in ["red", "green", "blue"]:
-    ____ = ____ + len(word)
-print(total)
-</code></pre></div>  </div>
-  <blockquote class="solution">
-    <h2 id="solution-3">Solution</h2>
-    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>total = 0
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Total length of the strings in the list: ["red", "green", "blue"] = 12
+</span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">[</span><span class="s">"red"</span><span class="p">,</span> <span class="s">"green"</span><span class="p">,</span> <span class="s">"blue"</span><span class="p">]:</span>
+   <span class="n">____</span> <span class="o">=</span> <span class="n">____</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</code></pre></div></div>
+
+<details>
+  <summary>Show answer</summary>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>total = 0
 for word in ["red", "green", "blue"]:
     total = total + len(word)
 print(total)
-</code></pre></div>    </div>
-  </blockquote>
-
-  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code># List of word lengths: ["red", "green", "blue"] =&gt; [3, 5, 4]
-lengths = ____
-for word in ["red", "green", "blue"]:
-    lengths.____(____)
-print(lengths)
 </code></pre></div>  </div>
-  <blockquote class="solution">
-    <h2 id="solution-4">Solution</h2>
-    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lengths = []
+
+</details>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># List of word lengths: ["red", "green", "blue"] = [3, 5, 4]
+</span><span class="n">lengths</span> <span class="o">=</span> <span class="n">____</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">[</span><span class="s">"red"</span><span class="p">,</span> <span class="s">"green"</span><span class="p">,</span> <span class="s">"blue"</span><span class="p">]:</span>
+   <span class="n">lengths</span><span class="p">.</span><span class="n">____</span><span class="p">(</span><span class="n">____</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span>
+</code></pre></div></div>
+
+<details>
+  <summary>Show answer</summary>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lengths = []
 for word in ["red", "green", "blue"]:
     lengths.append(len(word))
 print(lengths)
-</code></pre></div>    </div>
-  </blockquote>
-
-  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Concatenate all words: ["red", "green", "blue"] =&gt; "redgreenblue"
-words = ["red", "green", "blue"]
-result = ____
-for ____ in ____:
-    ____
-print(result)
 </code></pre></div>  </div>
-  <blockquote class="solution">
-    <h2 id="solution-5">Solution</h2>
-    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>words = ["red", "green", "blue"]
+
+</details>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Concatenate all words: ["red", "green", "blue"] = "redgreenblue"
+</span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s">"red"</span><span class="p">,</span> <span class="s">"green"</span><span class="p">,</span> <span class="s">"blue"</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">____</span>
+<span class="k">for</span> <span class="n">____</span> <span class="ow">in</span> <span class="n">____</span><span class="p">:</span>
+   <span class="n">____</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div></div>
+
+<details>
+  <summary>Show answer</summary>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>words = ["red", "green", "blue"]
 result = ""
 for word in words:
     result = result + word
 print(result)
-</code></pre></div>    </div>
-  </blockquote>
-
-  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Create acronym: ["red", "green", "blue"] =&gt; "RGB"
-# write the whole thing
 </code></pre></div>  </div>
-  <blockquote class="solution">
-    <h2 id="solution-6">Solution</h2>
-    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>acronym = ""
-for word in ["red", "green", "blue"]:
-    acronym = acronym + word[0].upper()
-print(acronym)
-</code></pre></div>    </div>
-  </blockquote>
-</blockquote>
 
-<blockquote class="challenge">
-  <h2 id="cumulative-sum">Cumulative Sum</h2>
+</details>
 
-  <p>Reorder and properly indent the lines of code below
+<h2 id="cumulative-sum">Cumulative Sum</h2>
+
+<p>Reorder and properly indent the lines of code below
 so that they print an array with the cumulative sum of data.
 The result should be <code class="language-plaintext highlighter-rouge">[1, 3, 5, 10]</code>.</p>
 
-  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cumulative += [sum]
-for number in data:
-cumulative = []
-sum += number
-sum = 0
-print(cumulative)
-data = [1,2,2,5]
-</code></pre></div>  </div>
-  <blockquote class="solution">
-    <h2 id="solution-7">Solution</h2>
-    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sum = 0
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cumulative</span> <span class="o">+=</span> <span class="p">[</span><span class="nb">sum</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+<span class="n">cumulative</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">sum</span> <span class="o">+=</span> <span class="n">number</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cumulative</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<details>
+  <summary>Show answer</summary>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sum = 0
 data = [1,2,2,5]
 cumulative = []
 for number in data:
     sum += number
     cumulative.append(sum)
 print(cumulative)
-</code></pre></div>    </div>
-  </blockquote>
-</blockquote>
-
-<blockquote class="challenge">
-  <h2 id="identifying-variable-name-errors">Identifying Variable Name Errors</h2>
-
-  <ol>
-    <li>Read the code below and try to identify what the errors are
-<em>without</em> running it.</li>
-    <li>Run the code and read the error message.
-What type of <code class="language-plaintext highlighter-rouge">NameError</code> do you think this is?
-Is it a string with no quotes, a misspelled variable, or a 
-variable that should have been defined but was not?</li>
-    <li>Fix the error.</li>
-    <li>Repeat steps 2 and 3, until you have fixed all the errors.</li>
-  </ol>
-
-  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for number in range(10):
-    # use a if the number is a multiple of 3, otherwise use b
-    if (Number % 3) == 0:
-        message = message + a
-    else:
-        message = message + "b"
-print(message)
 </code></pre></div>  </div>
-  <blockquote class="solution">
-    <h2 id="solution-8">Solution</h2>
-    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>message = ""
-for number in range(10):
-    # use a if the number is a multiple of 3, otherwise use b
-    if (number % 3) == 0:
-        message = message + "a"
-    else:
-        message = message + "b"
-print(message)
-</code></pre></div>    </div>
-  </blockquote>
-</blockquote>
 
-<blockquote class="challenge">
-  <h2 id="identifying-item-errors">Identifying Item Errors</h2>
+</details>
 
-  <ol>
-    <li>Read the code below and try to identify what the errors are
-<em>without</em> running it.</li>
-    <li>Run the code, and read the error message. What type of error is it?</li>
-    <li>Fix the error.</li>
-  </ol>
+<h2 id="identifying-variable-name-errors">Identifying Variable Name Errors</h2>
 
-  <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>seasons = ['Spring', 'Summer', 'Fall', 'Winter']
-print('My favorite season is ', seasons[4])
-</code></pre></div>  </div>
-  <blockquote class="solution">
-    <h2 id="solution-9">Solution</h2>
-    <div class="language-plaintext python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>seasons = ['Spring', 'Summer', 'Fall', 'Winter']
-print('My favorite season is ', seasons[3])
-</code></pre></div>    </div>
-  </blockquote>
-</blockquote>
+<ol>
+  <li>Read the code below and try to identify what the errors are
+  <em>without</em> running it.</li>
+  <li>Run the code and read the error message.
+  What type of <code class="language-plaintext highlighter-rouge">NameError</code> do you think this is?
+  Is it a string with no quotes, a misspelled variable, or a 
+  variable that should have been defined but was not?</li>
+  <li>Fix the error.</li>
+  <li>Repeat steps 2 and 3, until you have fixed all the errors.</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+   <span class="c1"># use a if the number is a multiple of 3, otherwise use b
+</span>   <span class="k">if</span> <span class="p">(</span><span class="n">Number</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+       <span class="n">message</span> <span class="o">=</span> <span class="n">message</span> <span class="o">+</span> <span class="n">a</span>
+   <span class="k">else</span><span class="p">:</span>
+       <span class="n">message</span> <span class="o">=</span> <span class="n">message</span> <span class="o">+</span> <span class="s">"b"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</code></pre></div></div>
 
 <details>
   <summary>Show answer</summary>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">message</span> <span class="o">=</span> <span class="s">""</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="c1"># use a if the number is a multiple of 3, otherwise use b
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">number</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="n">message</span> <span class="o">+</span> <span class="s">"a"</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="n">message</span> <span class="o">+</span> <span class="s">"b"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+</details>
+
+<h2 id="identifying-item-errors">Identifying Item Errors</h2>
+
+<ol>
+  <li>Read the code below and try to identify what the errors are
+  <em>without</em> running it.</li>
+  <li>Run the code, and read the error message. What type of error is it?</li>
+  <li>Fix the error.</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">seasons</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Spring'</span><span class="p">,</span> <span class="s">'Summer'</span><span class="p">,</span> <span class="s">'Fall'</span><span class="p">,</span> <span class="s">'Winter'</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'My favorite season is '</span><span class="p">,</span> <span class="n">seasons</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+</code></pre></div></div>
+
+<details>
+  <summary>Show answer</summary>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+print('My favorite season is ', seasons[3])
+</code></pre></div>  </div>
 
 </details>
 
