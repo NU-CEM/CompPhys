@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Libraries | An Introduction to Computational Physics</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Libraries" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
+<meta property="og:description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
+<link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/Libraries.html" />
+<meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/Libraries.html" />
+<meta property="og:site_name" content="An Introduction to Computational Physics" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Libraries.html","@type":"BlogPosting","headline":"Libraries","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Libraries.html"},"description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/CompPhys/">An Introduction to Computational Physics</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/CompPhys/about/">About</a><a class="page-link" href="/CompPhys/search/">Search</a><a class="page-link" href="/CompPhys/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Libraries</h1><p class="post-meta post-meta-title">
+    </p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/NU-CEM/CompPhys/tree/master/_notebooks/2021-08-02-Libraries.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/CompPhys/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/NU-CEM/CompPhys/master?filepath=_notebooks%2F2021-08-02-Libraries.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/CompPhys/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/NU-CEM/CompPhys/blob/master/_notebooks/2021-08-02-Libraries.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/CompPhys/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-08-02-Libraries.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Questions:</p>
+<ul>
+<li>How can I use software that other people have written?</li>
+<li>How can I find out what that software does?</li>
+</ul>
+<p>Objectives:</p>
+<ul>
+<li>Explain what software libraries are and why programmers create and use them.</li>
+<li>Write programs that import and use libraries from Python's standard library.</li>
+<li>Find and read documentation for standard libraries interactively (in the interpreter) and online.</li>
+</ul>
+<p>Keypoints:</p>
+<ul>
+<li>Most of the power of a programming language is in its libraries.</li>
+<li>A program must import a library module in order to use it.</li>
+<li>Use <code>help</code> to learn about the contents of a library module.</li>
+<li>Import specific items from a library to shorten programs.</li>
+<li>Create an alias for a library when importing it to shorten programs.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">*</span>   <span class="n">A</span> <span class="o">*</span><span class="n">library</span><span class="o">*</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">collection</span> <span class="n">of</span> <span class="n">files</span> <span class="p">(</span><span class="n">called</span> <span class="o">*</span><span class="n">modules</span><span class="o">*</span><span class="p">)</span> <span class="n">that</span> <span class="n">contains</span>
+    <span class="n">functions</span> <span class="k">for</span> <span class="n">use</span> <span class="n">by</span> <span class="n">other</span> <span class="n">programs</span><span class="o">.</span>
+    <span class="o">*</span>   <span class="n">May</span> <span class="n">also</span> <span class="n">contain</span> <span class="n">data</span> <span class="n">values</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">numerical</span> <span class="n">constants</span><span class="p">)</span> <span class="ow">and</span> <span class="n">other</span> <span class="n">things</span><span class="o">.</span>
+    <span class="o">*</span>   <span class="n">Library</span><span class="s1">&#39;s contents are supposed to be related, but there&#39;</span><span class="n">s</span> <span class="n">no</span> <span class="n">way</span> <span class="n">to</span> <span class="n">enforce</span> <span class="n">that</span><span class="o">.</span>
+<span class="o">*</span>   <span class="n">The</span> <span class="n">Python</span> <span class="p">[</span><span class="n">standard</span> <span class="n">library</span><span class="p">][</span><span class="n">stdlib</span><span class="p">]</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">extensive</span> <span class="n">suite</span> <span class="n">of</span> <span class="n">modules</span> <span class="n">that</span> <span class="n">comes</span>
+    <span class="k">with</span> <span class="n">Python</span> <span class="n">itself</span><span class="o">.</span>
+<span class="o">*</span>   <span class="n">Many</span> <span class="n">additional</span> <span class="n">libraries</span> <span class="n">are</span> <span class="n">available</span> <span class="kn">from</span> <span class="p">[</span><span class="n">PyPI</span><span class="p">][</span><span class="n">pypi</span><span class="p">]</span> <span class="p">(</span><span class="n">the</span> <span class="n">Python</span> <span class="n">Package</span> <span class="n">Index</span><span class="p">)</span><span class="o">.</span>
+<span class="o">*</span>   <span class="n">We</span> <span class="n">will</span> <span class="n">see</span> <span class="n">later</span> <span class="n">how</span> <span class="n">to</span> <span class="n">write</span> <span class="n">new</span> <span class="n">libraries</span><span class="o">.</span>
+
+<span class="o">&gt;</span> <span class="c1">## Libraries and modules</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="n">A</span> <span class="n">library</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">collection</span> <span class="n">of</span> <span class="n">modules</span><span class="p">,</span> <span class="n">but</span> <span class="n">the</span> <span class="n">terms</span> <span class="n">are</span> <span class="n">often</span> <span class="n">used</span>
+<span class="o">&gt;</span> <span class="n">interchangeably</span><span class="p">,</span> <span class="n">especially</span> <span class="n">since</span> <span class="n">many</span> <span class="n">libraries</span> <span class="n">only</span> <span class="n">consist</span> <span class="n">of</span> <span class="n">a</span> <span class="n">single</span>
+<span class="o">&gt;</span> <span class="n">module</span><span class="p">,</span> <span class="n">so</span> <span class="n">don</span><span class="s1">&#39;t worry if you mix them.</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">callout</span><span class="p">}</span>
+
+
+<span class="c1">## A program must import a library module before using it.</span>
+
+<span class="o">*</span>   <span class="n">Use</span> <span class="err">`</span><span class="n">import</span><span class="err">`</span> <span class="n">to</span> <span class="n">load</span> <span class="n">a</span> <span class="n">library</span> <span class="n">module</span> <span class="n">into</span> <span class="n">a</span> <span class="n">program</span><span class="s1">&#39;s memory.</span>
+<span class="o">*</span>   <span class="n">Then</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">things</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">module</span> <span class="k">as</span> <span class="err">`</span><span class="n">module_name</span><span class="o">.</span><span class="n">thing_name</span><span class="err">`</span><span class="o">.</span>
+    <span class="o">*</span>   <span class="n">Python</span> <span class="n">uses</span> <span class="err">`</span><span class="o">.</span><span class="err">`</span> <span class="n">to</span> <span class="n">mean</span> <span class="s2">&quot;part of&quot;</span><span class="o">.</span>
+<span class="o">*</span>   <span class="n">Using</span> <span class="err">`</span><span class="n">math</span><span class="err">`</span><span class="p">,</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">modules</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">standard</span> <span class="n">library</span><span class="p">:</span>
+
+<span class="o">~~~</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pi is&#39;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cos(pi) is&#39;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
+<span class="o">~~~</span>
+<span class="n">pi</span> <span class="ow">is</span> <span class="mf">3.141592653589793</span>
+<span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">1.0</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
+
+<span class="o">*</span>   <span class="n">Have</span> <span class="n">to</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">each</span> <span class="n">item</span> <span class="k">with</span> <span class="n">the</span> <span class="n">module</span><span class="s1">&#39;s name.</span>
+    <span class="o">*</span>   <span class="err">`</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span><span class="err">`</span> <span class="n">won</span><span class="s1">&#39;t work: the reference to `pi`</span>
+        <span class="n">doesn</span><span class="s1">&#39;t somehow &quot;inherit&quot; the function&#39;</span><span class="n">s</span> <span class="n">reference</span> <span class="n">to</span> <span class="err">`</span><span class="n">math</span><span class="err">`</span><span class="o">.</span>
+
+<span class="c1">## Use `help` to learn about the contents of a library module.</span>
+
+<span class="o">*</span>   <span class="n">Works</span> <span class="n">just</span> <span class="n">like</span> <span class="n">help</span> <span class="k">for</span> <span class="n">a</span> <span class="n">function</span><span class="o">.</span>
+
+<span class="o">~~~</span>
+<span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
+<span class="o">~~~</span>
+<span class="n">Help</span> <span class="n">on</span> <span class="n">module</span> <span class="n">math</span><span class="p">:</span>
+
+<span class="n">NAME</span>
+    <span class="n">math</span>
+
+<span class="n">MODULE</span> <span class="n">REFERENCE</span>
+    <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">3.5</span><span class="o">/</span><span class="n">library</span><span class="o">/</span><span class="n">math</span>
+
+    <span class="n">The</span> <span class="n">following</span> <span class="n">documentation</span> <span class="ow">is</span> <span class="n">automatically</span> <span class="n">generated</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">Python</span>
+    <span class="n">source</span> <span class="n">files</span><span class="o">.</span>  <span class="n">It</span> <span class="n">may</span> <span class="n">be</span> <span class="n">incomplete</span><span class="p">,</span> <span class="n">incorrect</span> <span class="ow">or</span> <span class="n">include</span> <span class="n">features</span> <span class="n">that</span>
+    <span class="n">are</span> <span class="n">considered</span> <span class="n">implementation</span> <span class="n">detail</span> <span class="ow">and</span> <span class="n">may</span> <span class="n">vary</span> <span class="n">between</span> <span class="n">Python</span>
+    <span class="n">implementations</span><span class="o">.</span>  <span class="n">When</span> <span class="ow">in</span> <span class="n">doubt</span><span class="p">,</span> <span class="n">consult</span> <span class="n">the</span> <span class="n">module</span> <span class="n">reference</span> <span class="n">at</span> <span class="n">the</span>
+    <span class="n">location</span> <span class="n">listed</span> <span class="n">above</span><span class="o">.</span>
+
+<span class="n">DESCRIPTION</span>
+    <span class="n">This</span> <span class="n">module</span> <span class="ow">is</span> <span class="n">always</span> <span class="n">available</span><span class="o">.</span>  <span class="n">It</span> <span class="n">provides</span> <span class="n">access</span> <span class="n">to</span> <span class="n">the</span>
+    <span class="n">mathematical</span> <span class="n">functions</span> <span class="n">defined</span> <span class="n">by</span> <span class="n">the</span> <span class="n">C</span> <span class="n">standard</span><span class="o">.</span>
+
+<span class="n">FUNCTIONS</span>
+    <span class="n">acos</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+        <span class="n">acos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+        <span class="n">Return</span> <span class="n">the</span> <span class="n">arc</span> <span class="n">cosine</span> <span class="p">(</span><span class="n">measured</span> <span class="ow">in</span> <span class="n">radians</span><span class="p">)</span> <span class="n">of</span> <span class="n">x</span><span class="o">.</span>
+<span class="err">⋮</span> <span class="err">⋮</span> <span class="err">⋮</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
+
+<span class="c1">## Import specific items from a library module to shorten programs.</span>
+
+<span class="o">*</span>   <span class="n">Use</span> <span class="err">`</span><span class="kn">from</span> <span class="nn">...</span> <span class="kn">import</span> <span class="o">...</span><span class="err">`</span> <span class="n">to</span> <span class="n">load</span> <span class="n">only</span> <span class="n">specific</span> <span class="n">items</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">library</span> <span class="n">module</span><span class="o">.</span>
+<span class="o">*</span>   <span class="n">Then</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">them</span> <span class="n">directly</span> <span class="n">without</span> <span class="n">library</span> <span class="n">name</span> <span class="k">as</span> <span class="n">prefix</span><span class="o">.</span>
+
+<span class="o">~~~</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">pi</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cos(pi) is&#39;</span><span class="p">,</span> <span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="p">))</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
+<span class="o">~~~</span>
+<span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">1.0</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
+
+<span class="c1">## Create an alias for a library module when importing it to shorten programs.</span>
+
+<span class="o">*</span>   <span class="n">Use</span> <span class="err">`</span><span class="kn">import</span> <span class="nn">...</span> <span class="k">as</span> <span class="nn">...</span><span class="err">`</span> <span class="n">to</span> <span class="n">give</span> <span class="n">a</span> <span class="n">library</span> <span class="n">a</span> <span class="n">short</span> <span class="o">*</span><span class="n">alias</span><span class="o">*</span> <span class="k">while</span> <span class="n">importing</span> <span class="n">it</span><span class="o">.</span>
+<span class="o">*</span>   <span class="n">Then</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">library</span> <span class="n">using</span> <span class="n">that</span> <span class="n">shortened</span> <span class="n">name</span><span class="o">.</span>
+
+<span class="o">~~~</span>
+<span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cos(pi) is&#39;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
+<span class="o">~~~</span>
+<span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">1.0</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
+
+<span class="o">*</span>   <span class="n">Commonly</span> <span class="n">used</span> <span class="k">for</span> <span class="n">libraries</span> <span class="n">that</span> <span class="n">are</span> <span class="n">frequently</span> <span class="n">used</span> <span class="ow">or</span> <span class="n">have</span> <span class="n">long</span> <span class="n">names</span><span class="o">.</span>
+    <span class="o">*</span>   <span class="n">E</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="err">`</span><span class="n">matplotlib</span><span class="err">`</span> <span class="n">plotting</span> <span class="n">library</span> <span class="ow">is</span> <span class="n">often</span> <span class="n">aliased</span> <span class="k">as</span> <span class="err">`</span><span class="n">mpl</span><span class="err">`</span><span class="o">.</span>
+<span class="o">*</span>   <span class="n">But</span> <span class="n">can</span> <span class="n">make</span> <span class="n">programs</span> <span class="n">harder</span> <span class="n">to</span> <span class="n">understand</span><span class="p">,</span>
+    <span class="n">since</span> <span class="n">readers</span> <span class="n">must</span> <span class="n">learn</span> <span class="n">your</span> <span class="n">program</span><span class="s1">&#39;s aliases.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+<p>Do <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Libraries-Qs.html">the quick-test</a>.</p>
+<p>Back to <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_two.html">Python part two</a>.</p>
+<hr />
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/CompPhys/2021/08/02/Libraries.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/CompPhys/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/CompPhys/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/CompPhys/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Resources for the second year course &quot;Theory, computation and experiment&quot; (KD5081) at Northumbria University, UK.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

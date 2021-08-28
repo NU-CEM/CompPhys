@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Conditionals | An Introduction to Computational Physics</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Conditionals" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
+<meta property="og:description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
+<link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/Conditionals.html" />
+<meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/Conditionals.html" />
+<meta property="og:site_name" content="An Introduction to Computational Physics" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Conditionals.html","@type":"BlogPosting","headline":"Conditionals","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Conditionals.html"},"description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/CompPhys/">An Introduction to Computational Physics</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/CompPhys/about/">About</a><a class="page-link" href="/CompPhys/search/">Search</a><a class="page-link" href="/CompPhys/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Conditionals</h1><p class="post-meta post-meta-title">
+    </p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/NU-CEM/CompPhys/tree/master/_notebooks/2021-08-02-Conditionals.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/CompPhys/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/NU-CEM/CompPhys/master?filepath=_notebooks%2F2021-08-02-Conditionals.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/CompPhys/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/NU-CEM/CompPhys/blob/master/_notebooks/2021-08-02-Conditionals.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/CompPhys/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-08-02-Conditionals.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Questions:</p>
+<ul>
+<li>How can programs do different things for different data?</li>
+</ul>
+<p>Objectives:</p>
+<ul>
+<li>Correctly write programs that use if and else statements and simple Boolean expressions (without logical operators).</li>
+<li>Trace the execution of unnested conditionals and conditionals inside loops.</li>
+</ul>
+<p>Keypoints:</p>
+<ul>
+<li>Use <code>if</code> statements to control whether or not a block of code is executed.</li>
+<li>Conditionals are often used inside loops.</li>
+<li>Use <code>else</code> to execute a block of code when an <code>if</code> condition is <em>not</em> true.</li>
+<li>Use <code>elif</code> to specify additional tests.</li>
+<li>Conditions are tested once, in order.</li>
+<li>Create a table showing variables' values to trace a program's execution.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">*</span>   <span class="n">An</span> <span class="err">`</span><span class="k">if</span><span class="err">`</span> <span class="n">statement</span> <span class="p">(</span><span class="n">more</span> <span class="n">properly</span> <span class="n">called</span> <span class="n">a</span> <span class="o">*</span><span class="n">conditional</span><span class="o">*</span> <span class="n">statement</span><span class="p">)</span>
+    <span class="n">controls</span> <span class="n">whether</span> <span class="n">some</span> <span class="n">block</span> <span class="n">of</span> <span class="n">code</span> <span class="ow">is</span> <span class="n">executed</span> <span class="ow">or</span> <span class="ow">not</span><span class="o">.</span>
+<span class="o">*</span>   <span class="n">Structure</span> <span class="ow">is</span> <span class="n">similar</span> <span class="n">to</span> <span class="n">a</span> <span class="err">`</span><span class="k">for</span><span class="err">`</span> <span class="n">statement</span><span class="p">:</span>
+    <span class="o">*</span>   <span class="n">First</span> <span class="n">line</span> <span class="n">opens</span> <span class="k">with</span> <span class="err">`</span><span class="k">if</span><span class="err">`</span> <span class="ow">and</span> <span class="n">ends</span> <span class="k">with</span> <span class="n">a</span> <span class="n">colon</span>
+    <span class="o">*</span>   <span class="n">Body</span> <span class="n">containing</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">more</span> <span class="n">statements</span> <span class="ow">is</span> <span class="n">indented</span> <span class="p">(</span><span class="n">usually</span> <span class="n">by</span> <span class="mi">4</span> <span class="n">spaces</span><span class="p">)</span>
+
+<span class="o">~~~</span>
+<span class="n">mass</span> <span class="o">=</span> <span class="mf">3.54</span>
+<span class="k">if</span> <span class="n">mass</span> <span class="o">&gt;</span> <span class="mf">3.0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="s1">&#39;is large&#39;</span><span class="p">)</span>
+
+<span class="n">mass</span> <span class="o">=</span> <span class="mf">2.07</span>
+<span class="k">if</span> <span class="n">mass</span> <span class="o">&gt;</span> <span class="mf">3.0</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="s1">&#39;is large&#39;</span><span class="p">)</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
+<span class="o">~~~</span>
+<span class="mf">3.54</span> <span class="ow">is</span> <span class="n">large</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
+
+<span class="c1">## Conditionals are often used inside loops.</span>
+
+<span class="o">*</span>   <span class="n">Not</span> <span class="n">much</span> <span class="n">point</span> <span class="n">using</span> <span class="n">a</span> <span class="n">conditional</span> <span class="n">when</span> <span class="n">we</span> <span class="n">know</span> <span class="n">the</span> <span class="n">value</span> <span class="p">(</span><span class="k">as</span> <span class="n">above</span><span class="p">)</span><span class="o">.</span>
+<span class="o">*</span>   <span class="n">But</span> <span class="n">useful</span> <span class="n">when</span> <span class="n">we</span> <span class="n">have</span> <span class="n">a</span> <span class="n">collection</span> <span class="n">to</span> <span class="n">process</span><span class="o">.</span>
+
+<span class="o">~~~</span>
+<span class="n">masses</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.54</span><span class="p">,</span> <span class="mf">2.07</span><span class="p">,</span> <span class="mf">9.22</span><span class="p">,</span> <span class="mf">1.86</span><span class="p">,</span> <span class="mf">1.71</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">masses</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="mf">3.0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s1">&#39;is large&#39;</span><span class="p">)</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
+<span class="o">~~~</span>
+<span class="mf">3.54</span> <span class="ow">is</span> <span class="n">large</span>
+<span class="mf">9.22</span> <span class="ow">is</span> <span class="n">large</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
+
+<span class="c1">## Use `else` to execute a block of code when an `if` condition is *not* true.</span>
+
+<span class="o">*</span>   <span class="err">`</span><span class="k">else</span><span class="err">`</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">following</span> <span class="n">an</span> <span class="err">`</span><span class="k">if</span><span class="err">`</span><span class="o">.</span>
+<span class="o">*</span>   <span class="n">Allows</span> <span class="n">us</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">an</span> <span class="n">alternative</span> <span class="n">to</span> <span class="n">execute</span> <span class="n">when</span> <span class="n">the</span> <span class="err">`</span><span class="k">if</span><span class="err">`</span> <span class="o">*</span><span class="n">branch</span><span class="o">*</span> <span class="n">isn</span><span class="s1">&#39;t taken.</span>
+
+<span class="o">~~~</span>
+<span class="n">masses</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.54</span><span class="p">,</span> <span class="mf">2.07</span><span class="p">,</span> <span class="mf">9.22</span><span class="p">,</span> <span class="mf">1.86</span><span class="p">,</span> <span class="mf">1.71</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">masses</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="mf">3.0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s1">&#39;is large&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s1">&#39;is small&#39;</span><span class="p">)</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
+<span class="o">~~~</span>
+<span class="mf">3.54</span> <span class="ow">is</span> <span class="n">large</span>
+<span class="mf">2.07</span> <span class="ow">is</span> <span class="n">small</span>
+<span class="mf">9.22</span> <span class="ow">is</span> <span class="n">large</span>
+<span class="mf">1.86</span> <span class="ow">is</span> <span class="n">small</span>
+<span class="mf">1.71</span> <span class="ow">is</span> <span class="n">small</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
+
+<span class="c1">## Use `elif` to specify additional tests.</span>
+
+<span class="o">*</span>   <span class="n">May</span> <span class="n">want</span> <span class="n">to</span> <span class="n">provide</span> <span class="n">several</span> <span class="n">alternative</span> <span class="n">choices</span><span class="p">,</span> <span class="n">each</span> <span class="k">with</span> <span class="n">its</span> <span class="n">own</span> <span class="n">test</span><span class="o">.</span>
+<span class="o">*</span>   <span class="n">Use</span> <span class="err">`</span><span class="k">elif</span><span class="err">`</span> <span class="p">(</span><span class="n">short</span> <span class="k">for</span> <span class="s2">&quot;else if&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">condition</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">these</span><span class="o">.</span>
+<span class="o">*</span>   <span class="n">Always</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">an</span> <span class="err">`</span><span class="k">if</span><span class="err">`</span><span class="o">.</span>
+<span class="o">*</span>   <span class="n">Must</span> <span class="n">come</span> <span class="n">before</span> <span class="n">the</span> <span class="err">`</span><span class="k">else</span><span class="err">`</span> <span class="p">(</span><span class="n">which</span> <span class="ow">is</span> <span class="n">the</span> <span class="s2">&quot;catch all&quot;</span><span class="p">)</span><span class="o">.</span>
+
+<span class="o">~~~</span>
+<span class="n">masses</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.54</span><span class="p">,</span> <span class="mf">2.07</span><span class="p">,</span> <span class="mf">9.22</span><span class="p">,</span> <span class="mf">1.86</span><span class="p">,</span> <span class="mf">1.71</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">masses</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="mf">9.0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s1">&#39;is HUGE&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="mf">3.0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s1">&#39;is large&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s1">&#39;is small&#39;</span><span class="p">)</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
+<span class="o">~~~</span>
+<span class="mf">3.54</span> <span class="ow">is</span> <span class="n">large</span>
+<span class="mf">2.07</span> <span class="ow">is</span> <span class="n">small</span>
+<span class="mf">9.22</span> <span class="ow">is</span> <span class="n">HUGE</span>
+<span class="mf">1.86</span> <span class="ow">is</span> <span class="n">small</span>
+<span class="mf">1.71</span> <span class="ow">is</span> <span class="n">small</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
+
+<span class="c1">## Conditions are tested once, in order.</span>
+
+<span class="o">*</span>   <span class="n">Python</span> <span class="n">steps</span> <span class="n">through</span> <span class="n">the</span> <span class="n">branches</span> <span class="n">of</span> <span class="n">the</span> <span class="n">conditional</span> <span class="ow">in</span> <span class="n">order</span><span class="p">,</span> <span class="n">testing</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">turn</span><span class="o">.</span>
+<span class="o">*</span>   <span class="n">So</span> <span class="n">ordering</span> <span class="n">matters</span><span class="o">.</span>
+
+<span class="o">~~~</span>
+<span class="n">grade</span> <span class="o">=</span> <span class="mi">85</span>
+<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;grade is C&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;grade is B&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;grade is A&#39;</span><span class="p">)</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
+<span class="o">~~~</span>
+<span class="n">grade</span> <span class="ow">is</span> <span class="n">C</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
+
+<span class="o">*</span>   <span class="n">Does</span> <span class="o">*</span><span class="ow">not</span><span class="o">*</span> <span class="n">automatically</span> <span class="n">go</span> <span class="n">back</span> <span class="ow">and</span> <span class="n">re</span><span class="o">-</span><span class="n">evaluate</span> <span class="k">if</span> <span class="n">values</span> <span class="n">change</span><span class="o">.</span>
+
+<span class="o">~~~</span>
+<span class="n">velocity</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="k">if</span> <span class="n">velocity</span> <span class="o">&gt;</span> <span class="mf">20.0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;moving too fast&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;adjusting velocity&#39;</span><span class="p">)</span>
+    <span class="n">velocity</span> <span class="o">=</span> <span class="mf">50.0</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
+<span class="o">~~~</span>
+<span class="n">adjusting</span> <span class="n">velocity</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
+
+<span class="o">*</span>   <span class="n">Often</span> <span class="n">use</span> <span class="n">conditionals</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">loop</span> <span class="n">to</span> <span class="s2">&quot;evolve&quot;</span> <span class="n">the</span> <span class="n">values</span> <span class="n">of</span> <span class="n">variables</span><span class="o">.</span>
+
+<span class="o">~~~</span>
+<span class="n">velocity</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="c1"># execute the loop 5 times</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">velocity</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">velocity</span> <span class="o">&gt;</span> <span class="mf">20.0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;moving too fast&#39;</span><span class="p">)</span>
+        <span class="n">velocity</span> <span class="o">=</span> <span class="n">velocity</span> <span class="o">-</span> <span class="mf">5.0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;moving too slow&#39;</span><span class="p">)</span>
+        <span class="n">velocity</span> <span class="o">=</span> <span class="n">velocity</span> <span class="o">+</span> <span class="mf">10.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;final velocity:&#39;</span><span class="p">,</span> <span class="n">velocity</span><span class="p">)</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
+<span class="o">~~~</span>
+<span class="mi">0</span> <span class="p">:</span> <span class="mf">10.0</span>
+<span class="n">moving</span> <span class="n">too</span> <span class="n">slow</span>
+<span class="mi">1</span> <span class="p">:</span> <span class="mf">20.0</span>
+<span class="n">moving</span> <span class="n">too</span> <span class="n">slow</span>
+<span class="mi">2</span> <span class="p">:</span> <span class="mf">30.0</span>
+<span class="n">moving</span> <span class="n">too</span> <span class="n">fast</span>
+<span class="mi">3</span> <span class="p">:</span> <span class="mf">25.0</span>
+<span class="n">moving</span> <span class="n">too</span> <span class="n">fast</span>
+<span class="mi">4</span> <span class="p">:</span> <span class="mf">20.0</span>
+<span class="n">moving</span> <span class="n">too</span> <span class="n">slow</span>
+<span class="n">final</span> <span class="n">velocity</span><span class="p">:</span> <span class="mf">30.0</span>
+<span class="o">~~~</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">output</span><span class="p">}</span>
+
+<span class="c1">## Create a table showing variables&#39; values to trace a program&#39;s execution.</span>
+
+<span class="o">&lt;</span><span class="n">table</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">i</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;.&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;.&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;.&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;.&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="mi">4</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;.&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">velocity</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="mf">10.0</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="mf">20.0</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;.&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="mf">30.0</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;.&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="mf">25.0</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;.&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="mf">20.0</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;.&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="mf">30.0</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">table</span><span class="o">&gt;</span>
+
+<span class="o">*</span>   <span class="n">The</span> <span class="n">program</span> <span class="n">must</span> <span class="n">have</span> <span class="n">a</span> <span class="err">`</span><span class="nb">print</span><span class="err">`</span> <span class="n">statement</span> <span class="o">*</span><span class="n">outside</span><span class="o">*</span> <span class="n">the</span> <span class="n">body</span> <span class="n">of</span> <span class="n">the</span> <span class="n">loop</span>
+    <span class="n">to</span> <span class="n">show</span> <span class="n">the</span> <span class="n">final</span> <span class="n">value</span> <span class="n">of</span> <span class="err">`</span><span class="n">velocity</span><span class="err">`</span><span class="p">,</span>
+    <span class="n">since</span> <span class="n">its</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">updated</span> <span class="n">by</span> <span class="n">the</span> <span class="n">last</span> <span class="n">iteration</span> <span class="n">of</span> <span class="n">the</span> <span class="n">loop</span><span class="o">.</span>
+
+<span class="o">&gt;</span> <span class="c1">## Compound Relations Using `and`, `or`, and Parentheses</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="n">Often</span><span class="p">,</span> <span class="n">you</span> <span class="n">want</span> <span class="n">some</span> <span class="n">combination</span> <span class="n">of</span> <span class="n">things</span> <span class="n">to</span> <span class="n">be</span> <span class="n">true</span><span class="o">.</span>  <span class="n">You</span> <span class="n">can</span> <span class="n">combine</span>
+<span class="o">&gt;</span> <span class="n">relations</span> <span class="n">within</span> <span class="n">a</span> <span class="n">conditional</span> <span class="n">using</span> <span class="err">`</span><span class="ow">and</span><span class="err">`</span> <span class="ow">and</span> <span class="err">`</span><span class="ow">or</span><span class="err">`</span><span class="o">.</span>  <span class="n">Continuing</span> <span class="n">the</span> <span class="n">example</span>
+<span class="o">&gt;</span> <span class="n">above</span><span class="p">,</span> <span class="n">suppose</span> <span class="n">you</span> <span class="n">have</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="o">~~~</span>
+<span class="o">&gt;</span> <span class="n">mass</span>     <span class="o">=</span> <span class="p">[</span> <span class="mf">3.54</span><span class="p">,</span>  <span class="mf">2.07</span><span class="p">,</span>  <span class="mf">9.22</span><span class="p">,</span>  <span class="mf">1.86</span><span class="p">,</span>  <span class="mf">1.71</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="n">velocity</span> <span class="o">=</span> <span class="p">[</span><span class="mf">10.00</span><span class="p">,</span> <span class="mf">20.00</span><span class="p">,</span> <span class="mf">30.00</span><span class="p">,</span> <span class="mf">25.00</span><span class="p">,</span> <span class="mf">20.00</span><span class="p">]</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="o">&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<span class="o">&gt;</span>     <span class="k">if</span> <span class="n">mass</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+<span class="o">&gt;</span>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fast heavy object.  Duck!&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span>     <span class="k">elif</span> <span class="n">mass</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">mass</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">:</span>
+<span class="o">&gt;</span>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Normal traffic&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span>     <span class="k">elif</span> <span class="n">mass</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">:</span>
+<span class="o">&gt;</span>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Slow light object.  Ignore it&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span>     <span class="k">else</span><span class="p">:</span>
+<span class="o">&gt;</span>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Whoa!  Something is up with the data.  Check it&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="o">~~~</span>
+<span class="o">&gt;</span> <span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="n">Just</span> <span class="n">like</span> <span class="k">with</span> <span class="n">arithmetic</span><span class="p">,</span> <span class="n">you</span> <span class="n">can</span> <span class="ow">and</span> <span class="n">should</span> <span class="n">use</span> <span class="n">parentheses</span> <span class="n">whenever</span> <span class="n">there</span>
+<span class="o">&gt;</span> <span class="ow">is</span> <span class="n">possible</span> <span class="n">ambiguity</span><span class="o">.</span>  <span class="n">A</span> <span class="n">good</span> <span class="n">general</span> <span class="n">rule</span> <span class="ow">is</span> <span class="n">to</span> <span class="o">*</span><span class="n">always</span><span class="o">*</span> <span class="n">use</span> <span class="n">parentheses</span>
+<span class="o">&gt;</span> <span class="n">when</span> <span class="n">mixing</span> <span class="err">`</span><span class="ow">and</span><span class="err">`</span> <span class="ow">and</span> <span class="err">`</span><span class="ow">or</span><span class="err">`</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">same</span> <span class="n">condition</span><span class="o">.</span>  <span class="n">That</span> <span class="ow">is</span><span class="p">,</span> <span class="n">instead</span> <span class="n">of</span><span class="p">:</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="o">~~~</span>
+<span class="o">&gt;</span> <span class="k">if</span> <span class="n">mass</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">mass</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+<span class="o">&gt;</span> <span class="o">~~~</span>
+<span class="o">&gt;</span> <span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="n">write</span> <span class="n">one</span> <span class="n">of</span> <span class="n">these</span><span class="p">:</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="o">~~~</span>
+<span class="o">&gt;</span> <span class="k">if</span> <span class="p">(</span><span class="n">mass</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">mass</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">)</span> <span class="ow">and</span> <span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+<span class="o">&gt;</span> <span class="k">if</span> <span class="n">mass</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="ow">or</span> <span class="p">(</span><span class="n">mass</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">):</span>
+<span class="o">&gt;</span> <span class="o">~~~</span>
+<span class="o">&gt;</span> <span class="p">{:</span> <span class="o">.</span><span class="n">python</span><span class="p">}</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="n">so</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">perfectly</span> <span class="n">clear</span> <span class="n">to</span> <span class="n">a</span> <span class="n">reader</span> <span class="p">(</span><span class="ow">and</span> <span class="n">to</span> <span class="n">Python</span><span class="p">)</span> <span class="n">what</span> <span class="n">you</span> <span class="n">really</span> <span class="n">mean</span><span class="o">.</span>
+<span class="p">{:</span> <span class="o">.</span><span class="n">callout</span><span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+<p>Do <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Conditionals-Qs.html">the quick-test</a>.</p>
+<p>Back to <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_two.html">Python part two</a>.</p>
+<hr />
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/CompPhys/2021/08/02/Conditionals.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/CompPhys/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/CompPhys/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/CompPhys/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Resources for the second year course &quot;Theory, computation and experiment&quot; (KD5081) at Northumbria University, UK.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
