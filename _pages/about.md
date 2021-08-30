@@ -11,6 +11,8 @@ The content of this website is derived from several other sources:
 - Software Carpentry (in particular, Introduction and Setup)
 - Code Refinery
 - pycharge (landing page animation)
+- https://users.aber.ac.uk/ruw/teach/260/
+- Chem Libre texts
 
 The content of this website is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/). You can re-use any of its content as long as the following attribution is included, and you indicate if changes were made.
 
