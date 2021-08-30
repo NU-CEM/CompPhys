@@ -414,7 +414,7 @@
   
       ,"page1": {
           "title": "About",
-          "content": "This website contains resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK. The resources have been developed by Dr Lucy Whalley and the website is powered by Github and fastpages which is licensed under Apache License 2.0. . The content of this website is derived from several other sources: . Software Carpentry (in particular, Introduction and Setup) | Code Refinery | pycharge (landing page animation) | . The content of this website is licensed under a Creative Commons Attribution 4.0 International License. You can re-use any of its content as long as the following attribution is included, and you indicate if changes were made. .",
+          "content": "This website contains resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK. The resources have been developed by Dr Lucy Whalley and the website is powered by Github and fastpages which is licensed under Apache License 2.0. . The content of this website is derived from several other sources: . Software Carpentry (in particular, Introduction and Setup) | Code Refinery | pycharge (landing page animation) | https://users.aber.ac.uk/ruw/teach/260/ | Chem Libre texts | . The content of this website is licensed under a Creative Commons Attribution 4.0 International License. You can re-use any of its content as long as the following attribution is included, and you indicate if changes were made. .",
           "url": "https://nu-cem.github.io/CompPhys/about/",
           "relUrl": "/about/",
           "date": ""
