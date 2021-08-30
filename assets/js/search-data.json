@@ -146,7 +146,7 @@
     
         ,"post13": {
             "title": "Modelling Partial Differential Equations",
-            "content": "https://en.wikipedia.org/wiki/Partial_differential_equation .",
+            "content": "In this section of the course we will learn how to solve another type of differential equation - the partial differential equation. These are also of vital importance to a physicist as they underly quantum mechanics (via the Schrodinger equation) and electromagnetism (via Maxwell’s equations). They are also used to model heat diffusion and wave propagation, amongst other processes. . It is usually impossible to write down explicit formulas for solutions of partial differential equations, and so there is a vast amount of research dedicated to solving these equations using computers. In this lesson we will start to explore some of these numerical approaches, with a focus on understanding the underlying mathematical methods used rather than importing pre-made functions. .",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/PDEs.html",
             "relUrl": "/2021/08/02/PDEs.html",
             "date": " • Aug 2, 2021"
