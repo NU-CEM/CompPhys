@@ -69,25 +69,30 @@ window.onload = wrap_img;
 </head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/CompPhys/">An Introduction to Computational Physics</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/CompPhys/">An Introduction to Computational Physics</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
         <label for="nav-trigger">
           <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
             </svg>
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/CompPhys/about/">About</a><a class="page-link" href="/CompPhys/search/">Search</a><a class="page-link" href="/CompPhys/categories/">Tags</a></div>
-      </nav></div>
+        <div class="trigger">
+<a class="page-link" href="/CompPhys/about/">About</a><a class="page-link" href="/CompPhys/search/">Search</a><a class="page-link" href="/CompPhys/categories/">Tags</a>
+</div>
+      </nav>
+</div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Modelling Ordinary Differential Equations</h1><p class="post-meta post-meta-title">
+    <h1 class="post-title p-name" itemprop="name headline">Modelling Ordinary Differential Equations</h1>
+<p class="post-meta post-meta-title">
     </p>
 
     
@@ -95,14 +100,72 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <ul class="section-nav">
-</ul><p>In this section of the course we will learn how to solve ordinary differential equations. These are of vital importance to a physicist as they are at the base of classical and celestial mechanics via Newton’s equations. They are also used to model electrical circuits and radioactive decay, amongst other systems.</p>
+    <p>In this section of the course we will learn how to solve ordinary differential equations. These are of vital importance to a physicist as they are at the base of classical and celestial mechanics via Newton’s equations. They are also used to model electrical circuits and radioactive decay, amongst other systems.</p>
 
 <p>Broadly speaking, there are three ways to solve a differential equation: analytically, numerically (with a pre-existing function) or numerically (with a home-made function). Numerical approaches offer more flexibility but with the caveat that they are approximate and must be converged.</p>
 
-<p>In this lesson we will use numerical approaches to solve ODE’s, but with a strong focus on home-made numerical functions, so that a greater understanding of the approximations and approaches (and a good chance to practice Python skills).</p>
+<p>In this lesson we will use numerical approaches to solve ODE’s, with a strong focus on home-made numerical functions (rather than pre-made functions imported from a library). As such we will achieve a greater understanding of the underlying mathematics and approximations used - and it’s a great chance to practice our Python skills.</p>
 
-  </div><a class="u-url" href="/CompPhys/2021/08/02/ODEs.html" hidden></a>
+<h3 id="before-you-begin">Before you begin</h3>
+
+<ul>
+  <li>Check that Python and Jupyter Notebook are installed</li>
+  <li>Launch a Jupyter notebook</li>
+</ul>
+
+<p>Please see the <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Setup">Setup</a> page for more details.</p>
+
+<h3 id="lesson-outline">Lesson outline</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Objective</th>
+      <th>Quick test</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/ODE-Types">Types of ODE</a></td>
+      <td>What are ODEs? <br> How are different types of ODE classified?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/ODE-Types-Qs.html"><img class="emoji" title=":ticket:" alt=":ticket:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3ab.png" height="20" width="20"></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Radioactive-Decay">Radioactive decay</a></td>
+      <td>How can I describe radioactive decay using an ODE? <br> What are initial or boundary values?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Radioactive-Decay-Qs.html"><img class="emoji" title=":trolleybus:" alt=":trolleybus:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f68e.png" height="20" width="20"></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Eulers-Method">Euler’s method</a></td>
+      <td>How do I use Euler’s method to solve a first-order ODE?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Eulers-Method-Qs.html"><img class="emoji" title=":blue_car:" alt=":blue_car:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f699.png" height="20" width="20"></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Runge-Kutta">The strange attractor</a></td>
+      <td>How do I solve differential equations with more than one variable?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Runge-Kutta-Qs.html"><img class="emoji" title=":truck:" alt=":truck:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f69a.png" height="20" width="20"></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Runge-Kutta">Runge-Kutta method</a></td>
+      <td>How do I use the Runge-Kutta method for more accurate solutions?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Runge-Kutta-Qs.html"><img class="emoji" title=":red_car:" alt=":red_car:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f697.png" height="20" width="20"></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="resources">Resources</h3>
+
+<ul>
+  <li>Lesson exercises</li>
+  <li>Extension exercise</li>
+  <li>Presentation</li>
+  <li>Teaching notes</li>
+</ul>
+
+
+  </div>
+<a class="u-url" href="/CompPhys/2021/08/02/ODEs.html" hidden></a>
 </article>
 
       </div>
@@ -122,11 +185,12 @@ window.onload = wrap_img;
         </p>
       </div>
       <div class="footer-col">
-        <p>Resources for the second year course &quot;Theory, computation and experiment&quot; (KD5081) at Northumbria University, UK.</p>
+        <p>Resources for the second year course "Theory, computation and experiment" (KD5081) at Northumbria University, UK.</p>
       </div>
     </div>
 
-    <div class="social-links"><ul class="social-media-list"></ul>
+    <div class="social-links">
+<ul class="social-media-list"></ul>
 </div>
 
   </div>
