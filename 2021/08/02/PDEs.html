@@ -69,25 +69,30 @@ window.onload = wrap_img;
 </head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/CompPhys/">An Introduction to Computational Physics</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/CompPhys/">An Introduction to Computational Physics</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
         <label for="nav-trigger">
           <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
             </svg>
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/CompPhys/about/">About</a><a class="page-link" href="/CompPhys/search/">Search</a><a class="page-link" href="/CompPhys/categories/">Tags</a></div>
-      </nav></div>
+        <div class="trigger">
+<a class="page-link" href="/CompPhys/about/">About</a><a class="page-link" href="/CompPhys/search/">Search</a><a class="page-link" href="/CompPhys/categories/">Tags</a>
+</div>
+      </nav>
+</div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Modelling Partial Differential Equations</h1><p class="post-meta post-meta-title">
+    <h1 class="post-title p-name" itemprop="name headline">Modelling Partial Differential Equations</h1>
+<p class="post-meta post-meta-title">
     </p>
 
     
@@ -95,12 +100,70 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <ul class="section-nav">
-</ul><p>In this section of the course we will learn how to solve another type of differential equation - the partial differential equation. These are also of vital importance to a physicist as they underly quantum mechanics (via the Schrodinger equation) and electromagnetism (via Maxwell’s equations). They are also used to model heat diffusion and wave propagation, amongst other processes.</p>
+    <p>In this section of the course we will learn how to solve another type of differential equation - the partial differential equation. These are also of vital importance to a physicist as they underly quantum mechanics (via the Schrodinger equation) and electromagnetism (via Maxwell’s equations). They are also used to model heat diffusion and wave propagation, amongst other processes.</p>
 
 <p>It is usually impossible to write down explicit formulas for solutions of partial differential equations, and so there is a vast amount of research dedicated to solving these equations using computers. In this lesson we will start to explore some of these numerical approaches, with a focus on understanding the underlying mathematical methods used rather than importing pre-made functions.</p>
 
-  </div><a class="u-url" href="/CompPhys/2021/08/02/PDEs.html" hidden></a>
+<h3 id="before-you-begin">Before you begin</h3>
+
+<ul>
+  <li>Check that Python and Jupyter Notebook are installed</li>
+  <li>Launch a Jupyter notebook</li>
+</ul>
+
+<p>Please see the <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Setup">Setup</a> page for more details.</p>
+
+<h3 id="lesson-outline">Lesson outline</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Objective</th>
+      <th>Quick test</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/PDE-Types">Types of PDE</a></td>
+      <td>What are PDEs? <br> How are different types of PDE classified?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/PDE-Types-Qs.html">🦋</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Heat-Diffusion">Heat diffusion</a></td>
+      <td>How can I describe heat diffusion using a PDE? <br> What are the del and Laplacian operators?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Heat-Diffusion-Qs.html">🍫</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Finite-Differences">Finite difference methods</a></td>
+      <td>How do I use the finite difference method to calculate derivatives?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Finite-Differences-Qs.html"><img class="emoji" title=":evergreen_tree:" alt=":evergreen_tree:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f332.png" height="20" width="20"></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Runge-Kutta">Heat diffusion revisited</a></td>
+      <td>How do I combine the finite difference and Euler methods to solve a second order PDE?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Runge-Kutta-Qs.html"><img class="emoji" title=":chestnut:" alt=":chestnut:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f330.png" height="20" width="20"></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Accuracy">Evaluating the accuracy of numerical methods</a></td>
+      <td>How can I quantify the accuracy of these numerical methods?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Accuract-Qs.html"><img class="emoji" title=":wrench:" alt=":wrench:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png" height="20" width="20"></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="resources">Resources</h3>
+
+<ul>
+  <li>Lesson exercises</li>
+  <li>Extension exercise</li>
+  <li>Presentation</li>
+  <li>Teaching notes</li>
+</ul>
+
+
+  </div>
+<a class="u-url" href="/CompPhys/2021/08/02/PDEs.html" hidden></a>
 </article>
 
       </div>
@@ -120,11 +183,12 @@ window.onload = wrap_img;
         </p>
       </div>
       <div class="footer-col">
-        <p>Resources for the second year course &quot;Theory, computation and experiment&quot; (KD5081) at Northumbria University, UK.</p>
+        <p>Resources for the second year course "Theory, computation and experiment" (KD5081) at Northumbria University, UK.</p>
       </div>
     </div>
 
-    <div class="social-links"><ul class="social-media-list"></ul>
+    <div class="social-links">
+<ul class="social-media-list"></ul>
 </div>
 
   </div>
