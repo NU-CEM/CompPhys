@@ -128,25 +128,58 @@ window.onload = wrap_img;
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<hr />
 <p>Questions:</p>
 <ul>
-<li>What is the difference between an ODE and PDE? </li>
+<li>What is a <mark>differential equation</mark>?</li>
+<li>What is the difference between an ordinary (<mark>ODE</mark>) and partial (<mark>PDE</mark>) differential equation? </li>
 <li>How do I classify the different types of differential equations?</li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Objectives:</p>
 <ul>
+<li>Identify the dependent and independent variables in a differential equation</li>
 <li>Distinguish between and ODE and PDE</li>
-<li>Indentify the order of a differential equation</li>
-<li>Distinguish between linear and non-linear equations</li>
-<li>Distinguish between heterogeneous and homogeneous equations</li>
+<li>Identify the <mark>order</mark> of a differential equation</li>
+<li>Distinguish between <mark>linear</mark> and <mark>non-linear</mark> equations</li>
+<li>Distinguish between <mark>heterogeneous</mark> and <mark>homogeneous</mark> equations</li>
+<li>Identify a <mark>separable</mark> equation</li>
 </ul>
-<p>Keypoints:</p>
-<ul>
-<li>Differential equations can be classified in a variety of ways</li>
-<li>An ODE contains differentials with respect to only one variable</li>
-<li>The order is the highest order of any differential contained in it</li>
-<li>Linear equations do not contain higher powers of either the dependent variable or its differentials</li>
-<li>Homogeneous equations do not contain any non-differential terms</li>
+<hr />
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="A-differential-equation-is-an-equation-that-relates-one-or-more-functions-and-their-derivatives">A differential equation is an equation that relates one or more functions and their derivatives<a class="anchor-link" href="#A-differential-equation-is-an-equation-that-relates-one-or-more-functions-and-their-derivatives"> </a></h3><ul>
+<li>The functions usually represent physical quantities (e.g. position $x$)</li>
+<li>The derivative represents a rate of change (e.g. speed $v$)</li>
+<li>The differential equation represents the relationship between the two:</li>
+</ul>
+\begin{equation}
+v = \frac{dx}{dt}
+\end{equation}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="An-independent-variable-is...-a-quantity-that-varies-independently...">An independent variable is... a quantity that varies independently...<a class="anchor-link" href="#An-independent-variable-is...-a-quantity-that-varies-independently..."> </a></h3><ul>
+<li>An <mark>independent variable</mark> does not depend on other variables</li>
+<li>A <mark> dependent variable</mark> depends on the independent variable</li>
+</ul>
+\begin{equation}
+v = \frac{dx}{dt}
+\end{equation}<ul>
+<li>$t$ is the <mark>independent</mark> variable</li>
+<li>$x$ is the <mark>dependent</mark> variable</li>
+<li>Writing $x = x(t)$ makes this relationship clear.</li>
 </ul>
 
 </div>
@@ -155,20 +188,33 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Differential-equations-can-be-classified-in-a-variety-of-ways">Differential equations can be classified in a variety of ways<a class="anchor-link" href="#Differential-equations-can-be-classified-in-a-variety-of-ways"> </a></h3><p>There are several ways to describe and classify differential equations. There are standard solution methods for each type, so it is useful to understand the classifications.</p>
+<p><img src="/CompPhys/images/copied_from_nb/../images/categories.png" alt="" /></p>
+<p><small>Once you can cook a single piece of spaghetti, you can cook all pieces of spaghetti!</small></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="An-ODE-contains-differentials-with-respect-to-only-one-variable">An ODE contains differentials with respect to only one variable<a class="anchor-link" href="#An-ODE-contains-differentials-with-respect-to-only-one-variable"> </a></h3><p>For example, the following equations are ODEs:</p>
-<ul>
-<li>$\frac{d x}{d t} = at$</li>
-<li>$\frac{d^3 x}{d t^3} + \frac{x}{t} = b$</li>
-</ul>
-<p>As in each case the differentials are with respect to the variable $t$.</p>
-<p>Partial differential equations (PDE) contain differentials with respect to several independent variables. An example of a PDE is:</p>
-<ul>
-<li>$\frac{\partial x}{\partial t} = \frac{\partial x}{\partial y} $</li>
-</ul>
-<p>As there is one differential with respect to $t$ and one differential with respect to $y$. Note also the difference in notation - for ODEs we use $d$ whilst for PDEs we  use $\partial$.
+\begin{equation}
+\frac{d x}{d t} = at
+\frac{d^3 x}{d t^3} + \frac{x}{t} = b
+\end{equation}<p>As in each case the differentials are with respect to the single variable $t$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Partial-differential-equations-(PDE)-contain-differentials-with-respect-to-several-independent-variables.">Partial differential equations (PDE) contain differentials with respect to several independent variables.<a class="anchor-link" href="#Partial-differential-equations-(PDE)-contain-differentials-with-respect-to-several-independent-variables."> </a></h3><p>An example of a PDE is:</p>
+\begin{equation}
+\frac{\partial x}{\partial t} = \frac{\partial x}{\partial y} 
+\end{equation}<p>As there is one differential with respect to $t$ and one differential with respect to $y$.</p>
+<p>Note also the difference in notation - <mark>for ODEs we use $d$ whilst for PDEs we  use $\partial$</mark>.
 <div class="flash">
     <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-    <strong>Note: </strong>the equations in this notebook are formatted using LaTeX. To write the equation above, for example, we used <code>$\frac{\partial x}{\partial t} = \frac{\partial x}{\partial y} $</code> in a markdown cell.
+    <strong>Note: </strong>the equations in this notebook are formatted using <a href="https://www.latex-project.org/">LaTeX</a>. 
 </div></p>
 
 </div>
@@ -176,7 +222,9 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-order-of-a-differential-equation-is-the-highest-order-of-any-differential-contained-in-it.">The order of a differential equation is the highest order of any differential contained in it.<a class="anchor-link" href="#The-order-of-a-differential-equation-is-the-highest-order-of-any-differential-contained-in-it."> </a></h3><p>For example, $\frac{d x}{d t} = at$ is first order whilst $\frac{d^3 x}{d t^3} + \frac{x}{t} = b$ is third order.
+<h3 id="The-order-of-a-differential-equation-is-the-highest-order-of-any-differential-contained-in-it.">The order of a differential equation is the highest order of any differential contained in it.<a class="anchor-link" href="#The-order-of-a-differential-equation-is-the-highest-order-of-any-differential-contained-in-it."> </a></h3><p>For example:</p>
+<p>$\frac{d x}{d t} = at$ is <mark>first order</mark>.</p>
+<p>$\frac{d^3 x}{d t^3} + \frac{x}{t} = b$ is <mark>third order</mark>.
 <div class="flash flash-warn">
     <svg class="octicon octicon-zap" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
     <strong>Important: </strong>$\frac{d^3 x}{d t^3}$ does not equal $\left(\frac{d x}{d t}\right)^3$!
@@ -187,10 +235,45 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Linear-equations-do-not-contain-higher-powers-of-either-the-dependent-variable-or-its-differentials">Linear equations do not contain higher powers of either the dependent variable or its differentials<a class="anchor-link" href="#Linear-equations-do-not-contain-higher-powers-of-either-the-dependent-variable-or-its-differentials"> </a></h3><p>For example, $\frac{d^3 x}{d t^3} = at$ and $\frac{\partial x}{\partial t} = \frac{\partial x}{\partial y} $ are linear, whilst $(\frac{d x}{d t})^3 = at$ and $\frac{d^3 x}{d t^3} = x^2$ is  non-linear.</p>
+<h3 id="Linear-equations-do-not-contain-higher-powers-of-either-the-dependent-variable-or-its-differentials">Linear equations do not contain higher powers of either the dependent variable or its differentials<a class="anchor-link" href="#Linear-equations-do-not-contain-higher-powers-of-either-the-dependent-variable-or-its-differentials"> </a></h3><p>For example:</p>
+<p>$\frac{d^3 x}{d t^3} = at$ and $\frac{\partial x}{\partial t} = \frac{\partial x}{\partial y} $ are <mark>linear</mark>.</p>
+<p>$(\frac{d x}{d t})^3 = at$ and $\frac{d^3 x}{d t^3} = x^2$ are <mark>non-linear</mark>.</p>
 <p>Non-linear equations can be particularly nasty to solve analytically, and so are often tackled numerically.</p>
-<h3 id="Homogeneous-equations-do-not-contain-any-non-differential-terms">Homogeneous equations do not contain any non-differential terms<a class="anchor-link" href="#Homogeneous-equations-do-not-contain-any-non-differential-terms"> </a></h3><p>For example, $\frac{\partial x}{\partial t} = \frac{\partial x}{\partial y}$ is a homogeneous equation, whilst $\frac{\partial x}{\partial t} - \frac{\partial x}{\partial y}=a$ is a heterogeneous equation (unless $a=0$!)</p>
-<h3 id="Separable-equations-can-be-written-as-a-product-of-two-functions-of-different-variables">Separable equations can be written as a product of two functions of different variables<a class="anchor-link" href="#Separable-equations-can-be-written-as-a-product-of-two-functions-of-different-variables"> </a></h3><p>A separable differential equation takes the form $f(y)\frac{d y}{d t} = g(t)$. Separable equations are some of the easiest to solve as we can split the equation into two independent parts with fewer variables, and solve each in turn.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Homogeneous-equations-do-not-contain-any-non-differential-terms">Homogeneous equations do not contain any non-differential terms<a class="anchor-link" href="#Homogeneous-equations-do-not-contain-any-non-differential-terms"> </a></h3><p>For example:</p>
+<p>$\frac{\partial x}{\partial t} = \frac{\partial x}{\partial y}$ is a <mark>homogeneous equation</mark>.</p>
+<p>$\frac{\partial x}{\partial t} - \frac{\partial x}{\partial y}=a$ is a <mark>heterogeneous equation</mark> (unless $a=0$!).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Separable-equations-can-be-written-as-a-product-of-two-functions-of-different-variables">Separable equations can be written as a product of two functions of different variables<a class="anchor-link" href="#Separable-equations-can-be-written-as-a-product-of-two-functions-of-different-variables"> </a></h3><p>A separable differential equation takes the form</p>
+\begin{equation}
+f(x)\frac{d x}{d t} = g(t)
+\end{equation}<p>Separable equations are some of the easiest to solve as we can split the equation into two independent parts with fewer variables, and solve each in turn - we will see an example of this in the next lesson.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+<p>Summary:</p>
+<ul>
+<li>An independent variable is a quantity that varies independently</li>
+<li>Differential equations can be classified in a variety of ways</li>
+<li>An ODE contains differentials with respect to only one variable</li>
+<li>The order is the highest order of any differential contained in it</li>
+<li>Linear equations do not contain higher powers of either the dependent variable or its differentials</li>
+<li>Homogeneous equations do not contain any non-differential terms</li>
+</ul>
 
 </div>
 </div>
