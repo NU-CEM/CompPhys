@@ -89,27 +89,6 @@ window.onload = wrap_img;
     
 
     
-      
-        <div class="pb-5 d-flex flex-wrap flex-justify-end">
-          <div class="px-2">
-
-    <a href="https://github.com/NU-CEM/CompPhys/tree/master/_notebooks/2021-08-02-ODE-Types.ipynb" role="button" target="_blank">
-<img class="notebook-badge-image" src="/CompPhys/assets/badges/github.svg" alt="View On GitHub">
-    </a>
-</div>
-
-          <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/NU-CEM/CompPhys/master?filepath=_notebooks%2F2021-08-02-ODE-Types.ipynb" target="_blank">
-        <img class="notebook-badge-image" src="/CompPhys/assets/badges/binder.svg" alt="Open In Binder"/>
-    </a>
-</div>
-
-          <div class="px-2">
-    <a href="https://colab.research.google.com/github/NU-CEM/CompPhys/blob/master/_notebooks/2021-08-02-ODE-Types.ipynb" target="_blank">
-        <img class="notebook-badge-image" src="/CompPhys/assets/badges/colab.svg" alt="Open In Colab"/>
-    </a>
-</div>
-        </div>
       </header>
 
   <div class="post-content e-content" itemprop="articleBody">
@@ -137,6 +116,12 @@ window.onload = wrap_img;
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#128131;-Classifying-differential-equations-&#128131;">&#128131; Classifying differential equations &#128131;<a class="anchor-link" href="#&#128131;-Classifying-differential-equations-&#128131;"> </a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <hr />
 <p>Questions:</p>
 <ul>
@@ -144,12 +129,14 @@ window.onload = wrap_img;
 <li>What is the difference between an ordinary (<mark>ODE</mark>) and partial (<mark>PDE</mark>) differential equation? </li>
 <li>How do I classify the different types of differential equations?</li>
 </ul>
+<hr />
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<hr />
 <p>Objectives:</p>
 <ul>
 <li>Identify the dependent and independent variables in a differential equation</li>
@@ -222,7 +209,7 @@ v = \frac{dx}{dt}
 \end{equation}<p>As there is one differential with respect to $t$ and one differential with respect to $y$.</p>
 <p>Note also the difference in notation - <mark>for ODEs we use $d$ whilst for PDEs we  use $\partial$</mark>.
 <div class="flash">
-    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
     <strong>Note: </strong>the equations in this notebook are formatted using <a href="https://www.latex-project.org/">LaTeX</a>. 
 </div></p>
 
@@ -263,7 +250,7 @@ v = \frac{dx}{dt}
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Separable-equations-can-be-written-as-a-product-of-two-functions-of-different-variables">Separable equations can be written as a product of two functions of different variables<a class="anchor-link" href="#Separable-equations-can-be-written-as-a-product-of-two-functions-of-different-variables"> </a></h3><p>A separable differential equation takes the form</p>
+<h3 id="Separable-equations-can-be-written-as-a-product-of-two-functions-of-different-variables">Separable equations can be written as a product of two functions of different variables<a class="anchor-link" href="#Separable-equations-can-be-written-as-a-product-of-two-functions-of-different-variables"> </a></h3><p>A separable first-order one-variable differential equation takes the form</p>
 \begin{equation}
 f(x)\frac{d x}{d t} = g(t)
 \end{equation}<p>Separable equations are some of the easiest to solve as we can split the equation into two independent parts with fewer variables, and solve each in turn - we will see an example of this in the next lesson.</p>
@@ -283,6 +270,7 @@ f(x)\frac{d x}{d t} = g(t)
 <li>Linear equations do not contain higher powers of either the dependent variable or its differentials</li>
 <li>Homogeneous equations do not contain any non-differential terms</li>
 </ul>
+<hr />
 
 </div>
 </div>

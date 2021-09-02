@@ -137,12 +137,431 @@ window.onload = wrap_img;
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#128208;-Euler's-method-&#128208;">&#128208; Euler's method &#128208;<a class="anchor-link" href="#&#128208;-Euler's-method-&#128208;"> </a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
 <p>Questions:</p>
 <ul>
 <li>How do I use Euler's method to solve a first-order ODE?</li>
 </ul>
+<hr />
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
 <p>Objectives:</p>
+<ul>
+<li>Use Euler's method, implemented in Python, to solve a first-order ODE</li>
+<li>Understand that this method is approximate and the significance of step size $h$</li>
+<li>Compare results at different levels of approximation using the <code>matplotlib</code> library.</li>
+</ul>
+<hr />
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="There-are-a-variety-of-ways-to-solve-an-ODE">There are a variety of ways to solve an ODE<a class="anchor-link" href="#There-are-a-variety-of-ways-to-solve-an-ODE"> </a></h3><p>In the previous lesson we considered nuclear decay:</p>
+\begin{equation}
+\frac{d N}{d t} = -\lambda N
+\end{equation}<p>This is one of the simplest examples of am ODE - a first-order, linear, separable differential equation with one dependent variable. We saw that we could model the number of atoms $N$ by finding an analytic solution through integration:</p>
+<p>\begin{equation}
+N = N_0 e^{-\lambda t}
+\end{equation}</p>
+<p>However there is more than one way to crack an egg (or solve a differential equation). We could have, instead, used an approximate, numerical method.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Computers-don't-care-whether-a-differential-equation-is-linear-or-non-linear">Computers don't care whether a differential equation is linear or non-linear<a class="anchor-link" href="#Computers-don't-care-whether-a-differential-equation-is-linear-or-non-linear"> </a></h3><p>Many of the equations we are interested in are not so friendly.</p>
+<p>For example, the Lotka-Volterra equations for studying predator-prey interactions have multiple dependent variables and the Cahn-Hilliard equation for modelling phase separation in fluids is non-linear. These equations can be solved analytically for particular, special cases only.</p>
+<p>Computers don't care whether an equation is linear or non-linear, the numerical method for studying it is the same - with the caveat that numerical methods are approximate and so we need to think about the accuracy of the methods used.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="A-function-can-be-approximated-using-a-Taylor-expansion">A function can be approximated using a Taylor expansion<a class="anchor-link" href="#A-function-can-be-approximated-using-a-Taylor-expansion"> </a></h3><p>Let's return to our example of nuclear decay:</p>
+\begin{equation}
+\frac{dN}{dt} = f(N,t),
+\end{equation}<p>where</p>
+\begin{equation}
+f(N,t) = -\lambda N.
+\end{equation}<p>We can use a <nark>Taylor expansion&lt;/mark&gt; to write the value of $N$ a short interval $h$ later:&lt;/p&gt;
+\begin{equation}
+N(t+h) = N(t) + h\frac{dN}{dt} + \frac{1}{2}h^2\frac{d^2N}{dt^2} + \ldots
+\end{equation}\begin{equation}
+N(t+h) = N(t) + hf(N,t) + \mathcal{O}(h^2)
+\end{equation}
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>If you have forgotten what a Taylor expansion is, there is a lovely video explanation below from user <code>3blue1brown</code> on Youtube:</em>
+
+<center class="youtube-iframe-wrapper">
+    <iframe width="730" height="315" src="https://www.youtube.com/embed/watch?v=3d6DsjIBzJ4" frameborder="0" allowfullscreen=""></iframe>
+</center>
+</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="If-the-step-size-$h$-is-small-then-higher--order-terms-can-be-neglected">If the step size $h$ is small then higher  order terms can be neglected<a class="anchor-link" href="#If-the-step-size-$h$-is-small-then-higher--order-terms-can-be-neglected"> </a></h3><p>If $h$ is small and $h^2$ is very small we can neglect the terms in $h^2$ and higher and we get:</p>
+\begin{equation}
+N(t+h) = N(t) + hf(N,t).
+\end{equation}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Euler's-method-can-be-used-to-approximate-the-solution-of-differential-equations">Euler's method can be used to approximate the solution of differential equations<a class="anchor-link" href="#Euler's-method-can-be-used-to-approximate-the-solution-of-differential-equations"> </a></h3><p>We can keep applying the equation above so that we calculate $N(t)$ at a succession of equally spaced points for as  long as we want. If $h$ is small enough we can get a good approximation to the solution of the equation. This method for solving differential equations is called Euler's method, after Leonhard Euler, its inventor.</p>
+<p><img src="/CompPhys/images/copied_from_nb/../images/Euler_method.png" alt="" /></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>Although we are neglecting terms $h^2$ and higher, Euler&#8217;s method has an error linear in $h$ as the error accumulates over repeated steps. This means that if we want to double the accuracy of our calculation we need to double the number of steps, and double the calcuation time.
+</div></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>So far we have looked at an example where the input (or independent variable) is time. This isn&#8217;t always the case - but it is the most common case in physics, as we are often interested in how things evolve with time.
+</div></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Euler's-method-can-be-applied-using-the-Python-skills-we-have-developed">Euler's method can be applied using the Python skills we have developed<a class="anchor-link" href="#Euler's-method-can-be-applied-using-the-Python-skills-we-have-developed"> </a></h3><p>Let's use Euler's method to solve the differential equation for nuclear decay. We will model the decay process over a period of 10 seconds, with the decay constant $\lambda=0.1$ and the initial condition $N_0 = 1000$.</p>
+\begin{equation}
+\frac{d N}{d t} = -0.1 N
+\end{equation}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First, let's import the standard scientific libraries we will be using - Numpy and  Matplotlib:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's definte the function $f(N,t)$ which describes the rate of decay. In this case, the function depends only on the number of atoms present.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">Num_atoms</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mf">0.1</span><span class="o">*</span><span class="n">Num_atoms</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next we'll list the simulation parameters and initial conditions: start time, end time, number of starting atoms (which is an initial condition), number of time steps and step size (which is calculated using the number of time steps).</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>                  <span class="c1"># start time</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>                 <span class="c1"># end time</span>
+<span class="n">Num_atoms</span> <span class="o">=</span> <span class="mi">1000</span>       <span class="c1"># initial condition</span>
+<span class="n">num_steps</span> <span class="o">=</span> <span class="mi">5</span>         <span class="c1"># number of time steps</span>
+<span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">num_steps</span>  <span class="c1"># time step size</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We use the Numpy <code>arange</code> function to generate a list of evenly spaced times at which to evaluate the number of atoms. We also create  an empty list to hold the values for $N$ that we are yet to calculate.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">time_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
+
+<span class="c1"># create an empty list to hold the calculated N values</span>
+<span class="n">Num_atoms_list</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally, we apply Euler's method using a <code>For</code> loop. Note that the order of operations in the loop body is important.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">time_list</span><span class="p">:</span>
+    <span class="n">Num_atoms_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Num_atoms</span><span class="p">)</span>
+    <span class="n">Num_atoms</span> <span class="o">+=</span> <span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">Num_atoms</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="We-can-easily-visualise-our-results,-and-compare-against-the-analytical-solution,-using-the-matplotlib-plotting-library">We can easily visualise our results, and compare against the analytical solution, using the <code>matplotlib</code> plotting library<a class="anchor-link" href="#We-can-easily-visualise-our-results,-and-compare-against-the-analytical-solution,-using-the-matplotlib-plotting-library"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">time_list</span><span class="p">,</span> <span class="n">Num_atoms_list</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Number of atoms&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+" />
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using the analytic solution from the previous lesson, we can define a function for calculating the number of atoms $N$ as a function of time (this is the exact solution).</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">analytic_solution</span><span class="p">(</span><span class="n">time</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1000</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="o">*</span><span class="n">time</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can use this to calculate the exact value for $N$ over the full time range. Note that we use a large number of points in time (in this case 1000) to give a nice smooth curve:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num_steps</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">num_steps</span>
+<span class="n">time_analytic_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
+<span class="n">Num_atoms_analytic_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">time_analytic_list</span><span class="p">:</span>
+    <span class="n">Num_atoms_analytic_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">analytic_solution</span><span class="p">(</span><span class="n">time</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally, we plot the approximate Euler method results against the exact analytical solution:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_analytic_list</span><span class="p">,</span><span class="n">Num_atoms_analytic_list</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">time_list</span><span class="p">,</span> <span class="n">Num_atoms_list</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Number of atoms&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Text(0, 0.5, &#39;Number of atoms&#39;)</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+" />
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
 <p>Keypoints:</p>
+<ul>
+<li>There are a variety of ways to solve an ODE</li>
+<li>Computers don't care whether a differential equation is linear or non-linear</li>
+<li>A function can be approximated using a Taylor expansion</li>
+<li>If the step size $h$ is small then higher  order terms can be neglected</li>
+<li>Euler's method can be used to approximate the solution of differential equations</li>
+<li>Euler's method can be applied using the Python skills we have developed</li>
+<li>We can easily visualise our results, and compare against the analytical solution, using the matplotlib plotting library</li>
+</ul>
+<hr />
 
 </div>
 </div>
@@ -157,8 +576,43 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">time_analytic_list</span>
+</pre></div>
+
+    </div>
+</div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([0])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+&lt;/div&gt;
+ 
+
+</nark></p></div></div></div></div>
 
 
   </div><a class="u-url" href="/CompPhys/2021/08/02/Eulers-Method.html" hidden></a>
