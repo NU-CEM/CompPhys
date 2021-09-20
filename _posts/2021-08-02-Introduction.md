@@ -6,7 +6,7 @@ sticky_rank: 1
 hide: true
 ---
 
-This introduction in slide format is [here](https://nu-cem.github.io/CompPhys/slides/Introduction.html).
+This introduction in slide format is [here](https://nu-cem.github.io/CompPhys/slides/Introduction_slides.html).
 
 Computing has become central to virtually all research and development in academia and industry, 
 and with the advent of Machine Learning and High-Performance Computing this dominance is set to continue.
