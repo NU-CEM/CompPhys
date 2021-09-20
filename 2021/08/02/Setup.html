@@ -91,7 +91,7 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>To participate in this course you will need access to the following software: Python, Bash, Git and Jupyter.
+    <p>To participate in this course you will need access to the following software: <a href="https://www.python.org/">Python</a>, <a href="https://www.gnu.org/software/bash/">Bash</a>, <a href="https://git-scm.com/">Git</a> and <a href="https://jupyter.org/">Jupyter</a>.
 To install this software on your personal laptop or desktop carefully follow the instructions listed below.</p>
 
 <p>You will also need a user account at <a href="https://github.com">github.com</a> - Basic GitHub accounts are free.</p>
@@ -103,27 +103,26 @@ To install this software on your personal laptop or desktop carefully follow the
 
 <div class="Toast Toast--warning googoo">
    <span class="Toast-icon"><svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path></svg></span>
-   <span class="Toast-content">You can also run the Python Jupyter Notebook files remotely through the [binder] or [colab] services whenever you see an icon (e.g. like those at the top of [this page]()). But be warned! Any changes you make are not saved and the service can time-out after a period of inactivity (usually ~20 minutes).</span>
+   <span class="Toast-content">You can also run the Python Jupyter Notebook files remotely through the [binder](https://mybinder.org/) or [colab](https://colab.research.google.com) services whenever you see an icon (e.g. like those at the top of [this page](https://nu-cem.github.io/CompPhys/2021/08/02/01-Running_Python)). But be warned! Any changes you make are not saved and the service can time-out after a period of inactivity (usually ~20 minutes).</span>
 </div>
+
+<h3 id="downloads">Downloads</h3>
 
 <h4 id="python">Python</h4>
 
-<p>[Python][python] is a popular language for scientific computing, and great for
+<p><a href="https://www.python.org/">Python</a> is a popular language for scientific computing, and great for
 general-purpose programming as well. Installing all of its scientific packages
 individually can be a bit difficult, however, so we recommend the all-in-one
-installer [Anaconda][anaconda].
-Please make sure you install Python
-version 3.x (e.g., 3.4 is fine).</p>
+installer <a href="https://www.anaconda.com/">Anaconda</a>.</p>
 
-<h5 id="windows---video-tutorial">Windows - [Video tutorial]</h5>
+<h5 id="windows---video-tutorial">Windows - <a href="https://youtu.be/TcSAln46u9U">video tutorial</a></h5>
 
 <ol>
   <li>
-    <p>Open [https://www.anaconda.com/download]
-with your web browser.</p>
+    <p>Open [https://www.anaconda.com/products/individual#download-section] with your web browser.</p>
   </li>
   <li>
-    <p>Download the Python 3 installer for Windows.</p>
+    <p>Download the Anaconda for Windows installer with Python 3. (If you are not sure which version to choose, you probably want the 64-bit Graphical Installer Anaconda3-…-Windows-x86_64.exe)</p>
   </li>
   <li>
     <p>Double-click the executable and install Python 3 using <em>MOST</em> of the
@@ -131,18 +130,18 @@ default settings, the only exception is to check <strong>Add Anaconda to my PATH
   </li>
 </ol>
 
-<h5 id="mac-os-x---video-tutorial">Mac OS X - [Video tutorial]</h5>
+<h5 id="mac-os-x---video-tutorial">Mac OS X - <a href="https://youtu.be/TcSAln46u9U">video tutorial</a></h5>
 
 <ol>
   <li>
-    <p>Open [https://www.anaconda.com/download]
+    <p>Open [https://www.anaconda.com/products/individual#download-section]
 with your web browser.</p>
   </li>
   <li>
-    <p>Download the Python 3 installer for OS X.</p>
+    <p>Download the Anaconda Installer with Python 3 for macOS (you can either use the Graphical or the Command Line Installer).</p>
   </li>
   <li>
-    <p>Install Python 3 using all of the defaults for installation.</p>
+    <p>Install Python 3 by running the Anaconda Installer using all of the defaults for installation.</p>
   </li>
 </ol>
 
@@ -150,75 +149,55 @@ with your web browser.</p>
 
 <p>Bash is a commonly-used shell that gives you the power to do simple tasks more quickly.
 Git is version-control software that allows to you to develop code more efficiently and share a public version of your code on github.com. 
-In fact, this website is built using Bash, Git and github.com (amongst other tools) - the code can be found <a href="">here</a>.
+In fact, this website is built using Bash, Git and github.com (amongst other tools) - the code can be found <a href="https://github.com/NU-CEM/CompPhys">here</a>.
 You can download both tools at the same time following the instructions below.</p>
 
-<h5 id="windows---video-tutorial-1">Windows - <a href="https://www.youtube.com/watch?v=339AEqk9c-8">video tutorial</a></h5>
+<h5 id="windows---video-tutorial-1">Windows - <a href="https://youtu.be/339AEqk9c-8">video tutorial</a></h5>
 
 <ol>
+  <li>Download the Git for Windows <a href="https://gitforwindows.org">installer</a></li>
   <li>
-    <p>Download the Git for Windows <a href="https://git-for-windows.github.io/">installer</a></p>
+    <p>Run the installer and follow the steps below:<br />
+ a) Click on “Next” four times (two times if you’ve previously installed Git). You don’t need to change anything in the Information, location, components, and start menu screens.  <br />
+ b) From the dropdown menu select “Use the Nano editor by default” (NOTE: you will need to scroll up to find it) and click on “Next”.  <br />
+ c) On the page that says “Adjusting the name of the initial branch in new repositories”, ensure that “Let Git decide” is selected. This will ensure the highest level of compatibility for our lessons.<br />
+     d) Ensure that “Git from the command line and also from 3rd-party software” is selected and click on “Next”. (If you don’t do this Git Bash will not work properly, requiring you to remove the Git Bash installation, re-run the installer and to select the “Git from the command line and also from 3rd-party software” option.). 
+     e) Ensure that “Use the native Windows Secure Channel Library” is selected and click on “Next”.<br />
+     f) Ensure that “Checkout Windows-style, commit Unix-style line endings” is selected and click on “Next”.<br />
+     g) Ensure that “Use Windows’ default console window” is selected and click on “Next”.<br />
+     h) Ensure that “Default (fast-forward or merge) is selected and click “Next”. 
+     i) Ensure that “Git Credential Manager Core” is selected and click on “Next”.<br />
+     j) Ensure that “Enable file system caching” is selected and click on “Next”.<br />
+     k) Click on “Install”.<br />
+     l) Click on “Finish” or “Next”.</p>
   </li>
-  <li>
-    <p>Run the installer and follow the steps below:</p>
-
-    <p>a) Click on “Next” four times (two times if you’ve previously
-             installed Git).  You don’t need to change anything
-             in the Information, location, components, and start menu screens.</p>
-
-    <p>b) Select “Use the nano editor by default” and click on “Next”.</p>
-
-    <p>c) Keep “Use Git from the command line and…” selected and click on “Next”.
-             If you forgot to do this programs that you need for the workshop will not work properly.
-             If this happens rerun the installer and select the appropriate option.</p>
-
-    <p>d) Click on “Next”</p>
-
-    <p>e) Keep “Checkout Windows-style, commit Unix-style line endings” selected and click on “Next”.</p>
-
-    <p>f) Select “Use Windows’ default console window” and click on “Next”.</p>
-
-    <p>g) Ensure that “Default (fast-forward or merge) is selected and click “Next”</p>
-
-    <p>h) Ensure that “Git Credential Manager Core” is selected and click on “Next”.</p>
-
-    <p>i) Ensure that “Enable file system caching” is selected and click on “Next”.</p>
-
-    <p>j) Click on “Install”</p>
-
-    <p>k) Click on “Finish”</p>
-  </li>
-  <li>
-    <p>If your “HOME” environment variable is not set (or you don’t know what this is):</p>
-
-    <p>a) Open command prompt (Open Start Menu then type <code>cmd</code> and press [Enter])</p>
-
-    <p>b) Type the following line into the command prompt window exactly as shown:
-  <code class="language-plaintext highlighter-rouge">setx HOME "%USERPROFILE%"</code></p>
-
-    <p>c) Press [Enter], you should see <code class="language-plaintext highlighter-rouge">SUCCESS: Specified value was saved.</code></p>
-  </li>
+  <li>If your “HOME” environment variable is not set (or you don’t know what this is):   <br />
+    a) Open command prompt (Open Start Menu then type cmd and press Enter).  <br />
+    b) Type the following line into the command prompt window exactly as shown: <code class="language-plaintext highlighter-rouge">setx HOME "%USERPROFILE%"</code>.  <br />
+    c) Press Enter, you should see <code class="language-plaintext highlighter-rouge">SUCCESS: Specified value was saved</code>.   <br />
+    d) Quit command prompt by typing exit then pressing Enter.</li>
 </ol>
-
-<p>d) Quit command prompt by typing <code class="language-plaintext highlighter-rouge">exit</code> then pressing [Enter]</p>
 
 <p>This will provide you with both Git and Bash in the Git Bash program.</p>
 
-<h5 id="macos">macOS</h5>
+<h5 id="mac-os-x---video-tutorial-1">Mac OS X - <a href="https://youtu.be/9LQhwETCdwY">video tutorial</a></h5>
 
-<p>For macOS, install Git for Mac by downloading and running the most recent “mavericks” installer from <a href="https://sourceforge.net/projects/git-osx-installer/files/">this list</a>. Because this installer is not signed by the developer, you may have to right click (control click) on the .pkg file, click Open, and click Open on the pop up window. After installing Git, there will not be anything in your <code class="language-plaintext highlighter-rouge">/Applications</code> folder, as Git is a command line program. For older versions of OS X (10.5-10.8) use the most recent available installer labelled “snow-leopard” available <a href="">here</a>.</p>
+<p>For macOS, install Git for Mac by downloading and running the most recent “mavericks” installer from <a href="https://sourceforge.net/projects/git-osx-installer/files/">this list</a>. Because this installer is not signed by the developer, you may have to right click (control click) on the .pkg file, click Open, and click Open on the pop up window. After installing Git, there will not be anything in your <code class="language-plaintext highlighter-rouge">/Applications</code> folder, as Git is a command line program. For older versions of OS X (10.5-10.8) use the most recent available installer labelled “snow-leopard” available <a href="http://sourceforge.net/projects/git-osx-installer/files/">here</a>.</p>
 
-<p>See the Git installation <a href="https://www.youtube.com/watch?v=9LQhwETCdwY ">video tutorial</a>
-        for an example on how to open the Terminal.</p>
+<p>The default shell in some versions of macOS is Bash, and Bash is available in all versions, so no need to install anything. You access Bash from the Terminal (found in /Applications/Utilities). See the video tutorial in the link above for an example on how to open the Terminal. You may want to keep Terminal in your dock.</p>
 
-<h4 id="jupyter">Jupyter</h4>
+<p>To see if your default shell is Bash type <code class="language-plaintext highlighter-rouge">echo $SHELL</code> in Terminal and press the Return key. If the message printed does not end with ‘/bash’ then your default is something else and you can run Bash by typing <code class="language-plaintext highlighter-rouge">bash</code>.</p>
 
-<p>We will teach Python using the [Jupyter notebook][jupyter], a 
+<p>If you want to change your default shell, see this Apple Support article and follow the instructions on “How to change your default shell”.</p>
+
+<h4 id="a-browser-for-jupyter">A browser for Jupyter</h4>
+
+<p>We will teach Python using the [Jupyter notebook][https://jupyter.org/], a 
 programming environment that runs in a web browser. Jupyter requires a reasonably 
 up-to-date browser, preferably a current version of Chrome, Safari, or Firefox 
 (note that Internet Explorer version 9 and below are <em>not</em> supported). Jupyter was installed as part of the Anaconda package for Python.</p>
 
-<h3 id="launch-a-jupyter-notebook">Launch a Jupyter Notebook</h3>
+<h3 id="how-to-launch-a-jupyter-notebook">How-to launch a Jupyter Notebook</h3>
 
 <p>To check that this software has installed correctly, open Git bash (or terminal) and type the command:</p>
 
@@ -229,7 +208,7 @@ up-to-date browser, preferably a current version of Chrome, Safari, or Firefox
 
 <p>You should see a file browser pop up as a new tab on your browser. Select <code class="language-plaintext highlighter-rouge">new</code> and you should see <code class="language-plaintext highlighter-rouge">Python 3</code> listed as an option. Clicking on this will create a new Python 3 notebook file.</p>
 
-<h3 id="start-the-command-line-python-interpreter">Start the command line Python interpreter</h3>
+<h3 id="how-to-start-the-command-line-python-interpreter">How to start the command line Python interpreter</h3>
 
 <p>To start the Python interpreter without the notebook, you can open a terminal 
 or Git Bash and type the command:</p>
