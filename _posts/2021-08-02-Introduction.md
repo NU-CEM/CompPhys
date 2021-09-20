@@ -6,6 +6,8 @@ sticky_rank: 1
 hide: true
 ---
 
+This introduction in slide format is [here](https://nu-cem.github.io/CompPhys/slides/Introduction.html).
+
 Computing has become central to virtually all research and development in academia and industry, 
 and with the advent of Machine Learning and High-Performance Computing this dominance is set to continue.
 
@@ -29,3 +31,4 @@ I will aim to publish all course materials on this website **however** a large c
 The details for Autumn 2021 are:
 - Wednesdays 9-12am 
 - Room D211 in Ellison building
+
