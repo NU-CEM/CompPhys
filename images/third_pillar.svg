@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="730.33014"
+   height="580.60712"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="HolyTrinityOfPhysics.svg">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient5310"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop5312" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5300"
+       osb:paint="gradient">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop5302" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop5304" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5300"
+       id="linearGradient5308"
+       x1="47.98732"
+       y1="377.58029"
+       x2="412.64223"
+       y2="377.58029"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5300"
+       id="linearGradient5314"
+       x1="45.98732"
+       y1="377.58029"
+       x2="414.64224"
+       y2="377.58029"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5300"
+       id="linearGradient5316"
+       x1="45.98732"
+       y1="377.58029"
+       x2="414.64224"
+       y2="377.58029"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="454.6961"
+     inkscape:cy="264.39713"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1282"
+     inkscape:window-height="757"
+     inkscape:window-x="4"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-11.621828,-132.84384)">
+    <path
+       sodipodi:type="arc"
+       style="opacity:0.50000000000000000;fill:#ffcc57;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient5316);stroke-width:5;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path2985"
+       sodipodi:cx="230.31477"
+       sodipodi:cy="377.58029"
+       sodipodi:rx="181.82745"
+       sodipodi:ry="181.82745"
+       d="m 412.14223,377.58029 c 0,100.42053 -81.40693,181.82746 -181.82746,181.82746 -100.42053,0 -181.82745,-81.40693 -181.82745,-181.82746 0,-100.42053 81.40692,-181.82745 181.82745,-181.82745 100.42053,0 181.82746,81.40692 181.82746,181.82745 z"
+       transform="translate(-36.365492,153.54319)" />
+    <path
+       transform="translate(329.30973,153.54319)"
+       sodipodi:type="arc"
+       style="opacity:0.50000000000000000;fill:#35b78f;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient5314);stroke-width:5;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path2985-1"
+       sodipodi:cx="230.31477"
+       sodipodi:cy="377.58029"
+       sodipodi:rx="181.82745"
+       sodipodi:ry="181.82745"
+       d="m 412.14223,377.58029 c 0,100.42053 -81.40693,181.82746 -181.82746,181.82746 -100.42053,0 -181.82745,-81.40693 -181.82745,-181.82746 0,-100.42053 81.40692,-181.82745 181.82745,-181.82745 100.42053,0 181.82746,81.40692 181.82746,181.82745 z" />
+    <path
+       transform="translate(146.47212,-62.408996)"
+       sodipodi:type="arc"
+       style="opacity:0.50000000000000000;fill:#ef5734;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient5308);stroke-width:5;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path2985-7"
+       sodipodi:cx="230.31477"
+       sodipodi:cy="377.58029"
+       sodipodi:rx="181.82745"
+       sodipodi:ry="181.82745"
+       d="m 412.14223,377.58029 c 0,100.42053 -81.40693,181.82746 -181.82746,181.82746 -100.42053,0 -181.82745,-81.40693 -181.82745,-181.82746 0,-100.42053 81.40692,-181.82745 181.82745,-181.82745 100.42053,0 181.82746,81.40692 181.82746,181.82745 z" />
+    <text
+       xml:space="preserve"
+       style="font-size:47.67557907px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
+       x="370.42368"
+       y="298.62131"
+       id="text3805"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3807"
+         x="370.42368"
+         y="298.62131"
+         style="font-size:50px;text-align:center;text-anchor:middle">Computational</tspan><tspan
+         sodipodi:role="line"
+         x="370.42368"
+         y="361.12131"
+         id="tspan3809"
+         style="font-size:50px;text-align:center;text-anchor:middle">Physics</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3811"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:10px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion3813"><rect
+           id="rect3815"
+           width="126.77415"
+           height="52.022858"
+           x="195.96959"
+           y="138.16031" /></flowRegion><flowPara
+         id="flowPara3817"></flowPara></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:54.73717499px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
+       x="194.16022"
+       y="514.57349"
+       id="text3805-5"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="194.16022"
+         y="514.57349"
+         id="tspan3809-1"
+         style="font-size:50px;text-align:center;text-anchor:middle">Theoretical</tspan><tspan
+         sodipodi:role="line"
+         x="194.16022"
+         y="577.07349"
+         style="font-size:50px;text-align:center;text-anchor:middle"
+         id="tspan3845">Physics</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48.28784561px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
+       x="558.08545"
+       y="514.57349"
+       id="text3805-0"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3807-1"
+         x="558.08545"
+         y="514.57349"
+         style="font-size:50px;text-align:center;text-anchor:middle">Experimental</tspan><tspan
+         sodipodi:role="line"
+         x="558.08545"
+         y="577.07349"
+         id="tspan3809-8"
+         style="font-size:50px;text-align:center;text-anchor:middle">Physics</tspan></text>
+  </g>
+</svg>
