@@ -26,7 +26,7 @@ Pandas and [NumPy](https://numpy.org/) are both essential libraries for scientif
 
 Crack the code using the dataframe `df` 
 
-<img src="../images/alphabet.png"  class="plain" width="300"/>
+<img src="https://nu-cem.github.io/CompPhys/images/alphabet.png"  class="plain" width="300"/>
 
 ```
 df.loc[3,0:1] df.loc[0,4] df.loc[3,4] df.loc[0,4] df.loc[0,3]
