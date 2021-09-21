@@ -1,9 +1,7 @@
 ---
 toc: false
 layout: post
-categories: [python]
-title: Python part one: extension activity
-sticky_rank: 3
+title: Python part one - extension activity
 hide: true
 ---
 
@@ -19,3 +17,8 @@ b) When this script is run from the command line, the function `carbon_calculato
 
 c) Can you suggest ways in which the `carbon_calculator.py` programme might be improved?
 
+---
+
+Back to [Python basics - part one](https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_one.html).
+
+---
