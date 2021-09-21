@@ -11,7 +11,7 @@ In this lesson we focus on one extended example: parsing, analysing and plotting
 
 ### Before you begin
 
-- Download the UV-Vis data: [UVVis-01.csv](https://nu-cem.github.io/CompPhys/data/UVVis-01.csv)
+- Download the UV-Vis data into a `data` sub-directory: [UVVis-01.csv](https://nu-cem.github.io/CompPhys/data/UVVis-01.csv)
 - Check that Python and Jupyter Notebook are installed
 - Launch a Jupyter notebook 
 
