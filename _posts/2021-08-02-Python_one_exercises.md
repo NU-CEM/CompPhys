@@ -19,6 +19,6 @@ b) Use this code to calculate the altitude of satellites that orbit the Earth on
 
 ---
 
-Back to [Python basics - part one](https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_one.html).
+Back to [Python part one](https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_one.html).
 
 ---
