@@ -1,9 +1,7 @@
 ---
 toc: false
 layout: post
-categories: [python]
-title: Python part two: exercises
-sticky_rank: 3
+title: Python part two - exercises
 hide: true
 ---
 
@@ -38,3 +36,9 @@ where R is the Tydberg constant ($R = 1.097\times 10^{-2}\mathrm{nm}^{-1}$) and 
 
 a) Write a piece of code to calculate the Lyman series ($m=1$), Balmer series ($m=2$) and Paschen series ($m=3$).
 
+---
+
+
+Back to [Python basics - part two](https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_two.html).
+
+---
