@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>Introduction_slides slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Python_two_slides slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 <!-- General and theme style sheets -->
 <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css">
@@ -14099,169 +14099,135 @@ div.jp-OutputPrompt {
 <div class="slides"><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Computational-Physics:-KD5081">Computational Physics: KD5081<a class="anchor-link" href="#Computational-Physics:-KD5081">&#182;</a></h1><h2 id="Dr-Lucy-Whalley">Dr Lucy Whalley<a class="anchor-link" href="#Dr-Lucy-Whalley">&#182;</a></h2><p><img src="../images/landing.png" alt=""></p>
+<h1 id="%F0%9F%90%8D%F0%9F%90%8D-Python-part-two-%F0%9F%90%8D%F0%9F%90%8D">&#128013;&#128013; Python part two &#128013;&#128013;<a class="anchor-link" href="#%F0%9F%90%8D%F0%9F%90%8D-Python-part-two-%F0%9F%90%8D%F0%9F%90%8D">&#182;</a></h1>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="%E2%9C%A8-Previous-Lesson-%E2%9C%A8">&#10024; Previous Lesson &#10024;<a class="anchor-link" href="#%E2%9C%A8-Previous-Lesson-%E2%9C%A8">&#182;</a></h1><ol>
+<li><strong>running python code:</strong> Jupyter Notebooks, markdown basics  </li>
+<li><strong>variables:</strong> variable names, variable assignment, <code>print()</code>, execution order   </li>
+<li><strong>data types:</strong> integer, float, string, list, <code>len()</code>, string operations/indexing/slicing, type conversion: <code>int()</code>, <code>str()</code>, <code>float()</code> </li>
+<li><strong>functions, help and errors:</strong> <code>min()</code>, <code>max()</code>, <code>round()</code>, <code>help()</code>, runtime errors (exceptions), syntax errors  </li>
+<li><strong>lists</strong> sequence type, immutable vs mutable, list method append, del</li>
+</ol>
 
 </div>
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Who-am-I?">Who am I?<a class="anchor-link" href="#Who-am-I?">&#182;</a></h1><ul>
-<li>Computational materials scientist: <ul>
-<li>solid-state physics</li>
-<li>quantum chemistry </li>
-</ul>
-</li>
-</ul>
-<p><img src="../images/vibrations.gif" width="400"/></p>
+<h1 id="%E2%9C%A8-Today's-Lesson-%E2%9C%A8">&#10024; Today's Lesson &#10024;<a class="anchor-link" href="#%E2%9C%A8-Today's-Lesson-%E2%9C%A8">&#182;</a></h1><ol>
+<li><strong>For loops</strong>  </li>
+<li><strong>Conditionals</strong>  </li>
+<li><strong>Writing functions</strong></li>
+<li><strong>Variable scope</strong></li>
+<li><strong>Libraries</strong></li>
+</ol>
 
 </div>
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Who-am-I?">Who am I?<a class="anchor-link" href="#Who-am-I?">&#182;</a></h1><ul>
-<li>Research software engineer<ul>
-<li>high-performance computing (supercomputers!) to generate data</li>
-<li>Python to analyse this data</li>
-</ul>
-</li>
-</ul>
-<p><img src="../images/Archer-supercomputer.png" width="300"/></p>
+<h1 id="For-Loops">For Loops<a class="anchor-link" href="#For-Loops">&#182;</a></h1><p><img src="../images/forloopa.png"  class="plain" width="800"/></p>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="For-Loops">For Loops<a class="anchor-link" href="#For-Loops">&#182;</a></h1><p><img src="../images/forloopb.png"  class="plain" width="800"/></p>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Conditionals">Conditionals<a class="anchor-link" href="#Conditionals">&#182;</a></h1>
+<pre><code>mass = 4.2
+
+if mass &gt; 3:
+    print(mass, ' is large')
+
+if mass &lt; 2:
+    print(mass, ' is small')
+
+if 2 &lt;= mass &lt;= 3:  
+    print(mass, ' is just right')</code></pre>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Functions">Functions<a class="anchor-link" href="#Functions">&#182;</a></h1>
+<pre><code>def print_greeting():
+    print ("Hello!")</code></pre>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Functions">Functions<a class="anchor-link" href="#Functions">&#182;</a></h1>
+<pre><code>def print_personalised_greeting(name):
+    print ("Hello "+name)</code></pre>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Variable-Scope">Variable Scope<a class="anchor-link" href="#Variable-Scope">&#182;</a></h1>
+<pre><code>pressure = 103.9
+
+def adjust(temperature):
+    new_temperature = temperature*1.43/pressure</code></pre>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Python-scientific-libraries">Python scientific libraries<a class="anchor-link" href="#Python-scientific-libraries">&#182;</a></h1><p><img src="../images/scipy.png"  class="plain" width="600"/></p>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="../images/functionmethodpackage.png"  class="plain" width="400"/></p>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="%E2%9C%A8-Lesson-outline-%E2%9C%A8">&#10024; Lesson outline &#10024;<a class="anchor-link" href="#%E2%9C%A8-Lesson-outline-%E2%9C%A8">&#182;</a></h1><ol>
+<li><strong>For loops</strong>  dummy variable, loop syntax, index from 0  </li>
+<li><strong>Conditionals</strong>  if, elif, else, ordering </li>
+<li><strong>Writing functions</strong> function syntax, return statement, parameters and arguments</li>
+<li><strong>Variable scope</strong> local and global variables</li>
+<li><strong>Libraries</strong> modules, packages, libraries, import statements, aliases</li>
+</ol>
+<p><strong>Bonus end note: Programming good practice</strong></p>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="%E2%9A%A0%EF%B8%8F-Programming-good-practice-%E2%9A%A0%EF%B8%8F">&#9888;&#65039; Programming good practice &#9888;&#65039;<a class="anchor-link" href="#%E2%9A%A0%EF%B8%8F-Programming-good-practice-%E2%9A%A0%EF%B8%8F">&#182;</a></h1><p><strong>Document your code with docstrings</strong></p>
+
+<pre><code> def calc_bulk_density(mass,volume):
+     "Return dry bulk density = powder mass / powder volume."
+     return mass / volume</code></pre>
+<p>What are the other two types of code documentation you can use?</p>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="%E2%9A%A0%EF%B8%8F-Programming-good-practice-%E2%9A%A0%EF%B8%8F">&#9888;&#65039; Programming good practice &#9888;&#65039;<a class="anchor-link" href="#%E2%9A%A0%EF%B8%8F-Programming-good-practice-%E2%9A%A0%EF%B8%8F">&#182;</a></h1><p><strong>Focus on readability</strong></p>
 <ul>
-<li>Ex-teacher:<ul>
-<li>hopefully I won't have to put anyone on detention</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="What-is-computational-physics?">What is computational physics?<a class="anchor-link" href="#What-is-computational-physics?">&#182;</a></h1><ul>
-<li>In physics, different theories based on mathematical models provide very precise predictions on how systems behave. Unfortunately, it is often the case that solving the mathematical model is not feasible.</li>
-<li>Computational physics is the study and implementation of <mark>numerical analysis</mark> to solve problems in physics for which a quantitative theory already exists.</li>
-</ul>
-<p><img src="../images/computational-physics.png" width="300"/></p>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Why-computational-physics?">Why computational physics?<a class="anchor-link" href="#Why-computational-physics?">&#182;</a></h1><ul>
-<li>Computing is now central to virtually all research and development in academia and industry</li>
-<li>Computational physics encompasses areas including materials modelling, particle physics simulations, protein structure prediction and plasma modelling. <mark> In fact, it is possible to find a computational branch for every major field in physics.</mark></li>
-</ul>
-<p><img src="../images/third_pillar.svg" width="300"/></p>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Why-computational-skills?">Why computational skills?<a class="anchor-link" href="#Why-computational-skills?">&#182;</a></h1><ul>
-<li>The software development job market is growing fast: jobs are expected to increase by 21% by 2028 </li>
-<li>The focus of this course is to equip with you with the <mark> transferable skills needed for success in a range of computational disciplines </mark>, with examples tailored towards the physics domain.</li>
-</ul>
-<p><img src="../images/skills-shortage.png" width="400"/></p>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Why-computational-skills?">Why computational skills?<a class="anchor-link" href="#Why-computational-skills?">&#182;</a></h1><p><img src="../images/disaster.png" width="500"/></p>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Course-outline">Course outline<a class="anchor-link" href="#Course-outline">&#182;</a></h1><h4 id="Part-one:-Getting-started">Part one: Getting started<a class="anchor-link" href="#Part-one:-Getting-started">&#182;</a></h4><ul>
-<li>Python part one</li>
-<li>Python part two</li>
-<li>Data analysis and visualisation</li>
-</ul>
-<h4 id="Part-two:-Getting-results">Part two: Getting results<a class="anchor-link" href="#Part-two:-Getting-results">&#182;</a></h4><ul>
-<li>Modelling with ordinary differential equations</li>
-<li>Modelling with partial differential equations</li>
-</ul>
-<h4 id="Part-three:-Getting-it-out-there">Part three: Getting it out there<a class="anchor-link" href="#Part-three:-Getting-it-out-there">&#182;</a></h4><ul>
-<li>Python scripts and the Unix terminal</li>
-<li>Testing and documentation</li>
-<li>Version control and Github</li>
-<li>Open science and build-your-own website</li>
+<li>consistency is key</li>
+<li>whitespace:<br>
+   <code>spam(ham[1], {eggs: 2})</code><br>
+   <code>spam( ham[ 1 ], { eggs: 2} )</code></li>
+<li>clear, meaningful variable names (don't just use <code>x</code>, <code>p</code> etc and expect the reader to know what they mean!)</li>
 </ul>
 
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Guest-speakers">Guest speakers<a class="anchor-link" href="#Guest-speakers">&#182;</a></h1><p>In the final section of the course you will also hear from three guest speakers who use some of the computational skills outlined in this course in their own work:</p>
-<ul>
-<li>Anna Krystalli (Research Software Engineer, Sheffield University)</li>
-<li>Adam Jackson (Computational scientist, Science and Technology Facilities Council)</li>
-<li>Felix Rehren (Director of insurance mergers and acquisitions, Athora).</li>
-</ul>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="How-does-all-this-relate-to-the-experimental-component?">How does all this relate to the experimental component?<a class="anchor-link" href="#How-does-all-this-relate-to-the-experimental-component?">&#182;</a></h1><p>The first part of this course covers the basic skills needed for processing experimental data using Python. At the end of Getting started you will be able to read in experimental data from a plain text file, clean the data, apply basic statistical analysis and plot. <mark>We very much encourage you to apply the tools outlined in this course to your experimental analysis.</mark></p>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="How-is-this-component-of-the-course-assessed?">How is this component of the course assessed?<a class="anchor-link" href="#How-is-this-component-of-the-course-assessed?">&#182;</a></h1><ul>
-<li>The module is split into two parts: experimental and computational</li>
-<li>Each part is assessed seperately: 50% for experiment, 50% for computational</li>
-<li>Both are coursework based. For the <mark>computational part</mark>:<ul>
-<li>Coursework will be released on <strong>Wednesday the 8th November</strong></li>
-<li>Coursework will be submitted on <strong>Thursday the 16th December</strong></li>
-<li>The coursework includes marks for <mark>code quality</mark></li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Course-resources">Course resources<a class="anchor-link" href="#Course-resources">&#182;</a></h1><ul>
-<li>Course website - <a href="nu-cem.github.io/CompPhys">nu-cem.github.io/CompPhys</a> - perhaps bookmark it.</li>
-<li><a href="https://github.com/NU-CEM/CompPhys/issues">Github</a> to suggest improvements, report errors, share ideas...</li>
-<li>Padlet to let me know what you think and share links - link <a href="https://padlet.com/lucywhalley/g7qjqy1fvo07sip5">here</a>.</li>
-</ul>
-<p><img src="../images/website.png" width="300"/></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Laptop-setup">Laptop setup<a class="anchor-link" href="#Laptop-setup">&#182;</a></h1><p>If you do not have a laptop with you then you can:</p>
-<ul>
-<li>sit with someone who does (to help and to learn)</li>
-<li>explore the Journal of Open Source Software: <a href="https://joss.theoj.org/">https://joss.theoj.org/</a><ul>
-<li>can you find a paper that interests you?</li>
-<li>can you find the corresponding software on Github?</li>
-<li>could explain what the software does to a non-expert?</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
 </div></section></section>
 </div>
 </div>
