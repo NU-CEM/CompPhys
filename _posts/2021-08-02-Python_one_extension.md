@@ -19,6 +19,6 @@ c) Can you suggest ways in which the `carbon_calculator.py` programme might be i
 
 ---
 
-Back to [Python basics - part one](https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_one.html).
+Back to [Python part one](https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_one.html).
 
 ---
