@@ -13,6 +13,7 @@ This lesson is part one of an introduction to programming in Python for people w
 
 - Check that Python and Jupyter Notebook are installed
 - Launch a Jupyter notebook 
+- Think about the folder (directory) structure you will use for this course. The following structure is recommended: `OneDrive -> KD5081_Comp -> Notebooks`.
 
 Please see the [Setup](https://nu-cem.github.io/CompPhys/2021/08/02/Setup) page for more details.
 
