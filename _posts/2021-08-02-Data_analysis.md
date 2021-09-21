@@ -27,7 +27,7 @@ Please see the [Setup](https://nu-cem.github.io/CompPhys/2021/08/02/Setup) page 
 
 ### Resources
 
-- Lesson exercises
-- Extension exercise
-- Presentation
-- Teaching notes
+- [Lesson exercises](https://nu-cem.github.io/CompPhys/2021/08/02/Data_analysis_exercises)
+- [Extension exercise](https://nu-cem.github.io/CompPhys/2021/08/02/Data_analysis_extension)
+- [Presentation](https://nu-cem.github.io/CompPhys/slides/Data_analysis_slides)
+
