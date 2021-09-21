@@ -13,7 +13,7 @@ The Madelung constant gives the total electric potential felt by an atom in a so
 
 Consider the compound sodium chloride. These are arranged on a cubic lattice, with sodium having a positive charge ($+e$) and chlorine having a negative charge ($-e$). If each atom position is given by integers $(i,j,k)$ then the sodium atoms are at positions where $i+j+k$ is even and the chlorine atoms are at positions where $i+j+k$ is odd.
 
-![](../images/NaCl.png)
+![](https://nu-cem.github.io/CompPhys/images/NaCl.png)
 
 For an atom at $i=j=k=0$, the Madelung constant $M$ can be approximated by using the following formulae:
 
