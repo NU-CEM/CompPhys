@@ -1,9 +1,7 @@
 ---
 toc: false
 layout: post
-categories: [python]
-title: Python part one: exercises
-sticky_rank: 3
+title: Python part one - exercises
 hide: true
 ---
 
@@ -18,3 +16,9 @@ where $G$ is Newton's gravitational constant, $M$ is the mass of the Earth, and 
 a) Write a piece of code which calculates the altitude $h$ (in metres) for a given value of $T$ (in seconds).
 
 b) Use this code to calculate the altitude of satellites that orbit the Earth once a day (a "geosynchronous" orbit) and once every 45 minutes. What can you conclude from this final calculation?
+
+---
+
+Back to [Python basics - part one](https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_one.html).
+
+---

@@ -1,9 +1,7 @@
 ---
 toc: false
 layout: post
-categories: [python]
-title: Python part two: extension activity
-sticky_rank: 3
+title: Python part two - extension activity
 hide: true
 ---
 
@@ -29,5 +27,9 @@ a) Write an expression (in Markdown/LaTeX) for the distance $r$ in terms of $i$,
 
 b) Calculate the Madelung constant for sodium chloride using a large a value as L as you can (so the code runs in about a minute or less). How does it compare with published values?
 
+---
 
+Back to [Python basics - part two](https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_two.html).
+
+---
 
