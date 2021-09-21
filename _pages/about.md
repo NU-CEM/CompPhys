@@ -8,11 +8,12 @@ This website contains resources for the second year course "Theory, computation 
 
 The content of this website is derived from several other sources:
 
-- Software Carpentry (in particular, Introduction and Setup)
-- Code Refinery
-- pycharge (landing page animation)
-- https://users.aber.ac.uk/ruw/teach/260/
-- Chem Libre texts
+- [Software Carpentry](https://software-carpentry.org/) (Setup and the "Getting started" section)
+- [Code Refinery](https://coderefinery.org/) ("Getting it out there")
+- [pycharge](https://pycharge.readthedocs.io/en/latest/) (landing page animation)
+- [Rudolf Winter's notes on ODEs and PDEs](https://users.aber.ac.uk/ruw/teach/260/) ("Getting results")
+- [3blue1brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw) Youtube videos ("Getting results")
+- The book [Computational Physics by Mark Newman](http://www-personal.umich.edu/~mejn/cp/) (Some of the exercises are taken from this book)
 
 The content of this website is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/). You can re-use any of its content as long as the following attribution is included, and you indicate if changes were made.
 

@@ -29,7 +29,7 @@ Please see the [Setup](https://nu-cem.github.io/CompPhys/2021/08/02/Setup) page 
 
 ### Resources
 
-- [Lesson exercises](https://nu-cem.github.io/CompPhys/exercises/Python_one_exercises)
-- [Extension exercise](https://nu-cem.github.io/CompPhys/exercises/Python_one_extension)
+- [Lesson exercises](https://nu-cem.github.io/CompPhys/2021/08/02/Python_one_exercises)
+- [Extension exercise](https://nu-cem.github.io/CompPhys/2021/08/02/Python_one_extension)
 - [Presentation](https://nu-cem.github.io/CompPhys/slides/Python_one_slides)
 
