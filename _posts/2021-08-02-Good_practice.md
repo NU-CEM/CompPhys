@@ -30,10 +30,14 @@ density = mass / volume
 
 **Focus on readability**
 
-1. consistency is key
-2. Use consisten whitespace:  
-	 `spam(ham[1], {eggs: 2})`   
-	 `spam( ham[ 1 ], { eggs: 2} )`
+1. Consistency is key
+2. Use consistent whitespace:  
+
+```
+spam(ham[1], {eggs: 2})   
+spam( ham[ 1 ], { eggs: 2} )
+```
+
 3. Use clear, meaningful variable names (don't just use `x`, `p` and expect the reader to know what they mean!)
 
 The [Pep 8 Style Guide for Python code](https://www.python.org/dev/peps/pep-0008/) has further guidance.
