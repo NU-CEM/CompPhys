@@ -9,7 +9,7 @@ hide: true
 
 A satellite is launched into a circular orbit around the earth so that it orbits the planet once every $T$ seconds. The altitude $h$ above the Earth's surface that the satellite must have is:
 
-$ h = \(\frac{GMT^2}{4\pi^2}\right)^{\frac{1}{3}} - R$
+$ h = \left(\frac{GMT^2}{4\pi^2}\right)^{\frac{1}{3}} - R$
 
 where $G$ is Newton's gravitational constant, $M$ is the mass of the Earth, and $R$ is the radius.
 
