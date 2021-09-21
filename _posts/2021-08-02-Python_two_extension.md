@@ -29,7 +29,7 @@ b) Calculate the Madelung constant for sodium chloride using a large a value as 
 
 ---
 
-Back to [Python basics - part two](https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_two.html).
+Back to [Python part two](https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_two.html).
 
 ---
 
