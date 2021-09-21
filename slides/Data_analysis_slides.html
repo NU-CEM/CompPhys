@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>Python_two_slides slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Data_analysis_slides slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 <!-- General and theme style sheets -->
 <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css">
@@ -14099,141 +14099,23 @@ div.jp-OutputPrompt {
 <div class="slides"><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="%F0%9F%90%8D%F0%9F%90%8D-Python-part-two-%F0%9F%90%8D%F0%9F%90%8D">&#128013;&#128013; Python part two &#128013;&#128013;<a class="anchor-link" href="#%F0%9F%90%8D%F0%9F%90%8D-Python-part-two-%F0%9F%90%8D%F0%9F%90%8D">&#182;</a></h1>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="%E2%9C%A8-Previous-Lesson-%E2%9C%A8">&#10024; Previous Lesson &#10024;<a class="anchor-link" href="#%E2%9C%A8-Previous-Lesson-%E2%9C%A8">&#182;</a></h1><ol>
-<li><strong>running python code:</strong> Jupyter Notebooks, markdown basics  </li>
-<li><strong>variables:</strong> variable names, variable assignment, <code>print()</code>, execution order   </li>
-<li><strong>data types:</strong> integer, float, string, list, <code>len()</code>, string operations/indexing/slicing, type conversion: <code>int()</code>, <code>str()</code>, <code>float()</code> </li>
-<li><strong>functions, help and errors:</strong> <code>min()</code>, <code>max()</code>, <code>round()</code>, <code>help()</code>, runtime errors (exceptions), syntax errors  </li>
-<li><strong>lists</strong> sequence type, immutable vs mutable, list method append, del</li>
-</ol>
+<h1 id="Data-analysis-and-visualisation">Data analysis and visualisation<a class="anchor-link" href="#Data-analysis-and-visualisation">&#182;</a></h1><p><img src="../images/anatomy1.webp"  class="plain" width="600"/></p>
 
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="%E2%9C%A8-Today's-Lesson-%E2%9C%A8">&#10024; Today's Lesson &#10024;<a class="anchor-link" href="#%E2%9C%A8-Today's-Lesson-%E2%9C%A8">&#182;</a></h1><ol>
-<li><strong>For loops</strong>  </li>
-<li><strong>Conditionals</strong>  </li>
-<li><strong>Writing functions</strong></li>
-<li><strong>Variable scope</strong></li>
-<li><strong>Libraries</strong></li>
-</ol>
-
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="For-Loops">For Loops<a class="anchor-link" href="#For-Loops">&#182;</a></h1><p><img src="../images/forloopa.png"  class="plain" width="800"/></p>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="For-Loops">For Loops<a class="anchor-link" href="#For-Loops">&#182;</a></h1><p><img src="../images/forloopb.png"  class="plain" width="800"/></p>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Conditionals">Conditionals<a class="anchor-link" href="#Conditionals">&#182;</a></h1>
-<pre><code>mass = 4.2
-
-if mass &gt; 3:
-    print(mass, ' is large')
-
-if mass &lt; 2:
-    print(mass, ' is small')
-
-if 2 &lt;= mass &lt;= 3:  
-    print(mass, ' is just right')</code></pre>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Functions">Functions<a class="anchor-link" href="#Functions">&#182;</a></h1>
-<pre><code>def print_greeting():
-    print ("Hello!")</code></pre>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Functions">Functions<a class="anchor-link" href="#Functions">&#182;</a></h1>
-<pre><code>def print_personalised_greeting(name):
-    print ("Hello "+name)</code></pre>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Variable-Scope">Variable Scope<a class="anchor-link" href="#Variable-Scope">&#182;</a></h1>
-<pre><code>pressure = 103.9
-
-def adjust(temperature):
-    new_temperature = temperature*1.43/pressure</code></pre>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Python-scientific-libraries">Python scientific libraries<a class="anchor-link" href="#Python-scientific-libraries">&#182;</a></h1><p><img src="../images/scipy.png"  class="plain" width="600"/></p>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="../images/functionmethodpackage.png"  class="plain" width="400"/></p>
-
-</div>
-</div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="%E2%9C%A8-Lesson-outline-%E2%9C%A8">&#10024; Lesson outline &#10024;<a class="anchor-link" href="#%E2%9C%A8-Lesson-outline-%E2%9C%A8">&#182;</a></h1><ol>
-<li><strong>For loops</strong>  dummy variable, loop syntax, index from 0  </li>
-<li><strong>Conditionals</strong>  if, elif, else, ordering </li>
-<li><strong>Writing functions</strong> function syntax, return statement, parameters and arguments</li>
-<li><strong>Variable scope</strong> local and global variables</li>
-<li><strong>Libraries</strong> modules, packages, libraries, import statements, aliases</li>
+<li>Reading (and cleaning) data with Pandas</li>
+<li>Analysing Data with NumPy</li>
+<li>Visualising Data with Matplotlib</li>
 </ol>
-<p><strong>Bonus end note: Programming good practice</strong></p>
 
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="%E2%9A%A0%EF%B8%8F-Programming-good-practice-%E2%9A%A0%EF%B8%8F">&#9888;&#65039; Programming good practice &#9888;&#65039;<a class="anchor-link" href="#%E2%9A%A0%EF%B8%8F-Programming-good-practice-%E2%9A%A0%EF%B8%8F">&#182;</a></h1><p><strong>Document your code with docstrings</strong></p>
-
-<pre><code> def calc_bulk_density(mass,volume):
-     "Return dry bulk density = powder mass / powder volume."
-     return mass / volume</code></pre>
-<p>What are the other two types of code documentation you can use?</p>
-
 </div>
-</div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="%E2%9A%A0%EF%B8%8F-Programming-good-practice-%E2%9A%A0%EF%B8%8F">&#9888;&#65039; Programming good practice &#9888;&#65039;<a class="anchor-link" href="#%E2%9A%A0%EF%B8%8F-Programming-good-practice-%E2%9A%A0%EF%B8%8F">&#182;</a></h1><p><strong>Focus on readability</strong></p>
-<ul>
-<li>consistency is key</li>
-<li>whitespace:<br>
-   <code>spam(ham[1], {eggs: 2})</code><br>
-   <code>spam( ham[ 1 ], { eggs: 2} )</code></li>
-<li>clear, meaningful variable names (don't just use <code>x</code>, <code>p</code> etc and expect the reader to know what they mean!)</li>
-</ul>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="%E2%9A%A0%EF%B8%8F-Programming-good-practice-%E2%9A%A0%EF%B8%8F">&#9888;&#65039; Programming good practice &#9888;&#65039;<a class="anchor-link" href="#%E2%9A%A0%EF%B8%8F-Programming-good-practice-%E2%9A%A0%EF%B8%8F">&#182;</a></h1><p><strong>Think about reproducibility</strong></p>
-<p>Reproducibility is more complex and difficult than you might think..</p>
-<p>One straight-forward thing you can do is print the version number for each package you import using <code>print(packagename.__version__)</code></p>
+<h1 id="Pandas-dataframe">Pandas dataframe<a class="anchor-link" href="#Pandas-dataframe">&#182;</a></h1><p><img src="../images/dataframe.png"  class="plain" width="1000"/></p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
