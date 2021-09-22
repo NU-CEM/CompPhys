@@ -7,6 +7,8 @@ hide: true
 
 # Altitude of a satellite
 
+*Adapted from Mark Newman's book "Computational Physics, p. 30*
+
 A satellite is launched into a circular orbit around the earth so that it orbits the planet once every $T$ seconds. The altitude $h$ above the Earth's surface that the satellite must have is:
 
 $ h = \left(\frac{GMT^2}{4\pi^2}\right)^{\frac{1}{3}} - R$
