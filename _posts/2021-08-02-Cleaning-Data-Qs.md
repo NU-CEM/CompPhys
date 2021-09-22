@@ -22,6 +22,27 @@ Pandas and [NumPy](https://numpy.org/) are both essential libraries for scientif
 
 {::options parse_block_html="false" /}
 
+## Crack the code
+
+Crack the code using the dataframe `df` 
+
+<img src="https://nu-cem.github.io/CompPhys/images/alphabet.png"  class="plain" width="300"/>
+
+```
+df.loc[3,0:1] df.loc[0,4] df.loc[3,4] df.loc[0,4] df.loc[0,3]
+df.loc[3,3] df.loc[4,2:3]
+```
+
+{::options parse_block_html="true" /}
+<details>
+  <summary markdown="span">Show answer</summary>
+
+Mmm, tasty tasty "stewed veg".
+
+</details>
+
+{::options parse_block_html="false" /}
+
 ---
 
 See [the notebook](https://nu-cem.github.io/CompPhys/2021/08/02/Cleaning-Data.html).
