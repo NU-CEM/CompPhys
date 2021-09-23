@@ -8,15 +8,15 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Data analysis and visualisation - exercises" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
-<meta property="og:description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
+<meta name="description" content="Error bars" />
+<meta property="og:description" content="Error bars" />
 <link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/Data_analysis_exercises.html" />
 <meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/Data_analysis_exercises.html" />
 <meta property="og:site_name" content="An Introduction to Computational Physics" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Data_analysis_exercises.html","@type":"BlogPosting","headline":"Data analysis and visualisation - exercises","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Data_analysis_exercises.html"},"description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","@context":"https://schema.org"}</script>
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Data_analysis_exercises.html","@type":"BlogPosting","headline":"Data analysis and visualisation - exercises","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Data_analysis_exercises.html"},"description":"Error bars","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -91,7 +91,35 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <hr />
+    <h1 id="error-bars">Error bars</h1>
+
+<p>In [Python part two] you wrote a function to calculate the perimeter of a triangle and the associated standard error.</p>
+
+<p>a) Use this function to plot the perimeter of an equilateral triangle as a function of side length. Use the following side lengths: 3.1cm, 6.7cm, 9.2cm, 12.4cm and assume you use. Think carefully about the type of plot: should it be a scatter plot or line plot?</p>
+
+<p>b) Re-plot this data with attached error bars using the <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html"><code class="language-plaintext highlighter-rouge">matplotlib.pyplot.errorbar</code> function</a></p>
+
+<h1 id="calculating-plancks-constant">Calculating Planck’s constant</h1>
+
+<p><em>Adapted from Mark Newman’s book “Computational Physics, p. 124</em></p>
+
+<p>When light is shone on the surface of a metal, the photons in the light can excite (transfer energy to) electrons in the metal and, sometimes, eject them from the surface into the free space above. The energy of the ejected electron can be calculated by measuring the minimum voltage $V$ that stops the electron moving.</p>
+
+<p>We know that the energy of an ejected electron is equal to the energy of the photon that excited it minus the workfunction $\phi$ (which is the energy needed to remove it from the surface) and that the energy of a single photon is $hf$ where $h$ is Planck’s constant and $f$ is the frequency of light. Mathematically this can be expressed as:</p>
+
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi>V</mi><mo>=</mo><mi>h</mi><mi>f</mi><mo>−</mo><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">eV = hf - \phi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">h</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">ϕ</span></span></span></span>,</p>
+
+<p>where $e$ is the charge of the electron.</p>
+
+<p>a) Read in the photoelectric measurement data from the file Planck.txt. The first column contains frequencies $f$ is hertz and the second column contains voltages $V$. Use this data to plot $V$ vs $f$. Think about the plot type - does a scatter plot of line plot make most sense?</p>
+
+<p>The least-squares method is very commonly used for fitting a polynomial to a set of data. As it is so prevalent in physics and engineering, you are encouraged to watch <a href="https://www.youtube.com/watch?v=YwZYSTQs-Hk">this video</a> which give an intuitive and mathematical description of the method.</p>
+
+<p>b) Fit a straight line (polynomial of degree one) to the data using the least-squares method implemented in <a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.lstsq.html"><code class="language-plaintext highlighter-rouge">numpy.polyfit</code></a>. Overlay this line on your data points.</p>
+
+<p>c) Using the gradient of the fitted line calculate a value for Planck’s constant. Compare this to values you can find online.</p>
+
+<hr />
 
 <p>Back to <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Data_analysis.html">Data analysis and visualisation</a>.</p>
 
