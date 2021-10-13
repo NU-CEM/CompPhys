@@ -7,3 +7,4 @@
 - Github issues
 - Github gists
 - Blackboard discussions
+- Nordic research software hour
