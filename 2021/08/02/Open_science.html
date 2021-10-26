@@ -98,8 +98,9 @@ window.onload = wrap_img;
 
 <p>Objectives:</p>
 <ul>
-  <li>Differentiate between git, Github and Github pages.</li>
-  <li>Use Github pages and markdown to create a single page website.</li>
+  <li>Differentiate between git, Github and Github pages</li>
+  <li>Use Github pages and html to create a very simple website</li>
+  <li>Use Github pages and markdown to create a very simple website</li>
   <li>Customise the website using the <code class="language-plaintext highlighter-rouge">_config.yml</code> file</li>
   <li>Use Github pages, markdown and Jekyll to create a multipage website</li>
 </ul>
@@ -109,7 +110,7 @@ window.onload = wrap_img;
   <li>Github pages is a static site hosting service that takes HTML files from a Github repository and publishes a website.</li>
   <li>We can create a simple website in three short steps.</li>
   <li>Github pages can be combined with a variety of static site generators to create a customised website.</li>
-  <li>A single page project site can be created using an <code class="language-plaintext highlighter-rouge">index.md</code> file on the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch.</li>
+  <li>A single page project site can be created using an <code class="language-plaintext highlighter-rouge">README.md</code> file on the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch.</li>
   <li>Github pages combined with Jekyll top matter can be used to create quick multipage sites.</li>
   <li>Github has a range of Jekyll themes to choose from.</li>
   <li>To access a wider range of themes and customisation options you can add a <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</li>
@@ -203,8 +204,35 @@ window.onload = wrap_img;
 
 <ul>
   <li>It would take a lot of time to write our website using html (unless we want a really, really simple website)</li>
-  <li>Instead there are several static site generators which will take plain text files (formatted using a markup language such as markdown or reStructuredText) and convert these into html.</li>
+  <li>Instead there are several static site generators which will take plain text files (formatted using a markup language such as <a href="https://www.markdownguide.org/basic-syntax/">markdown</a> or <a href="https://www.writethedocs.org/guide/writing/reStructuredText/">reStructuredText</a>) and convert these into html.</li>
+  <li>Examples of static site generators include:
+    <ul>
+      <li><a href="https://jekyllrb.com/">Jekyll</a>, which is used by the Software Carpentry organisation: https://swcarpentry.github.io/python-novice-inflammation/</li>
+      <li><a href="https://www.mkdocs.org/">Mkdocs</a>, which is used to create documentation sites, for example this one for the University of Northumbria research computing community (developed by an undergraduate student in the CIS department): https://rsc-northumbria.github.io/oswald-docs/</li>
+      <li><a href="https://gohugo.io/">hugo</a> which can be used for developing personal or professional webpages: https://lucydot.github.io</li>
+    </ul>
+  </li>
+  <li>Each type of static site generator comes with a range of templates to use for customising your website.</li>
+  <li>Any static site generator can be combined with Github pages to create a website. We will use Jekyll as this has extra integration support from Github pages.</li>
+  <li>
+    <h3 id="a-single-page-project-site-is-created-using-the-readmemd-file-on-the-gh-pages-branch">A single page project site is created using the <code class="language-plaintext highlighter-rouge">README.md</code> file on the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch.</h3>
+  </li>
+  <li>In fact, Github has already used the Jekyll static site generator behind the scenes to convert your repository <code class="language-plaintext highlighter-rouge">README.md</code> file to html. You can access this at <code class="language-plaintext highlighter-rouge">https://username.github.io/website-example/</code>.</li>
+  <li>We can edit and commit changes to the <code class="language-plaintext highlighter-rouge">README.md</code> and our webpage will be updated.
+    <ul>
+      <li>Click on the pencil icon on your repository landing page</li>
+      <li>Edit the file using markdown, e.g. <code class="language-plaintext highlighter-rouge">The website can be accessed [here](https://lucydot.github.io/website-example/Hello-world.html).</code></li>
+      <li>Under <code class="language-plaintext highlighter-rouge">Commit changes</code> write a commit message title e.g. <code class="language-plaintext highlighter-rouge">Include a link the website</code>.</li>
+      <li>Click on <code class="language-plaintext highlighter-rouge">Commit changes</code> to save (version control) the changes made.</li>
+      <li>The changes should be reflected on the webpage: https://username.github.io/website-example/</li>
+    </ul>
+  </li>
 </ul>
+
+<h3 id="github-pages-combined-with-jekyll-top-matter-can-be-used-to-create-quick-multipage-sites">Github pages combined with Jekyll top matter can be used to create quick multipage sites.</h3>
+<h3 id="github-has-a-range-of-jekyll-themes-to-choose-from">Github has a range of Jekyll themes to choose from.</h3>
+<h3 id="to-access-a-wider-range-of-themes-and-customisation-options-you-can-add-a-_configyml-file">To access a wider range of themes and customisation options you can add a <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</h3>
+<h3 id="other-static-site-generators-can-be-combined-with-github-actions-for-more-flexibility">Other static site generators can be combined with Github actions for more flexibility.</h3>
 
   </div><a class="u-url" href="/CompPhys/2021/08/02/Open_science.html" hidden></a>
 </article>
