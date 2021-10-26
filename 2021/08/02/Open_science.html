@@ -214,9 +214,11 @@ window.onload = wrap_img;
   </li>
   <li>Each type of static site generator comes with a range of templates to use for customising your website.</li>
   <li>Any static site generator can be combined with Github pages to create a website. We will use Jekyll as this has extra integration support from Github pages.</li>
-  <li>
-    <h3 id="a-single-page-project-site-is-created-using-the-readmemd-file-on-the-gh-pages-branch">A single page project site is created using the <code class="language-plaintext highlighter-rouge">README.md</code> file on the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch.</h3>
-  </li>
+</ul>
+
+<h3 id="a-single-page-project-site-is-created-using-the-readmemd-file-on-the-gh-pages-branch">A single page project site is created using the <code class="language-plaintext highlighter-rouge">README.md</code> file on the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch.</h3>
+
+<ul>
   <li>In fact, Github has already used the Jekyll static site generator behind the scenes to convert your repository <code class="language-plaintext highlighter-rouge">README.md</code> file to html. You can access this at <code class="language-plaintext highlighter-rouge">https://username.github.io/website-example/</code>.</li>
   <li>We can edit and commit changes to the <code class="language-plaintext highlighter-rouge">README.md</code> and our webpage will be updated.
     <ul>
@@ -229,10 +231,95 @@ window.onload = wrap_img;
   </li>
 </ul>
 
-<h3 id="github-pages-combined-with-jekyll-top-matter-can-be-used-to-create-quick-multipage-sites">Github pages combined with Jekyll top matter can be used to create quick multipage sites.</h3>
+<h3 id="github-pages-combined-with-jekyll-top-matter-can-be-used-to-create-a-multipage-sites">Github pages combined with Jekyll top matter can be used to create a multipage sites.</h3>
+
+<ul>
+  <li>Github pages will automatically convert any markdown file on the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch using Jekyll if it contains top-matter in a particular format.
+    <ul>
+      <li>In your repository click on <code class="language-plaintext highlighter-rouge">Add file</code> and <code class="language-plaintext highlighter-rouge">Create new file</code></li>
+      <li>Name the file <code class="language-plaintext highlighter-rouge">Code-of-Conduct.md</code></li>
+      <li>Paste the following top matter and content into the file</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+title: Code of Conduct
+---
+
+Welcome to the Build-your-own website page.
+
+The first rule is: Be Nice!
+</code></pre></div></div>
+<ul>
+  <li>Click <code class="language-plaintext highlighter-rouge">Commit new file</code></li>
+  <li>You can see your new webpage at https://username.github.io/website-example/Code-of-Conduct.</li>
+</ul>
+
+<p>You may also want to update your <code class="language-plaintext highlighter-rouge">README.md</code> with links to the Hello-world webpage and the Code of Conduct.</p>
+
+<blockquote>
+  <p>Important: The three dashes at the top and bottom of your front matter are very important. If your file does not start with top matter in this format Jekyll will not convert the file to html.</p>
+</blockquote>
+
+<blockquote>
+  <p>Info: The Code of Conduct we use here is a silly example. However for many projects and initiatives having a Code of Conduct is important. There is more information on <a href="https://opensource.guide/code-of-conduct/">this page</a>.</p>
+</blockquote>
+
 <h3 id="github-has-a-range-of-jekyll-themes-to-choose-from">Github has a range of Jekyll themes to choose from.</h3>
-<h3 id="to-access-a-wider-range-of-themes-and-customisation-options-you-can-add-a-_configyml-file">To access a wider range of themes and customisation options you can add a <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</h3>
+
+<ul>
+  <li>You can add a theme to your GitHub Pages site to customize your site’s look and feel.</li>
+  <li>There are a <a href="https://pages.github.com/themes/">range of Jekyll themes</a> that Github pages has built-in support for. To change the theme you can use the following steps:
+    <ul>
+      <li>In your repository click on <code class="language-plaintext highlighter-rouge">Settings</code></li>
+      <li>Click on <code class="language-plaintext highlighter-rouge">Pages</code> in the left navigation bar</li>
+      <li>Click on <code class="language-plaintext highlighter-rouge">Choose a theme</code></li>
+      <li>Choose a theme to preview</li>
+      <li>Click <code class="language-plaintext highlighter-rouge">Select theme</code></li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Note: The theme will only be applied to webpages with the Jekyll top matter.</p>
+</blockquote>
+
+<blockquote>
+  <p>Note: When you select a new theme the <code class="language-plaintext highlighter-rouge">_config.yml</code> file in your repository is automatically updated.</p>
+</blockquote>
+
+<h3 id="to-access-a-wider-range-of-customisation-options-you-can-edit-the-_configyml-file">To access a wider range of customisation options you can edit the <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</h3>
+
 <h3 id="other-static-site-generators-can-be-combined-with-github-actions-for-more-flexibility">Other static site generators can be combined with Github actions for more flexibility.</h3>
+
+<ul>
+  <li>Any static site generator can be combined with Github pages to create a website.</li>
+  <li>For example, the <a href="https://rsc-northumbria.github.io/oswald-docs/">Northumbria Research Computing Community website</a> was built using MkDocs framework, Github Pages and Github Actions to build the webpages.
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">main</code> branch of the corresponding <a href="https://github.com/RSC-Northumbria/oswald-docs">Github repo</a> has a <code class="language-plaintext highlighter-rouge">mkdocs.yml</code> file that specifies the theme, plugins used and website navigation</li>
+      <li>The <code class="language-plaintext highlighter-rouge">main</code> branch has a <code class="language-plaintext highlighter-rouge">docs</code> folder containing the website content as markdown files. In the root of the <code class="language-plaintext highlighter-rouge">docs</code> folder is the homepage <code class="language-plaintext highlighter-rouge">index.md</code>.</li>
+      <li>The <code class="language-plaintext highlighter-rouge">main</code> branch contains a file <code class="language-plaintext highlighter-rouge">.github/workflows/build-docs.yml</code> which specifies how to build and deploy the html using the markdown files</li>
+      <li>After commiting a change on the main branch, Github Actions will build the website and copy the html files to the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch for publishing.</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Note: the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch in this example includes a <code class="language-plaintext highlighter-rouge">.nojekyll</code> file to tell Github pages not to automatically build it using Jekyll</p>
+</blockquote>
+
+<h3 id="task">TASK</h3>
+
+<p>Use Github pages and Jekyll to create an academic website. This could include:</p>
+<ul>
+  <li>A landing page with a short description of your background and interests</li>
+  <li>Links to code that you have written (during this course or elsewhere)</li>
+  <li>A picture of yourself or your experimental work</li>
+</ul>
+
+<p>Think of it as an online CV. It is a great way to promote your work to potential employers or supervisors.</p>
+
 
   </div><a class="u-url" href="/CompPhys/2021/08/02/Open_science.html" hidden></a>
 </article>
