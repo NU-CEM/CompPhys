@@ -4,19 +4,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Open science | An Introduction to Computational Physics</title>
+<title>Build-your-own website | An Introduction to Computational Physics</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Open science" />
+<meta property="og:title" content="Build-your-own website" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Open science" />
-<meta property="og:description" content="Open science" />
+<meta name="description" content="Questions: How can I create a project website?" />
+<meta property="og:description" content="Questions: How can I create a project website?" />
 <link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/Open_science.html" />
 <meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/Open_science.html" />
 <meta property="og:site_name" content="An Introduction to Computational Physics" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Open_science.html","@type":"BlogPosting","headline":"Open science","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Open_science.html"},"description":"Open science","@context":"https://schema.org"}</script>
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Open_science.html","@type":"BlogPosting","headline":"Build-your-own website","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Open_science.html"},"description":"Questions: How can I create a project website?","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -83,7 +83,7 @@ window.onload = wrap_img;
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Open science</h1><p class="page-description">Open science</p><p class="post-meta post-meta-title">
+    <h1 class="post-title p-name" itemprop="name headline">Build-your-own website</h1><p class="post-meta post-meta-title">
     </p>
 
     
@@ -91,10 +91,120 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <ul class="section-nav">
-<li class="toc-entry toc-h1"><a href="#open-science">Open science</a></li>
-</ul><h1 id="open-science">
-<a class="anchor" href="#open-science" aria-hidden="true"><span class="octicon octicon-link"></span></a>Open science</h1>
+    <p>Questions:</p>
+<ul>
+  <li>How can I create a project website?</li>
+</ul>
+
+<p>Objectives:</p>
+<ul>
+  <li>Differentiate between git, Github and Github pages.</li>
+  <li>Use Github pages and markdown to create a single page website.</li>
+  <li>Customise the website using the <code class="language-plaintext highlighter-rouge">_config.yml</code> file</li>
+  <li>Use Github pages, markdown and Jekyll to create a multipage website</li>
+</ul>
+
+<p>Keypoints:</p>
+<ul>
+  <li>Github pages is a static site hosting service that takes HTML files from a Github repository and publishes a website.</li>
+  <li>We can create a simple website in three short steps.</li>
+  <li>Github pages can be combined with a variety of static site generators to create a customised website.</li>
+  <li>A single page project site can be created using an <code class="language-plaintext highlighter-rouge">index.md</code> file on the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch.</li>
+  <li>Github pages combined with Jekyll top matter can be used to create quick multipage sites.</li>
+  <li>Github has a range of Jekyll themes to choose from.</li>
+  <li>To access a wider range of themes and customisation options you can add a <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</li>
+  <li>Other static site generators can be combined with Github actions for more flexibility.</li>
+</ul>
+
+<h3 id="github-pages-takes-html-files-from-a-github-repository-and-publishes-a-website">Github pages takes HTML files from a Github repository and publishes a website.</h3>
+
+<ul>
+  <li>First we should differentiate between three similar sounding tools:
+    <ul>
+      <li><a href="https://git-scm.com/">Git</a> is an open-source version control system that can be used online or locally.</li>
+      <li><a href="https://github.com/">Github</a> is a website (owned by Microsoft) that is built on top of git. It can be used to store and share files in project repositories.</li>
+      <li><a href="https://pages.github.com/">Github pages</a> is a service provided by Github. Github pages takes HTML from a repository and publishes it as a website.</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Note: Github is not the only option for hosting your code. Other services include <a href="https://about.gitlab.com/">Gitlab</a> (which is an open source project) and <a href="https://bitbucket.org/product">Bitbucket</a>.</p>
+</blockquote>
+
+<h3 id="we-can-create-a-simple-website-in-three-short-steps">We can create a simple website in three short steps</h3>
+
+<ul>
+  <li>
+    <p>To see the most simple example of how Github pages works we can create 1) create a repository 2) create a <code class="language-plaintext highlighter-rouge">gh-pages</code> branch and 3) add a html file.</p>
+  </li>
+  <li>
+    <p>Step 1: Create a repository</p>
+    <ul>
+      <li>Register for a Github account (if you do not already have one) and login</li>
+      <li>Create a new repository by clicking the <code class="language-plaintext highlighter-rouge">plus</code> sign at the top-right hand corner</li>
+      <li>Give your repository a name e.g. <code class="language-plaintext highlighter-rouge">website-example</code></li>
+      <li>Give your repository a description e.g. <code class="language-plaintext highlighter-rouge">A simple example of a website generated using gh-pages</code></li>
+      <li>Select <code class="language-plaintext highlighter-rouge">Add a README file</code></li>
+      <li>Select <code class="language-plaintext highlighter-rouge">Choose a license</code> and select a license</li>
+      <li>Click <code class="language-plaintext highlighter-rouge">Create repository</code></li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Important: You don’t need to select a license at this stage but it’s recommended that you do. The MIT License is a popular choice as it is simple and permissive (people do almost anything they want with your project). If you are not clear which license to use you can visit <a href="https://choosealicense.com/">https://choosealicense.com/</a>.</p>
+</blockquote>
+
+<ul>
+  <li>Step 2: Create a gh-pages branch
+    <ul>
+      <li>Click <code class="language-plaintext highlighter-rouge">main</code> towards the top-left hand corner</li>
+      <li>Type <code class="language-plaintext highlighter-rouge">gh-pages</code> into the text box (Find or create a branch)</li>
+      <li>Select `Create branch: gh-pages from ‘main’</li>
+    </ul>
+  </li>
+</ul>
+
+<p>A branch in Git is similar to the branch of a tree. A tree branch is attached to the main part of the tree. While branches can generate and fall off, the main central part of the tree continues. Similarly, a branch in Git is a way of developing new features or fixing bugs without affecting the main part of the project (the <code class="language-plaintext highlighter-rouge">main</code> branch). The main branch is created when we create the git repository.</p>
+
+<blockquote>
+  <p>Important: Github pages will automatically publish any html on the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch only.</p>
+</blockquote>
+
+<ul>
+  <li>Step 3:
+    <ul>
+      <li>Click <code class="language-plaintext highlighter-rouge">Add file</code> (make sure you are on the gh-pages branch)</li>
+      <li>Click <code class="language-plaintext highlighter-rouge">Create new file</code></li>
+      <li>Name the file <code class="language-plaintext highlighter-rouge">Hello-world.html</code></li>
+      <li>Paste the following code</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+        &lt;head&gt;
+            &lt;title&gt;Hello World!&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;p&gt;Soooo nice to meet you.&lt;/p&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre></div></div>
+<ul>
+  <li>Click <code class="language-plaintext highlighter-rouge">Commit new file</code></li>
+</ul>
+
+<p>You can access your project webpages using the address format <code class="language-plaintext highlighter-rouge">username.github.io/repository-name/filename.html</code>. If you have followed the suggested naming in this example you can access your Hello-world webpage at <code class="language-plaintext highlighter-rouge">https://username.github.io/website-example/Hello-world.html</code></p>
+
+<h3 id="github-pages-can-be-combined-with-a-variety-of-static-site-generators-to-create-a-customised-website">Github pages can be combined with a variety of static site generators to create a customised website.</h3>
+
+<ul>
+  <li>It would take a lot of time to write our website using html (unless we want a really, really simple website)</li>
+  <li>Instead there are several static site generators which will take plain text files (formatted using a markup language such as markdown or reStructuredText) and convert these into html.</li>
+</ul>
 
   </div><a class="u-url" href="/CompPhys/2021/08/02/Open_science.html" hidden></a>
 </article>
