@@ -91,7 +91,7 @@ You can access your project webpages using the address format `username.github.i
   - [hugo](https://gohugo.io/) which can be used for developing personal or professional webpages: https://lucydot.github.io
 - Each type of static site generator comes with a range of templates to use for customising your website.
 - Any static site generator can be combined with Github pages to create a website. We will use Jekyll as this has extra integration support from Github pages.
-- 
+ 
 ### A single page project site is created using the `README.md` file on the `gh-pages` branch.
 
 - In fact, Github has already used the Jekyll static site generator behind the scenes to convert your repository `README.md` file to html. You can access this at `https://username.github.io/website-example/`.
@@ -102,7 +102,64 @@ You can access your project webpages using the address format `username.github.i
   - Click on `Commit changes` to save (version control) the changes made.
   - The changes should be reflected on the webpage: https://username.github.io/website-example/
 
-### Github pages combined with Jekyll top matter can be used to create quick multipage sites.
+### Github pages combined with Jekyll top matter can be used to create a multipage sites.
+
+- Github pages will automatically convert any markdown file on the `gh-pages` branch using Jekyll if it contains top-matter in a particular format.
+  - In your repository click on `Add file` and `Create new file`
+  - Name the file `Code-of-Conduct.md`
+  - Paste the following top matter and content into the file
+  
+```
+---
+title: Code of Conduct
+---
+
+Welcome to the {{page.title}} page.
+
+The first rule is: Be Nice!
+```
+  - Click `Commit new file`
+  - You can see your new webpage at https://username.github.io/website-example/Code-of-Conduct.
+
+You may also want to update your `README.md` with links to the Hello-world webpage and the Code of Conduct.
+
+> Important: The three dashes at the top and bottom of your front matter are very important. If your file does not start with top matter in this format Jekyll will not convert the file to html.
+
+> Info: The Code of Conduct we use here is a silly example. However for many projects and initiatives having a Code of Conduct is important. There is more information on [this page](https://opensource.guide/code-of-conduct/).
+
 ### Github has a range of Jekyll themes to choose from.
-### To access a wider range of themes and customisation options you can add a `_config.yml` file.
+
+- You can add a theme to your GitHub Pages site to customize your site’s look and feel.
+- There are a [range of Jekyll themes](https://pages.github.com/themes/) that Github pages has built-in support for. To change the theme you can use the following steps:
+  - In your repository click on `Settings`
+  - Click on `Pages` in the left navigation bar
+  - Click on `Choose a theme` 
+  - Choose a theme to preview 
+  - Click `Select theme`
+
+> Note: The theme will only be applied to webpages with the Jekyll top matter.
+
+> Note: When you select a new theme the `_config.yml` file in your repository is automatically updated.
+
+### To access a wider range of customisation options you can edit the `_config.yml` file.
+
 ### Other static site generators can be combined with Github actions for more flexibility.
+
+- Any static site generator can be combined with Github pages to create a website.
+- For example, the [Northumbria Research Computing Community website](https://rsc-northumbria.github.io/oswald-docs/) was built using MkDocs framework, Github Pages and Github Actions to build the webpages. 
+  - The `main` branch of the corresponding [Github repo](https://github.com/RSC-Northumbria/oswald-docs) has a `mkdocs.yml` file that specifies the theme, plugins used and website navigation
+  - The `main` branch has a `docs` folder containing the website content as markdown files. In the root of the `docs` folder is the homepage `index.md`.
+  - The `main` branch contains a file `.github/workflows/build-docs.yml` which specifies how to build and deploy the html using the markdown files
+  - After commiting a change on the main branch, Github Actions will build the website and copy the html files to the `gh-pages` branch for publishing.
+
+> Note: the `gh-pages` branch in this example includes a `.nojekyll` file to tell Github pages not to automatically build it using Jekyll
+
+### TASK
+
+Use Github pages and Jekyll to create an academic website. This could include:
+- A landing page with a short description of your background and interests
+- Links to code that you have written (during this course or elsewhere)
+- A picture of yourself or your experimental work
+
+Think of it as an online CV. It is a great way to promote your work to potential employers or supervisors. 
+
