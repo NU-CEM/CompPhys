@@ -22,7 +22,7 @@ Keypoints:
 - We can create a simple website in three short steps.
 - Github pages can be combined with a variety of static site generators to create a customised website.
 - A single page project site can be created using an `README.md` file on the `gh-pages` branch.
-- Github pages combined with Jekyll top matter can be used to create quick multipage sites.
+- Github pages combined with Jekyll front matter can be used to create quick multipage sites.
 - Github has a range of Jekyll themes to choose from.
 - To access a wider range of themes and customisation options you can add a `_config.yml` file.
 - Other static site generators can be combined with Github actions for more flexibility.
@@ -102,12 +102,12 @@ You can access your project webpages using the address format `username.github.i
   - Click on `Commit changes` to save (version control) the changes made.
   - The changes should be reflected on the webpage: https://username.github.io/website-example/
 
-### Github pages combined with Jekyll top matter can be used to create a multipage sites.
+### Github pages combined with Jekyll front matter can be used to create a multipage sites.
 
 - Github pages will automatically convert any markdown file on the `gh-pages` branch using Jekyll if it contains top-matter in a particular format.
   - In your repository click on `Add file` and `Create new file`
   - Name the file `Code-of-Conduct.md`
-  - Paste the following top matter and content into the file
+  - Paste the following front matter and content into the file
   
 ```
 ---
@@ -121,9 +121,11 @@ The first rule is: Be Nice!
   - Click `Commit new file`
   - You can see your new webpage at https://username.github.io/website-example/Code-of-Conduct.
 
-You may also want to update your `README.md` with links to the Hello-world webpage and the Code of Conduct.
+> Important: The three dashes at the top and bottom of your front matter are very important. If your file does not start with front matter in this format Jekyll will not convert the file to html.
 
-> Important: The three dashes at the top and bottom of your front matter are very important. If your file does not start with top matter in this format Jekyll will not convert the file to html.
+- The front matter contains predefined global variables or custom variables. In this example, we have specified what the value of the `title` variable is. We can then access this variable in the main body of the page.
+- If you don't want to define any variables you can always leave it empty - but you must include the two sets of triple dashed lines.
+- At this stage you may also want to update your `README.md` with links to the Hello-world webpage and the Code of Conduct.
 
 > Info: The Code of Conduct we use here is a silly example. However for many projects and initiatives having a Code of Conduct is important. There is more information on [this page](https://opensource.guide/code-of-conduct/).
 
@@ -137,13 +139,22 @@ You may also want to update your `README.md` with links to the Hello-world webpa
   - Choose a theme to preview 
   - Click `Select theme`
 
-> Note: The theme will only be applied to webpages with the Jekyll top matter.
+> Note: The theme will only be applied to the README.md or webpages with the Jekyll front matter.
 
 > Note: When you select a new theme the `_config.yml` file in your repository is automatically updated.
 
-### To access a wider range of customisation options you can edit the `_config.yml` file.
+### To access a wider range of customisation options you can fork a Jekyll template and edit the `_config.yml` file.
 
-### Other static site generators can be combined with Github actions for more flexibility.
+- For example, you can follow the steps outlined for the [beautiful-jekyll blog template](https://github.com/daattali/beautiful-jekyll#build-your-website-in-3-steps):
+  - Fork (copy) the [beautiful-jekyll template](https://github.com/daattali/beautiful-jekyll) by clicking on the Fork button at the top right corner of the page
+  - Under the repository `Settings` rename the project repository e.g. `improved-website`
+  - Under the repository `Settings`->`Github Pages` choose the `gh-pages` branch as the source
+
+- This will create a website at https://username.github.io/improved-website. 
+- To customise edit the `_config.yml` file 
+- To add content edit the markdown files (see the [beautiful-jekyll docs](https://github.com/daattali/beautiful-jekyll#add-your-own-content) for more information).
+
+### For more flexibility you can combine other static site generators can be combined with Github actions .
 
 - Any static site generator can be combined with Github pages to create a website.
 - For example, the [Northumbria Research Computing Community website](https://rsc-northumbria.github.io/oswald-docs/) was built using MkDocs framework, Github Pages and Github Actions to build the webpages. 
