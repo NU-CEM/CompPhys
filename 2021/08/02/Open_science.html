@@ -111,7 +111,7 @@ window.onload = wrap_img;
   <li>We can create a simple website in three short steps.</li>
   <li>Github pages can be combined with a variety of static site generators to create a customised website.</li>
   <li>A single page project site can be created using an <code class="language-plaintext highlighter-rouge">README.md</code> file on the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch.</li>
-  <li>Github pages combined with Jekyll top matter can be used to create quick multipage sites.</li>
+  <li>Github pages combined with Jekyll front matter can be used to create quick multipage sites.</li>
   <li>Github has a range of Jekyll themes to choose from.</li>
   <li>To access a wider range of themes and customisation options you can add a <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</li>
   <li>Other static site generators can be combined with Github actions for more flexibility.</li>
@@ -231,14 +231,14 @@ window.onload = wrap_img;
   </li>
 </ul>
 
-<h3 id="github-pages-combined-with-jekyll-top-matter-can-be-used-to-create-a-multipage-sites">Github pages combined with Jekyll top matter can be used to create a multipage sites.</h3>
+<h3 id="github-pages-combined-with-jekyll-front-matter-can-be-used-to-create-a-multipage-sites">Github pages combined with Jekyll front matter can be used to create a multipage sites.</h3>
 
 <ul>
   <li>Github pages will automatically convert any markdown file on the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch using Jekyll if it contains top-matter in a particular format.
     <ul>
       <li>In your repository click on <code class="language-plaintext highlighter-rouge">Add file</code> and <code class="language-plaintext highlighter-rouge">Create new file</code></li>
       <li>Name the file <code class="language-plaintext highlighter-rouge">Code-of-Conduct.md</code></li>
-      <li>Paste the following top matter and content into the file</li>
+      <li>Paste the following front matter and content into the file</li>
     </ul>
   </li>
 </ul>
@@ -256,11 +256,15 @@ The first rule is: Be Nice!
   <li>You can see your new webpage at https://username.github.io/website-example/Code-of-Conduct.</li>
 </ul>
 
-<p>You may also want to update your <code class="language-plaintext highlighter-rouge">README.md</code> with links to the Hello-world webpage and the Code of Conduct.</p>
-
 <blockquote>
-  <p>Important: The three dashes at the top and bottom of your front matter are very important. If your file does not start with top matter in this format Jekyll will not convert the file to html.</p>
+  <p>Important: The three dashes at the top and bottom of your front matter are very important. If your file does not start with front matter in this format Jekyll will not convert the file to html.</p>
 </blockquote>
+
+<ul>
+  <li>The front matter contains predefined global variables or custom variables. In this example, we have specified what the value of the <code class="language-plaintext highlighter-rouge">title</code> variable is. We can then access this variable in the main body of the page.</li>
+  <li>If you don’t want to define any variables you can always leave it empty - but you must include the two sets of triple dashed lines.</li>
+  <li>At this stage you may also want to update your <code class="language-plaintext highlighter-rouge">README.md</code> with links to the Hello-world webpage and the Code of Conduct.</li>
+</ul>
 
 <blockquote>
   <p>Info: The Code of Conduct we use here is a silly example. However for many projects and initiatives having a Code of Conduct is important. There is more information on <a href="https://opensource.guide/code-of-conduct/">this page</a>.</p>
@@ -282,16 +286,29 @@ The first rule is: Be Nice!
 </ul>
 
 <blockquote>
-  <p>Note: The theme will only be applied to webpages with the Jekyll top matter.</p>
+  <p>Note: The theme will only be applied to the README.md or webpages with the Jekyll front matter.</p>
 </blockquote>
 
 <blockquote>
   <p>Note: When you select a new theme the <code class="language-plaintext highlighter-rouge">_config.yml</code> file in your repository is automatically updated.</p>
 </blockquote>
 
-<h3 id="to-access-a-wider-range-of-customisation-options-you-can-edit-the-_configyml-file">To access a wider range of customisation options you can edit the <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</h3>
+<h3 id="to-access-a-wider-range-of-customisation-options-you-can-fork-a-jekyll-template-and-edit-the-_configyml-file">To access a wider range of customisation options you can fork a Jekyll template and edit the <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</h3>
 
-<h3 id="other-static-site-generators-can-be-combined-with-github-actions-for-more-flexibility">Other static site generators can be combined with Github actions for more flexibility.</h3>
+<ul>
+  <li>For example, you can follow the steps outlined for the <a href="https://github.com/daattali/beautiful-jekyll#build-your-website-in-3-steps">beautiful-jekyll blog template</a>:
+    <ul>
+      <li>Fork (copy) the <a href="https://github.com/daattali/beautiful-jekyll">beautiful-jekyll template</a> by clicking on the Fork button at the top right corner of the page</li>
+      <li>Under the repository <code class="language-plaintext highlighter-rouge">Settings</code> rename the project repository e.g. <code class="language-plaintext highlighter-rouge">improved-website</code></li>
+      <li>Under the repository <code class="language-plaintext highlighter-rouge">Settings</code>-&gt;<code class="language-plaintext highlighter-rouge">Github Pages</code> choose the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch as the source</li>
+    </ul>
+  </li>
+  <li>This will create a website at https://username.github.io/improved-website.</li>
+  <li>To customise edit the <code class="language-plaintext highlighter-rouge">_config.yml</code> file</li>
+  <li>To add content edit the markdown files (see the <a href="https://github.com/daattali/beautiful-jekyll#add-your-own-content">beautiful-jekyll docs</a> for more information).</li>
+</ul>
+
+<h3 id="for-more-flexibility-you-can-combine-other-static-site-generators-can-be-combined-with-github-actions-">For more flexibility you can combine other static site generators can be combined with Github actions .</h3>
 
 <ul>
   <li>Any static site generator can be combined with Github pages to create a website.</li>
