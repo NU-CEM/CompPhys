@@ -119,6 +119,96 @@ window.onload = wrap_img;
 
 <p>c) Using the gradient of the fitted line calculate a value for Planck’s constant. Compare this to values you can find online.</p>
 
+<h1 id="line-fitting">Line fitting</h1>
+
+<p>In the code below we calculate the velocity of a ball between times 0 and 10 and store it as a numpy array</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="mf">6.67408e-11</span>
+<span class="n">velocity_list</span> <span class="o">=</span> <span class="n">numpy</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">v_0</span> <span class="o">=</span> <span class="mi">0</span>
+ 
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">time</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">numpy</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">50</span><span class="p">)):</span>
+  <span class="n">velocity_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">v_0</span> <span class="o">+</span> <span class="n">g</span><span class="o">*</span><span class="n">time</span>
+</code></pre></div></div>
+
+<p>We can fit a polynomial to this data using the <code class="language-plaintext highlighter-rouge">numpy.polyfit</code> function. In this case, we know from looking at the equation that is is a first order polynomial (straight line).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fit</span> <span class="o">=</span> <span class="n">numpy</span><span class="p">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">numpy</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">velocity_list</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>What is the gradient and intercept of the straight line fit? Does this make physical sense? 
+Make a scatter plot of velocity vs time. Label the x-axis and y-axis (with units) and give the plot a title.</p>
+
+<details>
+  <summary>Show answer</summary>
+
+  <p>The gradient is equal to the acceleration of the ball which is given by the gravitational constant $g$. The intercept is the starting velocity of the ball, which in this example is zero.</p>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">numpy</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span><span class="n">velocity_list</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Time (s)"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Velocity (m/s)"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Velocity of an object accelerated by gravity"</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+</details>
+
+<p>Use the polyval function to generate and plot velocities over the timeframe 30 to 100 seconds.</p>
+
+<details>
+  <summary>Show answer</summary>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">time_range</span> <span class="o">=</span> <span class="n">numpy</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">70</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_range</span><span class="p">,</span><span class="n">np</span><span class="p">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span><span class="n">time_range</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Time (s)"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Velocity (m/s)"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Velocity of an object accelerated by gravity"</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+</details>
+
+<h1 id="error-bars-and-exponential-growth">Error bars and exponential growth</h1>
+
+<p>This question is partly modelled on the a <a href="https://towardsdatascience.com/modeling-exponential-growth-49a2b6f22e1f">blog post</a>. There is also a nice
+<a href="https://www.youtube.com/watch?v=Kas0tIxDvrg">3Blue1Brown video on exponential growth in the context of Covid</a>.</p>
+
+<p>We have the following (hypothetical) data for the growth in Covid cases at a university over a two-week period</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">day</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">case_numbers</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">253</span><span class="p">,</span><span class="mi">512</span><span class="p">,</span><span class="mi">1025</span><span class="p">,</span><span class="mi">2049</span><span class="p">,</span><span class="mi">4090</span><span class="p">,</span><span class="mi">8191</span><span class="p">,</span><span class="mi">16387</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Assuming that the growth is exponential, fit a straight line to the log of the case number data and predict the exponential growth factor.</p>
+
+<details>
+  <summary>Show answer</summary>
+
+  <p>From scanning the blog post we can see that the growth factor is the base of the exponential.
+Assuming the growth is exponential, to generate a straight-(ish) line we first need to take a logarithm of the case values data.
+We can then fit a straight line to this to calculate the logarithm of the growth factor.</p>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">log_growth_factor</span><span class="p">,</span> <span class="n">log_starting_case_number</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">day</span><span class="p">,</span><span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">case_numbers</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">growth_factor</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="n">log_growth_factor</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+</details>
+
+<p>From inspecting the data, does the calculated growth factor make sense?</p>
+
+<details>
+  <summary>Show answer</summary>
+
+  <p>The data roughly doubles each day. The calculated growth factor is 1.94, which is reassuringly close to 2.</p>
+
+</details>
+
 <hr />
 
 <p>Back to <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Data_analysis.html">Data analysis and visualisation</a>.</p>
