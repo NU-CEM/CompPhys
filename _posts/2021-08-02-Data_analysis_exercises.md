@@ -33,6 +33,117 @@ b) Fit a straight line (polynomial of degree one) to the data using the least-sq
 
 c) Using the gradient of the fitted line calculate a value for Planck's constant. Compare this to values you can find online.
 
+# Line fitting
+
+In the code below we calculate the velocity of a ball between times 0 and 10 and store it as a numpy array
+
+~~~python
+import numpy
+
+g = 6.67408e-11
+velocity_list = numpy.zeros(50)
+v_0 = 0
+ 
+for index,time in enumerate(numpy.linspace(0,10,50)):
+  velocity_list[index] = v_0 + g*time
+~~~
+
+We can fit a polynomial to this data using the `numpy.polyfit` function. In this case, we know from looking at the equation that is is a first order polynomial (straight line).
+
+~~~python
+fit = numpy.polyfit(numpy.linspace(0,10,50), velocity_list, 1)
+print(fit)
+~~~
+
+What is the gradient and intercept of the straight line fit? Does this make physical sense? 
+Make a scatter plot of velocity vs time. Label the x-axis and y-axis (with units) and give the plot a title.
+
+{::options parse_block_html="true" /}
+<details>
+  <summary markdown="span">Show answer</summary>
+
+The gradient is equal to the acceleration of the ball which is given by the gravitational constant $g$. The intercept is the starting velocity of the ball, which in this example is zero.
+  
+~~~python
+import matplotlib.pyplot as plt
+
+plt.scatter(numpy.linspace(0,10,50),velocity_list)
+plt.xlabel("Time (s)")
+plt.ylabel("Velocity (m/s)")
+plt.title("Velocity of an object accelerated by gravity")
+~~~
+  
+</details>
+
+{::options parse_block_html="false" /}
+
+
+Use the polyval function to generate and plot velocities over the timeframe 30 to 100 seconds.
+ 
+{::options parse_block_html="true" /}
+<details>
+  <summary markdown="span">Show answer</summary>
+  
+~~~python
+import matplotlib.pyplot as plt
+
+time_range = numpy.linspace(30,100,70)
+plt.plot(time_range,np.polyval(fit,time_range))
+plt.xlabel("Time (s)")
+plt.ylabel("Velocity (m/s)")
+plt.title("Velocity of an object accelerated by gravity")
+~~~
+
+</details>
+
+{::options parse_block_html="false" /}
+
+# Error bars and exponential growth
+
+This question is partly modelled on the a [blog post](https://towardsdatascience.com/modeling-exponential-growth-49a2b6f22e1f). There is also a nice
+[3Blue1Brown video on exponential growth in the context of Covid](https://www.youtube.com/watch?v=Kas0tIxDvrg).
+
+We have the following (hypothetical) data for the growth in Covid cases at a university over a two-week period
+
+~~~python
+import numpy as np
+day = np.arange(0,14)
+case_numbers = np.array([2,3,4,8,15,32,65,128,253,512,1025,2049,4090,8191,16387])
+~~~
+
+Assuming that the growth is exponential, fit a straight line to the log of the case number data and predict the exponential growth factor. 
+ 
+{::options parse_block_html="true" /}
+<details>
+  <summary markdown="span">Show answer</summary>
+
+From scanning the blog post we can see that the growth factor is the base of the exponential.
+Assuming the growth is exponential, to generate a straight-(ish) line we first need to take a logarithm of the case values data.
+We can then fit a straight line to this to calculate the logarithm of the growth factor. 
+
+~~~python
+log_growth_factor, log_starting_case_number = np.polyfit(day,np.log(case_numbers),1)
+growth_factor = np.exp(log_growth_factor)
+~~~
+  
+
+</details>
+
+{::options parse_block_html="false" /}
+
+From inspecting the data, does the calculated growth factor make sense? 
+
+{::options parse_block_html="true" /}
+<details>
+  <summary markdown="span">Show answer</summary>
+
+The data roughly doubles each day. The calculated growth factor is 1.94, which is reassuringly close to 2. 
+
+
+</details>
+
+{::options parse_block_html="false" /}
+
 ---
 
 Back to [Data analysis and visualisation](https://nu-cem.github.io/CompPhys/2021/08/02/Data_analysis.html).
