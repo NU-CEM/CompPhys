@@ -21,7 +21,7 @@ $V_\mathrm{total} = \sum_{i,j,k} V(i,j,k) = \frac{e}{4\pi\epsilon_0a}M$
 
 $V(i,j,k) = \pm\\frac{e}{4\pi\epsilon_0r}$
 
-where $r$ is the distance from the origin to the atom at position $(i,j,k)$ and $a$ is the lattice spacing. The summation runs from $i,j,k=-L$ to $i,j,k=L$ but not including $i,j,k=0$ (otherwise the expression would "blow up").
+where $r$ is the distance from the origin to the atom at position $(i,j,k)$ and $a$ is the atom spacing. The summation runs from $i,j,k=-L$ to $i,j,k=L$ but not including $i,j,k=0$ (otherwise the expression would "blow up").
 
 a) Write an expression (in Markdown/LaTeX) for the distance $r$ in terms of $i$,$j$,$k$ and $a$.
 
