@@ -111,7 +111,7 @@ window.onload = wrap_img;
 
 <p>where $e$ is the charge of the electron.</p>
 
-<p>a) Read in the photoelectric measurement data from the file Planck.txt. The first column contains frequencies $f$ is hertz and the second column contains voltages $V$. Use this data to plot $V$ vs $f$. Think about the plot type - does a scatter plot of line plot make most sense?</p>
+<p>a) Read in the photoelectric measurement data from the file <a href="https://nu-cem.github.io/CompPhys/data/Planck.txt">Planck.txt</a>. The first column contains frequencies $f$ is hertz and the second column contains voltages $V$. Use this data to plot $V$ vs $f$. Think about the plot type - does a scatter plot of line plot make most sense?</p>
 
 <p>The least-squares method is very commonly used for fitting a polynomial to a set of data. As it is so prevalent in physics and engineering, you are encouraged to watch <a href="https://www.youtube.com/watch?v=YwZYSTQs-Hk">this video</a> which give an intuitive and mathematical description of the method.</p>
 
@@ -125,7 +125,7 @@ window.onload = wrap_img;
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span>
 
-<span class="n">g</span> <span class="o">=</span> <span class="mf">6.67408e-11</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>
 <span class="n">velocity_list</span> <span class="o">=</span> <span class="n">numpy</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
 <span class="n">v_0</span> <span class="o">=</span> <span class="mi">0</span>
  
