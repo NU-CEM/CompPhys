@@ -17,6 +17,8 @@ In this lesson we focus on one extended example: parsing, analysing and plotting
 
 Please see the [Setup](https://nu-cem.github.io/CompPhys/2021/08/02/Setup) page for more details.
 
+During the first tutorial you will generate a file called `UVVis-01-cleaned.csv`. It is also available for download [here](https://nu-cem.github.io/CompPhys/data/UVVis-01-cleaned.csv).
+
 ### Lesson outline
 
 | Topic | Objective | Quick test |
