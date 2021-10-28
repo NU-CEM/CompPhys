@@ -95,6 +95,9 @@ You can access your project webpages using the address format `username.github.i
 ### A single page project site is created using the `README.md` file on the `gh-pages` branch.
 
 - In fact, Github has already used the Jekyll static site generator behind the scenes to convert your repository `README.md` file to html. You can access this at `https://username.github.io/website-example/`.
+
+> Note: Github will automatically convert a file named `README.md` on the gh-pages branch only if an `index.html` does not exist. 
+
 - We can edit and commit changes to the `README.md` and our webpage will be updated.
   - Click on the pencil icon on your repository landing page
   - Edit the file using markdown, e.g. `The website can be accessed [here](https://lucydot.github.io/website-example/Hello-world.html).`
@@ -104,7 +107,7 @@ You can access your project webpages using the address format `username.github.i
 
 ### Github pages combined with Jekyll front matter can be used to create a multipage sites.
 
-- Github pages will automatically convert any markdown file on the `gh-pages` branch using Jekyll if it contains top-matter in a particular format.
+- Github will not convert any other files on the `gh-pages` branch to html unless the file containts top-matter in a particular format. The top-matter consists of two sets of three dashes, with variable(s) defined between, as given in the code block below.
   - In your repository click on `Add file` and `Create new file`
   - Name the file `Code-of-Conduct.md`
   - Paste the following front matter and content into the file
@@ -148,7 +151,7 @@ The first rule is: Be Nice!
 - For example, you can follow the steps outlined for the [beautiful-jekyll blog template](https://github.com/daattali/beautiful-jekyll#build-your-website-in-3-steps):
   - Fork (copy) the [beautiful-jekyll template](https://github.com/daattali/beautiful-jekyll) by clicking on the Fork button at the top right corner of the page
   - Under the repository `Settings` rename the project repository e.g. `improved-website`
-  - Under the repository `Settings`->`Github Pages` choose the `gh-pages` branch as the source
+  - Under the repository `Settings`->`Github Pages` choose the `main` (or `master`) branch as the source
 
 - This will create a website at https://username.github.io/improved-website. 
 - To customise edit the `_config.yml` file 
