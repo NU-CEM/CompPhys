@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Open_science.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Open_science.html"},"headline":"Build-your-own website","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","description":"Questions: How can I create a project website?","@context":"https://schema.org"}</script>
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Open_science.html","@type":"BlogPosting","headline":"Build-your-own website","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Open_science.html"},"description":"Questions: How can I create a project website?","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -220,6 +220,13 @@ window.onload = wrap_img;
 
 <ul>
   <li>In fact, Github has already used the Jekyll static site generator behind the scenes to convert your repository <code class="language-plaintext highlighter-rouge">README.md</code> file to html. You can access this at <code class="language-plaintext highlighter-rouge">https://username.github.io/website-example/</code>.</li>
+</ul>
+
+<blockquote>
+  <p>Note: Github will automatically convert a file named <code class="language-plaintext highlighter-rouge">README.md</code> on the gh-pages branch only if an <code class="language-plaintext highlighter-rouge">index.html</code> does not exist.</p>
+</blockquote>
+
+<ul>
   <li>We can edit and commit changes to the <code class="language-plaintext highlighter-rouge">README.md</code> and our webpage will be updated.
     <ul>
       <li>Click on the pencil icon on your repository landing page</li>
@@ -234,7 +241,7 @@ window.onload = wrap_img;
 <h3 id="github-pages-combined-with-jekyll-front-matter-can-be-used-to-create-a-multipage-sites">Github pages combined with Jekyll front matter can be used to create a multipage sites.</h3>
 
 <ul>
-  <li>Github pages will automatically convert any markdown file on the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch using Jekyll if it contains top-matter in a particular format.
+  <li>Github will not convert any other files on the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch to html unless the file containts top-matter in a particular format. The top-matter consists of two sets of three dashes, with variable(s) defined between, as given in the code block below.
     <ul>
       <li>In your repository click on <code class="language-plaintext highlighter-rouge">Add file</code> and <code class="language-plaintext highlighter-rouge">Create new file</code></li>
       <li>Name the file <code class="language-plaintext highlighter-rouge">Code-of-Conduct.md</code></li>
@@ -300,7 +307,7 @@ The first rule is: Be Nice!
     <ul>
       <li>Fork (copy) the <a href="https://github.com/daattali/beautiful-jekyll">beautiful-jekyll template</a> by clicking on the Fork button at the top right corner of the page</li>
       <li>Under the repository <code class="language-plaintext highlighter-rouge">Settings</code> rename the project repository e.g. <code class="language-plaintext highlighter-rouge">improved-website</code></li>
-      <li>Under the repository <code class="language-plaintext highlighter-rouge">Settings</code>-&gt;<code class="language-plaintext highlighter-rouge">Github Pages</code> choose the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch as the source</li>
+      <li>Under the repository <code class="language-plaintext highlighter-rouge">Settings</code>-&gt;<code class="language-plaintext highlighter-rouge">Github Pages</code> choose the <code class="language-plaintext highlighter-rouge">main</code> (or <code class="language-plaintext highlighter-rouge">master</code>) branch as the source</li>
     </ul>
   </li>
   <li>This will create a website at https://username.github.io/improved-website.</li>
