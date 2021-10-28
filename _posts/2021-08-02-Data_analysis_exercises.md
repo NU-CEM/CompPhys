@@ -25,7 +25,7 @@ $$eV = hf - \phi$$,
 
 where $e$ is the charge of the electron.
 
-a) Read in the photoelectric measurement data from the file Planck.txt. The first column contains frequencies $f$ is hertz and the second column contains voltages $V$. Use this data to plot $V$ vs $f$. Think about the plot type - does a scatter plot of line plot make most sense?
+a) Read in the photoelectric measurement data from the file [Planck.txt](https://nu-cem.github.io/CompPhys/data/Planck.txt). The first column contains frequencies $f$ is hertz and the second column contains voltages $V$. Use this data to plot $V$ vs $f$. Think about the plot type - does a scatter plot of line plot make most sense?
 
 The least-squares method is very commonly used for fitting a polynomial to a set of data. As it is so prevalent in physics and engineering, you are encouraged to watch [this video](https://www.youtube.com/watch?v=YwZYSTQs-Hk) which give an intuitive and mathematical description of the method. 
 
@@ -40,7 +40,7 @@ In the code below we calculate the velocity of a ball between times 0 and 10 and
 ~~~python
 import numpy
 
-g = 6.67408e-11
+g = 9.81
 velocity_list = numpy.zeros(50)
 v_0 = 0
  
