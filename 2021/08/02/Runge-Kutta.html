@@ -192,7 +192,7 @@ x(t+h) = x(t+\frac{h}{2}) + \frac{h}{2}\left(\frac{\mathrm{d}x}{\mathrm{d}t}\rig
 x(t) = x(t+\frac{h}{2}) - \frac{h}{2}\left(\frac{\mathrm{d}x}{\mathrm{d}t}\right)_{t+\frac{h}{2}} + \frac{h^2}{8}\left(\frac{\mathrm{d}^2x}{\mathrm{d}t^2}\right)_{t+\frac{h}{2}}+\mathcal{O}(h^3)
 \end{equation}<p>3) Subtract Equation 2 from Equation 1 and re-arrange:</p>
 \begin{eqnarray}
-x(t+h) &amp;=&amp; x(t) + h\left(\frac{\mathrm{d}x}{\mathrm{d}t}\right))_{t+\frac{h}{2}}+\mathcal{O}(h^3) \\
+x(t+h) &amp;=&amp; x(t) + h\left(\frac{\mathrm{d}x}{\mathrm{d}t}\right)_{t+\frac{h}{2}}+\mathcal{O}(h^3) \\
 x(t+h) &amp;=&amp; x(t) + hf(x(t+\frac{h}{2}),t+\frac{h}{2})+\mathcal{O}(h^3)
 \end{eqnarray}<p>Note that the $h^2$ term has completely disappeared, and the error term is now order $h^3$. We can say that this approximation is now accurate to order $h^2$.</p>
 <p>The problem is that this requires knowledge of $x(t+\frac{h}{2})$ which we don't currently have. We can however estimate this using the Euler method!</p>
@@ -203,7 +203,7 @@ x(t+\frac{h}{2}) = x(t) + \frac{h}{2}f(x,t).
 k_1 &amp;=&amp; hf(x,t) \\
 k_2 &amp;=&amp; hf(x+\frac{k_1}{2},t+\frac{h}{2})\\
 x(t+h) &amp;=&amp; x(t) + k_2
-\end{eqnarray}<p>See how $k_1$ is used to give an estimate for $x(t+\frac{h}{2})$ ($k_2$), which is then substituted into the third equation to give an estimate for  $x(t+h)$.
+\end{eqnarray}<p>See how $k_1$ is used to give an estimate for $x(t+\frac{h}{2})$ in $k_2$, which is then substituted into the third equation to give an estimate for  $x(t+h)$.
 <div class="flash">
     <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
     <strong>Note: </strong>Higher orde Runge-Kutta methods can be derived in a similar way - by calculating the Taylor series around various points and then taking a linear combination of the resulting expansions. As we increase the number of intermediate points, we increase the accuracy of the method. The downside is that the equations get increasingly complicated. 
