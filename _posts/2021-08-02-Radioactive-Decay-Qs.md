@@ -27,7 +27,7 @@ a) The amount of charge that flows every second from a capacitor,
 b) The oscillation of a non-linear driven pendulum,
 
 \begin{equation}
-\frac{\mathrm{d}^2\theta}{\mathrm{t}^2} = -\frac{g}{l}\mathrm{sin}\theta + C\mathrm{cos}\theta\mathrm{sin}\sigma t.
+\frac{\mathrm{d}^2\theta}{\mathrm{t}^2} = -\frac{g}{l}\mathrm{sin}\theta + C\mathrm{cos}(\theta)\mathrm{sin}(\sigma) t.
 \end{equation}
 
 {::options parse_block_html="true" /}
