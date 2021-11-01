@@ -35,4 +35,4 @@ In [The strange attractor tutorial](https://nu-cem.github.io/CompPhys/2021/08/02
 At the end of the tutorial you are also shown how to re-cast the second order ODE for a non-linear pendulum as two simultaneous first order ODEs. Using expressions 11 and 12
 on the tutorial page, and following the same method outlined as that outlined for the Strange Attractor, write a piece of code for modelling $\theta$ as a function of time.
 
-> Tip: Combine the two variable $theta$ and $omega$ into a single vector $\mathbf{r} = (\theta,\omega)$. The method will give us a value for $theta$ and $omega$, but we can ignore the $omega$ values generated if they are not needed.
+> Tip: Combine the two variable $\theta$ and $\omega$ into a single vector $\mathbf{r} = (\theta,\omega)$. The method will give us a value for $\theta$ and $\omega$, but we can ignore the $\omega$ values generated if they are not needed.
