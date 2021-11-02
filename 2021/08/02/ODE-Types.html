@@ -148,12 +148,13 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="A-differential-equation-is-an-equation-that-relates-one-or-more-functions-and-their-derivatives">A differential equation is an equation that relates one or more functions and their derivatives<a class="anchor-link" href="#A-differential-equation-is-an-equation-that-relates-one-or-more-functions-and-their-derivatives"> </a></h3><ul>
-<li>The functions usually represent physical quantities (e.g. position $x$)</li>
-<li>The derivative represents a rate of change (e.g. speed $v$)</li>
-<li>The differential equation represents the relationship between the two:</li>
+<li>The functions usually represent physical quantities (e.g. $\mathbf{F}$))</li>
+<li>The derivative represents a rate of change (e.g. acceleration)</li>
+<li>The differential equation represents the relationship between the two.</li>
+<li>For example, Newton's second law for $n$ particles of mass $m$:</li>
 </ul>
 \begin{equation}
-v = \frac{dx}{dt}
+\mathbf{F}(t,\mathbf{x},\mathbf{v}) = m\frac{d\mathbf{v}}{dt}
 \end{equation}
 </div>
 </div>
@@ -165,10 +166,10 @@ v = \frac{dx}{dt}
 <li>A <mark> dependent variable</mark> depends on the independent variable</li>
 </ul>
 \begin{equation}
-v = \frac{dx}{dt}
+\mathbf{F}(t,\mathbf{x},\mathbf{v}) = m\frac{d\mathbf{v}}{dt}
 \end{equation}<ul>
-<li>$t$ is the <mark>independent</mark> variable</li>
-<li>$x$ is the <mark>dependent</mark> variable</li>
+<li>$t$ is an <mark>independent</mark> variable</li>
+<li>$x$ and $v$ are <mark>dependent</mark> variables</li>
 <li>Writing $x = x(t)$ makes this relationship clear.</li>
 </ul>
 
