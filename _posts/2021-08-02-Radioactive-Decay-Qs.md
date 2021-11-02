@@ -15,8 +15,7 @@ Complete a similar table for the following physical systems:
 | | dependent  variable(s)|
 |  | independent variable(s)|
 |  | differential(s)|
-|  | parameter(s) |
-|  | constants(s) |
+|  | parameter(s)/constants(s) |
 
 a) The amount of charge that flows every second from a capacitor,
 
@@ -24,10 +23,10 @@ a) The amount of charge that flows every second from a capacitor,
 \frac{\mathrm{d} Q}{\mathrm{d} t} = -\beta Q
 \end{equation}
 
-b) The oscillation of a non-linear driven pendulum,
+b) The motion of a non-linear pendulum driven by a force oscillating at frequency $\sigma$,
 
 \begin{equation}
-\frac{\mathrm{d}^2\theta}{\mathrm{t}^2} = -\frac{g}{l}\mathrm{sin}\theta + C\mathrm{cos}(\theta)\mathrm{sin}(\sigma) t.
+\frac{\mathrm{d}^2\theta}{\mathrm{t}^2} = -\frac{g}{l}\sin(\theta) + C\cos(\theta)\sin(\sigma t).
 \end{equation}
 
 {::options parse_block_html="true" /}
@@ -40,9 +39,8 @@ b) The oscillation of a non-linear driven pendulum,
 |-----|-----|
 | $Q$ | dependent  variable(s)|
 | $t$ | independent variable(s)|
-| $\frac{\mathrm{d}Q}{\mathrm{t}}$ | differential(s)|
-| $\beta$ | parameter(s) |
-  | None | constant(s) |
+| $\frac{\mathrm{d}Q}{\mathrm{d}t}$ | differential(s)|
+| $\beta$ | parameter(s)/constant(s) |
   
   b)
   
@@ -51,8 +49,7 @@ b) The oscillation of a non-linear driven pendulum,
 | $\theta$ | dependent  variable(s)|
 |  $t$ | independent variable(s)|
 | $\frac{\mathrm{d}^2\theta}{\mathrm{d} t^2}$  | differential(s)|
-| $l$, $C$, $\sigma$ | parameter(s) |
-  |$g$ | constant(s) |
+| $l$, $C$, $\sigma$, $g$ | parameter(s)/constant(s) |
   
   
   </details>
