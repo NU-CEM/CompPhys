@@ -23,7 +23,7 @@ a) The amount of charge that flows every second from a capacitor,
 \frac{\mathrm{d} Q}{\mathrm{d} t} = -\beta Q
 \end{equation}
 
-b) The oscillation of a non-linear driven pendulum,
+b) The motion of a non-linear pendulum driven by a force oscillating at frequency $\sigma$,
 
 \begin{equation}
 \frac{\mathrm{d}^2\theta}{\mathrm{t}^2} = -\frac{g}{l}\sin(\theta) + C\cos(\theta)\sin(\sigma t).
