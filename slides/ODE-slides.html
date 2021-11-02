@@ -14166,9 +14166,10 @@ div.jp-OutputPrompt {
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="An-ODE-contains-differentials-with-respect-to-only-one-variable">An ODE contains differentials with respect to only one variable<a class="anchor-link" href="#An-ODE-contains-differentials-with-respect-to-only-one-variable">&#182;</a></h3><p>For example, the following equation is an ODE:</p>
+<h3 id="An-ODE-contains-differentials-with-respect-to-only-one-variable">An ODE contains differentials with respect to only one variable<a class="anchor-link" href="#An-ODE-contains-differentials-with-respect-to-only-one-variable">&#182;</a></h3><p>For example, the following equations are ODEs:</p>
 \begin{equation}
 \frac{d x}{d t} = at
+\end{equation}\begin{equation}
 \frac{d^3 x}{d t^3} + \frac{x}{t} = b
 \end{equation}<p>As in each case the differentials are with respect to the single variable $t$.</p>
 
@@ -14189,8 +14190,7 @@ div.jp-OutputPrompt {
 <h3 id="The-order-of-a-differential-equation-is-the-highest-order-of-any-differential-contained-in-it.">The order of a differential equation is the highest order of any differential contained in it.<a class="anchor-link" href="#The-order-of-a-differential-equation-is-the-highest-order-of-any-differential-contained-in-it.">&#182;</a></h3><p>For example:</p>
 <p>$\frac{d x}{d t} = at$ is <mark>first order</mark>.</p>
 <p>$\frac{d^3 x}{d t^3} + \frac{x}{t} = b$ is <mark>third order</mark>.</p>
-<blockquote><p>Important: $\frac{d^3 x}{d t^3}$ does not equal $\left(\frac{d x}{d t}\right)^3$!</p>
-</blockquote>
+<p><strong>Note:</strong> $\frac{d^3 x}{d t^3}$ does not equal $\left(\frac{d x}{d t}\right)^3$!</p>
 
 </div>
 </div></section></section><section><section>
@@ -14216,7 +14216,7 @@ div.jp-OutputPrompt {
 <h3 id="Separable-equations-can-be-written-as-a-product-of-two-functions-of-different-variables">Separable equations can be written as a product of two functions of different variables<a class="anchor-link" href="#Separable-equations-can-be-written-as-a-product-of-two-functions-of-different-variables">&#182;</a></h3><p>A separable differential equation takes the form</p>
 \begin{equation}
 f(x)\frac{d x}{d t} = g(t)
-\end{equation}<p>Separable equations are some of the easiest to solve as we can split the equation into two independent parts with fewer variables, and solve each in turn - we will see an example of this in the next lesson.</p>
+\end{equation}<p>Separable equations are some of the easiest to solve as we can split the equation into two independent parts with fewer variables, and solve each in turn - we will see an example of this in the next tutorial.</p>
 
 </div>
 </div></section></section><section><section>
@@ -14279,7 +14279,7 @@ f(x)\frac{d x}{d t} = g(t)
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>For example,  if we know that 10% of atoms will decay per second we could write:</p>
+<p>If we know that 10% of atoms will decay per second we could write:</p>
 \begin{equation}
 \frac{d N}{d t} = -0.1 N
 \end{equation}<p>where $N$ is the number of atoms and $t$ is time measured in seconds.</p>
@@ -14287,7 +14287,7 @@ f(x)\frac{d x}{d t} = g(t)
 <table>
 <thead><tr>
 <th>physical notation</th>
-<th>generic notation</th>
+<th>generic notation $\left(\frac{dy}{dx} = f(y)\right)$</th>
 </tr>
 </thead>
 <tbody>
@@ -14305,7 +14305,7 @@ f(x)\frac{d x}{d t} = g(t)
 </tr>
 <tr>
 <td>constant of proportionality $\lambda=0.1 $</td>
-<td>parameter $c$</td>
+<td>parameter(s)</td>
 </tr>
 </tbody>
 </table>
@@ -14314,11 +14314,10 @@ f(x)\frac{d x}{d t} = g(t)
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="The-equation-for-radioactive-decay-is-separable-and-has-an-analytic-solution">The equation for radioactive decay is separable and has an analytic solution<a class="anchor-link" href="#The-equation-for-radioactive-decay-is-separable-and-has-an-analytic-solution">&#182;</a></h3><p>The radioactive decay equation is <mark>separable</mark>. For example,</p>
+<h3 id="The-equation-for-radioactive-decay-is-separable-and-has-an-analytic-solution">The equation for radioactive decay is separable and has an analytic solution<a class="anchor-link" href="#The-equation-for-radioactive-decay-is-separable-and-has-an-analytic-solution">&#182;</a></h3><p>The radioactive decay equation is <mark>separable</mark>:</p>
 \begin{equation}
-\frac{d N}{d t} = -\lambda N
-\end{equation}<p>Can be seperated as</p>
-\begin{equation}
+\frac{1}{N}\frac{d N}{d t} = -\lambda 
+\end{equation}\begin{equation}
 \frac{dN}{N} = -\lambda dt.
 \end{equation}<p>We can then integrate each side:</p>
 \begin{equation}
@@ -14328,19 +14327,14 @@ f(x)\frac{d x}{d t} = g(t)
 N = e^{-\lambda t}e^{\textrm{const.}} 
 \end{equation}
 </div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><p>Note: Remember that $\int \frac{1}{x} dx = \ln x + \textrm{const.}$</p>
-</blockquote>
-
-</div>
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="To-model-a-physical-system-an-initial-value-has-to-be-provided">To model a physical system an initial value has to be provided<a class="anchor-link" href="#To-model-a-physical-system-an-initial-value-has-to-be-provided">&#182;</a></h3><p>At the beginning (when $t=0$):</p>
+<h3 id="To-model-a-physical-system-an-initial-value-has-to-be-provided">To model a physical system an initial value has to be provided<a class="anchor-link" href="#To-model-a-physical-system-an-initial-value-has-to-be-provided">&#182;</a></h3>\begin{equation}
+N(t) = e^{-\lambda t}e^{\textrm{const.}} 
+\end{equation}<p>At the beginning (when $t=0$):</p>
 \begin{equation}
-N = e^{-\lambda t}e^{\textrm{const.}} = e^{0}e^{\textrm{const.}} = e^{\textrm{const.}}
+N (t_0) = e^{0}e^{\textrm{const.}} = e^{\textrm{const.}}
 \end{equation}<p>So we can identify $e^{\textrm{const.}}$ as the amount of radioactive material that was present in the beginning. We denote this starting amount as $N_0$.</p>
 
 </div>
@@ -14357,17 +14351,11 @@ N = N_0 e^{-\lambda t}
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="ODEs-can-have-initial-values-or-boundary-values">ODEs can have initial values or boundary values<a class="anchor-link" href="#ODEs-can-have-initial-values-or-boundary-values">&#182;</a></h3><p>ODEs have either initial values or boundary values. For example, using Newton's second laws we could calculate the distance $x$ an object travels under the influence of gravity over time $t$</p>
+<h3 id="ODEs-can-have-initial-values-or-boundary-values">ODEs can have initial values or boundary values<a class="anchor-link" href="#ODEs-can-have-initial-values-or-boundary-values">&#182;</a></h3><p>ODEs have either initial values or boundary values. Take Newton's second law as an example:</p>
 \begin{equation}
 \frac{\mathrm{d}^2x}{\mathrm{d}t^2} = -g
 \end{equation}<p>An initial value problem would be where we know the starting position and velocity. A boundary value problem would be where we specify the position of the ball at times $t=t_0$ and $t=t_1$.</p>
-<p>In this course we will only study ODEs with initial values. ODEs with boundary values are more difficult to solve, but you can related materials listed under <code>External resources</code>.</p>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="The-number-of--initial-conditions-depends-on-the-order-of--the-differential-equation">The number of  initial conditions depends on the order of  the differential equation<a class="anchor-link" href="#The-number-of--initial-conditions-depends-on-the-order-of--the-differential-equation">&#182;</a></h3><p>Our radioactive decay example is a first-order ODE and so we only had to provide a single initial condition. For second-order ODEs (such as acceleration under gravity) we need to provide two initial/boundary conditions, for third-order ODEs we would need to provide three, and so on.</p>
+<p>For second-order ODEs (such as acceleration under gravity) we need to provide two initial/boundary conditions, for third-order ODEs we would need to provide three, and so on. Our radioactive decay example was a first-order ODE and so we only had to provide a single initial condition.</p>
 
 </div>
 </div></section></section><section><section>
@@ -14430,10 +14418,11 @@ N = N_0 e^{-\lambda t}
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="A-function-can-be-approximated-using-a-Taylor-expansion">A function can be approximated using a Taylor expansion<a class="anchor-link" href="#A-function-can-be-approximated-using-a-Taylor-expansion">&#182;</a></h3><p>The Taylor series is a polynomial expansion of a function about a point.
 For example, the image below shows $\mathrm{sin}(x)$ and its Taylor approximation by polynomials of degree 1, 3, 5, 7, 9, 11, and 13 at $x = 0$.</p>
-<figure>
+<p><figure>
 <img src="../images/Sintay_SVG.svg" width=500 />
-    <figcaption> Credit: Image By IkamusumeFan - CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=27865201</figcaption>
 </figure>
+Credit: Image By IkamusumeFan - CC BY-SA 3.0, Commons Wikimedia</p>
+
 </div>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14446,37 +14435,61 @@ f(x) = f(a) + \frac{\mathrm{d} f}{\mathrm{d} x}(x-a) + \frac{1}{2!} \frac{\mathr
 N(t+h) = N(t) + h\frac{\mathrm{d}N}{\mathrm{d}t} + \frac{1}{2}h^2\frac{\mathrm{d}^2N}{\mathrm{d}t^2} + \ldots
 \end{equation}\begin{equation}
 N(t+h) = N(t) + hf(N,t) + \mathcal{O}(h^2)
-\end{equation}
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>If you want to know more about Taylor expansion, there is aan excellent video explanation from user <code>3blue1brown</code> on Youtube:</em></p>
-<blockquote><p>youtube: <a href="https://youtu.be/3d6DsjIBzJ4">https://youtu.be/3d6DsjIBzJ4</a></p>
-</blockquote>
-
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="If-the-step-size-$h$-is-small-then-higher--order-terms-can-be-neglected">If the step size $h$ is small then higher  order terms can be neglected<a class="anchor-link" href="#If-the-step-size-$h$-is-small-then-higher--order-terms-can-be-neglected">&#182;</a></h3><p>If $h$ is small and $h^2$ is very small we can neglect the terms in $h^2$ and higher and we get:</p>
+\end{equation}<p>If $h$ is small and $h^2$ is very small we can neglect the terms in $h^2$ and higher and we get:</p>
 \begin{equation}
 N(t+h) = N(t) + hf(N,t).
 \end{equation}
 </div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">youtube_video</span><span class="p">(</span><span class="s2">&quot;https://www.youtube.com/embed/3d6DsjIBzJ4&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/3d6DsjIBzJ4"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Euler's-method-can-be-used-to-approximate-the-solution-of-differential-equations">Euler's method can be used to approximate the solution of differential equations<a class="anchor-link" href="#Euler's-method-can-be-used-to-approximate-the-solution-of-differential-equations">&#182;</a></h3><p>We can keep applying the equation above so that we calculate $N(t)$ at a succession of equally spaced points for as  long as we want. If $h$ is small enough we can get a good approximation to the solution of the equation. This method for solving differential equations is called Euler's method, after Leonhard Euler, its inventor.</p>
 <p><img src="../images/Euler_method.png" alt=""></p>
-
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><p>Note: Although we are neglecting terms $h^2$ and higher, Euler's method typically has an error linear in $h$ as the error accumulates over repeated steps. This means that if we want to double the accuracy of our calculation we need to double the number of steps, and double the calcuation time.</p>
-<p>Note: So far we have looked at an example where the input (or independent variable) is time. This isn't always the case - but it is the most common case in physics, as we are often interested in how things evolve with time.</p>
-</blockquote>
+<p><strong>Note</strong>: Although we are neglecting terms $h^2$ and higher, Euler's method typically has an error linear in $h$ as the error accumulates over repeated steps. This means that if we want to double the accuracy of our calculation we need to double the number of steps, and double the calcuation time.</p>
 
 </div>
 </div></section></section><section><section>
