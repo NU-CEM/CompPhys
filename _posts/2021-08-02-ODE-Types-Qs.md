@@ -16,7 +16,7 @@ Describe the following differential equations. Are they -
 a) The oscillation of a non-linear driven pendulum,
 
 \begin{equation}
-\frac{\mathrm{d}^2\theta}{\mathrm{d}t^2} = -\frac{g}{l}\sin(\theta) + C\cos(\theta)\sin(\sigma) t,
+\frac{\mathrm{d}^2\theta}{\mathrm{d}t^2} = -\frac{g}{l}\sin(\theta) + C\cos(\theta)\sin(\sigma t),
 \end{equation}
 
 where $l$ and $\sigma$ are constant parameters and $g$ is the acceleration due to gravity.
