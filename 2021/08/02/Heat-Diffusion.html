@@ -140,9 +140,7 @@ window.onload = wrap_img;
 <hr />
 <p>Questions:</p>
 <ul>
-<li>How can I describe heat diffusion using a PDE?</li>
-<li>What is the Laplacian operator?</li>
-<li>What are boundary conditions?</li>
+<li>How do I combine the finite difference and Euler methods to solve the heat diffusion equation? </li>
 </ul>
 <p>Objectives:</p>
 <hr />
@@ -152,73 +150,9 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Partial-differential-equations-have-multiple-inputs">Partial differential equations have multiple inputs<a class="anchor-link" href="#Partial-differential-equations-have-multiple-inputs"> </a></h3><p>In the previous section of the course we studied <bold>ordinary differential equations</bold>. ODEs have a single input (also known as dependent variable) - for example, time.</p>
-<p>Partial differential equations (PDEs) have multiple inputs (dependent variables). For example, think about a sheet of metal that has been heated unevenly across the surface. Over time, heat will diffuse through the 2-dimensional sheet. The temperature depends on both time <em>and</em> position - there are two inputs.
-
-<center class="youtube-iframe-wrapper">
-    <iframe width="730" height="315" src="https://www.youtube.com/embed/watch?v=twBcpxrWm5E" frameborder="0" allowfullscreen=""></iframe>
-</center>
-
-Because PDEs have multiple inputs they are generally much more difficult to solve analytically than ODEs. However, there are a range of numerical methods that can be used to find approximate solutions.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="PDEs-have-application-across-a-wide-variety-of-topics">PDEs have application across a wide variety of topics<a class="anchor-link" href="#PDEs-have-application-across-a-wide-variety-of-topics"> </a></h3><p>The same type of PDE often appears in different contexts. For example, the <bold>diffusion equation</bold> takes the form:</p>
-\begin{equation}
-\nabla^2T = \alpha \frac{\partial T}{\partial t}
-\end{equation}<p>When used to describe heat diffusion, this PDE is known as the heat equation. This same PDE however can be used to model other seemingly unrelated processes such as brownian motion, or used in financial modelling via the Black-Sholes equation.</p>
-<p>Another type of PDE is known as <bold>Poisson's equation</bold>:</p>
-\begin{equation}
-\nabla^2\phi = f(x,y,z)
-\end{equation}<p>Poisson's equation can be used to describe electrostatic forces, where $\phi$ is the electric potential. It can also be applied to mechanics (where $\phi$ is the gravitational potential) or thermodynamics (where $\phi$ is the temperature). When $f(x,y,z)=0$ this equation is known as <bold>Laplace's equation</bold>.</p>
-<p>The third common type of PDE is the <bold>wave equation</bold>:</p>
-\begin{equation}
-\nabla^2r = \alpha \frac{\partial^2 r}{\partial t^2}
-\end{equation}<p>This describes mechanical processes such as the vibration of a string or the motion of a pendulum. It can also be used in electrodynamics to describe the exchange of energy between the electric and magnetic fields.</p>
-<p>In this course we will focus on only the heat equation, but many of the topics we will discuss - such as boundary conditions, and finite difference methods - can be transferred to PDEs more generally.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-Laplacian-operator-corresponds-to-an-average-rate-of-change">The Laplacian operator corresponds to an average rate of change<a class="anchor-link" href="#The-Laplacian-operator-corresponds-to-an-average-rate-of-change"> </a></h3><p><em>But what is the operator $\nabla^2$?</em>. This is the <bold>Laplacian operator</bold>. When applied to $\phi$ and written in full for a three dimensional cartesian coordinate system with dependent variables $x$, $y$ and $z$ it takes the following form:</p>
-\begin{equation}
-\nabla^2\phi = \frac{\partial^2\phi}{\partial x^2} + \frac{\partial^2\phi}{\partial y^2} + \frac{\partial^2\phi}{\partial z^2}.
-\end{equation}<p>We can think of the laplacian as encoding an average rate of change. To better develop an intuition for how the laplacian can be interpreted physically, we need to understand two related operators - div and curl. We will not explore these operators further in this lesson, but a related video is below:
-
-<center class="youtube-iframe-wrapper">
-    <iframe width="730" height="315" src="https://www.youtube.com/embed/EW08rD-GFh0" frameborder="0" allowfullscreen=""></iframe>
-</center>
-</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="PDEs-can-have-boundary-values-and-initial-values">PDEs can have boundary values and initial values<a class="anchor-link" href="#PDEs-can-have-boundary-values-and-initial-values"> </a></h3><p>In the previous section of the course we learnt that ODEs have either initial values or boundary values.</p>
-<p>PDEs can also be separated in a similar manner. <bold>Boundary value problems</bold> describe the behaviour of a variable in a space and we are given some constraints on the variable around the boundary of that space. For example, consider a box with one wall at voltage $V$ and all others at voltage zero.</p>
-<p><img src="/CompPhys/images/copied_from_nb/../images/electrostatics.png" alt="" /></p>
-<p>The sprecification that one wall is at voltage $V$ and all others are at voltage zero are the boundary conditions. We could then calculate the electrostatic potential $\phi$ at all points within the box using Poisson's equation:</p>
-\begin{equation}
-\nabla^2\phi = 0
-\end{equation}<p><bold>Initial value problems</bold> are where the field - or other variable of interest - is varying in both space and time. We now require boundary conditions <em>and</em> initial values. For example, consider heat diffusion in a box. Here we could specify that there is no heat flow in or out of the box - this is the boundary condition.</p>
-<p><img src="/CompPhys/images/copied_from_nb/../images/diffusion1.png" alt="" /></p>
-<p>We could also specify that at time $t=0$ the centre of the box is at temperature $T_1$, whilst surrounding areas are at temperature  $T_1$. This is the initial condition. It differs from a boundary condition in that we are told what the temperature is at the start of our time grid (at $t=0$) but not at the end of our time grid (when the simulation finishes).</p>
-<p><img src="/CompPhys/images/copied_from_nb/../images/diffusion2.png" alt="" /></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <hr />
 <p>Keypoints:</p>
-<h2 id="--Partial-differential-equations-have-multiple-inputs">- Partial differential equations have multiple inputs<a class="anchor-link" href="#--Partial-differential-equations-have-multiple-inputs"> </a></h2>
+
 </div>
 </div>
 </div>
