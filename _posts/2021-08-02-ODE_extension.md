@@ -90,3 +90,9 @@ Assume that the $z$ axis is perpendicular to the plane of motion so that the mot
 For the parameters assume $G=1$, $m_1=1$ and $m_2=1$. For the initial conditions, assume that $r_1 = [1,0]$, $r_2 = [-1,0]$, $v_1 = [0,0.5]$ and $v_2 = [0,-0.5]$. Integrate up to the time $t_\mathrm{max} = 20$ with a time step size of $\delta t = 0.05$.
 
 Once you have working code, change the initial velocities and comment on what you observe.
+
+---
+
+Back to [Modelling with Ordinary Differential Equations](https://nu-cem.github.io/CompPhys/2021/08/02/ODEs.html).
+
+---

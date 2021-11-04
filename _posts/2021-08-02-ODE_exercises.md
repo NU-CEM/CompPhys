@@ -36,3 +36,9 @@ At the end of the tutorial you are also shown how to re-cast the second order OD
 on the tutorial page, and following the same method outlined as that outlined for the Strange Attractor, write a piece of code for modelling $\theta$ as a function of time.
 
 > Tip: Combine the two variable $\theta$ and $\omega$ into a single vector $\mathbf{r} = (\theta,\omega)$. The method will give us a value for $\theta$ and $\omega$, but we can ignore the $\omega$ values generated if they are not needed.
+
+---
+
+Back to [Modelling with Ordinary Differential Equations](https://nu-cem.github.io/CompPhys/2021/08/02/ODEs.html).
+
+---
