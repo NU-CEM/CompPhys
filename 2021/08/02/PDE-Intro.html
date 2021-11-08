@@ -190,7 +190,7 @@ Because PDEs have multiple inputs they are generally much more difficult to solv
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-Laplacian-operator-corresponds-to-an-average-rate-of-change">The Laplacian operator corresponds to an average rate of change<a class="anchor-link" href="#The-Laplacian-operator-corresponds-to-an-average-rate-of-change"> </a></h3><p><em>But what is the operator $\nabla^2$?</em>. This is the <bold>Laplacian operator</bold>. When applied to $\phi$ and written in full for a three dimensional cartesian coordinate system with dependent variables $x$, $y$ and $z$ it takes the following form:</p>
+<h3 id="The-Laplacian-operator-corresponds-to-an-average-rate-of-change">The Laplacian operator corresponds to an average rate of change<a class="anchor-link" href="#The-Laplacian-operator-corresponds-to-an-average-rate-of-change"> </a></h3><p><em>But what is the operator $\nabla^2$?</em>. This is the <mark>Laplacian operator</mark>. When applied to $\phi$ and written in full for a three dimensional cartesian coordinate system with dependent variables $x$, $y$ and $z$ it takes the following form:</p>
 \begin{equation}
 \nabla^2\phi = \frac{\partial^2\phi}{\partial x^2} + \frac{\partial^2\phi}{\partial y^2} + \frac{\partial^2\phi}{\partial z^2}.
 \end{equation}<p>We can think of the laplacian as encoding an average rate of change. To develop an intuition for how the laplacian can be interpreted physically, we need to understand two related operators - div and curl. We will not explore these operators further in this lesson, but a related video is below:
@@ -207,13 +207,25 @@ Because PDEs have multiple inputs they are generally much more difficult to solv
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="PDEs-can-have-boundary-conditions-and-initial-conditions">PDEs can have boundary conditions <em>and</em> initial conditions<a class="anchor-link" href="#PDEs-can-have-boundary-conditions-and-initial-conditions"> </a></h3><p>In the previous section of the course we learnt that ODEs have either initial values or boundary values.</p>
 <h4 id="Boundary-value-problems">Boundary value problems<a class="anchor-link" href="#Boundary-value-problems"> </a></h4><p>PDEs can also be separated in a similar manner. <mark>Boundary value problems</mark> describe the behaviour of a variable in a space and we are given some constraints on the variable around the boundary of that space. For example, consider the 2-dimensional problem of a thin rectangular sheet with one side at voltage $V$ and all others at voltage zero.</p>
-<p><img src="../images/electrostatics.png" width="200" /></p>
+<p><figure>
+  
+    <img class="docimage" src="/CompPhys/images/copied_from_nb/../images/electrostatics.png" alt="" style="max-width: 200px" />
+    
+    
+</figure>
+</p>
 <p>The specification that one side is at voltage $V$ and all others are at voltage zero are the <mark>boundary conditions</mark>. We could then calculate the electrostatic potential $\phi$ at all points within the sheet using the two-dimensional Laplace's equation:</p>
 \begin{equation}
 \nabla^2\phi = \frac{\partial^2\phi}{\partial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0
-\end{equation}<h4 id="Initial-value-problems">Initial value problems<a class="anchor-link" href="#Initial-value-problems"> </a></h4><p><bold>Initial value problems</bold> are where the field - or other variable of interest - is varying in both space and time. We now require boundary conditions <em>and</em> initial values. This is a more difficult type of PDE to solve.</p>
+\end{equation}<h4 id="Initial-value-problems">Initial value problems<a class="anchor-link" href="#Initial-value-problems"> </a></h4><p><mark>Initial value problems</mark> are where the field - or other variable of interest - is varying in both space and time. We now require boundary conditions <em>and</em> initial values. This is a more difficult type of PDE to solve.</p>
 <p>For example, consider heat diffusion in a two-dimensional sheet. Here we could specify that there is no heat flow in or out of the sheet - this is the boundary condition.</p>
-<p><img src="../images/diffusion1.png" width="200" /></p>
+<p><figure>
+  
+    <img class="docimage" src="/CompPhys/images/copied_from_nb/../images/diffusion1.png" alt="" style="max-width: 200px" />
+    
+    
+</figure>
+</p>
 <p>We could also specify that at time $t=0$ the centre of the sheet is at temperature $T_1$, whilst surrounding areas are at temperature  $T_0$. This is the initial condition. It differs from a boundary condition in that we are told what the temperature is at the start of our time grid (at $t=0$) but not at the end of our time grid (when the simulation finishes).</p>
 <p><figure>
   

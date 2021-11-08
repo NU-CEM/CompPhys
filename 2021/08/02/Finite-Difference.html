@@ -168,7 +168,13 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The method of finite differences involves dividing the space into a grid of discrete points $[x,y]$ and calculating numerical derivatives or at each of these points</p>
-<p><img src="../images/electrostatics2.png" width="200" /></p>
+<p><figure>
+  
+    <img class="docimage" src="/CompPhys/images/copied_from_nb/../images/electrostatics2.png" alt="" style="max-width: 200px" />
+    
+    
+</figure>
+</p>
 <p>But how do we calculate these numerical derivatives?</p>
 
 </div>
@@ -178,7 +184,7 @@ window.onload = wrap_img;
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="A-numerical-derivative-can-be-calculated-using-the-forward,-backward-or-central-difference">A numerical derivative can be calculated using the forward, backward or central difference<a class="anchor-link" href="#A-numerical-derivative-can-be-calculated-using-the-forward,-backward-or-central-difference"> </a></h3><p>The standard definition of a derivative is</p>
 \begin{equation}
-\frac{\mathrm{d} f}{\mathrm{d} x} = \lim{h\to0}\frac{f(x+h)-f(x)}{h}.
+\frac{\mathrm{d} f}{\mathrm{d} x} = \lim_{h\to0}\frac{f(x+h)-f(x)}{h}.
 \end{equation}<p>To calculate the derivative numerically we make $h$ very small and calculate</p>
 \begin{equation}
 \frac{\mathrm{d} f}{\mathrm{d} x} \simeq \frac{f(x+h)-f(x)}{h}.
@@ -224,7 +230,13 @@ window.onload = wrap_img;
 <h3 id="The-finite-difference-method-turns-our-partial-differential-equation-into-a-set-of-linear-simulatenous-equation">The finite difference method turns our partial differential equation into a set of linear simulatenous equation<a class="anchor-link" href="#The-finite-difference-method-turns-our-partial-differential-equation-into-a-set-of-linear-simulatenous-equation"> </a></h3><p>Returning to our Laplace equation for for the electric potential $\phi$:</p>
 \begin{equation}
 \frac{\partial^2\phi}{\partial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0
-\end{equation}<p><img src="../images/electrostatics2.png" width="200" /></p>
+\end{equation}<p><figure>
+  
+    <img class="docimage" src="/CompPhys/images/copied_from_nb/../images/electrostatics2.png" alt="" style="max-width: 200px" />
+    
+    
+</figure>
+</p>
 <p>The numerical Laplacian can be substituted into the equation above, giving us a set of $n$ simulatenous equations for the $n$ grid points.</p>
 \begin{equation}
  \frac{\phi(x+h,y)+\phi(x-h,y)+\phi(x,y+h)+\phi(x,y-h)-4\phi(x,y)}{a^2} = 0,
@@ -234,13 +246,16 @@ First we re-arrange the equation above:</p>
 \begin{equation}
  \phi(x,y)=\frac{1}{4}\left(\phi(x+h,y)+\phi(x-h,y)+\phi(x,y+h)+\phi(x,y-h)\right) = 0.
 \end{equation}<p>This tells us that $\phi(x,y)$ is the average of the surrounding grid points, which can be represented visually as:</p>
-<p><img src="../images/electrostatics3.png" width="200" /></p>
+<p><figure>
+  
+    <img class="docimage" src="/CompPhys/images/copied_from_nb/../images/electrostatics3.png" alt="" style="max-width: 200px" />
+    
+    
+</figure>
+</p>
 <p>Second, we fix $\phi(x,y)$ at the boundaries using the boundary conditions. Third, we guess the initial values of the interior $\phi(x,y)$ points - our guesses do not need to be good, and can be zero.</p>
-<p>Finally we use Equation X to calculate new values of $\phi'(x,y)$ at all points in space. We take these new $\phi'(x,y)$ values and feed them into Equation X to calculate new values. We repeat this iterative process until the $\phi(x,y)$ values converge, and that is our solution.
-<div class="flash">
-    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-    <strong>Note: </strong>Convergence can be tested by specifying what the maximum difference should be between iterations. For example, that $\phi&amp;#8217;(x,y)-\phi(x,y)&lt; 1e-5$ for all grid points.
-</div></p>
+<p>Finally we use Equation 14 to calculate new values of $\phi'(x,y)$ at all points in space. We take these new $\phi'(x,y)$ values and feed them into Equation 14 again to calculate new values. We repeat this iterative process until the $\phi(x,y)$ values converge, and that is our solution.</p>
+<p>Convergence can be tested by specifying what the maximum difference should be between iterations. For example, that $\phi'(x,y)-\phi(x,y)&lt; 1e-5$ for all grid points.</p>
 
 </div>
 </div>
