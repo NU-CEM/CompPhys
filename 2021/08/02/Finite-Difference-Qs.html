@@ -107,15 +107,15 @@ window.onload = wrap_img;
     <span class="k">return</span> <span class="n">phi_prime</span>
 </code></pre></div></div>
 
-<p>Another form of boundary condition is a Periodic Boundary Condition. PBCs are often chosen for approximating a large (infinite) system by using a small part called a unit cell, and are most famously used for modelling periodic crystals in solid state physics. Mathematically, PBCs can be expressed for $f(x,y)$ on a two dimensional $N\timesN$ grid as:</p>
+<p>Another form of boundary condition is a Periodic Boundary Condition. PBCs are often chosen for approximating a large (infinite) system by using a small part called a unit cell, and are most famously used for modelling periodic crystals in solid state physics. Mathematically, PBCs can be expressed for $f(x,y)$ on a two dimensional $N \times N$ grid as:</p>
 
-<p>\begin{latex}
+<p>\begin{equation}
 f[N,y] = f[0,y],
-\end{latex}</p>
+\end{equation}</p>
 
-<p>\begin{latex}
+<p>\begin{equation}
 f[x,N] = f[x,0],
-\end{latex}</p>
+\end{equation}</p>
 
 <p>Write a function which calculates the finite difference with periodic boundary conditions</p>
 
