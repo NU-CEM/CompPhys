@@ -12,13 +12,13 @@ Decide whether the following systems are a boundary value problem or initial val
 a) Brownian motion of small particles in a liquid (the random-walk)
 
 \begin{equation}
-\frac{dP}{dt} = \frac{l^2}{2Np^2}\del^2P
+\frac{dP}{dt} = \frac{l^2}{2Np^2}\nabla^2P
 \end{equation}
 
 b) the Klein-Gordon equation for describing the energy-momentum relation of relativistic particles:
 
 \begin{equation}
-\left(\frac{1}{c^2}\frac{\partial^2}{\partial t^2} - \del^2 + \frac{m^2c^2}{\hbar^2}\right)\phi(t,x)=0
+\left(\frac{1}{c^2}\frac{\partial^2}{\partial t^2} - \nabla^2 + \frac{m^2c^2}{\hbar^2}\right)\phi(t,x)=0
 \end{equation}
 
 {::options parse_block_html="true" /}
