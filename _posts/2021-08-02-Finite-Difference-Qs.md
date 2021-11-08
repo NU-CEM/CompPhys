@@ -22,15 +22,15 @@ def finite_difference(phi):
     return phi_prime
 ~~~
 
-Another form of boundary condition is a Periodic Boundary Condition. PBCs are often chosen for approximating a large (infinite) system by using a small part called a unit cell, and are most famously used for modelling periodic crystals in solid state physics. Mathematically, PBCs can be expressed for $f(x,y)$ on a two dimensional $N\timesN$ grid as:
+Another form of boundary condition is a Periodic Boundary Condition. PBCs are often chosen for approximating a large (infinite) system by using a small part called a unit cell, and are most famously used for modelling periodic crystals in solid state physics. Mathematically, PBCs can be expressed for $f(x,y)$ on a two dimensional $N \times N$ grid as:
 
-\begin{latex}
+\begin{equation}
 f[N,y] = f[0,y],
-\end{latex}
+\end{equation}
 
-\begin{latex}
+\begin{equation}
 f[x,N] = f[x,0],
-\end{latex}
+\end{equation}
 
 Write a function which calculates the finite difference with periodic boundary conditions
 
