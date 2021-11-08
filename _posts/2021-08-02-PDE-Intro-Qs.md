@@ -25,7 +25,7 @@ b) the Klein-Gordon equation for describing the energy-momentum relation of rela
 <details>
   <summary markdown="span">Show answer</summary>
   
- a) this is an initial value problem described by the diffusion equation
+ a) this is an initial value problem described by the diffusion equation. 
  b) this is an initial value problem described by the wave equation
  
 </details>
