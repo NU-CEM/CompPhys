@@ -5,7 +5,7 @@ title: Introduction to PDEs - quick test
 hide: true
 ---
 
-## Boundary value problem or initial value problem
+## Classifying PDEs
 
 Decide whether the following systems are a boundary value problem or initial value problem, and whether they are diffusion-like, wave-like or poisson-like:
 
