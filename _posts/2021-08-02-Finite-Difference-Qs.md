@@ -1,7 +1,7 @@
 ---
 toc: false
 layout: post
-title: Finite difference methods - quick test
+title: Laplace's equation - quick test
 hide: true
 ---
 
