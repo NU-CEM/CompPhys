@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Finite difference methods | An Introduction to Computational Physics</title>
+<title>Laplace’s equation for electrostatics | An Introduction to Computational Physics</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Finite difference methods" />
+<meta property="og:title" content="Laplace’s equation for electrostatics" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
 <meta property="og:description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Finite-Difference.html","@type":"BlogPosting","headline":"Finite difference methods","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Finite-Difference.html"},"description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","@context":"https://schema.org"}</script>
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Finite-Difference.html","@type":"BlogPosting","headline":"Laplace’s equation for electrostatics","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Finite-Difference.html"},"description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -83,7 +83,7 @@ window.onload = wrap_img;
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Finite difference methods</h1><p class="post-meta post-meta-title">
+    <h1 class="post-title p-name" itemprop="name headline">Laplace&#39;s equation for electrostatics</h1><p class="post-meta post-meta-title">
     </p>
 
     
@@ -140,10 +140,8 @@ window.onload = wrap_img;
 <hr />
 <p>Questions:</p>
 <ul>
-<li>What is a finite difference method? </li>
-<li>What is the relaxation (a.k.a Jacobi) method?</li>
-<li>How do I use a finite difference method to calculate derivatives?</li>
-<li>How do I combine the finite difference method with the relaxation method to solve a PDE?</li>
+<li>How do I use a finite difference method to calculate derivatives? </li>
+<li>How do I use the relaxation method to solve Laplace's equation?</li>
 </ul>
 <p>Objectives:</p>
 <ul>
@@ -167,7 +165,7 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The method of finite differences involves dividing the space into a grid of discrete points $[x,y]$ and calculating numerical derivatives or at each of these points</p>
+<p>The method of finite differences involves dividing the space into a grid of discrete points $[x,y]$ and calculating numerical derivatives or at each of these points.</p>
 <p><figure>
   
     <img class="docimage" src="/CompPhys/images/copied_from_nb/../images/electrostatics2.png" alt="" style="max-width: 200px" />
@@ -175,7 +173,7 @@ window.onload = wrap_img;
     
 </figure>
 </p>
-<p>But how do we calculate these numerical derivatives?</p>
+<p>In this case we consider a 2-dimensional sheet with a fixed voltage $V$ at the top side, and all other sides fixed at $0V$.  But how do we calculate these numerical derivatives?</p>
 
 </div>
 </div>
@@ -262,7 +260,7 @@ First we re-arrange the equation above:</p>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="These-methods-can-be-applied-using-the-Python-skills-we-have-developed">These methods can be applied using the Python skills we have developed<a class="anchor-link" href="#These-methods-can-be-applied-using-the-Python-skills-we-have-developed"> </a></h3><p>We will now use our Python Skillz to solve Laplace's equation with the boundary conditions outlined above. Let's also imagine that the sheet is 1m along each side and that we want a grid spacing of 1cm. First let's import the libraries we will use:</p>
+<h3 id="The-relaxation-and-finite-difference-methods-can-be-applied-using-the-Python-skills-we-have-developed">The relaxation and finite difference methods can be applied using the Python skills we have developed<a class="anchor-link" href="#The-relaxation-and-finite-difference-methods-can-be-applied-using-the-Python-skills-we-have-developed"> </a></h3><p>We will now use our Python Skillz to solve Laplace's equation with the boundary conditions outlined above. Let's also imagine that the sheet is 1m along each side and that we want a grid spacing of 1cm. First let's import the libraries we will use:</p>
 
 </div>
 </div>
@@ -552,7 +550,7 @@ First we re-arrange the equation above:</p>
 <li>Second-order derivatives, partial derivatives and the Laplacian can be calculated using the same approach</li>
 <li>The finite difference method turns our partial differential equation into a set of linear simulatenous equation</li>
 <li>To solve this set of equations we use the relaxation method</li>
-<li>These methods can be applied using the Python skills we have developed</li>
+<li>The relaxation and finite difference methods can be applied using the Python skills we have developed</li>
 </ul>
 
 </div>

@@ -140,7 +140,7 @@ window.onload = wrap_img;
 <hr />
 <p>Questions:</p>
 <ul>
-<li>How do I combine the finite difference method and Euler methods to solve the heat diffusion equation? </li>
+<li>How do I combine the finite difference method and Euler methods to solve the diffusion equation? </li>
 </ul>
 <p>Objectives:</p>
 <ul>
@@ -151,6 +151,276 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-diffusion-equation-is-an-initial-value-problem">The diffusion equation is an initial value problem<a class="anchor-link" href="#The-diffusion-equation-is-an-initial-value-problem"> </a></h3><p>In the previous section we solved a boundary value problem in the form of Laplace's equation. In this section we will look at an initial value problem, which is a more complex type of PDE. An initial value problem is more complex as we are told the starting conditions and then have to predict future behaviour as a function of time.</p>
+<p>The example we will use is the one-dimensional diffusion equation:</p>
+\begin{equation}
+ \frac{\partial \phi}{\partial t} = D\frac{\partial^2 \phi}{\partial x^2}
+\end{equation}<p>In this case we have a variable $\phi(x,t)$ that depends on position $x$ and time $t$ - so can we not solve it in the same way as finding the $\phi(x,y)$ Laplace's equation, which also had two independent variables?</p>
+<p>The problem is that we  only have an <em>initial</em> condition in the time dimension - we know the value of $\phi(x,t)$ at $t=0$ but we do not typically know the value of $t$ at a later point. In the spatial dimensions we know the boundary conditions at either end of the grid.</p>
+<p>Instead, we will use the <mark>Forward-Time Centred-Space method (FTCS)</mark>.</p>
+<h3 id="There-are-two-steps-to-the-FTCS-method">There are two steps to the FTCS method<a class="anchor-link" href="#There-are-two-steps-to-the-FTCS-method"> </a></h3><h4 id="Step-one">Step one<a class="anchor-link" href="#Step-one"> </a></h4><p>Use the finite difference method to express the Laplacian as a set of simulatenous equations:</p>
+<p>where $a$ is the grid spacing.</p>
+<p>Substitute this back into the diffusion equation:</p>
+<h4 id="Step-two">Step two<a class="anchor-link" href="#Step-two"> </a></h4><p>We now have a set of simultaneous ODEs for $\phi(x,t)$. So we can use Euler's method to evolve the system forward in time. Euler's method has the general form:</p>
+\begin{equation}
+\phi(t+h) \simeq \phi(t) + hf(\phi, t).
+\end{equation}<p>Applying this to Equation X gives:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-FTCS-can-be-applied-using-the-Python-skills-we-have-developed">The FTCS can be applied using the Python skills we have developed<a class="anchor-link" href="#The-FTCS-can-be-applied-using-the-Python-skills-we-have-developed"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Consider a 10cm rod of stainless steel initially at a uniform temperature of 20$\degrees$ Celsius. The rod is dipped in a hot water bath at 90$\degrees$ Celsius at one end, and held in someone's hand at the other. Assume that the hand is at constant body temperature throughout (27$\degrees$ Celsius).</p>
+<p>The proble can be represented visually as follows:</p>
+<p>Our goal is to calculate the temperature profile of the steel as a function of distance $x$ from the cold side to the hot side, and as a function of time. For simplicity let us assume that the rod is perfectly insulated so that heat only moves horizontally; as a result this problem can be modelled as 1-dimensional. Also assume that neighter the hot water bath or the hand change temperature appreciably.</p>
+<p>Thermal conduction is described by the diffusion equation (or heat equation in this context)</p>
+\begin{equation}
+ \frac{\partial \phi}{\partial t} = D\frac{\partial^2 \phi}{\partial x^2},
+\end{equation}<p>where $D$ is the material dependent thermal diffusivity. For steel $D=4.25\times10^{-6}\mathrm{m}^2\mathrm{s}^{-1}$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First, let's import the libraries we will be using</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now let's fix some of the constants in the problem</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="c1"># width of the rod in metres</span>
+<span class="n">D</span> <span class="o">=</span> <span class="mf">4.25e-6</span> <span class="c1"># thermal diffusivity of  steel</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And some of the numerical parameters:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># number of divisions in the grid</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">L</span><span class="o">/</span><span class="n">N</span> <span class="c1"># grid spacing</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">1e-4</span> <span class="c1"># time step</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's specify the boundary conditions and the initial condition</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">T_left</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># temperature fixed on left side of rod</span>
+<span class="n">T_right</span> <span class="o">=</span> <span class="mf">50.0</span> <span class="c1"># temperature fixed on right side of rod</span>
+<span class="n">T_middle</span> <span class="o">=</span> <span class="mf">20.0</span> <span class="c1"># temperature of rod at the beginning</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And now create an array $T$ to hold the temperature of the rod and an array $T_{new}$ to calculate the temperature of the rod after evolving through time. Note that there are $N$ grid divisions but $N+1$ grid points (as we are evaluating at the boundary on each edge).</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>  
+<span class="n">T_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Apply the boundary conditions and initial condition to our rod:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">T_left</span>
+<span class="n">T</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">T_right</span>
+<span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">T_middle</span>
+<span class="n">T_new</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">T_left</span>
+<span class="n">T_new</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">T_right</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">evolve</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">T_new</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span><span class="o">*</span><span class="n">D</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">T_new</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">]</span> <span class="o">+</span> <span class="n">c</span><span class="o">*</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">T</span><span class="p">,</span> <span class="n">T_new</span>
+    
+    
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">times</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="n">t_end</span> <span class="o">=</span> <span class="n">times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">epsilon</span>
+<span class="n">t</span><span class="o">=</span><span class="mf">0.0</span>
+<span class="n">epsilon</span> <span class="o">=</span> <span class="n">h</span><span class="o">/</span><span class="mi">1000</span>
+
+<span class="k">while</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="n">t_end</span><span class="p">:</span>
+    
+    <span class="n">T_new</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">evolve</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">T_new</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">+=</span><span class="n">h</span>
+    
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">times</span><span class="o">.</span><span class="n">any</span><span class="p">())</span><span class="o">&lt;</span><span class="n">epsilon</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0.9999999999999062
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+" />
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr />
