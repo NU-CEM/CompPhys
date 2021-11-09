@@ -25,11 +25,11 @@ def finite_difference(phi):
 Another form of boundary condition is a Periodic Boundary Condition. PBCs are often chosen for approximating a large (infinite) system by using a small part called a unit cell, and are most famously used for modelling periodic crystals in solid state physics. Mathematically, PBCs can be expressed for $f(x,y)$ on a two dimensional $N \times N$ grid as:
 
 \begin{equation}
-f[N,y] = f[0,y],
+f[N+1,y] = f[0,y],
 \end{equation}
 
 \begin{equation}
-f[x,N] = f[x,0],
+f[x,N+1] = f[x,0],
 \end{equation}
 
 Write a function which calculates the finite difference with periodic boundary conditions
@@ -41,22 +41,22 @@ Write a function which calculates the finite difference with periodic boundary c
 ~~~python
 def finite_difference(phi):
 
-    for i in range(N): # for each grid point
-        for j in range(N):
+    for i in range(N+1): # for each grid point
+        for j in range(N+1):
     
             i1 = i+1
             j1 = j+1
             i2 = i-1
             j2 = j-1
             
-            if i == N-1:
+            if i == N:
                 i1 = 0
             if i == 0:
-                i2 == N-1
-            if j == N-1:
+                i2 == N
+            if j == N:
                 j1 = 0
             if j == 0:
-                j2 == N-1
+                j2 == N
 
             phi_prime[i,j] = (phi[i1,j]+phi[i2,j]+phi[i,j1]+phi[i,j2]) / 4
     
