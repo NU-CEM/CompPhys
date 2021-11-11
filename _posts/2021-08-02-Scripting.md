@@ -7,7 +7,7 @@ sticky_rank: 8
 hide: true
 ---
 
-# Python scripts and the Unix terminal
+-------
 
 Questions:
 - How can I convert my Jupyter Notebook into a Python script?
@@ -28,6 +28,8 @@ Keypoints:
 - You can navigate around your computer using the Unix shell
 - To run your python code type the filepath into the terminal
 - Use `sys.argv` to read in command line arguments
+
+-------
 
 ### A Python script is a `.py` file that contains Python code only
 
@@ -152,3 +154,9 @@ Lorenz.py
 - To access this list we need to import the sys library at the top of our script: `import sys`
 - And we need to set the `end_time` equal to the first argument: `end_time = float(sys.argv[1])`
 - The argument is automatically read in as a string so in this case we must convert it to a float.
+
+### TASKS
+
+1. Adapt the programme `Lorenz.py` so that it accepts 3 command line arguments: one for the `start_time`, one for `end_time` and one for `num_steps`.
+2. Each time the `Lorenz.py` script runs the previous `.png` file is overwritten. Adapt the script so that the plot filename contains the values of the `start_time`, `end_time` and `num_steps` variables. You may need to search the internet for hints on how to do this...
+
