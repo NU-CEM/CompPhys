@@ -113,7 +113,7 @@
     
         ,"post10": {
             "title": "Documentation and testing",
-            "content": "",
+            "content": "Write short functions where possible as these are easier to test | See https://coderefinery.github.io/testing/motivation/ | Documentation: README, API? https://pdoc3.github.io/pdoc/ | README: markdown incl. dropdown boxes | README: pdoc: https://github.com/pdoc3/pdoc/issues/55 | cookiecutter? | .",
             "url": "https://nu-cem.github.io/CompPhys/2021/08/02/Sharing_code.html",
             "relUrl": "/2021/08/02/Sharing_code.html",
             "date": " • Aug 2, 2021"
