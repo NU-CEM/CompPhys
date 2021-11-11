@@ -28,9 +28,14 @@ Please see the [Setup](https://nu-cem.github.io/CompPhys/2021/08/02/Setup) page 
 |[Lists](https://nu-cem.github.io/CompPhys/2021/08/02/Lists)| How can I store multiple values? | [:ear:](https://nu-cem.github.io/CompPhys/2021/08/02/Lists-Qs) |
 
 
-### Resources
+### Course resources
 
 - [Lesson exercises](https://nu-cem.github.io/CompPhys/2021/08/02/Python_one_exercises)
 - [Extension exercise](https://nu-cem.github.io/CompPhys/2021/08/02/Python_one_extension)
 - [Presentation](https://nu-cem.github.io/CompPhys/slides/Python_one_slides)
+
+### External resources
+
+- There are other tutorials covering Python for scientific computing, including:
+  - https://aaltoscicomp.github.io/python-for-scicomp/
 
