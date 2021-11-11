@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Evaluating the accuracy of numerical methods | An Introduction to Computational Physics</title>
+<title>Title | An Introduction to Computational Physics</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Evaluating the accuracy of numerical methods" />
+<meta property="og:title" content="Title" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
 <meta property="og:description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Evaluating-Accuracy.html","@type":"BlogPosting","headline":"Evaluating the accuracy of numerical methods","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Evaluating-Accuracy.html"},"description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","@context":"https://schema.org"}</script>
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Evaluating-Accuracy.html","@type":"BlogPosting","headline":"Title","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Evaluating-Accuracy.html"},"description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -83,7 +83,7 @@ window.onload = wrap_img;
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Evaluating the accuracy of numerical methods</h1><p class="post-meta post-meta-title">
+    <h1 class="post-title p-name" itemprop="name headline">Title</h1><p class="post-meta post-meta-title">
     </p>
 
     
@@ -137,13 +137,15 @@ window.onload = wrap_img;
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr />
-<p>Questions:</p>
 <ul>
-<li><p>Objectives:</p>
-</li>
+<li>toc:false</li>
+<li>branch: master</li>
+<li>badges: true</li>
+<li>comments: false</li>
+<li>categories: [mathematics, numerical recipes]</li>
+<li>title: Evaluating the numerical errors and accuracy</li>
+<li>hide: true</li>
 </ul>
-<hr />
 
 </div>
 </div>
@@ -151,7 +153,364 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr />
+<p>Questions:</p>
+<ul>
+<li>Which numerical errors are unavoidable in a Python programme?</li>
+<li>How do I choose the optimum step size $h$ when using the finite difference method?</li>
+<li>What do the terms first-order accurate and second-order accurate mean?</li>
+<li>How can I measure the speed of my code?</li>
+</ul>
+<p>Objectives:</p>
+<ul>
+<li>Understand that there are unavoidable rounding errors when working with floats</li>
+<li>Write code for testing if two floats are equivalent (to within machine accuracy)</li>
+<li>Calculate the optimum step size $h$ for finite difference methods</li>
+<li>Measure the length of time a Notebook cell takes to run using the <code>%time</code> magic.</li>
+</ul>
+<hr />
+<h3 id="Computers-have-inherent-limitations-that-lead-to-rounding-errors">Computers have inherent limitations that lead to rounding errors<a class="anchor-link" href="#Computers-have-inherent-limitations-that-lead-to-rounding-errors"> </a></h3><ul>
+<li>We have seen how computer programming can be used to model physical systems. However computers have inherent limitations - they cannot store real numbers with an infinite number of decimal places.</li>
+<li>In many cases this is not a problem, but it is something to be aware of. For example, take the following piece of code:</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">test_add_numbers</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">add_numbers</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.2</span><span class="p">)</span> <span class="o">==</span> <span class="mf">0.3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>add_numbers</code> is a function for adding two Python objects <code>a</code> and <code>b</code>.</li>
+<li><code>test_add_numbers</code> is a function for testing is the <code>add_numbers</code> function is working as expected (we will see more on testing later in the course). This function will raise an error if $0.1 + 0.2$ does not equal 0.3.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_numbers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>add_numbers</code> function works as expected if we pass it two integers. However when we run the test function we raise an assertion error:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_add_numbers</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">AssertionError</span>                            Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-5-fee3d9bc4a88&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>test_add_numbers<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-3-61c3c4878185&gt;</span> in <span class="ansi-cyan-fg">test_add_numbers</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> 
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">def</span> test_add_numbers<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">assert</span> add_numbers<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0.1</span><span class="ansi-blue-fg">,</span><span class="ansi-cyan-fg">0.2</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">==</span> <span class="ansi-cyan-fg">0.3</span>
+
+<span class="ansi-red-fg">AssertionError</span>: </pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This <mark> rounding error </mark> is given because $0.1+0.2$ does not equal 0.3 exactly:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.30000000000000004</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is because floating point numbers (floats) are represented on the computer to a certain precision. In Python the standard level of precision is 16 significant digits.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>The largest value you can give a floating point variable is about $10^{308}$. The smallest is -$10^{308}$. If you exceed these values (which is unlikely) then the computer will return an Overflow error. In contrast, PYthon can represent integers to any precision - limited only by the memory of the machine.
+</div></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Do-not-test-for-the-equality-of-two-floats">Do not test for the equality of two floats<a class="anchor-link" href="#Do-not-test-for-the-equality-of-two-floats"> </a></h3><p>As we have seen in the previous example, we should not test for the equality of two floats. Instead we should ask if they are equal up to a given precision:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+
+<span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1e-12</span>
+
+<span class="k">def</span> <span class="nf">test_add_numbers</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="nb">abs</span><span class="p">(</span><span class="n">add_numbers</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.2</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.3</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">epsilon</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_add_numbers</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finite-difference-methods-have-two-sources-of-error">Finite difference methods have two sources of error<a class="anchor-link" href="#Finite-difference-methods-have-two-sources-of-error"> </a></h3><ul>
+<li>There are two sources of errors for finite difference methods: one is from the approximation that the step size $h$ is small but not zero. The second is from the rounding errors introduced at the start of this tutorial.</li>
+<li>One way of improving the finite-$h$ approximation is to decrease the step size in space (use a higher number of points on our real space grid). However when the step size is decreased the programme will run more slowly.</li>
+<li>We also need to think about the rounding errors associated with finite differences. Counter-intuitively, these errors can increase as we decrease the step size $h$. </li>
+</ul>
+<p>To demonstrate this, consider the Taylor expansion of $f(x)$ about $x$:</p>
+\begin{equation}
+f(x+h) = f(x) + hf'(x) +\frac{1}{2}h^2f''(x) + \ldots
+\end{equation}<p>Re-arrange the expression to get the expression for the forward difference method:</p>
+\begin{equation}
+f'(x) = \frac{f(x+h)}{h} - \frac{1}{2}hf''(x)+\ldots
+\end{equation}<p>A computer can typically store a number $f(x)$ to an accuracy of 16 significant figures, or $Cf(x)$ where $C=10^{-16}$. In the worst case, this makes the error $\epsilon$ on our derivative:</p>
+\begin{equation}
+\epsilon = \frac{2C|f(x)|}{h} + \frac{1}{2}h|f''(x)|.
+\end{equation}<p>We want to find the value of $h$ which minimises this error so we differentiate with respect to $h$ and set the result equal to zero.</p>
+\begin{equation}
+-\frac{2C|f(x)|}{h^2} + h|f''(x)|
+\end{equation}\begin{equation}
+h = \sqrt{4C\lvert\frac{f(x)}{f''(x)}\rvert}
+\end{equation}<p>If $f(x)$ and $f''(x)$ are order 1, then $h$ should be order $\sqrt{C}$, or $10^{-8}$.</p>
+<p>Similar reasoning applied to the central difference formula suggests that the optimum step size for this method is $10^{-5}$.</p>
+<h3 id="The-relaxation-method-for-PDEs-is-limited-by-the-accuracy-of-the-finite-difference-method.">The relaxation method for PDEs is limited by the accuracy of the finite difference method.<a class="anchor-link" href="#The-relaxation-method-for-PDEs-is-limited-by-the-accuracy-of-the-finite-difference-method."> </a></h3><ul>
+<li>For solving PDEs we use the relaxation method combined with a finite difference method.</li>
+<li>Even if we use a very small target accuracy for convergence of the relaxation method, our accuracy will still be limited by the finite differences. Higher-order finite difference methods (such as the 5-point or 7-point methods) can be used here to improve the overrall accuracy of the calculation.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Euler's-method-is-a-first-order-method-accurate-to-order-$h$.">Euler's method is a first-order method accurate to order $h$.<a class="anchor-link" href="#Euler's-method-is-a-first-order-method-accurate-to-order-$h$."> </a></h3><ul>
+<li>As we have seen in previous tutorials, numerical methods (such as Euler's method or the Runge-Kutta method) give approximate solutions.</li>
+<li>Euler's method neglected the term in $h^2$ and higher:
+\begin{equation}
+x(t+h) = x(t)+hf(x,t)+\mathcal{O}(h^2)
+\end{equation}</li>
+<li>This tells us the error introduced on a single step of the method is proportional to $h^2$ - this makes Euler's method  a <mark> first-order </mark> method, accurate to order $h$.</li>
+<li>However the cumulative error over several steps is proportional to $h$ </li>
+<li>So to make our error half as large we need to double the number of steps (halve the step size) and double the length of the calculation.</li>
+</ul>
+<h3 id="The-second-order-Runge-Kutta-method-is-accurate-to-order-$h^2$.">The second-order Runge-Kutta method is accurate to order $h^2$.<a class="anchor-link" href="#The-second-order-Runge-Kutta-method-is-accurate-to-order-$h^2$."> </a></h3><ul>
+<li>The error term for one step of the Runge-Kutta method is ${O}(h^3)$ - this makes the Runge-Kutta method accurate to order $h^2$ which is why this is called the <mark>second-order</mark> Runge Kutta method (RK2).</li>
+<li>With the RK2 can use a fewer number of steps whilst getting the same accuracy as Euler's method.</li>
+<li>There are higher order Runge-Kutta methods which increase the accuracy further.</li>
+</ul>
+<h3 id="Use-the-%time-magic-to-measure-the-length-of-time-a-Jupyter-Notebook-cell-takes-to-run">Use the %time magic to measure the length of time a Jupyter Notebook cell takes to run<a class="anchor-link" href="#Use-the-%time-magic-to-measure-the-length-of-time-a-Jupyter-Notebook-cell-takes-to-run"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sum_integers</span><span class="p">(</span><span class="n">max_integer</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_integer</span><span class="p">):</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="n">max_integer</span> <span class="o">+</span> <span class="mi">1</span>
+        
+    <span class="k">return</span> <span class="n">count</span>
+        
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">time</span> sum = sum_integers(1000000)
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>CPU times: user 100 ms, sys: 3.79 ms, total: 104 ms
+Wall time: 110 ms
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
 <p>Keypoints:</p>
+<ul>
+<li>Computers have inherent limitations that lead to rounding errors</li>
+<li>Do not test for the equality of two floats</li>
+<li>Finite difference methods have two sources of error</li>
+<li>The relaxation method for PDEs is limited by the accuracy of the finite difference method.</li>
+<li>Euler's method is a first-order method accurate to order $h$.</li>
+<li>The second-order Runge-Kutta method is accurate to order $h^2$.</li>
+</ul>
 
 </div>
 </div>
