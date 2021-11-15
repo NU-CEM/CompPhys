@@ -29,7 +29,7 @@ jobs:
       with:
         author_name: Lucy Whalley
         message: "Update GitHub checkbox report"
-        add: "./_notebooks/2021-08-02-Python-progress.ipynb"
+        add: "./_notebooks/2021-08-02-Python-progress.nbconvert.ipynb"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
 
