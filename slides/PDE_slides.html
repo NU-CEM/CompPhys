@@ -14440,38 +14440,22 @@ div.jp-OutputPrompt {
 \end{equation}<p>This describes mechanical processes such as the vibration of a string or the motion of a pendulum. It can also be used in electrodynamics to describe the exchange of energy between the electric and magnetic fields.</p>
 
 </div>
-</div><aside class="notes">
-
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In this course we will look at techniques for solving the diffusion equation and Poisson's equation, but many of the topics we will discuss - such as boundary conditions, and finite difference methods - can be transferred to PDEs more generally.</p>
-
-</div>
-</div>
-</aside></section></section><section><section>
+</div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="The-Laplacian-operator-corresponds-to-an-average-rate-of-change">The Laplacian operator corresponds to an average rate of change<a class="anchor-link" href="#The-Laplacian-operator-corresponds-to-an-average-rate-of-change">&#182;</a></h3><p><em>But what is the operator $\nabla^2$?</em>. This is the <mark>Laplacian operator</mark>. When applied to $\phi$ and written in full for a three dimensional cartesian coordinate system with dependent variables $x$, $y$ and $z$ it takes the following form:</p>
 \begin{equation}
 \nabla^2\phi = \frac{\partial^2\phi}{\partial x^2} + \frac{\partial^2\phi}{\partial y^2} + \frac{\partial^2\phi}{\partial z^2}.
-\end{equation}
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>youtube_video("<a href="https://youtu.be/EW08rD-GFh0&quot;).display(">https://youtu.be/EW08rD-GFh0&quot;).display(</a>)</p>
-<p>We can think of the laplacian as encoding an average rate of change. To develop an intuition for how the laplacian can be interpreted physically, we need to understand two related operators - div and curl. We will not explore these operators further in this lesson, but here is a link to a related video</p>
+\end{equation}<p>We can think of the laplacian as encoding an average rate of change - the difference between a value at a point and the average of the values around that point.</p>
 
 </div>
-</div><aside class="notes">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### PDEs can have boundary conditions *and* initial conditions</span>
-<span class="n">In</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">section</span> <span class="n">of</span> <span class="n">the</span> <span class="n">course</span> <span class="n">we</span> <span class="n">learnt</span> <span class="n">that</span> <span class="n">ODEs</span> <span class="n">have</span> <span class="n">either</span> <span class="n">initial</span> <span class="n">values</span> <span class="ow">or</span> <span class="n">boundary</span> <span class="n">values</span><span class="o">.</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">youtube_video</span><span class="p">(</span><span class="s2">&quot;https://youtu.be/EW08rD-GFh0&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -14479,8 +14463,37 @@ div.jp-OutputPrompt {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+
+        <iframe
+            width="560"
+            height="315"
+            src="https://youtu.be/EW08rD-GFh0"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        
 </div>
-</aside></section></section><section><section>
+
+</div>
+
+</div>
+
+</div>
+
+</div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Boundary-value-problems">Boundary value problems<a class="anchor-link" href="#Boundary-value-problems">&#182;</a></h3><p><mark>Boundary value problems</mark> describe the behaviour of a variable in a space and we are given some constraints on the variable around the boundary of that space. For example, consider the 2-dimensional problem of a thin rectangular sheet with one side at voltage $V$ and all others at voltage zero.</p>
@@ -14573,7 +14586,7 @@ div.jp-OutputPrompt {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Numerical-partial-derivatives">Numerical partial derivatives<a class="anchor-link" href="#Numerical-partial-derivatives">&#182;</a></h3><p>The extension to partial derivatives is straight-forward:</p>
 \begin{equation}
-\frac{\mathrm{d} f}{\mathrm{d} x} \simeq \frac{f(x+h)-f(x)}{h}.
+\frac{\mathrm{d} f}{\mathrm{d} x} \simeq \frac{f(x+\frac{h}{h2})-f(x-\frac{h}{2})}{h},
 \end{equation}\begin{equation}
 \frac{\partial f}{\partial x} \simeq \frac{f(x+\frac{h}{2},y)-f(x-\frac{h}{2},y)}{h},
 \end{equation}\begin{equation}
@@ -14629,6 +14642,121 @@ div.jp-OutputPrompt {
 \end{equation}</p>
 <h4 id="Step-four">Step four<a class="anchor-link" href="#Step-four">&#182;</a></h4><p>Repeat until the $\phi(x,y)$ values converge*, and that is our solution.</p>
 <p>*Convergence can be tested by specifying what the maximum difference should be between iterations. For example, that $\phi'(x,y)-\phi(x,y)&lt; 1e-5$ for all grid points.</p>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Heat-Diffusion">Heat Diffusion<a class="anchor-link" href="#Heat-Diffusion">&#182;</a></h1><hr>
+<p>Questions:</p>
+<ul>
+<li>How do I use the Forward-Time Centred-Space method (FTCS) to solve the diffusion equation? </li>
+</ul>
+<hr>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="The-diffusion-equation-is-an-initial-value-problem">The diffusion equation is an initial value problem<a class="anchor-link" href="#The-diffusion-equation-is-an-initial-value-problem">&#182;</a></h3><p>An initial value problem is more complex than a boundary value problem as we are told the starting conditions and then have to predict future behaviour as a function of time.</p>
+<h4 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h4><p>A 10cm rod of stainless steel initially at a uniform temperature of 20$^\mathrm{o}$ Celsius. The rod is dipped in a hot water bath at 90$^\mathrm{o}$ Celsius at one end, and held in someone's hand at the other. Assume that the hand is at constant body temperature throughout (27$^\mathrm{o}$ Celsius).</p>
+<p><img src="../images/hand_hot.png" width="400" ></p>
+<p>Assume that the rod is perfectly insulated so that heat only moves horizontally; as a result this problem can be modelled as 1-dimensional. Also assume that neighter the hot water bath or the hand change temperature appreciably.</p>
+<p>Thermal conduction is described by the diffusion equation (or heat equation in this context)</p>
+\begin{equation}
+ \frac{\partial \phi}{\partial t} = D\frac{\partial^2 \phi}{\partial x^2},
+\end{equation}<p>where $D$ is the material dependent thermal diffusivity. For steel $D=4.25\times10^{-6}\mathrm{m}^2\mathrm{s}^{-1}$.</p>
+
+</div>
+</div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Why-can't-we-use-the-relaxation-method?">Why can't we use the relaxation method?<a class="anchor-link" href="#Why-can't-we-use-the-relaxation-method?">&#182;</a></h3><p>We solved Laplace's equation and that had three variables ($x$,$y$,$z$) - why not do the same thing here?</p>
+<p>The problem is that we  only have an <em>initial</em> condition in the time dimension - we know the value of $\phi(x,t)$ at $t=0$ but we do not typically know the value of $t$ at a later point. In the spatial dimensions we know the boundary conditions at either end of the grid.</p>
+<p>Instead, we will use the <mark>Forward-Time Centred-Space method (FTCS)</mark>.</p>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="There-are-two-steps-to-the-Forward-Time-Centred-Space-method">There are two steps to the Forward-Time Centred-Space method<a class="anchor-link" href="#There-are-two-steps-to-the-Forward-Time-Centred-Space-method">&#182;</a></h3><h4 id="Step-one">Step one<a class="anchor-link" href="#Step-one">&#182;</a></h4><p>Use the finite difference method to express the 1D Laplacian as a set of simulatenous equations:</p>
+\begin{equation}
+\frac{\partial^2\phi}{\partial x^2} = \frac{\phi(x+a,t)+\phi(x-a,t) - 2\phi(x,t)}{a^2}
+\end{equation}<p>where $a$ is the grid spacing.</p>
+<p>Substitute this back into the diffusion equation:</p>
+\begin{equation}
+ \frac{\partial \phi}{\partial t} = \frac{D}{a^2}(\phi(x+a,t)+\phi(x-a,t)-2\phi(x,t))
+\end{equation}<p><mark>We now have a set of simultaneous ODEs for $\phi(x,t)$. </mark></p>
+
+</div>
+</div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Step-two">Step two<a class="anchor-link" href="#Step-two">&#182;</a></h4><p>So we can use Euler's method to evolve the system forward in time. Euler's method for solving an ODE of the form $\frac{d\phi}{dt} = f(\phi,t)$ has the general form:</p>
+\begin{equation}
+\phi(t+h) \simeq \phi(t) + hf(\phi, t).
+\end{equation}<p>Applying this to Equation 3 gives:</p>
+\begin{equation}
+\phi(x,t+h) = \phi(x,t) + h\frac{D}{a^2}(\phi(x+a,t)+\phi(x-a,t)-2\phi(x,t))
+\end{equation}
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Evaluating-numerical-errors-and-accuracy">Evaluating numerical errors and accuracy<a class="anchor-link" href="#Evaluating-numerical-errors-and-accuracy">&#182;</a></h1><hr>
+<p>Questions:</p>
+<ul>
+<li>Which numerical errors are unavoidable in a Python programme?</li>
+<li>How do I choose the optimum step size $h$ when using the finite difference method?</li>
+<li>What do the terms first-order accurate and second-order accurate mean?</li>
+<li>How can I measure the speed of my code?</li>
+</ul>
+<hr>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Finite-difference-methods-have-two-sources-of-error">Finite difference methods have two sources of error<a class="anchor-link" href="#Finite-difference-methods-have-two-sources-of-error">&#182;</a></h3><ul>
+<li>There are two sources of errors for finite difference methods: <ul>
+<li>the approximation that the step size $h$ is small but not zero. </li>
+<li>the numerical rounding errors for floating point numbers</li>
+</ul>
+</li>
+<li>If we decrease the step size $h$:<ul>
+<li>the finite-difference approximation will improve</li>
+<li>the runtime of the programme will increase</li>
+<li>counter-intuitively, the rounding error might <em>increase</em>. </li>
+</ul>
+</li>
+<li>So it is possible that by decreasing $h$ we make our programme <em>less</em> accurate <em>and</em> it takes longer to run!</li>
+</ul>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>To demonstrate this, consider the Taylor expansion of $f(x)$ about $x$:</p>
+\begin{equation}
+f(x+h) = f(x) + hf'(x) +\frac{1}{2}h^2f''(x) + \ldots
+\end{equation}<p>Re-arrange the expression to get the expression for the forward difference method:</p>
+\begin{equation}
+f'(x) = \frac{f(x+h)}{h} - \frac{1}{2}hf''(x)+\ldots
+\end{equation}
+</div>
+</div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>A computer can typically store a number $f(x)$ to an accuracy of 16 significant figures, or $Cf(x)$ where $C=10^{-16}$. In the worst case, this makes the error $\epsilon$ on our derivative:</p>
+\begin{equation}
+\epsilon = \frac{2C|f(x)|}{h} + \frac{1}{2}h|f''(x)|.
+\end{equation}<p>We want to find the value of $h$ which minimises this error so we differentiate with respect to $h$ and set the result equal to zero.</p>
+\begin{equation}
+-\frac{2C|f(x)|}{h^2} + h|f''(x)| = 0
+\end{equation}\begin{equation}
+h = \sqrt{4C\lvert\frac{f(x)}{f''(x)}\rvert}
+\end{equation}<p>If $f(x)$ and $f''(x)$ are order 1, then $h$ should be order $\sqrt{C}$, or $10^{-8}$.</p>
+<p>Similar reasoning applied to the central difference formula suggests that the optimum step size for this method is $10^{-5}$.</p>
 
 </div>
 </div></section></section>

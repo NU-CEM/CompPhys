@@ -33,4 +33,7 @@ Please see the [Setup](https://nu-cem.github.io/CompPhys/2021/08/02/Setup) page 
 - [Extension exercise](https://nu-cem.github.io/CompPhys/2021/08/02/Python_two_extension)
 - [Presentation](https://nu-cem.github.io/CompPhys/slides/Python_two_slides)
 
+### External resources
 
+- There are other tutorials covering Python for scientific computing, including:
+  - https://aaltoscicomp.github.io/python-for-scicomp/
