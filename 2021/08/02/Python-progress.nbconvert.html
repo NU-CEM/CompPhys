@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Getting started progress report | An Introduction to Computational Physics</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Getting started progress report" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
+<meta property="og:description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
+<link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/Python-progress.nbconvert.html" />
+<meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/Python-progress.nbconvert.html" />
+<meta property="og:site_name" content="An Introduction to Computational Physics" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Python-progress.nbconvert.html","@type":"BlogPosting","headline":"Getting started progress report","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Python-progress.nbconvert.html"},"description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/CompPhys/">An Introduction to Computational Physics</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/CompPhys/about/">About</a><a class="page-link" href="/CompPhys/search/">Search</a><a class="page-link" href="/CompPhys/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+       processEscapes: true
+     }
+   });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Getting started progress report</h1><p class="post-meta post-meta-title">
+    </p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/NU-CEM/CompPhys/tree/master/_notebooks/2021-08-02-Python-progress.nbconvert.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/CompPhys/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/NU-CEM/CompPhys/master?filepath=_notebooks%2F2021-08-02-Python-progress.nbconvert.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/CompPhys/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/NU-CEM/CompPhys/blob/master/_notebooks/2021-08-02-Python-progress.nbconvert.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/CompPhys/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+       processEscapes: true
+     }
+   });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+
+<!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-08-02-Python-progress.nbconvert.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This report provides statistics for class progress in the <a href="https://nu-cem.github.io/CompPhys/">Getting Started</a> part of the Computational Physics course KD5081 at Northumbria University.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Prepare-system">Prepare system<a class="anchor-link" href="#Prepare-system"> </a></h2><p>Install libraries, get Github authentication token and create tasks list.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">from</span> <span class="nn">github</span> <span class="kn">import</span> <span class="n">Github</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="kn">import</span> <span class="nn">os</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">load_dotenv</span><span class="p">()</span>
+<span class="n">GH_TOKEN</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;GH_TOKEN&quot;</span><span class="p">)</span>  <span class="c1"># this is needed to interact with the Github API</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Create, save and open a Jupyter Notebook&#39;</span><span class="p">,</span> <span class="s1">&#39;Create a Python list&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Retrieve-and-parse-issue-information">Retrieve and parse issue information<a class="anchor-link" href="#Retrieve-and-parse-issue-information"> </a></h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">Github</span><span class="p">(</span><span class="n">GH_TOKEN</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">repo</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">get_repo</span><span class="p">(</span><span class="s2">&quot;nu-cem/CompPhys&quot;</span><span class="p">)</span>
+<span class="n">checklist_issues</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">get_issues</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;python_checklist&quot;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">totals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">checklist_issues</span><span class="p">:</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">issue</span><span class="o">.</span><span class="n">body</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">task</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tasks</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">body</span><span class="p">:</span>
+            <span class="n">splits</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">task</span><span class="p">,</span><span class="n">maxsplit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">splits</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;[x]&#39;</span><span class="p">:</span>
+                <span class="n">totals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;problem: task not in string&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Plot-results">Plot results<a class="anchor-link" href="#Plot-results"> </a></h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">tasks</span><span class="p">)))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tasks</span><span class="p">)),</span><span class="n">totals</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tasks</span><span class="p">)))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">totals</span><span class="p">)</span><span class="o">+</span><span class="mf">0.1</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;# of checked boxes&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">([</span><span class="n">ax</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">label</span><span class="p">,</span> <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">label</span><span class="p">]</span> <span class="o">+</span>
+             <span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">()</span> <span class="o">+</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_yticklabels</span><span class="p">()):</span>
+    <span class="n">item</span><span class="o">.</span><span class="n">set_fontsize</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+" />
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/CompPhys/2021/08/02/Python-progress.nbconvert.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/CompPhys/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/CompPhys/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/CompPhys/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Resources for the second year course &quot;Theory, computation and experiment&quot; (KD5081) at Northumbria University, UK.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
