@@ -18,7 +18,7 @@ jobs:
         ref: 'checkboxes'   
     - name: Install library and other requirements
       run: |
-        pip install jupyter matplotlib numpy nbconvert PyGithub    
+        pip install jupyter matplotlib numpy nbconvert PyGithub python-dotenv os
     - name: Execute report notebook
       env:
         GH_TOKEN:  ${{ secrets.GH_TOKEN }}
