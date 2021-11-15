@@ -1,13 +1,11 @@
 ---
 name: Python basics checklist
 about: A checklist to monitor your understanding of Python basics
-title: ''
-labels: ''
+title: Python basics checklist
+labels: python_checklist
 assignees: ''
 
 ---
 
-| | Task | Tutorial | Question(s) |
-|---|---|---|---|
--[] | Create, save and open a Jupyter Notebook | [link]() | [link]() |
--[] | Create a Python list | [link]() | [link]() |
+- [ ] Create, save and open a Jupyter Notebook | [Tutorial]() | [Question 1]() | [Question 2]() 
+- [ ] Create a Python list | [Tutorial]() | [Question 1]() |
