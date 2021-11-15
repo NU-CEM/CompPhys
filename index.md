@@ -4,18 +4,17 @@ search_exclude: true
 ---
 # Course content
 
-### Part zero: Introduction
-
 - [Introduction](https://nu-cem.github.io/CompPhys/2021/08/02/Introduction.html)
 - [Setup](https://nu-cem.github.io/CompPhys/2021/08/02/Setup.html)
-- [Github issues](https://nu-cem.github.io/CompPhys/2021/08/02/Issues.html)
                                                                                            
 ### Part one: Getting started
 
+- [Getting started checklist](https://nu-cem.github.io/CompPhys/2021/08/02/Issues.html)
 - [Python part one](https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_one.html)
 - [Python part two](https://nu-cem.github.io/CompPhys/2021/08/02/Python_basics_two.html)
 - [Data analysis and visualisation](https://nu-cem.github.io/CompPhys/2021/08/02/Data_analysis.html)
-- [Programming good practice](https://nu-cem.github.io/CompPhys/2021/08/02/Good_practice.html)
+
+### *Interlude*: [Programming good practice](https://nu-cem.github.io/CompPhys/2021/08/02/Good_practice.html)
 
 ### Part two: Getting results
 
