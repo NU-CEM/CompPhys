@@ -32,3 +32,9 @@ The details for Autumn 2021 are:
 - Wednesdays 9-12am 
 - Room D211 in Ellison building
 
+### Why aren't you using Blackboard?
+
+Blackboard collaborate is widely used at Northumbria University for teaching. However in the computational sciences (and in software engineering) Blackboard collaborate *is not* widely used. The aim here is to teach and learn using the tools that are used in research and industry - hence building the course resources around Github. Also, the code can be nicely formatted in Markdown/html, making it easier for students to read and understand.
+
+Blackboard collaborate will be used for posting assessments and for course announcements.
+
