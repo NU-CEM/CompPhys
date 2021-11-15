@@ -21,7 +21,7 @@ jobs:
         pip install jupyter matplotlib numpy nbconvert PyGithub python-dotenv 
     - name: Execute report notebook
       env:
-        GH_TOKEN:  ${{ secrets.GH_TOKEN }}
+        GH_TOKEN:  ${{ secrets.GITHUB_TOKEN }}
       run: |
          jupyter nbconvert --to notebook --execute _notebooks/2021-08-02-Python-progress.ipynb       
     - name: Commit changes
