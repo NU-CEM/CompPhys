@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Python progress chart | An Introduction to Computational Physics</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Python progress chart" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
+<meta property="og:description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
+<link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/Python-progress.html" />
+<meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/Python-progress.html" />
+<meta property="og:site_name" content="An Introduction to Computational Physics" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Python-progress.html","@type":"BlogPosting","headline":"Python progress chart","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Python-progress.html"},"description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/CompPhys/">An Introduction to Computational Physics</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/CompPhys/about/">About</a><a class="page-link" href="/CompPhys/search/">Search</a><a class="page-link" href="/CompPhys/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+       processEscapes: true
+     }
+   });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Python progress chart</h1><p class="post-meta post-meta-title">
+    </p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/NU-CEM/CompPhys/tree/master/_notebooks/2021-08-02-Python-progress.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/CompPhys/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/NU-CEM/CompPhys/master?filepath=_notebooks%2F2021-08-02-Python-progress.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/CompPhys/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/NU-CEM/CompPhys/blob/master/_notebooks/2021-08-02-Python-progress.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/CompPhys/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+       processEscapes: true
+     }
+   });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+
+<!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-08-02-Python-progress.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">github</span> <span class="kn">import</span> <span class="n">Github</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Create, save and open a Jupyter Notebook&#39;</span><span class="p">,</span> <span class="s1">&#39;Create a Python list&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">Github</span><span class="p">(</span><span class="err">$</span><span class="p">{{</span> <span class="n">secrets</span><span class="o">.</span><span class="n">GITHUB_TOKEN</span> <span class="p">}})</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">repo</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">get_repo</span><span class="p">(</span><span class="s2">&quot;nu-cem/CompPhys&quot;</span><span class="p">)</span>
+<span class="n">checklist_issues</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">get_issues</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;python_checklist&quot;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">totals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">checklist_issues</span><span class="p">:</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">issue</span><span class="o">.</span><span class="n">body</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">task</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tasks</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">body</span><span class="p">:</span>
+            <span class="n">splits</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">task</span><span class="p">,</span><span class="n">maxsplit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">splits</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;[x]&#39;</span><span class="p">:</span>
+                <span class="n">totals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;problem: task not in string&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">tasks</span><span class="p">)))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tasks</span><span class="p">)),</span><span class="n">totals</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tasks</span><span class="p">)))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">totals</span><span class="p">)</span><span class="o">+</span><span class="mf">0.1</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;# of checked boxes&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Python basics checkbox progress&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Text(0.5, 1.0, &#39;Python basics checkbox progress&#39;)</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+" />
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/CompPhys/2021/08/02/Python-progress.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/CompPhys/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/CompPhys/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/CompPhys/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Resources for the second year course &quot;Theory, computation and experiment&quot; (KD5081) at Northumbria University, UK.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
