@@ -4,7 +4,9 @@ title: About
 permalink: /about/
 ---
 
-This website contains resources for the second year course "Theory, computation and experiment" (KD5081) at Northumbria University, UK. The resources have been developed by [Dr Lucy Whalley](https://lucydot.github.io). The website is powered by [Github](https://github.com/NU-CEM/CompPhys/) and [fastpages](https://github.com/fastai/fastpages), which is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt).
+This website contains resources for the second year course "Theory, computation and experiment" (KD5081) at Northumbria University, UK. The resources have been developed by [Dr Lucy Whalley](https://lucydot.github.io). If you spot any mistakes or have any suggestions please [raise an issue](https://github.com/NU-CEM/CompPhys/issues) on the Github repository for this course.
+
+The website is powered by [Github](https://github.com/NU-CEM/CompPhys/) and [fastpages](https://github.com/fastai/fastpages), which is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
 The content of this website is adapted and derived from several other sources:
 

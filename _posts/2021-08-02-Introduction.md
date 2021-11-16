@@ -32,3 +32,12 @@ The details for Autumn 2021 are:
 - Wednesdays 9-12am 
 - Room D211 in Ellison building
 
+### Why do you use a Github website instead of Blackboard?
+
+Blackboard collaborate is widely used at Northumbria University for teaching. However in the computational sciences (and in software engineering) Blackboard collaborate *is not* widely used. The aim here is to teach and learn using the tools that are already used in research and industry - hence building the course resources around the [Github](https://github.com) service. Also, the code can be nicely formatted using Markdown/html (rather than blackboard), making it easier for students to read and understand.
+
+The source code for this website can be found in the [course Github repository](https://github.com/nu-cem/CompPhys).
+If you spot any mistakes or would like to make a suggestions for improving the course please [raise an issue on Github](https://github.com/nu-cem/CompPhys/issues).
+
+Blackboard collaborate will be used for posting assessments and for course announcements.
+
