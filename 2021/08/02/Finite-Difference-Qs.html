@@ -124,22 +124,22 @@ f[x,N+1] = f[x,0],
 
   <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">finite_difference</span><span class="p">(</span><span class="n">phi</span><span class="p">):</span>
 
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># for each grid point
-</span>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span> <span class="c1"># for each grid point
+</span>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
     
             <span class="n">i1</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
             <span class="n">j1</span> <span class="o">=</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span>
             <span class="n">i2</span> <span class="o">=</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span>
             <span class="n">j2</span> <span class="o">=</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span>
             
-            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">N</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
                 <span class="n">i1</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">i2</span> <span class="o">==</span> <span class="n">N</span>
-            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="n">N</span><span class="p">:</span>
+                <span class="n">i2</span> <span class="o">==</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
                 <span class="n">j1</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">j2</span> <span class="o">==</span> <span class="n">N</span>
+                <span class="n">j2</span> <span class="o">==</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span>
 
             <span class="n">phi_prime</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">phi</span><span class="p">[</span><span class="n">i1</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">phi</span><span class="p">[</span><span class="n">i2</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j1</span><span class="p">]</span><span class="o">+</span><span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j2</span><span class="p">])</span> <span class="o">/</span> <span class="mi">4</span>
     
