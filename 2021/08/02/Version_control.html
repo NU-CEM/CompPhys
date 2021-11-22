@@ -8,15 +8,15 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Version control and Github" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Version control and github" />
-<meta property="og:description" content="Version control and github" />
+<meta name="description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
+<meta property="og:description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
 <link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/Version_control.html" />
 <meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/Version_control.html" />
 <meta property="og:site_name" content="An Introduction to Computational Physics" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Version_control.html","@type":"BlogPosting","headline":"Version control and Github","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Version_control.html"},"description":"Version control and github","@context":"https://schema.org"}</script>
+{"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Version_control.html","@type":"BlogPosting","headline":"Version control and Github","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Version_control.html"},"description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -83,7 +83,7 @@ window.onload = wrap_img;
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Version control and Github</h1><p class="page-description">Version control and github</p><p class="post-meta post-meta-title">
+    <h1 class="post-title p-name" itemprop="name headline">Version control and Github</h1><p class="post-meta post-meta-title">
     </p>
 
     
@@ -91,10 +91,77 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <ul class="section-nav">
-<li class="toc-entry toc-h1"><a href="#version-control-and-github">Version control and Github</a></li>
-</ul><h1 id="version-control-and-github">
-<a class="anchor" href="#version-control-and-github" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version control and Github</h1>
+    <hr />
+
+<p>Questions:</p>
+<ul>
+  <li>What is version control and why is it useful?</li>
+  <li>How can I use Git to version control my files?</li>
+  <li>What is the difference between Git and Github?</li>
+</ul>
+
+<p>Objectives:</p>
+<ul>
+  <li>Describe the benefits of version control</li>
+  <li>Initialise a Git repository from the command line or through the Github interface</li>
+  <li>Use command line git to version control your work locally</li>
+  <li>Use git and Github to store and share a remote copy of your work</li>
+</ul>
+
+<p>Keypoints:</p>
+<ul>
+  <li>Version control is the ultimate undo button for code</li>
+  <li>Github is very widely used in academia and industry</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">git init</code> to initialise an empty git repository</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">git status</code> for a summary of your repository</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">git add</code> and <code class="language-plaintext highlighter-rouge">git commit</code> to version control your files</li>
+  <li>Ignore particular files and folders using a <code class="language-plaintext highlighter-rouge">.gitignore</code> file</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">git push</code> and <code class="language-plaintext highlighter-rouge">git pull</code> to communicate with a remote repository</li>
+  <li>For some tasks the Github web interface is a useful alternative</li>
+</ul>
+
+<hr />
+
+<h3 id="version-control-is-the-ultimate-undo-button-for-code">Version control is the ultimate undo button for code</h3>
+
+<p><img src="&quot;./images/Final.png&quot;" alt="" /></p>
+
+<p>There are several benefits to version control:</p>
+
+<ul>
+  <li>Nothing that is committed to version control is ever lost, unless you work really, really hard at it.</li>
+  <li>You can go back in time to see exactly who wrote what on a particular day, or what version of a program was used to generate a particular set of results.</li>
+  <li>We can revert to a previous version, much like the “undo” feature in an editor.</li>
+  <li>When several people collaborate in the same project, it’s possible to accidentally overlook or overwrite someone’s changes. The version control system automatically notifies users whenever there’s a conflict between one person’s work and another’s.</li>
+</ul>
+
+<p>Version control is what software professionals use to keep track of what they’ve done and to collaborate with other people. Every large software development project relies on it, and most programmers use it for their small jobs as well. And it isn’t just for software: books, papers, small data sets, and anything that changes over time or needs to be shared can and should be stored in a version control system.</p>
+
+<blockquote>
+  <p>Note: Version control is not well-suited to binary files as much of the functionality that we will see later does not work efficiently with these types of file.</p>
+</blockquote>
+
+<h3 id="github-is-very-widely-used-in-academia-and-industry">Github is very widely used in academia and industry</h3>
+
+<p>In this lesson we will be using a version control system called git. You can install and use git locally on your own computer (without any internet connection). However there are several online services that will store remote copies of your repositories. Remote copies are highly encouraged for two reasons:</p>
+<ul>
+  <li>as backup in case your computer dies</li>
+  <li>to share your work with other people</li>
+</ul>
+
+<h3 id="tasks">TASKS</h3>
+
+<p>Use Github to:</p>
+<ol>
+  <li>Create a repository for holding the work done in this module</li>
+  <li>Create a README.md and select an open source license</li>
+  <li>Upload the script(s) you developed last week</li>
+</ol>
+
+<p>Extension:</p>
+<ol>
+  <li>Use the git command line to version control and upload the Jupyter Notebooks (or any other file) generated during this course</li>
+</ol>
 
   </div><a class="u-url" href="/CompPhys/2021/08/02/Version_control.html" hidden></a>
 </article>
