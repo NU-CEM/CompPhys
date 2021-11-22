@@ -252,18 +252,84 @@ Lorenz.py
   <li>We have seen the script print messages to the terminal but what about the other way around - how can users at the terminal pass values into the script?</li>
   <li>For example, we may want a user to specify the <code class="language-plaintext highlighter-rouge">end_time</code> variable used by the simulation as an argument.</li>
   <li>For this we can use <code class="language-plaintext highlighter-rouge">sys.argv</code> which is a list of arguments passed to the programme</li>
-  <li>The first item in the list, <code class="language-plaintext highlighter-rouge">sys.argv[0]</code>, contains the name of the programme: <code class="language-plaintext highlighter-rouge">Lorenz.py</code>. The second item in the list, sys.argv[1], contains the first argument, the third item, sys.argv[2], contains the second argument and so on.</li>
-  <li>For example, if the user runs <code class="language-plaintext highlighter-rouge">Lorenz.py 30</code> then <code class="language-plaintext highlighter-rouge">sys.argv[1]</code> will equal 30.</li>
-  <li>To access this list we need to import the sys library at the top of our script: <code class="language-plaintext highlighter-rouge">import sys</code></li>
-  <li>And we need to set the <code class="language-plaintext highlighter-rouge">end_time</code> equal to the first argument: <code class="language-plaintext highlighter-rouge">end_time = float(sys.argv[1])</code></li>
-  <li>The argument is automatically read in as a string so in this case we must convert it to a float.</li>
+  <li>The first item in the list, <code class="language-plaintext highlighter-rouge">sys.argv[0]</code>, contains the name of the programme: in this case, <code class="language-plaintext highlighter-rouge">Lorenz.py</code>. The second item in the list, <code class="language-plaintext highlighter-rouge">sys.argv[1]</code>, contains the first argument from the command line, the third item, <code class="language-plaintext highlighter-rouge">sys.argv[2]</code>, contains the second argument from the command line and so on.</li>
+  <li>First, we need to edit the script
+    <ul>
+      <li>To access the <code class="language-plaintext highlighter-rouge">sys.argv</code> list we import the sys library at the top of our script: <code class="language-plaintext highlighter-rouge">import sys</code></li>
+      <li>We set the <code class="language-plaintext highlighter-rouge">end_time</code> equal to the first command line argument: <code class="language-plaintext highlighter-rouge">end_time = float(sys.argv[1])</code></li>
+      <li>Note that the argument is automatically read in as a string so we convert it to a float.</li>
+    </ul>
+  </li>
+  <li>Now, if the user runs <code class="language-plaintext highlighter-rouge">Lorenz.py 30</code> then <code class="language-plaintext highlighter-rouge">end_time</code> will equal 30.</li>
 </ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">#!/usr/bin/env python3
+</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Initialising the simulation..."</span><span class="p">)</span>
+
+<span class="c1"># define function that describe the Lorenz system.
+</span><span class="k">def</span> <span class="nf">Lorenz</span><span class="p">(</span><span class="n">sigma</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">xyz</span><span class="p">):</span>
+    
+    <span class="n">x</span> <span class="o">=</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    
+    <span class="n">fx</span> <span class="o">=</span> <span class="n">sigma</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">fy</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">y</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">z</span><span class="p">)</span>
+    <span class="n">fz</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">z</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="n">fx</span><span class="p">,</span><span class="n">fy</span><span class="p">,</span><span class="n">fz</span><span class="p">],</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="c1"># Simulation parameters
+</span><span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>                                     <span class="c1"># start time
+</span><span class="n">end_time</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>                 <span class="c1"># end time
+</span><span class="n">num_steps</span> <span class="o">=</span> <span class="mi">3000</span>                              <span class="c1"># number of time steps
+</span><span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">)</span> <span class="o">/</span> <span class="n">num_steps</span>                   <span class="c1"># time step size
+</span>
+<span class="c1"># intitial conditions: x=0, y=1, z=0
+</span><span class="n">xyz</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="c1"># constants
+</span><span class="n">sigma</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mi">28</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">8</span><span class="o">/</span><span class="mi">3</span>
+
+<span class="c1"># generate times at which to evaluate xyz
+</span><span class="n">time_list</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
+
+<span class="c1"># create empty arrays to hold the calculated values
+</span><span class="n">x_points</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">y_points</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">z_points</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Applying Euler's method..."</span><span class="p">)</span>
+
+<span class="c1"># Apply Euler's method
+</span><span class="k">for</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">time_list</span><span class="p">:</span>
+    
+    <span class="n">x_points</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">y_points</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">xyz</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">z_points</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">xyz</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">xyz</span> <span class="o">+=</span> <span class="n">h</span><span class="o">*</span><span class="n">Lorenz</span><span class="p">(</span><span class="n">sigma</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">xyz</span><span class="p">)</span>
+    
+<span class="k">print</span><span class="p">(</span><span class="s">"Plotting the results..."</span><span class="p">)</span>
+
+<span class="c1"># Plot the strange attractor
+</span><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_points</span><span class="p">,</span><span class="n">z_points</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">"Strange_attractor.png"</span><span class="p">)</span>
+
+</code></pre></div></div>
 
 <h3 id="tasks">TASKS</h3>
 
 <ol>
   <li>Adapt the programme <code class="language-plaintext highlighter-rouge">Lorenz.py</code> so that it accepts 3 command line arguments: one for the <code class="language-plaintext highlighter-rouge">start_time</code>, one for <code class="language-plaintext highlighter-rouge">end_time</code> and one for <code class="language-plaintext highlighter-rouge">num_steps</code>.</li>
-  <li>Each time the <code class="language-plaintext highlighter-rouge">Lorenz.py</code> script runs the previous <code class="language-plaintext highlighter-rouge">.png</code> file is overwritten. Adapt the script so that the plot filename contains the values of the <code class="language-plaintext highlighter-rouge">start_time</code>, <code class="language-plaintext highlighter-rouge">end_time</code> and <code class="language-plaintext highlighter-rouge">num_steps</code> variables. You may need to search the internet for hints on how to do this…</li>
+  <li>Each time the <code class="language-plaintext highlighter-rouge">Lorenz.py</code> script runs the previous <code class="language-plaintext highlighter-rouge">.png</code> file is overwritten. Adapt the script so that the plot filename contains the values of the <code class="language-plaintext highlighter-rouge">start_time</code>, <code class="language-plaintext highlighter-rouge">end_time</code> and <code class="language-plaintext highlighter-rouge">num_steps</code> variables. You may need to search the internet for hints on how to do this (hint: look-up string formatting)</li>
 </ol>
 
 
