@@ -173,7 +173,7 @@ git commit -m "function to demonstrate the if __name__ == __main__ syntax"
  create mode 100644 hello.py
 ~~~
 
-{% include info.html text="Good commit messages often describe *why* a change was made. For example "fixed a bug that was breaking the unit tests". Information about *what* changed can be gotten by asking git to compare different versions of the file (we'll see this later in the lesson)." %}
+{% include info.html text="Good commit messages often describe *why* a change was made. For example 'fixed a bug that was breaking the unit tests'. Information about *what* changed can be gotten by asking git to compare different versions of the file (we'll see this later in the lesson)." %}
 
 The two stage process is useful because it means you can carefully craft your commit snapshots. For example, I may make several changes to several files. I then want to version control the changes. Instead of being forced to use a single commit for changes that are unrelated I can split my changes into several smaller commits - for example, one for "implementing a new algorithm to find the minima" and one for "improved function docstrings".
 
