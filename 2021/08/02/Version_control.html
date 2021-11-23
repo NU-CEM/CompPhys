@@ -115,6 +115,8 @@ window.onload = wrap_img;
   <li>Use <code class="language-plaintext highlighter-rouge">git init</code> to initialise an empty git repository</li>
   <li>Use <code class="language-plaintext highlighter-rouge">git status</code> for a summary of your repository</li>
   <li>Git uses a two-step process for version control: <code class="language-plaintext highlighter-rouge">git add</code> and <code class="language-plaintext highlighter-rouge">git commit</code></li>
+  <li>See the changes made to a file using <code class="language-plaintext highlighter-rouge">git diff</code></li>
+  <li>Use <code class="language-plaintext highlighter-rouge">git log</code> to see a record of the commits that have been made</li>
   <li>You can <code class="language-plaintext highlighter-rouge">add</code> and <code class="language-plaintext highlighter-rouge">commit</code> multiple files</li>
   <li>Use <code class="language-plaintext highlighter-rouge">git push</code> and <code class="language-plaintext highlighter-rouge">git pull</code> to communicate with a remote repository</li>
   <li>For some tasks the Github web interface is a useful alternative</li>
@@ -124,7 +126,7 @@ window.onload = wrap_img;
 
 <h3 id="version-control-is-the-ultimate-undo-button-for-code">Version control is the ultimate undo button for code</h3>
 
-<p><img src="&quot;./images/Final.png&quot;" alt="" /></p>
+<p><img src="/CompPhys/images/Final.png" alt="" /></p>
 
 <p>There are several benefits to version control:</p>
 
@@ -137,9 +139,10 @@ window.onload = wrap_img;
 
 <p>Version control is what software professionals use to keep track of what they’ve done and to collaborate with other people. Every large software development project relies on it, and most programmers use it for their small jobs as well. And it isn’t just for software: books, papers, small data sets, and anything that changes over time or needs to be shared can and should be stored in a version control system.</p>
 
-<blockquote>
-  <p>Note: Version control is not well-suited to binary files as much of the functionality that we will see later does not work efficiently with these types of file.</p>
-</blockquote>
+<div class="Toast">
+   <span class="Toast-icon"><svg class="octicon octicon-info octicon octicon-info octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>
+   <span class="Toast-content">Version control is not well-suited to binary files as much of the functionality that we will see later does not work efficiently with these types of file.</span>
+</div>
 
 <h3 id="github-is-very-widely-used-in-academia-and-industry">Github is very widely used in academia and industry</h3>
 
@@ -160,14 +163,15 @@ window.onload = wrap_img;
 <span class="nb">ls</span>
 </code></pre></div></div>
 
-<p>Second, create a file. You can use the in-built terminal editor (vim)[https://www.vim.org/] or <a href="https://www.nano-editor.org/">nano</a>, or any plain-text editor (such as Notepad). Whichever editor you use, you need to make sure you save the file in the <code class="language-plaintext highlighter-rouge">my_scripts</code> folder.</p>
+<p>Second, create a file. You can use the in-built terminal editor <a href="https://www.vim.org/">vim</a> or <a href="https://www.nano-editor.org/">nano</a>, or any plain-text editor (such as Notepad). Whichever editor you use, you need to make sure you save the file in the <code class="language-plaintext highlighter-rouge">my_scripts</code> folder.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim hello.py
 </code></pre></div></div>
 
-<blockquote>
-  <p>Note: To start writing in vim type <code class="language-plaintext highlighter-rouge">i</code>.</p>
-</blockquote>
+<div class="Toast">
+   <span class="Toast-icon"><svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>
+   <span class="Toast-content">To start writing in vim type `i`.</span>
+</div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
@@ -177,13 +181,15 @@ window.onload = wrap_img;
   <span class="n">hello_world</span><span class="p">()</span>
 </code></pre></div></div>
 
-<blockquote>
-  <p>Note: We are not writing the Python shebang as we treating this like a Python module (with functions/code you can import) rather than a Python script that is ran from top-to-bottom.</p>
-</blockquote>
+<div class="Toast">
+   <span class="Toast-icon"><svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>
+   <span class="Toast-content">We are not writing the Python shebang as we treating this like a Python module (with functions/code you can import) rather than a Python script that is ran from top-to-bottom.</span>
+</div>
 
-<blockquote>
-  <p>Note: To save and exit vim you type <code class="language-plaintext highlighter-rouge">Esc</code>, <code class="language-plaintext highlighter-rouge">:wq</code>, <code class="language-plaintext highlighter-rouge">Enter</code>.</p>
-</blockquote>
+<div class="Toast">
+   <span class="Toast-icon"><svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>
+   <span class="Toast-content">To save and exit vim you type `Esc`, `:wq`, `Enter`.</span>
+</div>
 
 <p>Third, create a git repository to version control this new file:</p>
 
@@ -203,9 +209,10 @@ window.onload = wrap_img;
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">rm</span> <span class="nt">-rf</span> .git
 </code></pre></div></div>
 
-<blockquote>
-  <p>Warning: Always take care using the command <code class="language-plaintext highlighter-rouge">rm -rf</code>. This permenantly deletes a directory and everything within the directory - and it will not be available in the recylcing bin!</p>
-</blockquote>
+<div class="Toast Toast--warning googoo">
+   <span class="Toast-icon"><svg class="octicon octicon-alert octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path></svg></span>
+   <span class="Toast-content">Always take care using the command `rm -rf`. This permenantly deletes a directory and everything within the directory - and it will not be available in the recylcing bin!</span>
+</div>
 
 <h3 id="use-git-status-for-a-summary-of-your-repository">Use <code class="language-plaintext highlighter-rouge">git status</code> for a summary of your repository</h3>
 
@@ -225,9 +232,10 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 </code></pre>
 
-<blockquote>
-  <p>Note: For a long time the default branch in most Git repositories was named “master”. Fortunately, many people have become aware that this terminology should be replaced to something more inclusive: <code class="language-plaintext highlighter-rouge">main</code>. If you branch is called <code class="language-plaintext highlighter-rouge">master</code> you can rename it using <code class="language-plaintext highlighter-rouge">git branch -m master main</code>.</p>
-</blockquote>
+<div class="Toast">
+   <span class="Toast-icon"><svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>
+   <span class="Toast-content">For a long time the default branch in most Git repositories was named `master`. Fortunately, many people have become aware that this terminology should be replaced to something more inclusive: `main`. If you branch is called `master` you can rename it using `git branch -m master main`.</span>
+</div>
 
 <p>The git outputs are generally quite helpful. Here we are told that there is “nothing added to commit but untracked files present” and git suggests that we use “git add” to track. What is this all about?</p>
 
@@ -235,8 +243,8 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 <p>If you think of Git as taking snapshots of changes over the life of a project, <code class="language-plaintext highlighter-rouge">git add</code> specifies what will go in a snapshot (putting things in the staging area), and <code class="language-plaintext highlighter-rouge">git commit</code> then actually takes the snapshot, and makes a permanent record of it (as a commit).</p>
 
-<p><img src="&quot;./images/add-commit.svg&quot;" alt="" />
-<img src="&quot;./images/add-commit2.svg&quot;" alt="" /></p>
+<p><img src="/CompPhys/images/addcommi.svg" alt="" />
+<img src="/CompPhys/images/addcommi2.svg" alt="" /></p>
 
 <p>First let’s add our new file:</p>
 
@@ -263,9 +271,10 @@ Changes to be committed:
  create mode 100644 hello.py
 </code></pre>
 
-<blockquote>
-  <p>Note: Good commit messages often describe <em>why</em> a change was made. For example “fixed a bug that was breaking the unit tests”. Information about <em>what</em> changed can be gotten by asking git to compare different versions of the file (we’ll see this later in the lesson).</p>
-</blockquote>
+<div class="Toast">
+   <span class="Toast-icon"><svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>
+   <span class="Toast-content">Good commit messages often describe *why* a change was made. For example 'fixed a bug that was breaking the unit tests'. Information about *what* changed can be gotten by asking git to compare different versions of the file (we'll see this later in the lesson).</span>
+</div>
 
 <p>The two stage process is useful because it means you can carefully craft your commit snapshots. For example, I may make several changes to several files. I then want to version control the changes. Instead of being forced to use a single commit for changes that are unrelated I can split my changes into several smaller commits - for example, one for “implementing a new algorithm to find the minima” and one for “improved function docstrings”.</p>
 
@@ -314,7 +323,7 @@ git status
 nothing to commit, working tree clean
 </code></pre>
 
-<p>Use git log to see a record of the commits that have been made</p>
+<h3 id="use-git-log-to-see-a-record-of-the-commits-that-have-been-made">Use git log to see a record of the commits that have been made</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git log
 </code></pre></div></div>
@@ -405,9 +414,10 @@ git commit <span class="nt">-m</span> <span class="s2">"implement and import fre
   <li>Select “Add a README file” and “Choose a license”</li>
 </ol>
 
-<blockquote>
-  <p>Note: To decide which open source license you would like to use visit <a href="https://choosealicense.com/">https://choosealicense.com/</a>.</p>
-</blockquote>
+<div class="Toast">
+   <span class="Toast-icon"><svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>
+   <span class="Toast-content">To decide which open source license you would like to use visit [https://choosealicense.com/](https://choosealicense.com/). </span>
+</div>
 
 <p>You now need to <code class="language-plaintext highlighter-rouge">push</code> your local repository to the remote server. To do so, follow the commands under “…or push an existing repository from the command line” into your terminal (you need to be in the <code class="language-plaintext highlighter-rouge">my_project</code> folder when you do this).</p>
 
@@ -424,7 +434,7 @@ git push <span class="nt">-u</span> origin main
 
 <h3 id="for-some-tasks-the-github-web-interface-is-a-useful-alternative">For some tasks the Github web interface is a useful alternative</h3>
 
-<p>We have already seen how to create a repository on Github. You can also use the interface (“drag and drop”) to add and commit files.</p>
+<p>We have already seen how to create a repository on Github. You can also use the Github web interface (“drag and drop”) to add and commit files.</p>
 
 <h3 id="tasks">TASKS</h3>
 
