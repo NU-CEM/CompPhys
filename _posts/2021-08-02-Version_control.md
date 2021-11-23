@@ -26,6 +26,8 @@ Keypoints:
 - Use `git init` to initialise an empty git repository
 - Use `git status` for a summary of your repository
 - Git uses a two-step process for version control: `git add` and `git commit`
+- See the changes made to a file using `git diff`
+- Use `git log` to see a record of the commits that have been made
 - You can `add` and `commit` multiple files
 - Use `git push` and `git pull` to communicate with a remote repository
 - For some tasks the Github web interface is a useful alternative
@@ -34,7 +36,7 @@ Keypoints:
 
 ### Version control is the ultimate undo button for code
 
-![]("./images/Final.png")
+![]({{ site.baseurl }}/images/Final.png)
 
 There are several benefits to version control:
 
@@ -45,7 +47,7 @@ There are several benefits to version control:
 
 Version control is what software professionals use to keep track of what they’ve done and to collaborate with other people. Every large software development project relies on it, and most programmers use it for their small jobs as well. And it isn’t just for software: books, papers, small data sets, and anything that changes over time or needs to be shared can and should be stored in a version control system.
 
-> Note: Version control is not well-suited to binary files as much of the functionality that we will see later does not work efficiently with these types of file. 
+{% include info.html text="Version control is not well-suited to binary files as much of the functionality that we will see later does not work efficiently with these types of file." %}
 
 ### Github is very widely used in academia and industry
 
@@ -65,13 +67,13 @@ cd my_project
 ls
 ~~~
 
-Second, create a file. You can use the in-built terminal editor (vim)[https://www.vim.org/] or [nano](https://www.nano-editor.org/), or any plain-text editor (such as Notepad). Whichever editor you use, you need to make sure you save the file in the `my_scripts` folder.
+Second, create a file. You can use the in-built terminal editor [vim](https://www.vim.org/) or [nano](https://www.nano-editor.org/), or any plain-text editor (such as Notepad). Whichever editor you use, you need to make sure you save the file in the `my_scripts` folder.
 
 ~~~bash
 vim hello.py
 ~~~
 
-> Note: To start writing in vim type `i`.
+{% include info.html text="To start writing in vim type `i`." %}
 
 ~~~python
 
@@ -82,9 +84,9 @@ if __name__ == "__main__":
   hello_world()
 ~~~
 
-> Note: We are not writing the Python shebang as we treating this like a Python module (with functions/code you can import) rather than a Python script that is ran from top-to-bottom.
+{% include info.html text="We are not writing the Python shebang as we treating this like a Python module (with functions/code you can import) rather than a Python script that is ran from top-to-bottom." %}
 
-> Note: To save and exit vim you type `Esc`, `:wq`, `Enter`.
+{% include info.html text="To save and exit vim you type `Esc`, `:wq`, `Enter`." %}
 
 Third, create a git repository to version control this new file:
 
@@ -108,7 +110,7 @@ Git stores all of the repository data in the .git directory. To delete the repos
 rm -rf .git
 ~~~
 
-> Warning: Always take care using the command `rm -rf`. This permenantly deletes a directory and everything within the directory - and it will not be available in the recylcing bin!
+{% include alert.html text="Always take care using the command `rm -rf`. This permenantly deletes a directory and everything within the directory - and it will not be available in the recylcing bin!" %}
 
 ### Use `git status` for a summary of your repository
 
@@ -130,7 +132,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 
-> Note: For a long time the default branch in most Git repositories was named "master". Fortunately, many people have become aware that this terminology should be replaced to something more inclusive: `main`. If you branch is called `master` you can rename it using `git branch -m master main`.
+{% include info.html text="For a long time the default branch in most Git repositories was named "master". Fortunately, many people have become aware that this terminology should be replaced to something more inclusive: `main`. If you branch is called `master` you can rename it using `git branch -m master main`." %}
 
 The git outputs are generally quite helpful. Here we are told that there is "nothing added to commit but untracked files present" and git suggests that we use "git add" to track. What is this all about?
 
@@ -138,8 +140,9 @@ The git outputs are generally quite helpful. Here we are told that there is "not
 
 If you think of Git as taking snapshots of changes over the life of a project, `git add` specifies what will go in a snapshot (putting things in the staging area), and `git commit` then actually takes the snapshot, and makes a permanent record of it (as a commit). 
 
-![]("./images/add-commit.svg")
-![]("./images/add-commit2.svg")
+
+![]({{ site.baseurl }}/images/addcommi.svg)
+![]({{ site.baseurl }}/images/addcommi2.svg)
 
 First let's add our new file:
 
@@ -170,7 +173,7 @@ git commit -m "function to demonstrate the if __name__ == __main__ syntax"
  create mode 100644 hello.py
 ~~~
 
-> Note: Good commit messages often describe *why* a change was made. For example "fixed a bug that was breaking the unit tests". Information about *what* changed can be gotten by asking git to compare different versions of the file (we'll see this later in the lesson).
+{% include info.html text="Good commit messages often describe *why* a change was made. For example "fixed a bug that was breaking the unit tests". Information about *what* changed can be gotten by asking git to compare different versions of the file (we'll see this later in the lesson)." %}
 
 The two stage process is useful because it means you can carefully craft your commit snapshots. For example, I may make several changes to several files. I then want to version control the changes. Instead of being forced to use a single commit for changes that are unrelated I can split my changes into several smaller commits - for example, one for "implementing a new algorithm to find the minima" and one for "improved function docstrings".
 
@@ -225,7 +228,7 @@ On branch main
 nothing to commit, working tree clean
 ~~~
 
-Use git log to see a record of the commits that have been made
+### Use git log to see a record of the commits that have been made
 
 ~~~bash
 git log
@@ -326,7 +329,7 @@ In practice, most programmers hold up-to-date copies of their files on a remote 
 3. Provide a name and description
 4. Select "Add a README file" and "Choose a license"
 
-> Note: To decide which open source license you would like to use visit [https://choosealicense.com/](https://choosealicense.com/). 
+{% include info.html text="To decide which open source license you would like to use visit [https://choosealicense.com/](https://choosealicense.com/). " %}
 
 You now need to `push` your local repository to the remote server. To do so, follow the commands under "...or push an existing repository from the command line" into your terminal (you need to be in the `my_project` folder when you do this).
 
@@ -345,7 +348,7 @@ It is important to `git push` and `git pull` frequently so that your local and r
 
 ### For some tasks the Github web interface is a useful alternative
 
-We have already seen how to create a repository on Github. You can also use the interface ("drag and drop") to add and commit files.
+We have already seen how to create a repository on Github. You can also use the Github web interface ("drag and drop") to add and commit files.
 
 ### TASKS
 
