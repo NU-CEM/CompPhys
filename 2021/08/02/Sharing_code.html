@@ -92,6 +92,12 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
+<li class="toc-entry toc-h3"><a href="#untested-software-can-be-compared-to-uncalibrated-detectors">Untested software can be compared to uncalibrated detectors</a></li>
+<li class="toc-entry toc-h3"><a href="#testing-helps-to-detect-errors-before-they-cause-problems">Testing helps to detect errors before they cause problems</a></li>
+<li class="toc-entry toc-h3"><a href="#use-assertions-for-things-you-believe-willshould-never-happen">Use assertions for things you believe will/should never happen.</a></li>
+<li class="toc-entry toc-h3"><a href="#units-testing-is-for-small-components-units-of-a-code">Units testing is for small components (units) of a code</a></li>
+<li class="toc-entry toc-h3"><a href="#pytest-can-be-used-to-implement-a-python-test-suite">Pytest can be used to implement a Python test suite</a></li>
+<li class="toc-entry toc-h3"><a href="#tasks">TASKS</a></li>
 </ul><ul>
   <li>Write short functions where possible as these are easier to test</li>
   <li>See https://coderefinery.github.io/testing/motivation/</li>
@@ -100,6 +106,130 @@ window.onload = wrap_img;
   <li>README: pdoc: https://github.com/pdoc3/pdoc/issues/55</li>
   <li>cookiecutter?</li>
 </ul>
+
+<p>In the course so far you have learnt the building blocks of Python. With this you can write a surprising amount of useful code! However our efforts are rewarded many times over if we can share the code we have written. Sharing your code:</p>
+<ul>
+  <li>clearly demonstrates your programming skills to future employers and/or supervisors</li>
+  <li>enables other researchers to use your code, progressing science forwards</li>
+  <li>establishes you an active participant in a particular domain or community of practice (people <em>know who you are</em>)</li>
+</ul>
+
+<p>However it is unfortunately not enough to stick our Python scripts / modules online and hope that other people will use them. We need to use tests to demonstrate that our software is reliable, and we need to write documentation so that others understand how best to use the code. These two topics - testing and documentation - are the focus of this lesson.</p>
+
+<p>Please note that the following text has been closeley adapted, with permission, from the <a href="https://coderefinery.github.io/testing/motivation/">Code Refinery software testing lesson</a>.</p>
+
+<h3 id="untested-software-can-be-compared-to-uncalibrated-detectors">
+<a class="anchor" href="#untested-software-can-be-compared-to-uncalibrated-detectors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Untested software can be compared to uncalibrated detectors</h3>
+
+<blockquote>
+  <p>“Before relying on a new experimental device, an experimental scientist always establishes its accuracy. A new detector is calibrated when the scientist observes &gt; its responses to known input signals. The results of this calibration are compared against the expected response.”</p>
+</blockquote>
+
+<p>[From <a href="https://carpentries-incubator.github.io/python-testing/">Testing and Continuous Integration with Python</a>, created by K. Huff]</p>
+
+<p>Simulations and analysis using software should be held to the same standards as experimental measurement devices!</p>
+
+<p>Further motivation for testing:</p>
+<ul>
+  <li><a href="https://science.sciencemag.org/content/314/5807/1856.summary">A Scientist’s Nightmare: Software Problem Leads to Five Retractions</a></li>
+  <li><a href="https://arstechnica.com/information-technology/2019/10/chemists-discover-cross-platform-python-scripts-not-so-cross-platform/">Researchers find bug in Python script may have affected hundreds of studies</a></li>
+</ul>
+
+<h3 id="testing-helps-to-detect-errors-before-they-cause-problems">
+<a class="anchor" href="#testing-helps-to-detect-errors-before-they-cause-problems" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing helps to detect errors before they cause problems</h3>
+
+<p>In software tests, expected results are compared with observed results in order to establish accuracy:</p>
+<ul>
+  <li>As projects grow, it becomes easier to break things without noticing immediately</li>
+  <li>Software defects can be caused by both human errors and non-controllable events (i.e. environmental conditions)</li>
+  <li>Testing is essential for research software because we care about reproducibility of scientific results</li>
+</ul>
+
+<p>Testing also encourages others to use your code:</p>
+<ul>
+  <li>It provides a way for users to see if the code is installed correctly</li>
+  <li>It allows users to better judge the quality of the code</li>
+</ul>
+
+<p>Finally, testing encourages other developers to contribute to your code as it is easier for external developers to contribute to the project without breaking your code (or at least it is clear when they have broken the code!)</p>
+
+<p>However bear in mind that tested code does not mean the code is <em>perfect</em>; “Program testing can be used to show the presence of bugs, but never to show their absence!” (Edsger W. Dijkstra)</p>
+
+<p><strong>Discussion question:</strong> Can you think of examples where it is <em>not</em> necessary to share your code?</p>
+
+<details>
+  <summary>Show answer</summary>
+
+  <p>Some examples where you may choose not to test your code:</p>
+  <ul>
+    <li>A Jupyter notebook which produces a plot and you know by looking at the plot whether it worked</li>
+    <li>A short, ‘obviously correct’ Python script which you never intend to reuse</li>
+  </ul>
+
+</details>
+
+<h3 id="use-assertions-for-things-you-believe-willshould-never-happen">
+<a class="anchor" href="#use-assertions-for-things-you-believe-willshould-never-happen" aria-hidden="true"><span class="octicon octicon-link"></span></a>Use assertions for things you believe will/should never happen.</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">kelvin_to_celsius</span><span class="p">(</span><span class="n">temp_k</span><span class="p">):</span>
+    <span class="s">"""
+    Converts temperature in Kelvin
+    to Celsius.
+    """</span>
+    <span class="k">assert</span> <span class="n">temp_k</span> <span class="o">&gt;=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s">"ERROR: negative T_K"</span>
+    <span class="n">temp_c</span> <span class="o">=</span> <span class="n">temp_k</span> <span class="o">-</span> <span class="mf">273.15</span>
+    <span class="k">return</span> <span class="n">temp_c</span>
+</code></pre></div></div>
+
+<h3 id="units-testing-is-for-small-components-units-of-a-code">
+<a class="anchor" href="#units-testing-is-for-small-components-units-of-a-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Units testing is for small components (units) of a code</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">fahrenheit_to_celsius</span><span class="p">(</span><span class="n">temp_f</span><span class="p">):</span>
+    <span class="s">"""Converts temperature in Fahrenheit
+    to Celsius.
+    """</span>
+    <span class="n">temp_c</span> <span class="o">=</span> <span class="p">(</span><span class="n">temp_f</span> <span class="o">-</span> <span class="mf">32.0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">5.0</span><span class="o">/</span><span class="mf">9.0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">temp_c</span>
+
+<span class="c1"># This is the test function: `assert` raises an error if something
+# is wrong.
+</span><span class="k">def</span> <span class="nf">test_fahrenheit_to_celsius</span><span class="p">():</span>
+    <span class="n">temp_c</span> <span class="o">=</span> <span class="n">fahrenheit_to_celsius</span><span class="p">(</span><span class="n">temp_f</span><span class="o">=</span><span class="mf">100.0</span><span class="p">)</span>
+    <span class="n">expected_result</span> <span class="o">=</span> <span class="mf">37.777777</span>
+    <span class="k">assert</span> <span class="nb">abs</span><span class="p">(</span><span class="n">temp_c</span> <span class="o">-</span> <span class="n">expected_result</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1.0e-6</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Unit tests are functions</li>
+  <li>Unit testing is used to test one unit: for example, a single function</li>
+</ul>
+
+<p><strong>Question:</strong> In the example above we want to check if the calculated <code class="language-plaintext highlighter-rouge">temp_c</code> is equal to the <code class="language-plaintext highlighter-rouge">expected_result</code>. Why do we use the assert statement <code class="language-plaintext highlighter-rouge">abs(temp_c - expected_result) &lt; 1.0e-6</code> instead of the simpler assert statement <code class="language-plaintext highlighter-rouge">temp_c == expected_result</code>?</p>
+
+<details>
+  <summary>Show answer</summary>
+
+  <p>Due to the inherent limitations to computational accuracy, we should not test for the exact equality between two floats. Instead we check that they are the same to within a numerical tolerance (in this case 1.0e-6). For more details please see the lesson <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Evaluating-Accuracy">Evaluating numerical errors and accuracy</a>.</p>
+
+</details>
+
+<p>Another commonly used type of testing is called <strong>end-to-end</strong>. End-to-end tests check if the software is working as a whole, from beginning to end. For example, you input example data at the start of a simulation and then check that the end results of the simulation are correct.</p>
+
+<h3 id="pytest-can-be-used-to-implement-a-python-test-suite">
+<a class="anchor" href="#pytest-can-be-used-to-implement-a-python-test-suite" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pytest can be used to implement a Python test suite</h3>
+
+<p>Rather than running unit tests one-by-one we can use <a href="http://pytest.org/">pytest</a> to automatically find and run all the tests within a project.</p>
+
+<blockquote>
+  <p>pytest collects and runs all test functions starting with test_.</p>
+</blockquote>
+
+<p>In the following steps we will make a simple Python function and use pytest to test it.</p>
+
+<h3 id="tasks">
+<a class="anchor" href="#tasks" aria-hidden="true"><span class="octicon octicon-link"></span></a>TASKS</h3>
+
+<p>Extension:</p>
 
   </div><a class="u-url" href="/CompPhys/2021/08/02/Sharing_code.html" hidden></a>
 </article>
