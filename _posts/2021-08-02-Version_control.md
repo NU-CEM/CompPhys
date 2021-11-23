@@ -132,7 +132,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 
-{% include info.html text="For a long time the default branch in most Git repositories was named "master". Fortunately, many people have become aware that this terminology should be replaced to something more inclusive: `main`. If you branch is called `master` you can rename it using `git branch -m master main`." %}
+{% include info.html text="For a long time the default branch in most Git repositories was named `master`. Fortunately, many people have become aware that this terminology should be replaced to something more inclusive: `main`. If you branch is called `master` you can rename it using `git branch -m master main`." %}
 
 The git outputs are generally quite helpful. Here we are told that there is "nothing added to commit but untracked files present" and git suggests that we use "git add" to track. What is this all about?
 
