@@ -100,7 +100,7 @@ window.onload = wrap_img;
 
 <p>However it is unfortunately not enough to stick our Python scripts / modules online and hope that other people will use them. We need to use tests to demonstrate that our software is reliable, and we need to write documentation so that others understand how best to use the code. These two topics - testing and documentation - are the focus of this lesson.</p>
 
-<p>Please note that the following text has been closeley adapted, with permission, from the <a href="https://coderefinery.github.io/testing/motivation/">Code Refinery software testing lesson</a>.</p>
+<p>Please note that the following text has been closeley adapted, with permission, from the <a href="https://coderefinery.github.io/testing/motivation/">Code Refinery software testing lesson</a> and the <a href="https://coderefinery.github.io/documentation/">Code Refinery documentation lesson</a>.</p>
 
 <h3 id="untested-software-can-be-compared-to-uncalibrated-detectors">Untested software can be compared to uncalibrated detectors</h3>
 
@@ -313,20 +313,141 @@ example.py:6: AssertionError
 
 </details>
 
-<h3 id="readmemd">README.md</h3>
+<h3 id="documentation-comes-in-different-forms">Documentation comes in different forms</h3>
 
 <blockquote>
   <p>There is nothing in the programming field more despicable than an undocumented program. 
   — Ed Yourdon, Software Engineering pioneer</p>
 </blockquote>
 
-<h3 id="docstrings">Docstrings</h3>
+<ul>
+  <li>Tutorials: learning-oriented, allows the newcomer to get started</li>
+  <li>How-to guides: goal-oriented, shows how to solve a specific problem</li>
+  <li>Explanation: understanding-oriented, explains a concept</li>
+  <li>Reference: information-oriented, describes the machinery</li>
+</ul>
+
+<p>These are distinct. For an excellent discussion, please see <a href="https://documentation.divio.com/">What nobody tells you about documentation</a>.</p>
+
+<p>There is no one size fits all: however a good starting point is almost always to include a <code class="language-plaintext highlighter-rouge">README</code> file with your code. Your code may, depending on the number of users apart from yourself, also include:</p>
+
+<ul>
+  <li>Purpose</li>
+  <li>Authors</li>
+  <li>License</li>
+  <li>Recommended citation</li>
+  <li>Copy-paste-able example to get started</li>
+  <li>Dependencies and their versions or version ranges</li>
+  <li>Installation instructions</li>
+  <li>Tutorials covering key functionality</li>
+  <li>Reference documentation (e.g. API) covering all functionality</li>
+  <li>How do you want to be asked questions (mailing list or forum or chat or issue tracker)</li>
+  <li>FAQ section</li>
+  <li>Contribution guide</li>
+</ul>
+
+<p><strong>Question:</strong> Visit the Github repository for <a href="https://github.com/lucydot/effmass/">effmass</a> and explore the repository and documentation site.</p>
+
+<ol>
+  <li>Which different types (tutorials/how-to/explanation/reference) of documentation can you find?</li>
+  <li>Are all the items in the bullet point list included?</li>
+</ol>
+
+<details>
+  <summary>Show answer</summary>
+  <ol>
+    <li>
+      <ul>
+        <li>There is a <a href="https://github.com/lucydot/effmass/">README file</a> with basic installation how-to instructions and an overview of the functionality.</li>
+        <li>There are <a href="https://nbviewer.org/github/lucydot/effmass/blob/master/Tutorial.ipynb">notebook tutorials</a> for allowing newcomers to get started.</li>
+        <li>There is API reference information <a href="https://effmass.readthedocs.io/en/latest/API%20documentation.html">here</a> which describes how each function works.</li>
+        <li>There is a <a href="https://arxiv.org/pdf/1811.02281.pdf">paper</a> which explains some of the concepts behind the code (for example the different definitions of effective mass).</li>
+      </ul>
+    </li>
+    <li>All of the bullet points on the list are included except i) there is no FAQ ii) the example is a Jupyter notebook and is not quickly copy-pastable (you would end up with the code and the surrounding text, which would then need to be removed).</li>
+  </ol>
+
+</details>
+
+<h3 id="the-readme-file-is-important-for-users">The README file is important for users</h3>
+
+<ul>
+  <li>The README file is important as it is usually the first thing people look at when visiting a code repository.</li>
+  <li>Use it to communitcate important information about your project.</li>
+  <li>Write your README using a markup language such as Markdown. Github will automatically format your markdown file when you push it to your Github repository.</li>
+  <li>The README should be in the top-level of your repository</li>
+  <li>To make your README extra friendly you can use emojis.</li>
+  <li>A README file might contains: A summary of the software purpose, author list, a link to the license file, a recommended citation, installation instructions and a list of code dependencies (e.g. numpy, matplotlib), a link to the issues tracker, and any other contact details.</li>
+</ul>
+
+<h3 id="in-code-documentation-is-important-for-code-developers">In-code documentation is important for code developers</h3>
+
+<ul>
+  <li>In-code documentation are very useful for people wanting to contribute to your code.</li>
+  <li>They can also be used to auto-generate online documentation for functions/classes (for more information see the extension task below).</li>
+  <li>The most commonly used Python in-code documentation are comments starting with <code class="language-plaintext highlighter-rouge">#</code> and Python docstrings</li>
+</ul>
+
+<p><strong>Question:</strong> Which of the comments below is the best and why?</p>
+
+<p>~~python</p>
+<h1 id="now-we-check-if-temperature-is-larger-then--50">Now we check if temperature is larger then -50:</h1>
+<p>if temperature &gt; -50:
+    print(‘do something’)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  
+~~~python
+# We regard temperatures below -50 degrees as measurement errors
+if temperature &gt; -50:
+    print('do something')
+</code></pre></div></div>
+
+<details>
+  <summary>Show answer</summary>
+
+  <p>The first comment describes what happens in this piece of code, whereas the second describes why this piece of code is there, i.e. its purpose. Comments like the second comment are much more useful.</p>
+
+</details>
+
+<h3 id="a-docstring-is-a-structured-comment-associated-to-a-segment-of-code-ie-a-function-or-class">A docstring is a structured comment associated to a segment of code (i.e. a function or class).</h3>
+
+<p>We have already written basic docstrings. Here we will see how to write <a href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html">Google style docstrings</a>. Let’s look at the following function:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">mean_temperature</span><span class="p">(</span><span class="n">temperatures</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">temperatures</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">temperatures</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>We can make it clearer what this function does and how to use it using a docstring. A good docstring describes:</p>
+
+<ul>
+  <li>What the function does</li>
+  <li>What goes in (including the type of the input variables)</li>
+  <li>What goes out (including the return type)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">mean_temperature</span><span class="p">(</span><span class="n">temperatures</span><span class="p">):</span>
+    <span class="s">"""
+      Get the mean temperature
+
+      Args:
+          data (list): A list with air temperature measurements.
+
+      Returns:
+          The mean air temperature (float)
+    """</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">temperatures</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">temperatures</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Two key advantages of docstrings are:</p>
+<ul>
+  <li>Python parses docstrings, for example calling the <code class="language-plaintext highlighter-rouge">help</code> function will display the docstring: try <code class="language-plaintext highlighter-rouge">help(mean_temperature)</code></li>
+  <li>You can generate your documentation as you are generating the code. In fact, thinking carefully about what the input/output/behaviour should be may encourage you to write better code!</li>
+</ul>
 
 <h3 id="tasks">TASKS</h3>
 
 <ol>
   <li>
-    <p>Write and run a unit test for the <code class="language-plaintext highlighter-rouge">Lorenz()</code> function in the <code class="language-plaintext highlighter-rouge">Lorenz.py</code> script you developed in <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Scripting.html">a previous lesson</a></p>
+    <p>Write and run a unit test for the <code class="language-plaintext highlighter-rouge">Lorenz()</code> function in the <code class="language-plaintext highlighter-rouge">Lorenz.py</code> script you developed in <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Scripting.html">a previous lesson</a>.</p>
   </li>
   <li>
     <p>Write a docstring for the <code class="language-plaintext highlighter-rouge">Lorenz()</code> function in the <code class="language-plaintext highlighter-rouge">Lorenz.py</code> script. Follow the <a href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md#383-functions-and-methods">Google docstring format</a> as in the example above.</p>
@@ -336,14 +457,14 @@ example.py:6: AssertionError
   </li>
 </ol>
 
-<h3 id="extension-tasks-automate-everything">EXTENSION TASKS: Automate everything!**</h3>
+<h3 id="extension-tasks-automate-everything">EXTENSION TASKS: Automate everything!</h3>
 
 <ol>
   <li>
-    <p>Automated testing using a tool such as <a href="https://travis-ci.org/">Travis Continuous Integration</a> allows us to automatically run tests when there is a commit to a Github repository. Following the tutorial from <a href="https://coderefinery.github.io/testing/continuous-integration/">The Code Refinery</a>, implement continuous integration for a Github repository holding <code class="language-plaintext highlighter-rouge">Lorenz.py</code> (this could be the Github repository you created in the <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Version_control.html">previous lesson</a>). Note that you will have to adapt the workflow file so that pip installs the python packages imported in your script (for Lorenz.py the packages are numpy and matplotlib).</p>
+    <p>Automated testing using Continuous Integration allows us to automatically run tests when there is a commit to a Github repository. Following the tutorial from <a href="https://coderefinery.github.io/testing/continuous-integration/">The Code Refinery</a>, implement continuous integration for a Github repository holding <code class="language-plaintext highlighter-rouge">Lorenz.py</code> (this could be the Github repository you created in the <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Version_control.html">previous lesson</a>). Note that you will have to adapt the workflow file so that pip installs the python packages imported in your script (for Lorenz.py the packages are numpy and matplotlib).</p>
   </li>
   <li>
-    <p>API (Application Programming Interface) documentation can be automatically generated using a tool such as <a href="https://pdoc3.github.io/pdoc/">pdoc3</a>. These tools read in all of the docstrings within a Python package and generate a webpage accordingly. For example, see the API documentation for the <a href="https://effmass.readthedocs.io/en/latest/inputs.html">effmass project</a>. Automatic API documentation is a real gamechanger; as long as we write docstrings alongside our code, we can quickly generate new documentation. If our code and docstrings change, the documentation will also stay up to date (as long as you remember to re-generate the webpage, or ask Github to do this for you with Github actions). Following the documentation on <a href="https://pdoc3.github.io/pdoc/">pdoc3</a> generate a html page with the API documentation for Lorenz.py. In the next lesson you will learn how to host this page using Github Pages.</p>
+    <p>API (Application Programming Interface) documentation can be automatically generated using a tool such as <a href="https://pdoc3.github.io/pdoc/">pdoc3</a>. These tools read in all of the docstrings within a Python package and generate a webpage accordingly. For example, see the API documentation for the <a href="https://effmass.readthedocs.io/en/latest/inputs.html">effmass project</a>. Automatic API documentation is a real gamechanger; as long as we write update the docstrings alongside our code, we can quickly generate new documentation. Following the documentation on <a href="https://pdoc3.github.io/pdoc/">pdoc3</a> generate a html page with the API documentation for Lorenz.py. In the next lesson you will learn how to host this page using Github Pages.</p>
   </li>
 </ol>
 
