@@ -295,7 +295,7 @@ There is no one size fits all: however a good starting point is almost always to
 
 **Question:** Which of the comments below is the best and why?
   
-~~python
+~~~python
 # Now we check if temperature is larger then -50:
 if temperature > -50:
     print('do something')
