@@ -356,7 +356,7 @@ Two key advantages of docstrings are:
   
 2. Write a docstring for the `Lorenz()` function in the `Lorenz.py` script. Follow the [Google docstring format](https://github.com/google/styleguide/blob/gh-pages/pyguide.md#383-functions-and-methods) as in the example above.
   
-3. Push your changes (if done locally) to the remote Github repository you created in the [previous lesson](https://nu-cem.github.io/CompPhys/2021/08/02/Version_control.html).
+3. Upload your new file to the remote Github repository you created in the [previous lesson](https://nu-cem.github.io/CompPhys/2021/08/02/Version_control.html).
 
 ### EXTENSION TASKS: Automate everything! 
   
