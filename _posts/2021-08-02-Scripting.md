@@ -149,14 +149,78 @@ Lorenz.py
 - We have seen the script print messages to the terminal but what about the other way around - how can users at the terminal pass values into the script?
 - For example, we may want a user to specify the `end_time` variable used by the simulation as an argument. 
 - For this we can use `sys.argv` which is a list of arguments passed to the programme
-- The first item in the list, `sys.argv[0]`, contains the name of the programme: `Lorenz.py`. The second item in the list, sys.argv[1], contains the first argument, the third item, sys.argv[2], contains the second argument and so on.
-- For example, if the user runs `Lorenz.py 30` then `sys.argv[1]` will equal 30.
-- To access this list we need to import the sys library at the top of our script: `import sys`
-- And we need to set the `end_time` equal to the first argument: `end_time = float(sys.argv[1])`
-- The argument is automatically read in as a string so in this case we must convert it to a float.
+- The first item in the list, `sys.argv[0]`, contains the name of the programme: in this case, `Lorenz.py`. The second item in the list, `sys.argv[1]`, contains the first argument from the command line, the third item, `sys.argv[2]`, contains the second argument from the command line and so on.
+- First, we need to edit the script
+    - To access the `sys.argv` list we import the sys library at the top of our script: `import sys`
+    - We set the `end_time` equal to the first command line argument: `end_time = float(sys.argv[1])`
+    - Note that the argument is automatically read in as a string so we convert it to a float.
+- Now, if the user runs `Lorenz.py 30` then `end_time` will equal 30.
+
+~~~python
+
+#!/usr/bin/env python3
+
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+
+print("Initialising the simulation...")
+
+# define function that describe the Lorenz system.
+def Lorenz(sigma,r,b,xyz):
+    
+    x = xyz[0]
+    y = xyz[1]
+    z = xyz[2]
+    
+    fx = sigma*(y-x)
+    fy = (r*x)-y-(x*z)
+    fz = (x*y)-(b*z)
+    
+    return np.array([fx,fy,fz],float)
+
+# Simulation parameters
+start = 0                                     # start time
+end_time = float(sys.argv[1])                 # end time
+num_steps = 3000                              # number of time steps
+h = (end-start) / num_steps                   # time step size
+
+# intitial conditions: x=0, y=1, z=0
+xyz = np.array([0,1,0],float)
+
+# constants
+sigma = 10
+r = 28
+b = 8/3
+
+# generate times at which to evaluate xyz
+time_list = np.arange(start,end,h)
+
+# create empty arrays to hold the calculated values
+x_points = []
+y_points = []
+z_points = []
+
+print("Applying Euler's method...")
+
+# Apply Euler's method
+for time in time_list:
+    
+    x_points.append(xyz[0])
+    y_points.append(xyz[1])
+    z_points.append(xyz[2])
+    xyz += h*Lorenz(sigma,r,b,xyz)
+    
+print("Plotting the results...")
+
+# Plot the strange attractor
+plt.plot(x_points,z_points)
+plt.savefig("Strange_attractor.png")
+
+~~~
 
 ### TASKS
 
 1. Adapt the programme `Lorenz.py` so that it accepts 3 command line arguments: one for the `start_time`, one for `end_time` and one for `num_steps`.
-2. Each time the `Lorenz.py` script runs the previous `.png` file is overwritten. Adapt the script so that the plot filename contains the values of the `start_time`, `end_time` and `num_steps` variables. You may need to search the internet for hints on how to do this...
+2. Each time the `Lorenz.py` script runs the previous `.png` file is overwritten. Adapt the script so that the plot filename contains the values of the `start_time`, `end_time` and `num_steps` variables. You may need to search the internet for hints on how to do this (hint: look-up string formatting)
 

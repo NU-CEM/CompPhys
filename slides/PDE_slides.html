@@ -14661,8 +14661,17 @@ div.jp-OutputPrompt {
 <h3 id="The-diffusion-equation-is-an-initial-value-problem">The diffusion equation is an initial value problem<a class="anchor-link" href="#The-diffusion-equation-is-an-initial-value-problem">&#182;</a></h3><p>An initial value problem is more complex than a boundary value problem as we are told the starting conditions and then have to predict future behaviour as a function of time.</p>
 <h4 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h4><p>A 10cm rod of stainless steel initially at a uniform temperature of 20$^\mathrm{o}$ Celsius. The rod is dipped in a hot water bath at 90$^\mathrm{o}$ Celsius at one end, and held in someone's hand at the other. Assume that the hand is at constant body temperature throughout (27$^\mathrm{o}$ Celsius).</p>
 <p><img src="../images/hand_hot.png" width="400" ></p>
-<p>Assume that the rod is perfectly insulated so that heat only moves horizontally; as a result this problem can be modelled as 1-dimensional. Also assume that neighter the hot water bath or the hand change temperature appreciably.</p>
-<p>Thermal conduction is described by the diffusion equation (or heat equation in this context)</p>
+
+</div>
+</div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Assume:</p>
+<ul>
+<li>that the rod is perfectly insulated so that heat only moves horizontally --&gt; a 1D problem</li>
+<li>neither the hot water bath or the hand change temperature </li>
+</ul>
+<p>Thermal conduction is described by the diffusion equation:</p>
 \begin{equation}
  \frac{\partial \phi}{\partial t} = D\frac{\partial^2 \phi}{\partial x^2},
 \end{equation}<p>where $D$ is the material dependent thermal diffusivity. For steel $D=4.25\times10^{-6}\mathrm{m}^2\mathrm{s}^{-1}$.</p>
@@ -14685,7 +14694,7 @@ div.jp-OutputPrompt {
 \end{equation}<p>where $a$ is the grid spacing.</p>
 <p>Substitute this back into the diffusion equation:</p>
 \begin{equation}
- \frac{\partial \phi}{\partial t} = \frac{D}{a^2}(\phi(x+a,t)+\phi(x-a,t)-2\phi(x,t))
+ \frac{d \phi}{d t} = \frac{D}{a^2}(\phi(x+a,t)+\phi(x-a,t)-2\phi(x,t))
 \end{equation}<p><mark>We now have a set of simultaneous ODEs for $\phi(x,t)$. </mark></p>
 
 </div>

@@ -41,22 +41,22 @@ Write a function which calculates the finite difference with periodic boundary c
 ~~~python
 def finite_difference(phi):
 
-    for i in range(N+1): # for each grid point
-        for j in range(N+1):
+    for i in range(N): # for each grid point
+        for j in range(N):
     
             i1 = i+1
             j1 = j+1
             i2 = i-1
             j2 = j-1
             
-            if i == N:
+            if i == N-1:
                 i1 = 0
             if i == 0:
-                i2 == N
-            if j == N:
+                i2 == N-1
+            if j == N-1:
                 j1 = 0
             if j == 0:
-                j2 == N
+                j2 == N-1
 
             phi_prime[i,j] = (phi[i1,j]+phi[i2,j]+phi[i,j1]+phi[i,j2]) / 4
     
