@@ -237,13 +237,14 @@ window.onload = wrap_img;
 </p>
 <p>The numerical Laplacian can be substituted into the equation above, giving us a set of $n$ simulatenous equations for the $n$ grid points.</p>
 \begin{equation}
- \frac{\phi(x+h,y)+\phi(x-h,y)+\phi(x,y+h)+\phi(x,y-h)-4\phi(x,y)}{a^2} = 0,
-\end{equation}<p>where $a$ is the distance between each grid point.</p>
+ \frac{\phi(x+h,y)+\phi(x-h,y)+\phi(x,y+h)+\phi(x,y-h)-4\phi(x,y)}{h^2} = 0,
+\end{equation}<p>where $h$ is the distance between each grid point.</p>
 <h3 id="To--solve-this-set-of-equations-we-use-the-relaxation-method">To  solve this set of equations we use the relaxation method<a class="anchor-link" href="#To--solve-this-set-of-equations-we-use-the-relaxation-method"> </a></h3><p>To calculate $\phi(x,y)$ we use the relaxation method, also known as the Jacobi method in the context of the Laplace equation.
 First we re-arrange the equation above:</p>
 \begin{equation}
  \phi(x,y)=\frac{1}{4}\left(\phi(x+h,y)+\phi(x-h,y)+\phi(x,y+h)+\phi(x,y-h)\right).
-\end{equation}<p>This tells us that $\phi(x,y)$ is the average of the surrounding grid points, which can be represented visually as:</p>
+\end{equation}<p><mark> Note that because we set the Laplacian equal to zero in Equation 13 (for this particular example), the $h^2$ term has dropped out of the expression - this might not be the case for other examples. </mark></p>
+<p>This tells us that $\phi(x,y)$ is the average of the surrounding grid points, which can be represented visually as:</p>
 <p><figure>
   
     <img class="docimage" src="/CompPhys/images/copied_from_nb/../images/electrostatics3.png" alt="" style="max-width: 200px" />
