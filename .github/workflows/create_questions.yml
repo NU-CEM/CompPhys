@@ -3,6 +3,8 @@ name: Create random questions
 on:
   issue_comment:
   types: created
+  
+if: ${{github.actor == github.event.issue_comment.issue.owner}}
     
 jobs:
   build:
