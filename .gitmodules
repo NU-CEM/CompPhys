@@ -1,0 +1,3 @@
+[submodule "ChooChoo-template"]
+	path = ChooChoo-template
+	url = https://github.com/lucydot/ChooChoo-template.git
