@@ -1,0 +1,54 @@
+body:
+- attributes:
+    value: 'For guidance on proposing a question please see the ChooChoo documentation
+      [here]().
+
+      Your proposed question and answer should be written [in markdown]().
+
+      '
+  type: markdown
+- attributes:
+    description: Provide Github username(s) for the authors of the proposed question
+    label: Authors
+  id: authors
+  type: input
+  validations:
+    required: true
+- attributes:
+    description: What is the title of your proposed question?
+    label: Title
+  id: title
+  type: input
+  validations:
+    required: true
+- attributes:
+    description: What is your proposed question?
+    label: Question
+  id: question
+  type: textarea
+  validations:
+    required: true
+- attributes:
+    description: What is the answer to your proposed question?
+    label: Answer
+  id: answer
+  type: textarea
+  validations:
+    required: true
+- attributes:
+    description: Which checklist item(s) does your question assess?
+    label: Checklist items
+    options:
+    - label: open and save a Jupyter Notebook
+    - label: use basic Markdown in a notebook
+    - label: create a list
+    - label: add to a list
+  id: checklist
+  type: checkboxes
+  validations:
+    required: true
+description: Propose a question to include in this ChooChoo project
+labels:
+- question proposal
+name: Question thread
+title: Question proposal
