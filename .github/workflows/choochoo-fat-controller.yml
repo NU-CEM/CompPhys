@@ -19,7 +19,7 @@ jobs:
     env: 
       ISSUE_NUMBER: ${{ github.event.issue.number }}
       GITHUB_REPOSITORY: ${{ github.repository }}
-      GH_TOKEN: ${{ secrets.BOT_ACCESS_TOKEN }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
@@ -34,7 +34,7 @@ jobs:
     env: 
       ISSUE_NUMBER: ${{ github.event.issue.number }}
       GITHUB_REPOSITORY: ${{ github.repository }}
-      GH_TOKEN: ${{ secrets.BOT_ACCESS_TOKEN }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
@@ -54,7 +54,7 @@ jobs:
     - uses: ben-z/actions-comment-on-issue@1.0.2
       with:
         message: "**[checks ticket]** I'm afraid you don't have permission to run choochoo commands here."
-        GITHUB_TOKEN: ${{ secrets.BOT_ACCESS_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
   not_instructor_student:
     if: |
@@ -70,7 +70,7 @@ jobs:
     - uses: ben-z/actions-comment-on-issue@1.0.2
       with:
         message: "**[checks ticket]** To run choochoo commands your issue must be labelled with `instructor`, `student`, `question proposal` or `accepted question`."
-        GITHUB_TOKEN: ${{ secrets.BOT_ACCESS_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   choochoo:
     if: |
@@ -90,7 +90,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with: 
-        token: ${{ secrets.BOT_ACCESS_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
     - uses: actions/setup-python@v2
       with:
         python-version: '3.x'
@@ -110,14 +110,14 @@ jobs:
        startsWith(github.event.comment.body,'choochoo ') 
     runs-on: ubuntu-latest
     env: 
-      GH_TOKEN: ${{ secrets.BOT_ACCESS_TOKEN }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       ISSUE_NUMBER: ${{ github.event.issue.number }}
       GITHUB_REPOSITORY: ${{ github.repository }}
       GITHUB_ACTOR: ${{ github.actor }}
     steps:
     - uses: actions/checkout@v2
       with: 
-        token: ${{ secrets.BOT_ACCESS_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
     - uses: actions/setup-python@v2
       with:
         python-version: '3.x'
