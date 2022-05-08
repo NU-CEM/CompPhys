@@ -1,0 +1,22 @@
+# Key settings (must edit)
+project_title: Choochoo template repository
+project_repo: lucydot/ChooChoo-template
+admins:
+- lucydot
+- choochoo-bot
+instructors:
+- lucydot
+students:
+- lucydot
+- choochoo-bot
+web_address: https://lucydot.github.io/ChooChoo-template
+
+# User options (may edit)
+questions: true
+votes_required: 3
+gh-pages: true
+
+# Advanced options (expert users only)
+choochoo_branch: main
+gh-pages_branch: gh-pages
+

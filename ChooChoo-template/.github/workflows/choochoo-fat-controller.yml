@@ -1,0 +1,140 @@
+name: Fat Controller
+
+on: 
+  workflow_dispatch:
+
+  issues:
+    types: 
+    - labeled
+    
+  issue_comment:
+    types: 
+    - created
+    
+jobs:
+
+  check_question_ticket:
+    if: github.event.label.name == 'question proposal' || github.event.label.name == 'student' 
+    runs-on: ubuntu-latest
+    env: 
+      ISSUE_NUMBER: ${{ github.event.issue.number }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+      GH_TOKEN: ${{ secrets.BOT_ACCESS_TOKEN }}
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - run: pip install https://github.com/lucydot/choochoo/archive/main.zip
+    - run: ${{ format('check_participant {0}', github.actor) }}
+      
+  check_instructor_ticket:
+    if: github.event.label.name == 'instructor' 
+    runs-on: ubuntu-latest
+    env: 
+      ISSUE_NUMBER: ${{ github.event.issue.number }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+      GH_TOKEN: ${{ secrets.BOT_ACCESS_TOKEN }}
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - run: pip install https://github.com/lucydot/choochoo/archive/main.zip
+    - run: ${{ format('check_instructor {0}', github.actor) }}
+    
+  not_issue_owner:
+    if: |
+      github.event_name == 'issue_comment' && 
+      github.actor != github.event.issue.user.login &&
+      startsWith(github.event.comment.body,'choochoo ') &&
+      !contains( github.event.issue.labels.*.name, 'question proposal') 
+    runs-on: ubuntu-latest
+    steps:
+    - uses: ben-z/actions-comment-on-issue@1.0.2
+      with:
+        message: "**[checks ticket]** I'm afraid you don't have permission to run choochoo commands here."
+        GITHUB_TOKEN: ${{ secrets.BOT_ACCESS_TOKEN }}
+    
+  not_instructor_student:
+    if: |
+      github.event_name == 'issue_comment' && 
+      github.actor == github.event.issue.user.login &&
+      !contains( github.event.issue.labels.*.name, 'instructor') &&
+      !contains( github.event.issue.labels.*.name, 'student') &&
+      !contains( github.event.issue.labels.*.name, 'question proposal') &&
+      !contains( github.event.issue.labels.*.name, 'accepted question') &&
+      startsWith(github.event.comment.body,'choochoo ')
+    runs-on: ubuntu-latest
+    steps:
+    - uses: ben-z/actions-comment-on-issue@1.0.2
+      with:
+        message: "**[checks ticket]** To run choochoo commands your issue must be labelled with `instructor`, `student`, `question proposal` or `accepted question`."
+        GITHUB_TOKEN: ${{ secrets.BOT_ACCESS_TOKEN }}
+
+  choochoo:
+    if: |
+      github.event_name == 'issue_comment' && 
+      github.actor == github.event.issue.user.login &&
+      (
+        contains( github.event.issue.labels.*.name, 'instructor') ||
+        contains( github.event.issue.labels.*.name, 'student')
+      ) &&
+      startsWith(github.event.comment.body,'choochoo ')
+    runs-on: ubuntu-latest
+    env: 
+      GH_TOKEN: ${{ secrets.BOT_ACCESS_TOKEN }}
+      ISSUE_NUMBER: ${{ github.event.issue.number }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+      GITHUB_ACTOR: ${{ github.actor }}
+    steps:
+    - uses: actions/checkout@v2
+      with: 
+        token: ${{ secrets.BOT_ACCESS_TOKEN }}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - run: pip install https://github.com/lucydot/choochoo/archive/main.zip
+    - run: ${{ github.event.comment.body }}
+    - uses: EndBug/add-and-commit@v4  
+      with:
+        author_name: choochoo-bot
+        message: "choochoo command completed"
+        add: "."
+      
+  choochoo-question:  
+    if: |
+       github.event_name == 'issue_comment' && 
+       (contains( github.event.issue.labels.*.name, 'question proposal') ||
+        contains( github.event.issue.labels.*.name, 'accepted question')  ) &&
+       startsWith(github.event.comment.body,'choochoo ') 
+    runs-on: ubuntu-latest
+    env: 
+      GH_TOKEN: ${{ secrets.BOT_ACCESS_TOKEN }}
+      ISSUE_NUMBER: ${{ github.event.issue.number }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+      GITHUB_ACTOR: ${{ github.actor }}
+    steps:
+    - uses: actions/checkout@v2
+      with: 
+        token: ${{ secrets.BOT_ACCESS_TOKEN }}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - run: pip install https://github.com/lucydot/choochoo/archive/main.zip
+    - run: ${{ github.event.comment.body }}
+    - uses: EndBug/add-and-commit@v4  
+      with:
+        author_name: choochoo-bot
+        message: "choochoo command completed"
+        add: "."
+    
+  print_context:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_CONTEXT: ${{ toJson(github) }}
+    steps:
+    - run: echo "$GITHUB_CONTEXT"
+
+
+
