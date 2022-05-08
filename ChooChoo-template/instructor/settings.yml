@@ -1,6 +1,6 @@
 # Key settings (must edit)
-project_title: Choochoo template repository
-project_repo: lucydot/ChooChoo-template
+project_title: CompPhys ChooChoo
+project_repo: NU-CEM/CompPhys
 admins:
 - lucydot
 - choochoo-bot
@@ -9,12 +9,12 @@ instructors:
 students:
 - lucydot
 - choochoo-bot
-web_address: https://lucydot.github.io/ChooChoo-template
+web_address: https://lucydot.github.io/CompPhys
 
 # User options (may edit)
 questions: true
 votes_required: 3
-gh-pages: true
+gh-pages: false
 
 # Advanced options (expert users only)
 choochoo_branch: main
