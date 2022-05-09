@@ -23,4 +23,3 @@ To list all possible choochoo commands type `choochoo list commands` in comment 
 ### Lists |   [links](https://nu-cem.github.io/CompPhys/2021/08/02/01-lists)  | 
 3) - [ ] create a list |    
 4) - [ ] add to a list | [tutorials](https://lucydot.github.io/ChooChoo-template/tutorials/lists)  |   
-
