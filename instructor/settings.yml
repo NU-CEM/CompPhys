@@ -1,22 +1,17 @@
-# Key settings (must edit)
-project_title: CompPhys ChooChoo
-project_repo: NU-CEM/CompPhys
 admins:
 - lucydot
 - choochoo-bot
+choochoo_branch: main
+gh-pages: false
+gh-pages_branch: gh-pages
 instructors:
 - lucydot
+- choochoo-bot
+project_repo: NU-CEM/CompPhys
+project_title: CompPhys ChooChoo
+questions: true
 students:
 - lucydot
 - choochoo-bot
-web_address: https://lucydot.github.io/CompPhys
-
-# User options (may edit)
-questions: true
 votes_required: 3
-gh-pages: false
-
-# Advanced options (expert users only)
-choochoo_branch: main
-gh-pages_branch: gh-pages
-
+web_address: https://lucydot.github.io/CompPhys
