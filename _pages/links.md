@@ -10,6 +10,10 @@ Listed below are some links to external resources that complement this course. I
 
 - Computational Physics by Mark Newman: http://www-personal.umich.edu/~mejn/cp/
 
+# Programming basics
+
+- Martijn Stegen Programming basics workbook: https://www.stgm.nl/basics/
+
 # Scientific programming in Python
 
 - Aalto University Python for scientific computing: https://aaltoscicomp.github.io/python-for-scicomp/
