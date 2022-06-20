@@ -1,0 +1,36 @@
+name: Publish questions
+
+on:
+  push:
+    paths:
+      - 'questions/*.md'
+    branches:    
+      - 'main'
+  workflow_dispatch:
+    
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v1
+    - name: read yaml settings
+      id: read-yaml
+      uses:  KJ002/read-yaml@main
+      with: 
+        file: './instructor/settings.yml'
+        key-path: '["gh-pages"]'   
+    - name: Deploy 🚀
+      if: |
+        steps.read-yaml.outputs.data == 'true' ||
+        steps.read-yaml.outputs.data == 'True'
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: questions # The folder the action should deploy.
+        target-folder: questions
+        commit-message: publish questions
+        clean: false
+        git-config-name: choochoo-bot
+        git-config-email:  <>
+
+

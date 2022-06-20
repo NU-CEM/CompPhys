@@ -1,0 +1,55 @@
+name: Publish tutorials
+
+on:
+  push:
+    paths:
+      - 'tutorials/*'
+    branches:    
+      - 'main'
+  workflow_dispatch:
+    
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-python@v1
+      with:
+        python-version: '3.6'
+        architecture: 'x64'
+    - name: read yaml settings
+      id: read-yaml
+      uses:  KJ002/read-yaml@main
+      with: 
+        file: './instructor/settings.yml'
+        key-path: '["gh-pages"]'   
+    - name: Install library and other requirements
+      if: |
+        steps.read-yaml.outputs.data == 'true' ||
+        steps.read-yaml.outputs.data == 'True'
+      run: |
+        pip install jupyter nbconvert 
+    - name: Convert notebook
+      if: |
+        steps.read-yaml.outputs.data == 'true' ||
+        steps.read-yaml.outputs.data == 'True'
+      run: |
+         jupyter nbconvert --to html ./tutorials/*.ipynb  
+         rm ./tutorials/*.ipynb 
+    - name: Deploy 🚀
+      if: |
+        steps.read-yaml.outputs.data == 'true' ||
+        steps.read-yaml.outputs.data == 'True'
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: tutorials # The folder the action should deploy.
+        target-folder: tutorials
+        commit-message: build tutorials
+        clean: false
+        git-config-name: choochoo-bot
+        git-config-email:  <>
+
+
+
+
