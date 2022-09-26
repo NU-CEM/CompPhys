@@ -4,21 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Random numbers and integration | An Introduction to Computational Physics</title>
+<title>Numerical integration and random numbers | An Introduction to Computational Physics</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Random numbers and integration" />
+<meta property="og:title" content="Numerical integration and random numbers" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="In this lesson we will learn about random numbers and how randomness can be applied to numerical integration via the Monte Carlo method." />
-<meta property="og:description" content="In this lesson we will learn about random numbers and how randomness can be applied to numerical integration via the Monte Carlo method." />
+<meta name="description" content="One of the most basic but also most important applications of computers in physics is the evaluation of integrals. Integrals occur widely in physics and, while some integrals can be done analytically, many cannot. In this lesson we will learn several methods for numerical integration and, as part of this, we will learn how to generate random numbers. We will also consider the errors that occur when using floating point arithmetic." />
+<meta property="og:description" content="One of the most basic but also most important applications of computers in physics is the evaluation of integrals. Integrals occur widely in physics and, while some integrals can be done analytically, many cannot. In this lesson we will learn several methods for numerical integration and, as part of this, we will learn how to generate random numbers. We will also consider the errors that occur when using floating point arithmetic." />
 <link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/Random.html" />
 <meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/Random.html" />
 <meta property="og:site_name" content="An Introduction to Computational Physics" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Random numbers and integration" />
+<meta property="twitter:title" content="Numerical integration and random numbers" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","description":"In this lesson we will learn about random numbers and how randomness can be applied to numerical integration via the Monte Carlo method.","headline":"Random numbers and integration","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Random.html"},"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Random.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","description":"One of the most basic but also most important applications of computers in physics is the evaluation of integrals. Integrals occur widely in physics and, while some integrals can be done analytically, many cannot. In this lesson we will learn several methods for numerical integration and, as part of this, we will learn how to generate random numbers. We will also consider the errors that occur when using floating point arithmetic.","headline":"Numerical integration and random numbers","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Random.html"},"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Random.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -89,7 +89,7 @@ window.onload = wrap_img;
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Random numbers and integration</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Numerical integration and random numbers</h1>
 <p class="post-meta post-meta-title">
     </p>
 
@@ -98,7 +98,9 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>In this lesson we will learn about random numbers and how randomness can be applied to numerical integration via the Monte Carlo method.</p>
+    <p>One of the most basic but also most important applications of computers in physics is the evaluation of integrals. 
+Integrals occur widely in physics and, while some integrals can be done analytically, many cannot. 
+In this lesson we will learn several methods for numerical integration and, as part of this, we will learn how to generate random numbers. We will also consider the errors that occur when using floating point arithmetic.</p>
 
 <h3 id="before-you-begin">Before you begin</h3>
 
@@ -121,19 +123,19 @@ window.onload = wrap_img;
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Cleaning-Data">Reading Data with Pandas</a></td>
-      <td>How can I import and clean my data?</td>
-      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Cleaning-Data-Qs.html"><img class="emoji" title=":mag:" alt=":mag:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f50d.png" height="20" width="20"></a></td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Numerical-Integration">Numerical integration</a></td>
+      <td>How can I numerically integrate a function?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Numerical-Integration-Qs.html"><img class="emoji" title=":mag:" alt=":mag:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f50d.png" height="20" width="20"></a></td>
     </tr>
     <tr>
-      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Analysing-Data">Analysing Data with NumPy</a></td>
-      <td>How can I analyse my data?</td>
-      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Analysing-Data-Qs.html"><img class="emoji" title=":flashlight:" alt=":flashlight:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f526.png" height="20" width="20"></a></td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Monte-Carlo">Calculating integrals using Monte Carlo methods</a></td>
+      <td>How can I integrate using Monte Carlo methods?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Monte-Carlo-Qs.html"><img class="emoji" title=":flashlight:" alt=":flashlight:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f526.png" height="20" width="20"></a></td>
     </tr>
     <tr>
-      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Visualising-Data">Visualising Data with Matplotlib</a></td>
-      <td>How can I plot my data?</td>
-      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Visualising-Data-Qs.html"><img class="emoji" title=":paperclip:" alt=":paperclip:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ce.png" height="20" width="20"></a></td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Rounding-Errors">Rounding errors</a></td>
+      <td>Which errors are associated with floating point arithmetic?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Rounding-Errors-Qs.html"><img class="emoji" title=":paperclip:" alt=":paperclip:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ce.png" height="20" width="20"></a></td>
     </tr>
   </tbody>
 </table>
