@@ -157,8 +157,232 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="There-are-many-different-numerical-methods-for-calculating-integrals">There are many different numerical methods for calculating integrals<a class="anchor-link" href="#There-are-many-different-numerical-methods-for-calculating-integrals"> </a></h4><p>In the previous section we looked at the two simplest methods for calculating integrals: the rectangular-slice method (where the error is proportional to step size $h$) and the trapezoid method (where the error is proportional to step size $h^2$). For increased accuracy, particularly in systems where we want to integrate over multiple variables, more advanced methods may be required. For example, Simpson's method gives an error proportional to $h^4$, whilst Gaussian Quadrature can be used to integrate certain classes of functions with higher efficiency still.</p>
+<p>We will not explore Simpson's method or Gaussian Quadraturein this course, but we will outline one particularly powerful, and conceptually intriguing group of approaches: the Monte Carlo methods.</p>
+<h4 id="Monte-Carlo-methods-calculate-the-answers-to-exact-calculations-by-doing-random-calculations">Monte Carlo methods calculate the answers to exact calculations by doing random calculations<a class="anchor-link" href="#Monte-Carlo-methods-calculate-the-answers-to-exact-calculations-by-doing-random-calculations"> </a></h4><p>Monte Carlo methods are a broad class of algorithms that rely on random sampling to obtain numerical results. The underlying concept is to use randomness to solve problems that might be deterministic in principle. "Monte Carlo" is a reference to a well-known casino town, since the element of chance is core to the modelling approach, similar to various casino games.</p>
+<p>Monte Carlo methods are applied across a wide variety of domains, most commonly mathematics, physics and finance. In physics, Monte Carlo methods are used to design particle detectors, model galaxy evolution and solve the many-body problem for quantum systems, amongst many other applications. In this lesson we will introduce one of the main uses of Monte Carlo: for integration.</p>
+<h4 id="The-Monte-Carlo-&quot;area-method&quot;-estimates-integrals-by-generating-a-uniform-sample-of-points-and-counting-how-many-fall-into-a-planar-region">The Monte Carlo "area method" estimates integrals by generating a uniform sample of points and counting how many fall into a planar region<a class="anchor-link" href="#The-Monte-Carlo-&quot;area-method&quot;-estimates-integrals-by-generating-a-uniform-sample-of-points-and-counting-how-many-fall-into-a-planar-region"> </a></h4><p>To introduce the Monte Carlo area method, we will consider the area under a circle to give us an estimate for the value of pi.</p>
+<p>The relevant equations are:</p>
+<p>square area: $A_s = (2 r)^2$<br />
+circle area: $A_c = \pi r^2$</p>
+<p>The ratio of the areas can be related to $\pi$ through the following expressions:</p>
+<p>$\frac{A_c}{A_s} = \frac{\pi r^2}{4 r^2} = \frac{\pi}{4}$<br />
+$\pi = 4\frac{A_c}{A_s}$</p>
+<p>We set the radius of our circle equal to one for simplicty. To approximate the ratio $\frac{A_c}{A_s}$ we will generate a (uniform) pseudo-random number between 0 and 1 for our x-coordinates, and a (uniform) pseudo-random number between 0 and 1 for our y-coordinates. We will then check if our random point lies in or out of the circle. The probability $P_i$ that our point lies in the circle is related to the area ratio and so value of pi:</p>
+<p>$P_i = \frac{A_c}{A_s} = \frac{\pi}{4}$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<figure>
+<figure>
+  
+    <img class="docimage" src="https://raw.githubusercontent.com/coderefinery/jupyter/main/example/darts.svg" alt="" style="max-width: 500px" />
+    
+    
+</figure>
+
+</figure>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="The-Monte-Carlo-area-method-can-be-translated-into-Python-code">The Monte Carlo area method can be translated into Python code<a class="anchor-link" href="#The-Monte-Carlo-area-method-can-be-translated-into-Python-code"> </a></h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="c1"># in this function we generate random numbers and count how many lie within the circle</span>
+<span class="k">def</span> <span class="nf">estimate_pi</span><span class="p">(</span><span class="n">num_points</span><span class="p">):</span>
+    
+    <span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">hits</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_points</span><span class="p">):</span>
+        <span class="c1"># random.random returns a random number drawn from a uniform distribution from 0 to 1</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(),</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+        <span class="c1"># we test if the point is within the circle (using the equation for a circle, X^2+y^2=r^2)</span>
+        <span class="k">if</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">:</span>
+            <span class="n">hits</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="n">probability</span> <span class="o">=</span> <span class="n">hits</span> <span class="o">/</span> <span class="n">num_points</span>
+    <span class="k">return</span> <span class="n">probability</span><span class="o">*</span><span class="mi">4</span>
+        
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">estimate_pi</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3.104</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">estimate_pi</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3.176</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This method usually improves with the number of points, however there can be some variation due to the randomness of the numbers used. If you would like others to reproduce your exact results, you can seed the (pseudo-)random number generator:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;error is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">-</span><span class="n">estimate_pi</span><span class="p">(</span><span class="mi">1000</span><span class="p">)))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>error is 0.029592653589793017
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;error is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">-</span><span class="n">estimate_pi</span><span class="p">(</span><span class="mi">2000</span><span class="p">)))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>error is -0.004407346410206792
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Monte-Carlo-methods-do-not-give-very-accurate-answers-but-they-provide-a-more-general-approach-for-calculating-integrals">Monte Carlo methods do not give very accurate answers but they provide a more general approach for calculating integrals<a class="anchor-link" href="#Monte-Carlo-methods-do-not-give-very-accurate-answers-but-they-provide-a-more-general-approach-for-calculating-integrals"> </a></h4><p>In fact, the error varies as $N^{-\frac{1}{2}}$, which is significantly more than the trapezoidal rule with error order $h^2$, where $h$ is the width of an integration slice. However Monte Carlo methods are more flexible and can be used where other methods break-down: for example, they are particularly useful for integrating functions where the integrand varies quickly (which is explored in the <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Random_exercises">Lesson exercises</a>), and/or where the integral is over many variables.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <hr />
 <p>Keypoints:</p>
+<ul>
+<li>There are many different numerical methods for calculating integrals</li>
+<li>Monte Carlo methods calculate the answers to exact calculations by doing random calculations</li>
+<li>The Monte Carlo "area method" estimates integrals by generating a uniform sample of points and counting how many fall into a planar region</li>
+<li>The Monte Carlo area method can be translated into Python code</li>
+<li>Monte Carlo methods do not give very accurate answers but they provide a more general approach for calculating integrals</li>
+</ul>
 
 </div>
 </div>

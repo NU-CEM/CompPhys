@@ -145,12 +145,302 @@ window.onload = wrap_img;
 <li>How can I do basic numerical integration?</li>
 </ul>
 <p>Objectives:</p>
-<ul>
-<li>Use the rectangular-slice approximation to calculate integrals</li>
-<li>Use the trapezoidal rule to calculate integrals</li>
-<li>Compare the accuracy of these two methods</li>
-</ul>
-<hr />
+<h2 id="--Use-the-rectangular-slice-approximation-to-calculate-integrals">- Use the rectangular-slice approximation to calculate integrals<a class="anchor-link" href="#--Use-the-rectangular-slice-approximation-to-calculate-integrals"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Depending-on-the-functional-form-of-f(x),-it-may-not-be-possible-to-calculate-an-integral-analytically">Depending on the functional form of f(x), it may not be possible to calculate an integral analytically<a class="anchor-link" href="#Depending-on-the-functional-form-of-f(x),-it-may-not-be-possible-to-calculate-an-integral-analytically"> </a></h4><p>The integral of f(x) from a to b is the area under the curve. Depending on the functional
+form of f(x), it may not be possible to calculate the integral analytically.</p>
+<figure>
+<figure>
+  
+    <img class="docimage" src="/CompPhys/images/copied_from_nb/../images/integration.png" alt="" style="max-width: 500px" />
+    
+    
+</figure>
+
+</figure><h4 id="The-simplest-method-to-approximate-an-integral-is-to-use-the-rectangular-slices">The simplest method to approximate an integral is to use the rectangular-slices<a class="anchor-link" href="#The-simplest-method-to-approximate-an-integral-is-to-use-the-rectangular-slices"> </a></h4><p>The simplest method of estimating the integral shown above is to divide the integration range into $N$ slices of width $h$. We calculate $f(x_i)$ at some point on each slice and then calculate the area of the associated rectangle:</p>
+<p>$ A_i = f(x_i)h$</p>
+<p>The integral is given by summing over all of the rectangles:</p>
+<p>$ \int_a^b f(x_i) dx \approx \sum_i f(x_i)h $</p>
+<figure>
+<figure>
+  
+    <img class="docimage" src="/CompPhys/images/copied_from_nb/../images/integration2.png" alt="" style="max-width: 500px" />
+    
+    
+</figure>
+
+</figure><h4 id="The-rectangular-slice-method-can-be-translated-to-Python-code-in-a-straight-forward-manner">The rectangular slice method can be translated to Python code in a straight-forward manner<a class="anchor-link" href="#The-rectangular-slice-method-can-be-translated-to-Python-code-in-a-straight-forward-manner"> </a></h4><p>For example, we may want to calculate the integral of $\sin(x)$ from 0 to $\frac{\pi}{2}$. This is an integral that can be evaluated analytically, so it doesn't usually make sense to calculate numerically - however, in this case, we can use it to establish that our method is correct.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">rectangular_slice_integral</span><span class="p">(</span><span class="n">f_x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+    
+    <span class="n">integral</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>   <span class="c1"># h is the width of each slice</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">i</span> <span class="c1"># the x value for the slice</span>
+        <span class="n">integral</span> <span class="o">+=</span> <span class="n">f_x</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">h</span>
+    <span class="k">return</span> <span class="n">integral</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that the function <code>rectangular_slice_integral</code> has an argument <code>f_x</code> which is itself a function. This is valid Python - you can pass one function to another function as an argument.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rectangular_slice_integral</span><span class="p">(</span><span class="n">sin</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.9921254566056334</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In fact, it is possible to pass the <code>math.sin()</code> function directly to <code>rectangular_slice_integral()</code>:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rectangular_slice_integral</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.9921254566056334</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is pretty close to the correct value of 1. To improve our approximation we can increase the number of slices:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rectangular_slice_integral</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.9960678687587687</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The error is of order $h$ - when we halve the rectangular width, we halve the error.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="The-rectangular-slice-method-can-be-adapted-for-use-with-discrete-data">The rectangular slice method can be adapted for use with discrete data<a class="anchor-link" href="#The-rectangular-slice-method-can-be-adapted-for-use-with-discrete-data"> </a></h4><p>Not all integrations are integrations of functions. For example, we may want to integrate experimental data, in which case there is no function to call to find the value of f(x). Instead, the most likely form of f(x) is given by the list of data values. In this case we can use the same method, but the implementation is slightly different:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">rectangular_slice_integral_discrete</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+    
+    <span class="k">return</span> <span class="n">h</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that this assumes the data is evenly spaced. To test our function using the same example as above we need to generate a list of sin(x) values between 0 to $\frac{\pi}{2}$:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">100</span>
+<span class="n">sin_0_90</span> <span class="o">=</span> <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">h</span><span class="p">)]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>where we are using <a href="https://realpython.com/list-comprehension-python/#using-list-comprehensions">Python list comprehension</a> and the Numpy arange function to generate a list of evenly spaced floats. We can now pass this list to our function <code>rectangular_slice_integral_discrete</code>:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rectangular_slice_integral_discrete</span><span class="p">(</span><span class="n">sin_0_90</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.9921254566056331</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="The-trapezoidal-rule-is-a-simple-extension-that-is-more-computationally-efficient">The trapezoidal rule is a simple extension that is more computationally efficient<a class="anchor-link" href="#The-trapezoidal-rule-is-a-simple-extension-that-is-more-computationally-efficient"> </a></h4><p>We can greatly improve the efficiency of our integration by approximating the slices as trapezoids instead of as rectangles. This is because the area under the trapezoids is a considerably better approximation to the
+area under the curve.</p>
+<figure>
+<figure>
+  
+    <img class="docimage" src="/CompPhys/images/copied_from_nb/../images/integration3.png" alt="" style="max-width: 500px" />
+    
+    
+</figure>
+
+</figure><p>This method is explored in the <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Random_exercises">Lesson exercises</a>. The trapezoidal rule a first-order rule that is <em>accurate</em> to order $h$ ($\mathcal{O}(h)$) and has an <em>error</em> of order $h^2$ $\mathcal{O}(h^2)$.</p>
 
 </div>
 </div>
@@ -159,6 +449,13 @@ window.onload = wrap_img;
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr />
 <p>Keypoints:</p>
+<ul>
+<li>Depending on the functional form of f(x), it may not be possible to calculate an integral analytically</li>
+<li>The simplest method to approximate an integral is to use the rectangular-slices</li>
+<li>The rectangular slice method can be translated to Python code in a straight-forward manner</li>
+<li>The rectangular slice method can be adapted for use with discrete data</li>
+<li>The trapezoidal rule is a simple extension that is more computationally efficient</li>
+</ul>
 
 </div>
 </div>
