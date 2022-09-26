@@ -1,7 +1,7 @@
 ---
 toc: false
 layout: post
-title: Calculating derivatives numerically
+title: Calculating derivatives
 categories: [data, python]
 sticky_rank: 4
 hide: true
