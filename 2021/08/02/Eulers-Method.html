@@ -143,6 +143,7 @@ window.onload = wrap_img;
 <p>Questions:</p>
 <ul>
 <li>How do I use Euler's method to solve a first-order ODE?</li>
+<li>What does the term first-order accurate mean?</li>
 </ul>
 <hr />
 
@@ -592,6 +593,22 @@ Error is:  40
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Euler's-method-is-a-first-order-method-accurate-to-order-$h$.">Euler's method is a first-order method accurate to order $h$.<a class="anchor-link" href="#Euler's-method-is-a-first-order-method-accurate-to-order-$h$."> </a></h3><ul>
+<li>Numerical methods give <em>approximate</em> solutions.</li>
+<li>Euler's method neglects the term in $h^2$ and higher:
+\begin{equation}
+x(t+h) = x(t)+hf(x,t)+\mathcal{O}(h^2)
+\end{equation}</li>
+<li>This tells us the error introduced on a single step of the method is proportional to $h^2$ - this makes Euler's method  a <mark> first-order </mark> method, accurate to order $h$.</li>
+<li>However the cumulative error over several steps is proportional to $h$ </li>
+<li>So to make our error half as large we need to double the number of steps (halve the step size) and double the length of the calculation.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <hr />
 <p>Keypoints:</p>
 <ul>
@@ -601,6 +618,7 @@ Error is:  40
 <li>Euler's method can be used to approximate the solution of differential equations</li>
 <li>Euler's method can be applied using the Python skills we have developed</li>
 <li>We can easily visualise our results, and compare against the analytical solution, using the matplotlib plotting library</li>
+<li>Euler's method is a first-order method accurate to order $h$.</li>
 </ul>
 <hr />
 

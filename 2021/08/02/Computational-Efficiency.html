@@ -4,21 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Evaluating numerical errors and accuracy | An Introduction to Computational Physics</title>
+<title>Evaluating numerical errors, accuracy and speed | An Introduction to Computational Physics</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Evaluating numerical errors and accuracy" />
+<meta property="og:title" content="Evaluating numerical errors, accuracy and speed" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
 <meta property="og:description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
-<link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/Evaluating-Accuracy.html" />
-<meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/Evaluating-Accuracy.html" />
+<link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/Computational-Efficiency.html" />
+<meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/Computational-Efficiency.html" />
 <meta property="og:site_name" content="An Introduction to Computational Physics" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Evaluating numerical errors and accuracy" />
+<meta property="twitter:title" content="Evaluating numerical errors, accuracy and speed" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","headline":"Evaluating numerical errors and accuracy","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Evaluating-Accuracy.html"},"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Evaluating-Accuracy.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","headline":"Evaluating numerical errors, accuracy and speed","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Computational-Efficiency.html"},"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Computational-Efficiency.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -85,7 +85,7 @@ window.onload = wrap_img;
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Evaluating numerical errors and accuracy</h1><p class="post-meta post-meta-title">
+    <h1 class="post-title p-name" itemprop="name headline">Evaluating numerical errors, accuracy and speed</h1><p class="post-meta post-meta-title">
     </p>
 
     
@@ -95,19 +95,19 @@ window.onload = wrap_img;
         <div class="pb-5 d-flex flex-wrap flex-justify-end">
           <div class="px-2">
 
-    <a href="https://github.com/NU-CEM/CompPhys/tree/master/_notebooks/2021-08-02-Evaluating-Accuracy.ipynb" role="button" target="_blank">
+    <a href="https://github.com/NU-CEM/CompPhys/tree/master/_notebooks/2021-08-02-Computational-Efficiency.ipynb" role="button" target="_blank">
 <img class="notebook-badge-image" src="/CompPhys/assets/badges/github.svg" alt="View On GitHub">
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/NU-CEM/CompPhys/master?filepath=_notebooks%2F2021-08-02-Evaluating-Accuracy.ipynb" target="_blank">
+    <a href="https://mybinder.org/v2/gh/NU-CEM/CompPhys/master?filepath=_notebooks%2F2021-08-02-Computational-Efficiency.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/CompPhys/assets/badges/binder.svg" alt="Open In Binder"/>
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://colab.research.google.com/github/NU-CEM/CompPhys/blob/master/_notebooks/2021-08-02-Evaluating-Accuracy.ipynb" target="_blank">
+    <a href="https://colab.research.google.com/github/NU-CEM/CompPhys/blob/master/_notebooks/2021-08-02-Computational-Efficiency.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/CompPhys/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
@@ -132,7 +132,7 @@ window.onload = wrap_img;
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
-# file to edit: _notebooks/2021-08-02-Evaluating-Accuracy.ipynb
+# file to edit: _notebooks/2021-08-02-Computational-Efficiency.ipynb
 -->
 
 <div class="container" id="notebook-container">
@@ -144,7 +144,6 @@ window.onload = wrap_img;
 <ul>
 <li>Which numerical errors are unavoidable in a Python programme?</li>
 <li>How do I choose the optimum step size $h$ when using the finite difference method?</li>
-<li>What do the terms first-order accurate and second-order accurate mean?</li>
 <li>How can I measure the speed of my code?</li>
 </ul>
 <p>Objectives:</p>
@@ -257,10 +256,10 @@ window.onload = wrap_img;
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">AssertionError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-5-fee3d9bc4a88&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-3-fee3d9bc4a88&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>test_add_numbers<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-3-61c3c4878185&gt;</span> in <span class="ansi-cyan-fg">test_add_numbers</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">&lt;ipython-input-1-61c3c4878185&gt;</span> in <span class="ansi-cyan-fg">test_add_numbers</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-intense-fg ansi-bold">      3</span> 
 <span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">def</span> test_add_numbers<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">assert</span> add_numbers<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0.1</span><span class="ansi-blue-fg">,</span><span class="ansi-cyan-fg">0.2</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">==</span> <span class="ansi-cyan-fg">0.3</span>
@@ -293,22 +292,6 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>0.30000000000000004</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -408,22 +391,8 @@ h = \sqrt{4C\lvert\frac{f(x)}{f''(x)}\rvert}
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Euler's-method-is-a-first-order-method-accurate-to-order-$h$.">Euler's method is a first-order method accurate to order $h$.<a class="anchor-link" href="#Euler's-method-is-a-first-order-method-accurate-to-order-$h$."> </a></h3><ul>
-<li>As we have seen in previous tutorials, numerical methods (such as Euler's method or the Runge-Kutta method) give approximate solutions.</li>
-<li>Euler's method neglected the term in $h^2$ and higher:
-\begin{equation}
-x(t+h) = x(t)+hf(x,t)+\mathcal{O}(h^2)
-\end{equation}</li>
-<li>This tells us the error introduced on a single step of the method is proportional to $h^2$ - this makes Euler's method  a <mark> first-order </mark> method, accurate to order $h$.</li>
-<li>However the cumulative error over several steps is proportional to $h$ </li>
-<li>So to make our error half as large we need to double the number of steps (halve the step size) and double the length of the calculation.</li>
-</ul>
-<h3 id="The-second-order-Runge-Kutta-method-is-accurate-to-order-$h^2$.">The second-order Runge-Kutta method is accurate to order $h^2$.<a class="anchor-link" href="#The-second-order-Runge-Kutta-method-is-accurate-to-order-$h^2$."> </a></h3><ul>
-<li>The error term for one step of the Runge-Kutta method is ${O}(h^3)$ - this makes the Runge-Kutta method accurate to order $h^2$ which is why this is called the <mark>second-order</mark> Runge Kutta method (RK2).</li>
-<li>With the RK2 can use a fewer number of steps whilst getting the same accuracy as Euler's method.</li>
-<li>There are higher order Runge-Kutta methods which increase the accuracy further.</li>
-</ul>
-<h3 id="Use-the-%time-magic-to-measure-the-length-of-time-a-Jupyter-Notebook-cell-takes-to-run">Use the %time magic to measure the length of time a Jupyter Notebook cell takes to run<a class="anchor-link" href="#Use-the-%time-magic-to-measure-the-length-of-time-a-Jupyter-Notebook-cell-takes-to-run"> </a></h3>
+<h3 id="Use-the-%time-magic-to-measure-the-length-of-time-a-Jupyter-Notebook-cell-takes-to-run">Use the %time magic to measure the length of time a Jupyter Notebook cell takes to run<a class="anchor-link" href="#Use-the-%time-magic-to-measure-the-length-of-time-a-Jupyter-Notebook-cell-takes-to-run"> </a></h3><p>It is often possible to use a range of numerical methods to achieve the same level of accuracy. In this case, we may want to consider code speed - which method will run the fastest? This is a particularly important question when writing code that is computationally intensive. To measure the length of time it takes for a Jupyter Notebook cell to run we can use the <code>%</code> time magic</p>
+
 </div>
 </div>
 </div>
@@ -464,21 +433,6 @@ x(t+h) = x(t)+hf(x,t)+\mathcal{O}(h^2)
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 100 ms, sys: 3.79 ms, total: 104 ms
-Wall time: 110 ms
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
@@ -490,9 +444,7 @@ Wall time: 110 ms
 <li>Computers have inherent limitations that lead to rounding errors</li>
 <li>Do not test for the equality of two floats</li>
 <li>Finite difference methods have two sources of error</li>
-<li>The relaxation method for PDEs is limited by the accuracy of the finite difference method.</li>
-<li>Euler's method is a first-order method accurate to order $h$.</li>
-<li>The second-order Runge-Kutta method is accurate to order $h^2$.</li>
+<li>Use the <code>%time</code> magic to measure the length of time a Jupyter Notebook cell takes to run </li>
 </ul>
 
 </div>
@@ -502,7 +454,7 @@ Wall time: 110 ms
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr />
 <p>Do <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Evaluating-Accuracy-Qs.html">the quick-test</a>.</p>
-<p>Back to <a href="https://nu-cem.github.io/CompPhys/2021/08/02/PDEs.html">Modelling with Partial Differential Equations</a>.</p>
+<p>Back to <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Derivatives.html">Calculating Derivatives</a>.</p>
 <hr />
 
 </div>
@@ -512,7 +464,7 @@ Wall time: 110 ms
 
 
 
-  </div><a class="u-url" href="/CompPhys/2021/08/02/Evaluating-Accuracy.html" hidden></a>
+  </div><a class="u-url" href="/CompPhys/2021/08/02/Computational-Efficiency.html" hidden></a>
 </article>
 
       </div>

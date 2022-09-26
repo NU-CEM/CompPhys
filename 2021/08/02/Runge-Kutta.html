@@ -143,6 +143,7 @@ window.onload = wrap_img;
 <p>Questions:</p>
 <ul>
 <li>How do I use the Runge-Kutta method for more accurate solutions?</li>
+<li>What do the terms first-order accurate and second-order accurate mean?</li>
 </ul>
 <p>Objectives:</p>
 <ul>
@@ -527,12 +528,26 @@ x(t+h) &amp;=&amp; x(t) + k_2
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-second-order-Runge-Kutta-method-is-accurate-to-order-$h^2$">The second-order Runge-Kutta method is accurate to order $h^2$<a class="anchor-link" href="#The-second-order-Runge-Kutta-method-is-accurate-to-order-$h^2$"> </a></h3><ul>
+<li>We have seen earlier in the course that Euler's method is a first-order method accurate to order $h$.</li>
+<li>The error term for one step of the Runge-Kutta method is ${O}(h^3)$ - this makes the Runge-Kutta method accurate to order $h^2$ which is why this is called the <mark>second-order</mark> Runge Kutta method (RK2).</li>
+<li>With the RK2 can use a fewer number of steps whilst getting the same accuracy as Euler's method.</li>
+<li>There are higher order Runge-Kutta methods which increase the accuracy further.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
 <p>Keypoints:</p>
 <ul>
 <li>The Runge-Kutta method is more accurate than Euler's method and runs just as fast</li>
 <li>Runge-Kutta methods are derived from Taylor expansion(s) around intermediate point(s)</li>
 <li>Runge-Kutta methods can be applied using the Python skills we have developed</li>
 <li>We can easily compare our various models using the <code>matplotlib</code> plotting library</li>
+<li>The second-order Runge-Kutta method is accurate to order $h^2$</li>
 </ul>
 
 </div>

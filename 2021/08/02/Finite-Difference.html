@@ -142,7 +142,6 @@ window.onload = wrap_img;
 <hr />
 <p>Questions:</p>
 <ul>
-<li>How do I use a finite difference method to calculate derivatives? </li>
 <li>How do I use the relaxation method to solve Laplace's equation?</li>
 </ul>
 <p>Objectives:</p>
@@ -167,7 +166,7 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The method of finite differences involves dividing the space into a grid of discrete points $[x,y]$ and calculating numerical derivatives or at each of these points.</p>
+<p>The method of finite differences, which has already been introduced earlier in the course, involves dividing the space into a grid of discrete points $[x,y]$ and calculating numerical derivatives or at each of these points.</p>
 <p><figure>
   
     <img class="docimage" src="/CompPhys/images/copied_from_nb/../images/electrostatics2.png" alt="" style="max-width: 200px" />
@@ -175,49 +174,8 @@ window.onload = wrap_img;
     
 </figure>
 </p>
-<p>In this case we consider a 2-dimensional sheet with a fixed voltage $V$ at the top side, and all other sides fixed at $0V$.  But how do we calculate these numerical derivatives?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="A-numerical-derivative-can-be-calculated-using-the-forward,-backward-or-central-difference">A numerical derivative can be calculated using the forward, backward or central difference<a class="anchor-link" href="#A-numerical-derivative-can-be-calculated-using-the-forward,-backward-or-central-difference"> </a></h3><p>The standard definition of a derivative is</p>
-\begin{equation}
-\frac{\mathrm{d} f}{\mathrm{d} x} = \lim_{h\to0}\frac{f(x+h)-f(x)}{h}.
-\end{equation}<p>To calculate the derivative numerically we make $h$ very small and calculate</p>
-\begin{equation}
-\frac{\mathrm{d} f}{\mathrm{d} x} \simeq \frac{f(x+h)-f(x)}{h}.
-\end{equation}<p>This is the <mark>forward difference</mark> because it is measured in the forward direction from $x$.</p>
-<p>The <mark>backward difference</mark> is measured in the backward direction from $x$:</p>
-\begin{equation}
-\frac{\mathrm{d} f}{\mathrm{d} x} \simeq \frac{f(x)-f(x-h)}{h},
-\end{equation}<p>and the <mark>central difference</mark> uses both the forwards and backwards directions around $x$:</p>
-\begin{equation}
-\frac{\mathrm{d} f}{\mathrm{d} x} \simeq \frac{f(x+\frac{h}{h2})-f(x-\frac{h}{2})}{h},
-\end{equation}<p><div class="flash flash-warn">
-    <svg class="octicon octicon-zap" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
-    <strong>Important: </strong>The central difference is in general more accurate than the forward or backward differences, but im all cases we need to carefully converge with respect to the step size $h$
-</div></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Second-order-derivatives,-partial-derivatives-and-the-Laplacian-can-be-calculated-using-the-same-approach">Second-order derivatives, partial derivatives and the Laplacian can be calculated using the same approach<a class="anchor-link" href="#Second-order-derivatives,-partial-derivatives-and-the-Laplacian-can-be-calculated-using-the-same-approach"> </a></h3><p>The second derivative is a derivative of a derivative, and so we can calculate it be applying the first derivative formulas twice. The resulting expression (after application of central differences) is:</p>
-\begin{equation}
-\frac{\mathrm{d} ^2f}{\mathrm{d} x^2} \simeq \frac{f(x+h)-2f(x)+f(x-h)}{h^2}.
-\end{equation}<p>The extension to partial derivatives is straight-forward:</p>
-\begin{equation}
-\frac{\partial f}{\partial x} \simeq \frac{f(x+\frac{h}{2},y)-f(x-\frac{h}{2},y)}{h},
-\end{equation}\begin{equation}
-\frac{\partial f}{\partial y} \simeq \frac{f(x,y+\frac{h}{2})-f(x,y-\frac{h}{2})}{h},
-\end{equation}\begin{equation}
-\frac{\partial ^2f}{\partial x^2} \simeq \frac{f(x+h,y)-2f(x,y)+f(x-h,y)}{h^2},
-\end{equation}\begin{equation}
-\frac{\partial ^2f}{\partial y^2} \simeq \frac{f(x,y+h)-2f(x,y)+f(x,y-h)}{h^2}.
-\end{equation}<p>By adding the two equations above, the Laplacian in two dimensions is:</p>
+<p>In this case we consider a 2-dimensional sheet with a fixed voltage $V$ at the top side, and all other sides fixed at $0V$.</p>
+<p>As a quick recap from what was learnt earlier in the course, we can express the Laplacian in two dimensions using finite differences:</p>
 \begin{equation}
 \frac{\partial ^2f}{\partial x^2} + \frac{\partial ^2f}{\partial y^2} \simeq \frac{f(x+h,y)+f(x-h,y)+f(x,y+h)+f(x,y-h)-4f(x,y)}{h^2},
 \end{equation}<p>The expression above is known as a <mark>five-point stencil</mark> as it uses five points to calculate the Laplacian.</p>
@@ -245,7 +203,7 @@ window.onload = wrap_img;
 First we re-arrange the equation above:</p>
 \begin{equation}
  \phi(x,y)=\frac{1}{4}\left(\phi(x+h,y)+\phi(x-h,y)+\phi(x,y+h)+\phi(x,y-h)\right).
-\end{equation}<p><mark> Note that because we set the Laplacian equal to zero in Equation 13 (for this particular example), the $h^2$ term has dropped out of the expression - this might not be the case for other examples. </mark></p>
+\end{equation}<p><mark> Note that because we set the Laplacian equal to zero in Equation 3 (for this particular example), the $h^2$ term has dropped out of the expression - this might not be the case for other examples. </mark></p>
 <p>This tells us that $\phi(x,y)$ is the average of the surrounding grid points, which can be represented visually as:</p>
 <p><figure>
   
@@ -255,15 +213,19 @@ First we re-arrange the equation above:</p>
 </figure>
 </p>
 <p>Second, we fix $\phi(x,y)$ at the boundaries using the boundary conditions. Third, we guess the initial values of the interior $\phi(x,y)$ points - our guesses do not need to be good, and can be zero.</p>
-<p>Finally we use Equation 14 to calculate new values of $\phi'(x,y)$ at all points in space. We take these new $\phi'(x,y)$ values and feed them into Equation 14 again to calculate new values. We repeat this iterative process until the $\phi(x,y)$ values converge, and that is our solution.</p>
+<p>Finally we use Equation 4 to calculate new values of $\phi'(x,y)$ at all points in space. We take these new $\phi'(x,y)$ values and feed them into Equation 4 again to calculate new values. We repeat this iterative process until the $\phi(x,y)$ values converge, and that is our solution.</p>
 <p>Convergence can be tested by specifying what the maximum difference should be between iterations. For example, that $\phi'(x,y)-\phi(x,y)&lt; 1e-5$ for all grid points.</p>
+<h3 id="The-relaxation-method-is-limited-by-the-accuracy-of-the-finite-difference-method">The relaxation method is limited by the accuracy of the finite difference method<a class="anchor-link" href="#The-relaxation-method-is-limited-by-the-accuracy-of-the-finite-difference-method"> </a></h3><ul>
+<li>For solving PDEs we use the finite difference method (as part of the relaxation method).</li>
+<li>Even if we use a very small target accuracy for convergence of the relaxation method, our accuracy will still be limited by the finite differences. Higher-order finite difference methods (such as the 5-point or 7-point methods) can be used here to improve the overrall accuracy of the calculation.</li>
+</ul>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-relaxation-and-finite-difference-methods-can-be-applied-using-the-Python-skills-we-have-developed">The relaxation and finite difference methods can be applied using the Python skills we have developed<a class="anchor-link" href="#The-relaxation-and-finite-difference-methods-can-be-applied-using-the-Python-skills-we-have-developed"> </a></h3><p>We will now use our Python Skillz to solve Laplace's equation with the boundary conditions outlined above. Let's also imagine that the sheet is 1m along each side and that we want a grid spacing of 1cm. First let's import the libraries we will use:</p>
+<h3 id="The-relaxation-methods-can-be-applied-using-the-Python-skills-we-have-developed">The relaxation methods can be applied using the Python skills we have developed<a class="anchor-link" href="#The-relaxation-methods-can-be-applied-using-the-Python-skills-we-have-developed"> </a></h3><p>We will now use our Python Skillz to solve Laplace's equation with the boundary conditions outlined above. Let's also imagine that the sheet is 1m along each side and that we want a grid spacing of 1cm. First let's import the libraries we will use:</p>
 
 </div>
 </div>
@@ -549,10 +511,9 @@ First we re-arrange the equation above:</p>
 <p>Keypoints:</p>
 <ul>
 <li>The finite difference method for numerical derivatives is often used to solve partial differential equations</li>
-<li>A numerical derivative can be calculated using the forward, backward or central difference</li>
-<li>Second-order derivatives, partial derivatives and the Laplacian can be calculated using the same approach</li>
 <li>The finite difference method turns our partial differential equation into a set of linear simulatenous equation</li>
 <li>To solve this set of equations we use the relaxation method</li>
+<li>The relaxation method is limited by the accuracy of the finite difference method</li>
 <li>The relaxation and finite difference methods can be applied using the Python skills we have developed</li>
 </ul>
 
