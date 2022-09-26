@@ -26,7 +26,7 @@ Please see the [Setup](https://nu-cem.github.io/CompPhys/2021/08/02/Setup) page 
 | Topic | Objective | Quick test |
 |-------|-----------|-----------|
 |[Finite difference methods](https://nu-cem.github.io/CompPhys/2021/08/02/Finite-Difference-Method)|How do I use a finite difference method to calculate derivatives?  | [:mag:](https://nu-cem.github.io/CompPhys/2021/08/02/Finite-Difference-Method-Qs.html) |
-|[Evaluating numerical errors, accuracy and speed](https://nu-cem.github.io/CompPhys/2021/08/02/Computational-Efficiency)| How accurate are finite difference methods? </n> How can I measure the speed of my Python code? | [:paperclip:](https://nu-cem.github.io/CompPhys/2021/08/02/Computational-Efficiency-Qs.html)|
+|[Evaluating numerical errors, accuracy and speed](https://nu-cem.github.io/CompPhys/2021/08/02/Computational-Efficiency)| How accurate are finite difference methods?<br/> How can I measure the speed of my Python code? | [:paperclip:](https://nu-cem.github.io/CompPhys/2021/08/02/Computational-Efficiency-Qs.html)|
 
 ### Resources
 
