@@ -10,10 +10,9 @@ The website is powered by [Github](https://github.com/NU-CEM/CompPhys/) and [fas
 
 The content of this website is adapted and derived from several other sources:
 
-- The Setup instructins page and the tutorials in the "Getting started" section are a derivative of materials from [Software Carpentry](https://software-carpentry.org/), used under [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+- The Setup instructions page is a derivative of materials from [Software Carpentry](https://software-carpentry.org/), used under [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 - The tutorial "Testing and Documentation" is a derivative of the [Testing lesson from Code Refinery](https://coderefinery.github.io/testing/motivation/"), used under [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). 
 - Where indicated, some of the exercises are adapted from the book [Computational Physics](http://www-personal.umich.edu/~mejn/cp/). These are used with the permission of the book's author, Mark Newman, and remain under his copyright. 
-- The landing page animation is taken from the [pycharge](https://pycharge.readthedocs.io/en/latest/) documentation site and is used with the permission of the pycharge author Matthew Filipovich.
 
 In addition, parts of the "Getting results" section were inspired by [Rudolf Winter's notes on ODEs and PDEs](https://users.aber.ac.uk/ruw/teach/260/).
 
