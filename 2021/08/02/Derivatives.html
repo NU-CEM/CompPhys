@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Calculating derivatives numerically" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="In this lesson we will learn how to calculate derivatives using the method of finite differences." />
-<meta property="og:description" content="In this lesson we will learn how to calculate derivatives using the method of finite differences." />
+<meta name="description" content="The origin of the notion of derivatives is in the vague feeling of the mobility of things, and of the greater or less speed with which phenomena take place. - Émile Picard" />
+<meta property="og:description" content="The origin of the notion of derivatives is in the vague feeling of the mobility of things, and of the greater or less speed with which phenomena take place. - Émile Picard" />
 <link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/Derivatives.html" />
 <meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/Derivatives.html" />
 <meta property="og:site_name" content="An Introduction to Computational Physics" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Calculating derivatives numerically" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","description":"In this lesson we will learn how to calculate derivatives using the method of finite differences.","headline":"Calculating derivatives numerically","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Derivatives.html"},"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Derivatives.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","description":"The origin of the notion of derivatives is in the vague feeling of the mobility of things, and of the greater or less speed with which phenomena take place. - Émile Picard","headline":"Calculating derivatives numerically","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Derivatives.html"},"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Derivatives.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -98,7 +98,14 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>In this lesson we will learn how to calculate derivatives using the method of finite differences.</p>
+    <blockquote>
+  <p>The origin of the notion of derivatives is in the vague feeling of the mobility of things, and of the greater or less speed with which phenomena take place. - Émile Picard</p>
+</blockquote>
+
+<p>In physics we are often looking at how things change over time or space so, like integrals, the evaluation of derivatives is one of the most important applications of computers in physics - especially when solving partial differential equations (a topic we will cover later in the course). However, unlike integrals, the derivatives of <strong>known</strong> functions can always be calculated analytically, so
+there’s generally less need to calculate them numerically.</p>
+
+<p>In this lesson we will learn how to calculate derivatives using finite difference methods, and take a brief look at the related operation of interpolation. There are some significant practical problems with numerical derivatives; at the end of this lesson we will also consider the accuracy and computational efficiency that can be achieved when using these various methods.</p>
 
 <h3 id="before-you-begin">Before you begin</h3>
 
@@ -121,19 +128,19 @@ window.onload = wrap_img;
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Cleaning-Data">Reading Data with Pandas</a></td>
-      <td>How can I import and clean my data?</td>
-      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Cleaning-Data-Qs.html"><img class="emoji" title=":mag:" alt=":mag:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f50d.png" height="20" width="20"></a></td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Finite-Difference-Method">Finite difference methods</a></td>
+      <td>How do I use a finite difference method to calculate derivatives?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Finite-Difference-Method-Qs.html"><img class="emoji" title=":mag:" alt=":mag:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f50d.png" height="20" width="20"></a></td>
     </tr>
     <tr>
-      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Analysing-Data">Analysing Data with NumPy</a></td>
-      <td>How can I analyse my data?</td>
-      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Analysing-Data-Qs.html"><img class="emoji" title=":flashlight:" alt=":flashlight:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f526.png" height="20" width="20"></a></td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Evaluating-Accuracy-FD">Evaluating the accuract of finite difference methods</a></td>
+      <td>How accurate are finite difference methods?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Evaluating-Accuracy-FD-Qs.html"><img class="emoji" title=":flashlight:" alt=":flashlight:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f526.png" height="20" width="20"></a></td>
     </tr>
     <tr>
-      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Visualising-Data">Visualising Data with Matplotlib</a></td>
-      <td>How can I plot my data?</td>
-      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Visualising-Data-Qs.html"><img class="emoji" title=":paperclip:" alt=":paperclip:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ce.png" height="20" width="20"></a></td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Computational-Efficiency">Comparing computational efficiency</a></td>
+      <td>How can I compare the computational efficiency of numerical methods?</td>
+      <td><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Computational-Efficiency-Qs.html"><img class="emoji" title=":paperclip:" alt=":paperclip:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ce.png" height="20" width="20"></a></td>
     </tr>
   </tbody>
 </table>
