@@ -8,8 +8,3 @@
 ### Northumbria University - KD5081 
 
 The corresponding module webpage can be found at: https://NU-CEM.github.io/CompPhys/.
-
-
-#### Student checklist
-
-This repository includes a includes student checklist built from a Github issue template. Using Github actions and the PyGithub API, a plot is automatically built which tracks class progress through the checklist. For more information, and instructions for adapting this to other Github based courses, please see the notebook [here](https://github.com/NU-CEM/CompPhys/blob/master/_notebooks/2021-08-02-Python-progress.ipynb).
