@@ -18,5 +18,6 @@ Please see the [Setup](https://nu-cem.github.io/CompPhys/2021/08/02/Setup) page 
 
 ### Resources
 
+- [Some context: flip your steak!](https://www.seriouseats.com/the-food-lab-flip-your-steaks-and-burgers-multiple-times-for-better-results)
 - [Article summary](https://physics.aps.org/articles/v15/123)
 - [Practice coursework pdf]()
