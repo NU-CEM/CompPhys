@@ -97,9 +97,7 @@ window.onload = wrap_img;
 
 <p>There are multiple ways you can document your code. Below are three examples:</p>
 
-<ol>
-  <li>Docstrings</li>
-</ol>
+<h4 id="docstrings">Docstrings</h4>
 
 <p>Docstrings are the first statement in a module, function, class or method so programmers can understand what it does without having to read the details of the implementation.</p>
 
@@ -112,53 +110,45 @@ window.onload = wrap_img;
 
 <p>Docstrings are preferred over in-line comments (see below) as the docstrings can be easily accessed using the Python <code class="language-plaintext highlighter-rouge">help()</code> function. It is also possible to generate online documentation automatically from docstrings.</p>
 
-<ol>
-  <li>In-line comments</li>
-</ol>
+<h4 id="in-line-comments">In-line comments</h4>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># bulk density is the powder mass / powder volume
 density = mass / volume 
 </code></pre></div></div>
 
-<ol>
-  <li>Markdown in a Jupyter Notebook</li>
-</ol>
+<h4 id="markdown-in-a-jupyter-notebook">Markdown in a Jupyter Notebook</h4>
 
 <p>For more extensive discussion you can combine code and text in a single document. 
 See <a href="https://lucydot.github.io/python_novice/01-run-quit/index.html">this tutorial</a> for more information about using Markdown in a Jupyter Notebook.</p>
 
 <h3 id="focus-on-readability">Focus on readability</h3>
 
-<ol>
-  <li>Consistency is key. Code formatting (for example, brackets) and use of whitespace should be consistent.</li>
-  <li>Use consistent whitespace:</li>
-</ol>
+<p>Your code should be easily readable by others. This is a big topic! The <a href="https://www.python.org/dev/peps/pep-0008/">Pep 8 Style Guide for Python code</a> has further guidance, although it is a daunting document. The most important thing is that you are consistent within your own code.</p>
+
+<h4 id="consistency-is-key">Consistency is key</h4>
+
+<p>Code formatting (for example, brackets) and use of whitespace should be consistent. For example, do not mix-and-match whitespace as in the code below:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spam(ham[1], {eggs: 2})   
 spam( ham[ 1 ], { eggs: 2} )
 </code></pre></div></div>
 
-<ol>
-  <li>Use clear, meaningful variable names (don’t just use <code class="language-plaintext highlighter-rouge">x</code>, <code class="language-plaintext highlighter-rouge">p</code> and expect the reader to know what they mean!)</li>
-</ol>
+<h4 id="variable-and-function-names">Variable and function names</h4>
 
-<p>The <a href="https://www.python.org/dev/peps/pep-0008/">Pep 8 Style Guide for Python code</a> has further guidance.</p>
+<p>Use clear, meaningful variable and function names (don’t just use <code class="language-plaintext highlighter-rouge">x</code>, <code class="language-plaintext highlighter-rouge">p</code> and expect the reader to know what they mean!)</p>
 
 <h3 id="avoid-duplication">Avoid duplication</h3>
 
-<p>Duplication of code should be avoided where possible.</p>
+<p>Duplication of code should be avoided where possible. There are several ways this can be achieved.</p>
 
-<ol>
-  <li>
-    <p>If you will re-use a block of code multiple times consider encapsulating it in a function. See <a href="https://lucydot.github.io/python_novice/08-writing-functions/index.html">this tutorial</a> for information about writing functions.</p>
-  </li>
-  <li>
-    <p>Use appropriate functions and data-types, including those from external libraries. For example, if you need to perform mathematical operations on an array of values, <a href="https://lucydot.github.io/python_novice/12-numpy-intro/index.html">use Numpy arrays</a> instead of Python lists.</p>
-  </li>
-  <li>
-    <p>Use control structures appropriately. Only use <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">while</code> or <code class="language-plaintext highlighter-rouge">for</code> loops when necessary.</p>
-  </li>
-</ol>
+<h4 id="use-functions">Use functions</h4>
+<p>If you will re-use a block of code multiple times consider encapsulating it in a function. See <a href="https://lucydot.github.io/python_novice/08-writing-functions/index.html">this tutorial</a> for information about writing functions.</p>
+
+<h4 id="use-external-libraries">Use external libraries</h4>
+<p>Use appropriate functions and data-types, including those from external libraries. For example, if you need to perform mathematical operations on an array of values, <a href="https://lucydot.github.io/python_novice/12-numpy-intro/index.html">use Numpy arrays</a> instead of Python lists.</p>
+
+<h4 id="use-control-structures-when-appropriate">Use control structures when appropriate</h4>
+<p>Use control structures appropriately. Only use <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">while</code> or <code class="language-plaintext highlighter-rouge">for</code> loops when necessary.</p>
 
 <h3 id="think-about-reproducibility">Think about reproducibility</h3>
 
