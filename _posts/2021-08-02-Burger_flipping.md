@@ -1,7 +1,7 @@
 ---
 toc: false
 layout: post
-title: Practice question: the physics of burger flipping
+title: Practice question - the physics of burger flipping
 categories: [data, python]
 sticky_rank: 4
 hide: true
