@@ -4,22 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Page 2 of 6 for An Introduction to Computational Physics | Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.</title>
+<title>Calculating integrals using Monte Carlo methods | An Introduction to Computational Physics</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="An Introduction to Computational Physics" />
+<meta property="og:title" content="Calculating integrals using Monte Carlo methods" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
 <meta property="og:description" content="Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK." />
-<link rel="canonical" href="https://nu-cem.github.io/CompPhys/page2/" />
-<meta property="og:url" content="https://nu-cem.github.io/CompPhys/page2/" />
+<link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/Monte-Carlo.html" />
+<meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/Monte-Carlo.html" />
 <meta property="og:site_name" content="An Introduction to Computational Physics" />
-<meta property="og:type" content="website" />
-<link rel="prev" href="https://nu-cem.github.io/CompPhys/" />
-<link rel="next" href="https://nu-cem.github.io/CompPhys/page3/" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="An Introduction to Computational Physics" />
+<meta property="twitter:title" content="Calculating integrals using Monte Carlo methods" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","headline":"An Introduction to Computational Physics","url":"https://nu-cem.github.io/CompPhys/page2/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","description":"Resources for the second year course “Theory, computation and experiment” (KD5081) at Northumbria University, UK.","headline":"Calculating integrals using Monte Carlo methods","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Monte-Carlo.html"},"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Monte-Carlo.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -71,59 +70,116 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home"><h3 id="part-zero-welcome">Part zero: Welcome</h3>
+        <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+       processEscapes: true
+     }
+   });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Calculating integrals using Monte Carlo methods</h1><p class="post-meta post-meta-title">
+    </p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/NU-CEM/CompPhys/tree/master/_notebooks/2021-08-02-Monte-Carlo.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/CompPhys/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/NU-CEM/CompPhys/master?filepath=_notebooks%2F2021-08-02-Monte-Carlo.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/CompPhys/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/NU-CEM/CompPhys/blob/master/_notebooks/2021-08-02-Monte-Carlo.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/CompPhys/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+       processEscapes: true
+     }
+   });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+
+<!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-08-02-Monte-Carlo.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+<p>Questions:</p>
 <ul>
-  <li><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Introduction.html">Introduction</a></li>
-  <li><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Setup.html">Setup</a></li>
+<li>How do I generate random numbers?</li>
+<li>How do I integrate using Monte Carlo methods?</li>
 </ul>
-
-<h3 id="part-one-getting-started">Part one: Getting started</h3>
-
+<p>Objectives:</p>
 <ul>
-  <li><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Choochoo.html">Python basics recap</a></li>
-  <li><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Good_practice.html">Code quality</a></li>
-  <li><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Recap_questions.html">Extended questions</a></li>
+<li>Use the <code>random</code> module to generate random numbers</li>
+<li>Use Monte Carlo methods to calculate the area of a circle</li>
 </ul>
+<hr />
 
-<h3 id="part-two-getting-results">Part two: Getting results</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+<p>Keypoints:</p>
 
-<ul>
-  <li><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Random.html">Calculating integrals</a></li>
-  <li><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Derivatives.html">Calculating derivatives</a></li>
-  <li><a href="https://nu-cem.github.io/CompPhys/2021/08/02/ODEs.html">Ordinary differential equations</a></li>
-  <li><a href="https://nu-cem.github.io/CompPhys/2021/08/02/PDEs.html">Partial differential equations</a></li>
-  <li><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Burger_flipping.html">Practice question: the physics of burger flipping</a></li>
-</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+<p>Do <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Monte-Carlo-Qs.html">the quick-test</a>.</p>
+<p>Back to <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Integrals.html">Calculating Integrals</a>.</p>
+<hr />
 
-<h3 id="part-three-getting-it-out-there">Part three: Getting it out there</h3>
-
-<ul>
-  <li><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Scripting.html">Python scripts and the Unix terminal</a></li>
-  <li><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Version_control.html">Version control and Github</a></li>
-  <li><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Sharing_code.html">Testing and documentation</a></li>
-  <li><a href="https://nu-cem.github.io/CompPhys/2021/08/02/Open_science.html">Open science and build-your-own website</a></li>
-</ul>
+</div>
+</div>
+</div>
+</div>
 
 
 
-  
+  </div><a class="u-url" href="/CompPhys/2021/08/02/Monte-Carlo.html" hidden></a>
+</article>
 
-  <!-- Hide posts if front matter flag hide:true -->
-  
-  
-
-  <!-- Sort posts by rank, then date -->
-  
-  
-  
-
- 
-  
-
-   <!-- Assemble final sorted posts array -->
-  
-  </div>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/CompPhys/"></data>
