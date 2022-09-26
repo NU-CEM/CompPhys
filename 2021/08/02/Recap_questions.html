@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Recap questions | An Introduction to Computational Physics</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Recap questions" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Altitude of a satellite" />
+<meta property="og:description" content="Altitude of a satellite" />
+<link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/Recap_questions.html" />
+<meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/Recap_questions.html" />
+<meta property="og:site_name" content="An Introduction to Computational Physics" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Recap questions" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","description":"Altitude of a satellite","headline":"Recap questions","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Recap_questions.html"},"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Recap_questions.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/CompPhys/">An Introduction to Computational Physics</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/CompPhys/about/">About</a><a class="page-link" href="/CompPhys/links/">Links</a><a class="page-link" href="/CompPhys/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+       processEscapes: true
+     }
+   });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Recap questions</h1><p class="post-meta post-meta-title">
+    </p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="altitude-of-a-satellite">Altitude of a satellite</h1>
+
+<p><em>Adapted from Mark Newman’s book “Computational Physics, p. 30</em></p>
+
+<p>A satellite is launched into a circular orbit around the earth so that it orbits the planet once every $T$ seconds. The altitude $h$ above the Earth’s surface that the satellite must have is:</p>
+
+<p>$h = \left(\frac{GMT^2}{4\pi^2}\right)^{\frac{1}{3}} - R$</p>
+
+<p>where $G$ is Newton’s gravitational constant, $M$ is the mass of the Earth, and $R$ is the radius.</p>
+
+<p>a) Write a piece of code which calculates the altitude $h$ (in metres) for a given value of $T$ (in seconds).</p>
+
+<p>b) Use this code to calculate the altitude of satellites that orbit the Earth once a day (a “geosynchronous” orbit) and once every 45 minutes. What can you conclude from this final calculation?</p>
+
+<h1 id="a-function-to-calculate-standard-errors">A function to calculate standard errors</h1>
+
+<p>In experimental work it is common for a quantity of interest to be calculated from a combination of direct measurements. It is important to remember that all experimentally measured quantities present an uncertainty that will affect the final result.</p>
+
+<p>The uncertainty is determined by the measurement instrument and settings. For example, if we measure a length with a caliper (resolution 0.1mm) we will get a more accurate value than if we use a ruler (resolution 1mm). But remember that whichever instrument we use we will introduce some amount of uncertainty.</p>
+
+<p>The table below outlines how the standard error can be obtained from the uncertainty associated with individual measurements.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Calculation</th>
+      <th>Standard error</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Z = A+B</td>
+      <td>$(\Delta Z)^2 = (\Delta A)^2 + (\Delta B)^2$</td>
+    </tr>
+    <tr>
+      <td>Z = A-B</td>
+      <td>$(\Delta Z)^2 = (\Delta A)^2 + (\Delta B)^2$</td>
+    </tr>
+    <tr>
+      <td>Z = AB</td>
+      <td>$\left(\frac{\Delta Z}{Z}\right)^2 = \left(\frac{\Delta A}{A}\right)^2 + \left(\frac{\Delta B}{B}\right)^2$</td>
+    </tr>
+    <tr>
+      <td>Z = \frac{A}{B}</td>
+      <td>$\left(\frac{\Delta Z}{Z}\right)^2 = \left(\frac{\Delta A}{A}\right)^2 + \left(\frac{\Delta B}{B}\right)^2$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>a) Write a function which calculates the area of a circle and the standard error associated with this area. The function argument will specify the radii of the circle and the uncertainty associated with the measurement.</p>
+
+<p>b) Using conditionals, write a function which calculates the standard error for any of the operations listed in the table. The function arguments will specify $A$, $B$, $\Delta A$, $\Delta B$ and the operation type.</p>
+
+<h1 id="the-emission-lines-of-hydrogen">The emission lines of hydrogen</h1>
+
+<p><em>Taken from Mark Newman’s book “Computational Physics, p. 73</em></p>
+
+<p>There is a simple and famous formula for calculating the wavelengths $\lambda$ of the emission lines of the hydrogen atom.</p>
+
+<p>$\frac{1}{\lambda} = R\left(\frac{1}{m^2} - \frac{1}{n^2}\right)$</p>
+
+<p>where R is the Rydberg constant $R = 1.097\times 10^{-2}\mathrm{nm}^{-1}$ and $m$ and $n$ are positive integers and $n&gt;m$.</p>
+
+<p>a) Write a piece of code to calculate the Lyman series ($m=1$), Balmer series ($m=2$) and Paschen series ($m=3$).</p>
+
+<h1 id="calculating-plancks-constant">Calculating Planck’s constant</h1>
+
+<p><em>Adapted from Mark Newman’s book “Computational Physics, p. 124</em></p>
+
+<p>When light is shone on the surface of a metal, the photons in the light can excite (transfer energy to) electrons in the metal and, sometimes, eject them from the surface into the free space above. The energy of the ejected electron can be calculated by measuring the minimum voltage $V$ that stops the electron moving.</p>
+
+<p>We know that the energy of an ejected electron is equal to the energy of the photon that excited it minus the workfunction $\phi$ (which is the energy needed to remove it from the surface) and that the energy of a single photon is $hf$ where $h$ is Planck’s constant and $f$ is the frequency of light. Mathematically this can be expressed as:</p>
+
+<p>$eV = hf - \phi$,</p>
+
+<p>where $e$ is the charge of the electron.</p>
+
+<p>a) Read in the photoelectric measurement data from the file <a href="https://nu-cem.github.io/CompPhys/data/Planck.txt">Planck.txt</a>. The first column contains frequencies $f$ is hertz and the second column contains voltages $V$. Use this data to plot $V$ vs $f$. Think about the plot type - does a scatter plot of line plot make most sense?</p>
+
+<p>The least-squares method is very commonly used for fitting a polynomial to a set of data. As it is so prevalent in physics and engineering, you are encouraged to watch <a href="https://www.youtube.com/watch?v=YwZYSTQs-Hk">this video</a> which give an intuitive and mathematical description of the method.</p>
+
+<p>b) Fit a straight line (polynomial of degree one) to the data using the least-squares method implemented in <a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.lstsq.html"><code class="language-plaintext highlighter-rouge">numpy.polyfit</code></a>. Overlay this line on your data points.</p>
+
+<p>c) Using the gradient of the fitted line calculate a value for Planck’s constant. Compare this to values you can find online.</p>
+
+<h1 id="the-madelung-constant">The Madelung constant</h1>
+
+<p><em>Taken from Mark Newman’s book “Computational Physics, p. 74</em></p>
+
+<p>The Madelung constant gives the total electric potential felt by an atom in a solid. It depends on the charge and position of other nearby atoms.</p>
+
+<p>Consider the compound sodium chloride. These are arranged on a cubic lattice, with sodium having a positive charge ($+e$) and chlorine having a negative charge ($-e$). If each atom position is given by integers $(i,j,k)$ then the sodium atoms are at positions where $i+j+k$ is even and the chlorine atoms are at positions where $i+j+k$ is odd.</p>
+
+<p><img src="https://nu-cem.github.io/CompPhys/images/NaCl.png" alt="" /></p>
+
+<p>For an atom at $i=j=k=0$, the Madelung constant $M$ can be approximated by using the following formulae:</p>
+
+<p>$V_\mathrm{total} = \sum_{i,j,k} V(i,j,k) = \frac{e}{4\pi\epsilon_0a}M$</p>
+
+<p>$V(i,j,k) = \pm\frac{e}{4\pi\epsilon_0r}$</p>
+
+<p>where $r$ is the distance from the origin to the atom at position $(i,j,k)$ and $a$ is the atom spacing. The summation runs from $i,j,k=-L$ to $i,j,k=L$ but not including $i,j,k=0$ (otherwise the expression would “blow up”).</p>
+
+<p>a) Write an expression (in Markdown/LaTeX) for the distance $r$ in terms of $i$, $j$, $k$ and $a$.</p>
+
+<p>b) Calculate the Madelung constant for sodium chloride using a large a value as L as you can (so the code runs in about a minute or less). How does it compare with published values?</p>
+
+  </div><a class="u-url" href="/CompPhys/2021/08/02/Recap_questions.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/CompPhys/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/CompPhys/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/CompPhys/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Resources for the second year course &quot;Theory, computation and experiment&quot; (KD5081) at Northumbria University, UK.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
