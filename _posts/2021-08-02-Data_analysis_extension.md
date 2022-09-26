@@ -11,9 +11,9 @@ hide: true
 
 When we drop a pebble in a pond waves travel out from the spot where it fell. The height of the waves at some time later could be represented by a sine wave, spreading out in a uniform circle. If the the pebble is dropped at $x_1,y_1$ (the centre of the circle) then the distance $r_1$ between a point $x,y$ and the pebble is:
 
-$$
+$
 r_1 = \sqrt((x-x_1)^2+(y-y_1)^2)
-$$
+$
 
 and the sine wave for the height $h$ is
 
