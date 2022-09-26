@@ -10,7 +10,7 @@ hide: true
 
 There are multiple ways you can document your code. Below are three examples:
 
-1. Docstrings
+#### Docstrings
 
 Docstrings are the first statement in a module, function, class or method so programmers can understand what it does without having to read the details of the implementation.
 
@@ -25,41 +25,47 @@ Docstrings are string literals so must be contained within single quote marks (f
 
 Docstrings are preferred over in-line comments (see below) as the docstrings can be easily accessed using the Python `help()` function. It is also possible to generate online documentation automatically from docstrings.
 
-2. In-line comments
+#### In-line comments
 
 ```
 # bulk density is the powder mass / powder volume
 density = mass / volume 
 ```
 
-3. Markdown in a Jupyter Notebook
+#### Markdown in a Jupyter Notebook
 
 For more extensive discussion you can combine code and text in a single document. 
 See [this tutorial](https://lucydot.github.io/python_novice/01-run-quit/index.html) for more information about using Markdown in a Jupyter Notebook.
 
 ### Focus on readability
 
-1. Consistency is key. Code formatting (for example, brackets) and use of whitespace should be consistent.
-2. Use consistent whitespace:  
+Your code should be easily readable by others. This is a big topic! The [Pep 8 Style Guide for Python code](https://www.python.org/dev/peps/pep-0008/) has further guidance, although it is a daunting document. The most important thing is that you are consistent within your own code.
+
+#### Consistency is key
+
+Code formatting (for example, brackets) and use of whitespace should be consistent. For example, do not mix-and-match whitespace as in the code below:
 
 ```
 spam(ham[1], {eggs: 2})   
 spam( ham[ 1 ], { eggs: 2} )
 ```
 
-3. Use clear, meaningful variable names (don't just use `x`, `p` and expect the reader to know what they mean!)
+#### Variable and function names
 
-The [Pep 8 Style Guide for Python code](https://www.python.org/dev/peps/pep-0008/) has further guidance.
+Use clear, meaningful variable and function names (don't just use `x`, `p` and expect the reader to know what they mean!)
 
-### Avoid duplication
+### Avoid duplication 
 
-Duplication of code should be avoided where possible. 
+Duplication of code should be avoided where possible. There are several ways this can be achieved.
 
-1. If you will re-use a block of code multiple times consider encapsulating it in a function. See [this tutorial](https://lucydot.github.io/python_novice/08-writing-functions/index.html) for information about writing functions.
+#### Use functions
+If you will re-use a block of code multiple times consider encapsulating it in a function. See [this tutorial](https://lucydot.github.io/python_novice/08-writing-functions/index.html) for information about writing functions.
 
-2. Use appropriate functions and data-types, including those from external libraries. For example, if you need to perform mathematical operations on an array of values, [use Numpy arrays](https://lucydot.github.io/python_novice/12-numpy-intro/index.html) instead of Python lists.
+#### Use external libraries
+Use appropriate functions and data-types, including those from external libraries. For example, if you need to perform mathematical operations on an array of values, [use Numpy arrays](https://lucydot.github.io/python_novice/12-numpy-intro/index.html) instead of Python lists.
 
-3. Use control structures appropriately. Only use `if`, `while` or `for` loops when necessary.
+#### Use control structures when appropriate
+Use control structures appropriately. Only use `if`, `while` or `for` loops when necessary.
 
 ### Think about reproducibility
 
