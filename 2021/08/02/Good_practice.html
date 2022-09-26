@@ -93,19 +93,24 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><strong>Document your code</strong></p>
+    <h3 id="document-your-code">Document your code</h3>
 
-<p>There are multiple ways you can document your code. In this course we will use three different methods:</p>
+<p>There are multiple ways you can document your code. Below are three examples:</p>
 
 <ol>
   <li>Docstrings</li>
 </ol>
 
+<p>Docstrings are the first statement in a module, function, class or method so programmers can understand what it does without having to read the details of the implementation.</p>
+
+<p>Docstrings are string literals so must be contained within single quote marks (for single line docstrings) or triple quotes (for multiline docstrings). See the example below for a function-level docstring.</p>
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> def calc_bulk_density(mass,volume):
      "Return dry bulk density = powder mass / powder volume."
      return mass / volume
 </code></pre></div></div>
-<p>Docstrings are the first statement in a module, function, class or method.</p>
+
+<p>Docstrings are preferred over in-line comments (see below) as the docstrings can be easily accessed using the Python <code class="language-plaintext highlighter-rouge">help()</code> function. It is also possible to generate online documentation automatically from docstrings.</p>
 
 <ol>
   <li>In-line comments</li>
@@ -119,10 +124,13 @@ density = mass / volume
   <li>Markdown in a Jupyter Notebook</li>
 </ol>
 
-<p><strong>Focus on readability</strong></p>
+<p>For more extensive discussion you can combine code and text in a single document. 
+See <a href="https://lucydot.github.io/python_novice/01-run-quit/index.html">this tutorial</a> for more information about using Markdown in a Jupyter Notebook.</p>
+
+<h3 id="focus-on-readability">Focus on readability</h3>
 
 <ol>
-  <li>Consistency is key</li>
+  <li>Consistency is key. Code formatting (for example, brackets) and use of whitespace should be consistent.</li>
   <li>Use consistent whitespace:</li>
 </ol>
 
@@ -136,9 +144,25 @@ spam( ham[ 1 ], { eggs: 2} )
 
 <p>The <a href="https://www.python.org/dev/peps/pep-0008/">Pep 8 Style Guide for Python code</a> has further guidance.</p>
 
-<p><strong>Think about reproducibility</strong></p>
+<h3 id="avoid-duplication">Avoid duplication</h3>
 
-<p><a href="https://www.nature.com/articles/d41586-020-02462-7">Writing reproducible code is difficult</a>. In fact, there are many interesting initiatives designed to improve reproducibility in the computational scientists, such as <a href="https://reprohacks.eu.pythonanywhere.com/about">Reprohacks</a>.</p>
+<p>Duplication of code should be avoided where possible.</p>
+
+<ol>
+  <li>
+    <p>If you will re-use a block of code multiple times consider encapsulating it in a function. See <a href="https://lucydot.github.io/python_novice/08-writing-functions/index.html">this tutorial</a> for information about writing functions.</p>
+  </li>
+  <li>
+    <p>Use appropriate functions and data-types, including those from external libraries. For example, if you need to perform mathematical operations on an array of values, <a href="https://lucydot.github.io/python_novice/12-numpy-intro/index.html">use Numpy arrays</a> instead of Python lists.</p>
+  </li>
+  <li>
+    <p>Use control structures appropriately. Only use <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">while</code> or <code class="language-plaintext highlighter-rouge">for</code> loops when necessary.</p>
+  </li>
+</ol>
+
+<h3 id="think-about-reproducibility">Think about reproducibility</h3>
+
+<p><a href="https://www.nature.com/articles/d41586-020-02462-7">Writing reproducible code is difficult</a>. In fact, there are many interesting initiatives designed to improve reproducibility in the computational scientists, such as <a href="https://www.reprohack.org/">Reprohacks</a>.</p>
 
 <p>One straight-forward thing you can do is print the version number for each package you import using <code class="language-plaintext highlighter-rouge">print(packagename.__version__)</code></p>
 
