@@ -777,17 +777,6 @@
   
 
   
-      ,"page4": {
-          "title": "Choochoo student thread",
-          "content": "Hello Student :wave: . Welcome to Choochoo the checklist tool! :train: . Your personal checklist is generated below. You can also interact with me, choochoo-bot, using commands in this thread. To list all possible choochoo commands type choochoo list commands in comment box below. .",
-          "url": "https://nu-cem.github.io/CompPhys/instructor/objectives_header.html",
-          "relUrl": "/instructor/objectives_header.html",
-          "date": ""
-      }
-      
-  
-
-  
   
 
   
@@ -815,7 +804,7 @@
   
 
   
-      ,"page16": {
+      ,"page15": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://nu-cem.github.io/CompPhys/robots.txt",
