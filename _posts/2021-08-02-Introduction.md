@@ -11,10 +11,10 @@ and with the advent of Machine Learning and High-Performance Computing this domi
 
 Computational physics encompasses a wide number of areas including materials modelling, particle physics simulations, protein structure prediction and plasma modelling. In fact, it is possible to find a computational branch for every major field in physics.
 
-**The focus of this course is to equip with you with the transferable skills needed for success in a range of computational disciplines, with examples tailored towards the physics domain.**
+**The focus of this course is to equip with you with knowledge and skills needed to model a range of physical systems using numerical methods. You will also gain a number of transferable skills which can be applied across in a range of computational disciplines.**
 
 This course is split into three sections - *Getting started*, *Getting results* and *Getting it out there*.
-In the first part of the course, *Getting started*, we will recap the basic programming concepts and Python libraries that are applicable to a wide range of research and industry - from game design to architecture. In the middle section of the course, which is called *Getting results*, we will combine these tools with numerical methods to model the differential equations that are so central to both classical and quantum physics. In the final section of the course, *Getting it out there*, we will use modern software engineering techniques to document, test and share our code.
+In the first part of the course, *Getting started*, we will recap the basic programming concepts and Python libraries that are applicable to a wide range of research and industry. In the middle section of the course, which is called *Getting results*, we will combine our Python knowledge with mathematical numerical methods to model various physical systems using differential equations. In the final section of the course, *Getting it out there*, we will use modern software engineering techniques to document, test and share our code.
 
 ### How does this course relate to experimental physics?
 
@@ -22,7 +22,7 @@ The first part of this course recaps the basic skills needed for processing expe
 
 ### Do I need to attend the in-person labs?
 
-I will aim to publish all course materials on this website **however** a large component of this course is based on the verbal explanations whilst writing code (a.k.a, "live coding") and class discussion. It will all make *much more sense* if you attend the sessions in the computer lab.
+We will aim to publish all course materials on this website **however** a large component of this course is based on the verbal explanations whilst writing code (a.k.a, "live coding") and class discussion. It will all make *much more sense* if you attend the sessions in the computer lab. The computer labs will not be recorded.
 
 ### Why do you use a Github website?
 
