@@ -7,7 +7,7 @@ hide: true
 
 ## Boundary conditions
 
-In [the tutorial](https://nu-cem.github.io/CompPhys/2021/08/02/Finite-Difference) we implement the finite difference method with fixed boundary conditions - this is an example of [Dirichlet-type boundary conditions](https://math.libretexts.org/Bookshelves/Differential_Equations/Book%3A_Partial_Differential_Equations_(Walet)/03%3A_Boundary_and_Initial_Conditions/3.02%3A_Explicit_Boundary_Conditions). 
+In [the tutorial](https://nu-cem.github.io/CompPhys/2021/08/02/Finite-Difference) we implement a finite difference method to solve Laplace's equation. We use fixed boundary conditions, which are an example of [Dirichlet-type boundary conditions](https://math.libretexts.org/Bookshelves/Differential_Equations/Book%3A_Partial_Differential_Equations_(Walet)/03%3A_Boundary_and_Initial_Conditions/3.02%3A_Explicit_Boundary_Conditions). 
 
 ~~~python
 def finite_difference(phi):
@@ -32,7 +32,7 @@ f[N+1,y] = f[0,y],
 f[x,N+1] = f[x,0],
 \end{equation}
 
-Write a function which calculates the finite difference with periodic boundary conditions
+Write a function which calculates `phi_prime` using a finite difference method with periodic boundary conditions.
 
 {::options parse_block_html="true" /}
 <details>
