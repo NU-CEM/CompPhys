@@ -3,6 +3,12 @@ layout: home
 search_exclude: true
 ---
 
+<style>
+  .footer {
+    display: none;
+  }
+</style>
+
 ### Part zero: Welcome
 
 - [Introduction](https://nu-cem.github.io/CompPhys/2021/08/02/Introduction.html)
