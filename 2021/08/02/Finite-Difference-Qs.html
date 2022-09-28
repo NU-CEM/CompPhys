@@ -95,7 +95,7 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <h2 id="boundary-conditions">Boundary conditions</h2>
 
-<p>In <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Finite-Difference">the tutorial</a> we implement the finite difference method with fixed boundary conditions - this is an example of <a href="https://math.libretexts.org/Bookshelves/Differential_Equations/Book%3A_Partial_Differential_Equations_(Walet)/03%3A_Boundary_and_Initial_Conditions/3.02%3A_Explicit_Boundary_Conditions">Dirichlet-type boundary conditions</a>.</p>
+<p>In <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Finite-Difference">the tutorial</a> we implement a finite difference method to solve Laplace’s equation. We use fixed boundary conditions, which are an example of <a href="https://math.libretexts.org/Bookshelves/Differential_Equations/Book%3A_Partial_Differential_Equations_(Walet)/03%3A_Boundary_and_Initial_Conditions/3.02%3A_Explicit_Boundary_Conditions">Dirichlet-type boundary conditions</a>.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">finite_difference</span><span class="p">(</span><span class="n">phi</span><span class="p">):</span>
 
@@ -119,7 +119,7 @@ f[N+1,y] = f[0,y],
 f[x,N+1] = f[x,0],
 \end{equation}</p>
 
-<p>Write a function which calculates the finite difference with periodic boundary conditions</p>
+<p>Write a function which calculates <code class="language-plaintext highlighter-rouge">phi_prime</code> using a finite difference method with periodic boundary conditions.</p>
 
 <details>
   <summary>Show answer</summary>
