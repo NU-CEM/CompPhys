@@ -46,8 +46,19 @@ Plot $x(t)$ for a number of steps $N$ equal to 10, 20, 50 and 1000. How does con
 ## Dynamical systems
 
 The motion of two bodies of mass $m_1$ and $m_2$ attracted by gravity is the Kepler problem. 
-In this case the moving bodies experience a force varying as the inverse square of the distance between them;
- for body one the distance to body two is $\mathbf{r}_{12} =  \mathbf{r}_1-\mathbf{r}_2$ whilst for body two the distance to body one is $\mathbf{r}_{21} =  \mathbf{r}_2-\mathbf{r}_1$.
+In this case the moving bodies experience a force varying as the inverse square of the distance between them; for body one the distance to body two is 
+ 
+ \begin{equation} 
+ \mathbf{r}_{12} =  \mathbf{r}_1-\mathbf{r}_2,
+ \end{equation}
+ 
+ whilst for body two the distance to body one is 
+ 
+ \begin{equation}
+ \mathbf{r}_{21} =  \mathbf{r}_2-\mathbf{r}_1.
+ \end{equation}
+ 
+ So that the corresponding forces are:
 
 \begin{equation}
 \mathbf{F}_1 = -\frac{Gm_1m_2}{r_{12}}\hat{\mathbf{r_{12}}}
