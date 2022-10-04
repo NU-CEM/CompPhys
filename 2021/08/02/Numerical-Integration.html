@@ -155,7 +155,7 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Depending-on-the-functional-form-of-f(x),-it-may-not-be-possible-to-calculate-an-integral-analytically">Depending on the functional form of f(x), it may not be possible to calculate an integral analytically<a class="anchor-link" href="#Depending-on-the-functional-form-of-f(x),-it-may-not-be-possible-to-calculate-an-integral-analytically"> </a></h4><p>The integral of f(x) from a to b is the area under the curve. Depending on the functional
+<h3 id="Depending-on-the-functional-form-of-f(x),-it-may-not-be-possible-to-calculate-an-integral-analytically">Depending on the functional form of f(x), it may not be possible to calculate an integral analytically<a class="anchor-link" href="#Depending-on-the-functional-form-of-f(x),-it-may-not-be-possible-to-calculate-an-integral-analytically"> </a></h3><p>The integral of f(x) from a to b is the area under the curve. Depending on the functional
 form of f(x), it may not be possible to calculate the integral analytically.</p>
 <figure>
 <figure>
@@ -165,7 +165,7 @@ form of f(x), it may not be possible to calculate the integral analytically.</p>
     
 </figure>
 
-</figure><h4 id="The-simplest-method-to-approximate-an-integral-is-to-use-the-rectangular-slices">The simplest method to approximate an integral is to use the rectangular-slices<a class="anchor-link" href="#The-simplest-method-to-approximate-an-integral-is-to-use-the-rectangular-slices"> </a></h4><p>The simplest method of estimating the integral shown above is to divide the integration range into $N$ slices of width $h$. We calculate $f(x_i)$ at some point on each slice and then calculate the area of the associated rectangle:</p>
+</figure><h3 id="The-simplest-method-to-approximate-an-integral-is-to-use-the-rectangular-slices">The simplest method to approximate an integral is to use the rectangular-slices<a class="anchor-link" href="#The-simplest-method-to-approximate-an-integral-is-to-use-the-rectangular-slices"> </a></h3><p>The simplest method of estimating the integral shown above is to divide the integration range into $N$ slices of width $h$. We calculate $f(x_i)$ at some point on each slice and then calculate the area of the associated rectangle:</p>
 <p>$ A_i = f(x_i)h$</p>
 <p>The integral is given by summing over all of the rectangles:</p>
 <p>$ \int_a^b f(x_i) dx \approx \sum_i f(x_i)h $</p>
@@ -177,7 +177,7 @@ form of f(x), it may not be possible to calculate the integral analytically.</p>
     
 </figure>
 
-</figure><h4 id="The-rectangular-slice-method-can-be-translated-to-Python-code-in-a-straight-forward-manner">The rectangular slice method can be translated to Python code in a straight-forward manner<a class="anchor-link" href="#The-rectangular-slice-method-can-be-translated-to-Python-code-in-a-straight-forward-manner"> </a></h4><p>For example, we may want to calculate the integral of $\sin(x)$ from 0 to $\frac{\pi}{2}$. This is an integral that can be evaluated analytically, so it doesn't usually make sense to calculate numerically - however, in this case, we can use it to establish that our method is correct.</p>
+</figure><h3 id="The-rectangular-slice-method-can-be-translated-to-Python-code-in-a-straight-forward-manner">The rectangular slice method can be translated to Python code in a straight-forward manner<a class="anchor-link" href="#The-rectangular-slice-method-can-be-translated-to-Python-code-in-a-straight-forward-manner"> </a></h3><p>For example, we may want to calculate the integral of $\sin(x)$ from 0 to $\frac{\pi}{2}$. This is an integral that can be evaluated analytically, so it doesn't usually make sense to calculate numerically - however, in this case, we can use it to establish that our method is correct.</p>
 
 </div>
 </div>
@@ -434,7 +434,7 @@ form of f(x), it may not be possible to calculate the integral analytically.</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="The-trapezoidal-rule-is-a-simple-extension-that-is-more-computationally-efficient">The trapezoidal rule is a simple extension that is more computationally efficient<a class="anchor-link" href="#The-trapezoidal-rule-is-a-simple-extension-that-is-more-computationally-efficient"> </a></h4><p>We can greatly improve the efficiency of our integration by approximating the slices as trapezoids instead of as rectangles. This is because the area under the trapezoids is a considerably better approximation to the
+<h3 id="The-trapezoidal-rule-is-a-simple-extension-that-is-more-computationally-efficient">The trapezoidal rule is a simple extension that is more computationally efficient<a class="anchor-link" href="#The-trapezoidal-rule-is-a-simple-extension-that-is-more-computationally-efficient"> </a></h3><p>We can greatly improve the efficiency of our integration by approximating the slices as trapezoids instead of as rectangles. This is because the area under the trapezoids is a considerably better approximation to the
 area under the curve.</p>
 <figure>
 <figure>
