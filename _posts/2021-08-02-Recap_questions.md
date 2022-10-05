@@ -22,6 +22,8 @@ b) Use this code to calculate the altitude of satellites that orbit the Earth on
 
 # The emission lines of hydrogen
 
+![](https://nu-cem.github.io/CompPhys/images/hydrogen_emission.png)
+
 *Taken from Mark Newman's book "Computational Physics, p. 73*
 
 There is a simple and famous formula for calculating the wavelengths $\lambda$ of the emission lines of the hydrogen atom.
