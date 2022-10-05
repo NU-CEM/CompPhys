@@ -30,7 +30,7 @@ $\frac{1}{\lambda} = R\left(\frac{1}{m^2} - \frac{1}{n^2}\right)$
 
 where R is the Rydberg constant $R = 1.097\times 10^{-2}\mathrm{nm}^{-1}$ and $m$ and $n$ are positive integers and $n>m$.
 
-a) Write a piece of code to calculate the Lyman series ($m=1$), Balmer series ($m=2$) and Paschen series ($m=3$).
+a) Write a piece of code to calculate the Lyman series ($m=1$, transitions to the ground state, emission in the UV-range), Balmer series ($m=2$, transitions to the first excited state, emissions in the visible region) and Paschen series ($m=3$, emissions in the infra-red).
 
 # Calculating Planck's constant
 
