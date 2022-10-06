@@ -144,6 +144,7 @@ window.onload = wrap_img;
 <ul>
 <li>How do I generate random numbers?</li>
 <li>How do I integrate using Monte Carlo methods?</li>
+<li>When might Monte Carlo integration be useful?</li>
 </ul>
 <p>Objectives:</p>
 <ul>
@@ -382,7 +383,7 @@ $\pi = 4\frac{A_c}{A_s}$</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Monte-Carlo-integration-does-not-give-very-accurate-answers-but-provides-a-more-general-approach-for-calculating-integrals">Monte Carlo integration does not give very accurate answers but provides a more general approach for calculating integrals<a class="anchor-link" href="#Monte-Carlo-integration-does-not-give-very-accurate-answers-but-provides-a-more-general-approach-for-calculating-integrals"> </a></h3><p>In fact, the error varies as $N^{-\frac{1}{2}}$, which is more than the Riemann sums approach with error order $h \propto N^{-1}$, where $N$ in this case is the number of integration slices. However Monte Carlo methods are more flexible and can be used where other methods break-down: for example, they are particularly useful for integrating functions where the integrand varies quickly, and/or where the integral is over many variables.</p>
+<h3 id="Monte-Carlo-integration-is-computationally-efficient-for-particular-types-of-integrand">Monte Carlo integration is computationally efficient for particular types of integrand<a class="anchor-link" href="#Monte-Carlo-integration-is-computationally-efficient-for-particular-types-of-integrand"> </a></h3><p>The error when using Monte Carlo integration is proportional to $N^{-\frac{1}{2}}$, which is larger than the rectangular slice approach with error order $h \propto N^{-1}$ (where $N$ in this case is the number of integration slices). However Monte Carlo methods are more flexible and can be used where other methods break-down: for example, they are particularly useful for integrating functions where the integrand varies very quickly, and/or where the integral is over many variables. In many cases, for "well behaved" functions, an approach based on Riemann summation will give more accurate and computationally efficient results.</p>
 
 </div>
 </div>
@@ -397,7 +398,7 @@ $\pi = 4\frac{A_c}{A_s}$</p>
 <li>The Monte Carlo "area method" estimates integrals by generating a uniform sample of points and counting how many fall into a planar region</li>
 <li>We can use the Monte Carlo area method to estimate pi</li>
 <li>The Monte Carlo area method can be translated into Python code</li>
-<li>Monte Carlo methods do not give very accurate answers but they provide a more general approach for calculating integrals</li>
+<li>Monte Carlo integration is computationally efficient for particular types of integrand</li>
 </ul>
 
 </div>
