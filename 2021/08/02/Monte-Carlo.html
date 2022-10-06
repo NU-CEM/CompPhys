@@ -157,34 +157,49 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="There-are-many-different-numerical-methods-for-calculating-integrals">There are many different numerical methods for calculating integrals<a class="anchor-link" href="#There-are-many-different-numerical-methods-for-calculating-integrals"> </a></h3><p>In the previous section we looked at the two simplest methods for calculating integrals: the rectangular-slice method (where the error is proportional to step size $h$) and the trapezoid method (where the error is proportional to step size $h^2$). For increased accuracy, particularly in systems where we want to integrate over multiple variables, more advanced methods may be required. For example, Simpson's method gives an error proportional to $h^4$, whilst Gaussian Quadrature can be used to integrate certain classes of functions with higher efficiency still.</p>
-<p>We will not explore Simpson's method or Gaussian Quadraturein this course, but we will outline one particularly powerful, and conceptually intriguing group of approaches: the Monte Carlo methods.</p>
+<h3 id="There-are-many-different-numerical-methods-for-calculating-integrals">There are many different numerical methods for calculating integrals<a class="anchor-link" href="#There-are-many-different-numerical-methods-for-calculating-integrals"> </a></h3><p>In the previous section we studied the simplest methods for calculating integrals: the rectangular-slice method . For increased accuracy and computational efficiency, there are extensions to this approach - for example, the trapezoid method (where each slice is a trapezoid rather than rectangle) or Simpson's rule (where a quadratic curve is fitted to each slice). For certain classes of functions we can increase the performance further using more specialised approaches such as Gaussian Quadrature.</p>
+<p>One particularly flexible and general purpose approach for calculating integrals is to use Monte Carlo integration. This approach is useful when the integrand is "pathological" (wildly varying) or noisy, or when the integration is performed over several variables.</p>
 <h3 id="Monte-Carlo-methods-calculate-the-answers-to-exact-calculations-by-doing-random-calculations">Monte Carlo methods calculate the answers to exact calculations by doing random calculations<a class="anchor-link" href="#Monte-Carlo-methods-calculate-the-answers-to-exact-calculations-by-doing-random-calculations"> </a></h3><p>Monte Carlo methods are a broad class of algorithms that rely on random sampling to obtain numerical results. The underlying concept is to use randomness to solve problems that might be deterministic in principle. "Monte Carlo" is a reference to a well-known casino town, since the element of chance is core to the modelling approach, similar to various casino games.</p>
 <p>Monte Carlo methods are applied across a wide variety of domains, most commonly mathematics, physics and finance. In physics, Monte Carlo methods are used to design particle detectors, model galaxy evolution and solve the many-body problem for quantum systems, amongst many other applications. In this lesson we will introduce one of the main uses of Monte Carlo: for integration.</p>
-<h3 id="The-Monte-Carlo-&quot;area-method&quot;-estimates-integrals-by-generating-a-uniform-sample-of-points-and-counting-how-many-fall-into-a-planar-region">The Monte Carlo "area method" estimates integrals by generating a uniform sample of points and counting how many fall into a planar region<a class="anchor-link" href="#The-Monte-Carlo-&quot;area-method&quot;-estimates-integrals-by-generating-a-uniform-sample-of-points-and-counting-how-many-fall-into-a-planar-region"> </a></h3><p>To introduce the Monte Carlo area method, we will consider the area under a circle to give us an estimate for the value of pi.</p>
-<p>The relevant equations are:</p>
+<h3 id="The-Monte-Carlo-&quot;area-method&quot;-estimates-integrals-by-generating-a-uniform-sample-of-points-and-counting-how-many-fall-into-a-planar-region">The Monte Carlo "area method" estimates integrals by generating a uniform sample of points and counting how many fall into a planar region<a class="anchor-link" href="#The-Monte-Carlo-&quot;area-method&quot;-estimates-integrals-by-generating-a-uniform-sample-of-points-and-counting-how-many-fall-into-a-planar-region"> </a></h3><p>Consider the shaded area as shown below. This is the integral $I$ which we wish to calculate.</p>
+<p><figure>
+  
+    <img class="docimage" src="/CompPhys/images/copied_from_nb/../images/mc_area.png" alt="" style="max-width: 400px" />
+    
+    
+</figure>
+</p>
+<p>If we choose a point uniformly at random in the rectange (dashed red line) that bounds the shaded area, the probability $p$ that the point falls in the shaded area is</p>
+<p>
+$$p = \frac{I}{A}$$
+</p>
+<p>where $A$ is the area of the bounding rectangle. This means that the integral $I$ can be calculated if we know the area of the bounding rectangle and the probability $p$:</p>
+<p>
+$$I = Ap$$
+</p>
+<p>To calculate $p$ we can randomly generate $N$ points in the bounding area and keep count as to how many lie in the shaded area. If $k$ lie in the shaded area then the fraction of points $\frac{k}{N}$ should be equal to the probability $p$.</p>
+<p>
+$$I = \frac{Ak}{N}$$
+</p>
+<p>We can extend this approach to higher dimensions to consider integrands lying within a bounding volume, or higher dimensional space (which is considered in the <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Random_extension">extension exercise</a> for this lesson).</p>
+<h3 id="We-can-use-the-Monte-Carlo-area-method-to-estimate-pi">We can use the Monte Carlo area method to estimate pi<a class="anchor-link" href="#We-can-use-the-Monte-Carlo-area-method-to-estimate-pi"> </a></h3><p>We'll now use this approach to give us an estimate for the value of pi by considering the area under a quarter-circle.</p>
+<figure>
+<figure>
+  
+    <img class="docimage" src="https://raw.githubusercontent.com/coderefinery/jupyter/main/example/darts.svg" alt="" style="max-width: 300px" />
+    
+    
+</figure>
+
+</figure><p>The relevant equations are:</p>
 <p>square area: $A_s = (2 r)^2$<br />
 circle area: $A_c = \pi r^2$</p>
 <p>The ratio of the areas can be related to $\pi$ through the following expressions:</p>
 <p>$\frac{A_c}{A_s} = \frac{\pi r^2}{4 r^2} = \frac{\pi}{4}$<br />
 $\pi = 4\frac{A_c}{A_s}$</p>
-<p>We set the radius of our circle equal to one for simplicty. To approximate the ratio $\frac{A_c}{A_s}$ we will generate a (uniform) pseudo-random number between 0 and 1 for our x-coordinates, and a (uniform) pseudo-random number between 0 and 1 for our y-coordinates. We will then check if our random point lies in or out of the circle. The probability $P_i$ that our point lies in the circle is related to the area ratio and so value of pi:</p>
+<p>To approximate the ratio $\frac{A_c}{A_s}$ we will generate a (uniform) pseudo-random number between 0 and 1 for our x-coordinates, and a (uniform) pseudo-random number between 0 and 1 for our y-coordinates. We will then check if our random point lies in or out of the circle. The probability $P_i$ that our point lies in the circle is related to the area ratio and so value of pi:</p>
 <p>$P_i = \frac{A_c}{A_s} = \frac{\pi}{4}$</p>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<figure>
-<figure>
-  
-    <img class="docimage" src="https://raw.githubusercontent.com/coderefinery/jupyter/main/example/darts.svg" alt="" style="max-width: 500px" />
-    
-    
-</figure>
-
-</figure>
 </div>
 </div>
 </div>
@@ -367,7 +382,7 @@ $\pi = 4\frac{A_c}{A_s}$</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Monte-Carlo-methods-do-not-give-very-accurate-answers-but-they-provide-a-more-general-approach-for-calculating-integrals">Monte Carlo methods do not give very accurate answers but they provide a more general approach for calculating integrals<a class="anchor-link" href="#Monte-Carlo-methods-do-not-give-very-accurate-answers-but-they-provide-a-more-general-approach-for-calculating-integrals"> </a></h4><p>In fact, the error varies as $N^{-\frac{1}{2}}$, which is significantly more than the trapezoidal rule with error order $h^2$, where $h$ is the width of an integration slice. However Monte Carlo methods are more flexible and can be used where other methods break-down: for example, they are particularly useful for integrating functions where the integrand varies quickly (which is explored in the <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Random_exercises">Lesson exercises</a>), and/or where the integral is over many variables.</p>
+<h3 id="Monte-Carlo-integration-does-not-give-very-accurate-answers-but-provides-a-more-general-approach-for-calculating-integrals">Monte Carlo integration does not give very accurate answers but provides a more general approach for calculating integrals<a class="anchor-link" href="#Monte-Carlo-integration-does-not-give-very-accurate-answers-but-provides-a-more-general-approach-for-calculating-integrals"> </a></h3><p>In fact, the error varies as $N^{-\frac{1}{2}}$, which is more than the Riemann sums approach with error order $h \propto N^{-1}$, where $N$ in this case is the number of integration slices. However Monte Carlo methods are more flexible and can be used where other methods break-down: for example, they are particularly useful for integrating functions where the integrand varies quickly, and/or where the integral is over many variables.</p>
 
 </div>
 </div>
@@ -380,6 +395,7 @@ $\pi = 4\frac{A_c}{A_s}$</p>
 <li>There are many different numerical methods for calculating integrals</li>
 <li>Monte Carlo methods calculate the answers to exact calculations by doing random calculations</li>
 <li>The Monte Carlo "area method" estimates integrals by generating a uniform sample of points and counting how many fall into a planar region</li>
+<li>We can use the Monte Carlo area method to estimate pi</li>
 <li>The Monte Carlo area method can be translated into Python code</li>
 <li>Monte Carlo methods do not give very accurate answers but they provide a more general approach for calculating integrals</li>
 </ul>

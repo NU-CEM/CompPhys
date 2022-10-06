@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Monte Carlo methods for integration - quick test" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Coming soon…." />
-<meta property="og:description" content="Coming soon…." />
+<meta name="description" content="Integrating a semicircle re-visited" />
+<meta property="og:description" content="Integrating a semicircle re-visited" />
 <link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/Monte-Carlo-Qs.html" />
 <meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/Monte-Carlo-Qs.html" />
 <meta property="og:site_name" content="An Introduction to Computational Physics" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Monte Carlo methods for integration - quick test" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","description":"Coming soon….","headline":"Monte Carlo methods for integration - quick test","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Monte-Carlo-Qs.html"},"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Monte-Carlo-Qs.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","description":"Integrating a semicircle re-visited","headline":"Monte Carlo methods for integration - quick test","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Monte-Carlo-Qs.html"},"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Monte-Carlo-Qs.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -93,7 +93,93 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <h2 id="coming-soon">Coming soon….</h2>
+    <h2 id="integrating-a-semicircle-re-visited">Integrating a semicircle re-visited</h2>
+
+<p>Use Monte Carlo integration (with 100 random points) to calculate the value of the integral:</p>
+
+<p>$ I = \int_{-1}^1\sqrt{1-x^2}\mathrm{d}x $</p>
+
+<p>How does this compare to exact answer? (Hint: the integrand is a semicircle of radius 1)</p>
+
+<p>How can you improve the accuracy of your estimate?</p>
+
+<p>Increase the number of points until you get an accuracy comparable (same order of magnitude) as the Riemann sum method with 100 points (which was implemented in the <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Numerical-Integration-Qs.html">Numerical integration - quick test</a>).</p>
+
+<p>Use the <a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit">%%timeit notebook magic</a> to compare the calculation times for the Riemann sum method and Monte Carlo method.</p>
+
+<p>Which is more efficient?</p>
+
+<details>
+  <summary>Show answer</summary>
+
+  <p>We want to calculate the area of a semicircle with radius 1. We can adapt the approach used in the Monte Carlo tutorial but, in this case, we use the fact that $P_i = \frac{A_c}{A_r}$ where $A_r$ is a rectangle of length 2 (as the semicircle goes from $-1$ to $1$) and height 1.</p>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">math</span>
+    
+<span class="k">def</span> <span class="nf">estimate_semicircle_area</span><span class="p">(</span><span class="n">num_points</span><span class="p">):</span>
+    
+    <span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">hits</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_points</span><span class="p">):</span>
+        <span class="c1"># random.uniform(a,b) returns a random number drawn from a uniform distribution from a to b
+</span>        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">random</span><span class="p">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># we test if the point is within the circle (using the equation for a circle, X^2+y^2=r^2)
+</span>        <span class="k">if</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">:</span>
+            <span class="n">hits</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="n">probability</span> <span class="o">=</span> <span class="n">hits</span> <span class="o">/</span> <span class="n">num_points</span>
+    <span class="n">rectangle_area</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">probability</span><span class="o">*</span><span class="n">rectangle_area</span>
+    
+<span class="n">estimate_semicircle_area</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+  <pre><code class="language-output">1.58
+</code></pre>
+
+  <p>Note that your estimate will be different as you be using a different set of random numbers.                      <br />
+The exact answer is $\frac{\pi}{2}$. The error on our calculation is</p>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">estimate_semicircle_area</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+  <pre><code class="language-output">-0.04920367320510355
+</code></pre>
+
+  <p>To improve the accuracy we can use a larger number of random points:</p>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">estimate_semicircle_area</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+  <pre><code class="language-output">0.04679632679489654
+</code></pre>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">estimate_semicircle_area</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+  <pre><code class="language-output">-0.0048036732051033315
+</code></pre>
+
+  <p>Increasing the number of points to 10,000 gives an error comparable to the Riemann sum method with 100 integration slices (where the error is 0.002). Let’s use the %%timeit magic to time how long each takes to run</p>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">timeit</span>
+<span class="n">estimate_semicircle_area</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+  <pre><code class="language-output">6.23 ms ± 370 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</code></pre>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">timeit</span>
+<span class="n">rectangular_slice_integral</span><span class="p">(</span><span class="n">semicircle</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+  <pre><code class="language-output">31 µs ± 1.09 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+</code></pre>
+
+  <p>As each method gives roughly the same accuracy, but the <code class="language-plaintext highlighter-rouge">estimate_semicircle_area</code> is 100x smaller, we can deduce that the Monte Carlo method implemented in <code class="language-plaintext highlighter-rouge">estimate_semicircle_area</code> is considerably less efficient than the Riemann summation method implemented in <code class="language-plaintext highlighter-rouge">rectangular_slice_integral</code>. However the Monte Carlo method is useful for badly behaving systems, as we will see in the lesson exercises.</p>
+
+</details>
 
   </div><a class="u-url" href="/CompPhys/2021/08/02/Monte-Carlo-Qs.html" hidden></a>
 </article>

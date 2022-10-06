@@ -147,6 +147,7 @@ window.onload = wrap_img;
 <p>Objectives:</p>
 <ul>
 <li>Use the rectangular-slice approximation to calculate integrals</li>
+<li>Describe the difference between a zeroth-order and first-order integration rule</li>
 </ul>
 <hr />
 
@@ -155,8 +156,8 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Depending-on-the-functional-form-of-f(x),-it-may-not-be-possible-to-calculate-an-integral-analytically">Depending on the functional form of f(x), it may not be possible to calculate an integral analytically<a class="anchor-link" href="#Depending-on-the-functional-form-of-f(x),-it-may-not-be-possible-to-calculate-an-integral-analytically"> </a></h3><p>The integral of f(x) from a to b is the area under the curve. Depending on the functional
-form of f(x), it may not be possible to calculate the integral analytically.</p>
+<h3 id="Depending-on-the-functional-form-of-f(x),-it-may-not-be-possible-to-calculate-an-integral-analytically">Depending on the functional form of f(x), it may not be possible to calculate an integral analytically<a class="anchor-link" href="#Depending-on-the-functional-form-of-f(x),-it-may-not-be-possible-to-calculate-an-integral-analytically"> </a></h3><p>The integral of $f(x)$ from $a$ to $b$ is the area under the curve. Depending on the functional
+form of $f(x)$, it may not be possible to calculate the integral analytically.</p>
 <figure>
 <figure>
   
@@ -165,11 +166,11 @@ form of f(x), it may not be possible to calculate the integral analytically.</p>
     
 </figure>
 
-</figure><h3 id="The-simplest-method-to-approximate-an-integral-is-to-use-Riemann-sums">The simplest method to approximate an integral is to use Riemann sums<a class="anchor-link" href="#The-simplest-method-to-approximate-an-integral-is-to-use-Riemann-sums"> </a></h3><p>The Riemann definition of the integral $I$ is:</p>
+</figure><h3 id="Riemann-sums-are-a-family-of-methods-used-for-approximating-integral">Riemann sums are a family of methods used for approximating integral<a class="anchor-link" href="#Riemann-sums-are-a-family-of-methods-used-for-approximating-integral"> </a></h3><p>The Riemann definition of the integral $I$ is:</p>
 <p>$ I = \lim_{n\to\infty} \sum_{i=1}^N h f(x_i)$</p>
 <p>where the domain of integration has been split into $N$ slices, each with width $h = \frac{b-a}{N}$.
 As we cannot in practice consider an infinite number of slices, this definition will give an approximation to the exact answer. By making $N$ large are approximation will, in many cases, be reasonable.</p>
-<p>To use this approximation we calculate $f(x_i)$ at some point on each slice and then calculate the area of the associated rectangle:</p>
+<h3 id="The-simplest-Riemann-sum-is-based-on-rectangular-slices">The simplest Riemann sum is based on rectangular slices<a class="anchor-link" href="#The-simplest-Riemann-sum-is-based-on-rectangular-slices"> </a></h3><p>The simplest way to use this approach is to calculate $f(x_i)$ at some point on each slice and then calculate the area of the associated rectangle:</p>
 <p>$ A_i = hf(x_i)$</p>
 <p>The integral is given by summing over all of the rectangles:</p>
 <p>$ \int_a^b f(x_i) dx \approx \sum_{i=1}^N A_i $</p>
@@ -181,7 +182,7 @@ As we cannot in practice consider an infinite number of slices, this definition 
     
 </figure>
 
-</figure><h3 id="The-rectangular-slice-method-can-be-translated-to-Python-code-in-a-straight-forward-manner">The rectangular slice method can be translated to Python code in a straight-forward manner<a class="anchor-link" href="#The-rectangular-slice-method-can-be-translated-to-Python-code-in-a-straight-forward-manner"> </a></h3><p>For example, we may want to calculate the integral of $\sin(x)$ from 0 to $\frac{\pi}{2}$. This is an integral that can be evaluated analytically, so it doesn't usually make sense to calculate numerically - however, in this case, we can use it to establish that our method is correct.</p>
+</figure><h3 id="The-rectangular-slices-method-can-be-translated-to-Python-code-in-a-straight-forward-manner">The rectangular slices method can be translated to Python code in a straight-forward manner<a class="anchor-link" href="#The-rectangular-slices-method-can-be-translated-to-Python-code-in-a-straight-forward-manner"> </a></h3><p>For example, we may want to calculate the integral of $\sin(x)$ from 0 to $\frac{\pi}{2}$. This is an integral that can be evaluated analytically, so it doesn't usually make sense to calculate numerically - however, in this case, we can use it to establish that our method is correct.</p>
 
 </div>
 </div>
@@ -338,14 +339,14 @@ As we cannot in practice consider an infinite number of slices, this definition 
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><mark> The error is of order $h$ ($\mathcal{O}(h)$) - when we halve the rectangular width, we halve the error. </mark></p>
+<p><mark> The Riemann sums method a zeroth-order integration rule that will integrate a zeroth-order polynomial (ie, constant number) exactly. It has an error of order $h$ ($\mathcal{O}(h)$) - when we halve the rectangular width, we halve the error. </mark></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-rectangular-slice-method-can-be-adapted-for-use-with-discrete-data">The rectangular slice method can be adapted for use with discrete data<a class="anchor-link" href="#The-rectangular-slice-method-can-be-adapted-for-use-with-discrete-data"> </a></h3><p>Not all integrations are integrations of functions. For example, we may want to integrate experimental data, in which case there is no function to call to find the value of f(x). Instead, the most likely form of f(x) is given by the list of data values. In this case we can use the same method, but the implementation is slightly different:</p>
+<h3 id="Riemann-sums-can-be-adapted-for-use-with-discrete-data">Riemann sums can be adapted for use with discrete data<a class="anchor-link" href="#Riemann-sums-can-be-adapted-for-use-with-discrete-data"> </a></h3><p>Not all integrations are integrations of functions. For example, we may want to integrate experimental data, in which case there is no function to call to find the value of f(x). Instead, the most likely form of f(x) is given by the list of data values. In this case we can use the same method, but the implementation is slightly different:</p>
 
 </div>
 </div>
@@ -520,9 +521,9 @@ As we cannot in practice consider an infinite number of slices, this definition 
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="There-are-a-number-of-extensions-to-this-approach-that-improve-accuracy">There are a number of extensions to this approach that improve accuracy<a class="anchor-link" href="#There-are-a-number-of-extensions-to-this-approach-that-improve-accuracy"> </a></h3><p>We can greatly improve the efficiency of our integration by approximating the slices as trapezoids instead of as rectangles. This is because the area under the trapezoids is a considerably better approximation to the
+<h3 id="Higher-order-Riemann-sums-increase-the-accuracy-of-our-approximations">Higher-order Riemann sums increase the accuracy of our approximations<a class="anchor-link" href="#Higher-order-Riemann-sums-increase-the-accuracy-of-our-approximations"> </a></h3><p>We can greatly improve the efficiency of our integration by approximating the slices as trapezoids instead of as rectangles. This is because the area under the trapezoids is a considerably better approximation to the
 area under the curve.</p>
-<p><mark> The trapezoidal rule a first-order integration rule that is *accurate* to order $h$ ($\mathcal{O}(h)$) and has an *error* of order $h^2$ $\mathcal{O}(h^2)$ </mark>. This method is explored in the <a href="https://nu-cem.github.io/CompPhys/2021/08/02/Random_exercises">Lesson exercises</a>.</p>
+<p><mark> The trapezoidal rule a first-order integration rule that will integrate a first-order polynomial (ie, a straight line) exactly. We can say it is *accurate* to order $h$ ($\mathcal{O}(h)$) and has an *error* of order $h^2$ $\mathcal{O}(h^2)$ </mark>.</p>
 <figure>
 <figure>
   
@@ -531,7 +532,7 @@ area under the curve.</p>
     
 </figure>
 
-</figure><p>For greater accuracy still, we can use Simpson's Rule. This technique involves fitting quadratic curves to pairs of slices and then calculating the area under the quadratics. In many cases Simpson's rule is more accurate than the trapezoidal rule, but this is not guaranteed for all integrands.</p>
+</figure><p>In many cases we can use Simpson's Rule for greater accuracy still. This technique involves fitting quadratic curves to pairs of slices and then calculating the area under the quadratics. In many cases Simpson's rule is more accurate than the trapezoidal rule, but this is not guaranteed for all integrands.</p>
 
 </div>
 </div>
@@ -542,10 +543,11 @@ area under the curve.</p>
 <p>Keypoints:</p>
 <ul>
 <li>Depending on the functional form of f(x), it may not be possible to calculate an integral analytically</li>
-<li>The simplest method to approximate an integral is to use Riemann sums</li>
-<li>The rectangular slice method can be translated to Python code in a straight-forward manner</li>
-<li>The rectangular slice method can be adapted for use with discrete data</li>
-<li>There are a number of extensions to this approach that improve accuracy</li>
+<li>Riemann sums are a family of methods used for approximating integral</li>
+<li>The simplest Riemann sum is based on rectangular slices</li>
+<li>The rectangular slices method can be translated to Python code in a straight-forward manner</li>
+<li>Riemann sums can be adapted for use with discrete data</li>
+<li>Higher-order Riemann sums increase the accuracy of our approximations</li>
 </ul>
 
 </div>
