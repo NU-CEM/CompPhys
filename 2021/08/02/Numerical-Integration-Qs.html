@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Numerical integration - quick test" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Coming soon…." />
-<meta property="og:description" content="Coming soon…." />
+<meta name="description" content="Integrate a semicircle" />
+<meta property="og:description" content="Integrate a semicircle" />
 <link rel="canonical" href="https://nu-cem.github.io/CompPhys/2021/08/02/Numerical-Integration-Qs.html" />
 <meta property="og:url" content="https://nu-cem.github.io/CompPhys/2021/08/02/Numerical-Integration-Qs.html" />
 <meta property="og:site_name" content="An Introduction to Computational Physics" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Numerical integration - quick test" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","description":"Coming soon….","headline":"Numerical integration - quick test","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Numerical-Integration-Qs.html"},"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Numerical-Integration-Qs.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","description":"Integrate a semicircle","headline":"Numerical integration - quick test","mainEntityOfPage":{"@type":"WebPage","@id":"https://nu-cem.github.io/CompPhys/2021/08/02/Numerical-Integration-Qs.html"},"url":"https://nu-cem.github.io/CompPhys/2021/08/02/Numerical-Integration-Qs.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/CompPhys/assets/css/style.css"><link rel="shortcut icon" type="image/x-icon" href="/CompPhys/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -93,7 +93,58 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <h2 id="coming-soon">Coming soon….</h2>
+    <h2 id="integrate-a-semicircle">Integrate a semicircle</h2>
+
+<p>Now use Riemann sums (with 10 rectangular slices) to calculate the value of the integral:</p>
+
+<p>$ I = \int_{-1}^1\sqrt{1-x^2}\mathrm{d}x $</p>
+
+<p>How does this compare to exact answer? (Hint: the integrand is a semicircle of radius 1)
+How can you improve the accuracy of your estimate?</p>
+
+<details>
+  <summary>Show answer</summary>
+
+  <p>We can use the same approach as in the tutorial, but with a different function for calculating the integrand.</p>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">semicircle</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    
+    <span class="k">return</span> <span class="n">math</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">rectangular_slice_integral</span><span class="p">(</span><span class="n">f_x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+    
+    <span class="n">integral</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>   <span class="c1"># h is the width of each slice
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">i</span> <span class="c1"># the x value for the slice
+</span>        <span class="n">integral</span> <span class="o">+=</span> <span class="n">f_x</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">h</span>
+    <span class="k">return</span> <span class="n">integral</span>
+    
+<span class="n">rectangular_slice_integral</span><span class="p">(</span><span class="n">semicircle</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+  <pre><code class="language-output">1.5691342555492505
+</code></pre>
+
+  <p>The exact answer it $\frac{\pi}{2}$. The error on our calculation is</p>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">rectangular_slice_integral</span><span class="p">(</span><span class="n">semicircle</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+  <pre><code class="language-output">0.0016620712456461018
+</code></pre>
+
+  <p>To improve the accuracy we can use a larger number of sliaces:</p>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">rectangular_slice_integral</span><span class="p">(</span><span class="n">semicircle</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+  <pre><code class="language-output">5.2588293825595045e-05
+</code></pre>
+
+</details>
 
   </div><a class="u-url" href="/CompPhys/2021/08/02/Numerical-Integration-Qs.html" hidden></a>
 </article>
