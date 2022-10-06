@@ -50,21 +50,37 @@ spam(ham[1], {eggs: 2})
 spam( ham[ 1 ], { eggs: 2} )
 ```
 
+You should also avoid mixing data types where possible. For example, using a 2-dimensional Numpy array and a 1-dimensional Numpy array within a simulation would usually be better than using a 2-dimensional Numpy array and a 1-dimensional Python list.
+
 #### Variable and function names
 
-Use clear, meaningful variable and function names (don't just use `x`, `p` and expect the reader to know what they mean!)
+Use clear, meaningful variable and function names - don't just use `x`, `p` and expect the reader to know what they mean! For example `angular_momentum` is a better variable name than `omega`.
+
+#### Clear code structure
+
+Import all of the libraries used at the top of your code. Also define any constants that will not change during your simulation (for example, the radius of the earth) at the top of your code. 
+
+Use Markdown to write section headings in a Jupyter Notebook. You can also use blank lines to split code into logical blocks. Split long lines of your code using a `\` at the end of the line(s). For example:
+
+```
+print("this is a really really long line of code \
+that I'd like split over two lines")
+```
 
 ### Avoid duplication 
 
 Duplication of code should be avoided where possible. There are several ways this can be achieved.
 
-#### Use functions
+#### Write functions
+
 If you will re-use a block of code multiple times consider encapsulating it in a function. See [this tutorial](https://lucydot.github.io/python_novice/08-writing-functions/index.html) for information about writing functions.
 
 #### Use external libraries
+
 Use appropriate functions and data-types, including those from external libraries. For example, if you need to perform mathematical operations on an array of values, [use Numpy arrays](https://lucydot.github.io/python_novice/12-numpy-intro/index.html) instead of Python lists.
 
 #### Use control structures when appropriate
+
 Use control structures appropriately. Only use `if`, `while` or `for` loops when necessary.
 
 ### Think about reproducibility
