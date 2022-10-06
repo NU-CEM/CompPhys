@@ -12,7 +12,7 @@ The content of this website is adapted and derived from several other sources:
 
 - The Setup instructions page is a derivative of materials from [Software Carpentry](https://software-carpentry.org/), used under [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 - The tutorial "Testing and Documentation" is a derivative of the [Testing lesson from Code Refinery](https://coderefinery.github.io/testing/motivation/"), used under [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). 
-- Where indicated, some of the exercises are adapted from the book [Computational Physics](http://www-personal.umich.edu/~mejn/cp/). These are used with the permission of the book's author, Mark Newman, and remain under his copyright. 
+- Some of the exercises are adapted from the book [Computational Physics](http://www-personal.umich.edu/~mejn/cp/). These are used with the permission of the book's author, Mark Newman, and remain under his copyright. 
 
 In addition, parts of the "Getting results" section were inspired by [Rudolf Winter's notes on ODEs and PDEs](https://users.aber.ac.uk/ruw/teach/260/).
 
