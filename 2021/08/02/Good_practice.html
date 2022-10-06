@@ -133,21 +133,36 @@ See <a href="https://lucydot.github.io/python_novice/01-run-quit/index.html">thi
 spam( ham[ 1 ], { eggs: 2} )
 </code></pre></div></div>
 
+<p>You should also avoid mixing data types where possible. For example, using a 2-dimensional Numpy array and a 1-dimensional Numpy array within a simulation would usually be better than using a 2-dimensional Numpy array and a 1-dimensional Python list.</p>
+
 <h4 id="variable-and-function-names">Variable and function names</h4>
 
-<p>Use clear, meaningful variable and function names (don’t just use <code class="language-plaintext highlighter-rouge">x</code>, <code class="language-plaintext highlighter-rouge">p</code> and expect the reader to know what they mean!)</p>
+<p>Use clear, meaningful variable and function names - don’t just use <code class="language-plaintext highlighter-rouge">x</code>, <code class="language-plaintext highlighter-rouge">p</code> and expect the reader to know what they mean! For example <code class="language-plaintext highlighter-rouge">angular_momentum</code> is a better variable name than <code class="language-plaintext highlighter-rouge">omega</code>.</p>
+
+<h4 id="clear-code-structure">Clear code structure</h4>
+
+<p>Import all of the libraries used at the top of your code. Also define any constants that will not change during your simulation (for example, the radius of the earth) at the top of your code.</p>
+
+<p>Use Markdown to write section headings in a Jupyter Notebook. You can also use blank lines to split code into logical blocks. Split long lines of your code using a <code class="language-plaintext highlighter-rouge">\</code> at the end of the line(s). For example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print("this is a really really long line of code \
+that I'd like split over two lines")
+</code></pre></div></div>
 
 <h3 id="avoid-duplication">Avoid duplication</h3>
 
 <p>Duplication of code should be avoided where possible. There are several ways this can be achieved.</p>
 
-<h4 id="use-functions">Use functions</h4>
+<h4 id="write-functions">Write functions</h4>
+
 <p>If you will re-use a block of code multiple times consider encapsulating it in a function. See <a href="https://lucydot.github.io/python_novice/08-writing-functions/index.html">this tutorial</a> for information about writing functions.</p>
 
 <h4 id="use-external-libraries">Use external libraries</h4>
+
 <p>Use appropriate functions and data-types, including those from external libraries. For example, if you need to perform mathematical operations on an array of values, <a href="https://lucydot.github.io/python_novice/12-numpy-intro/index.html">use Numpy arrays</a> instead of Python lists.</p>
 
 <h4 id="use-control-structures-when-appropriate">Use control structures when appropriate</h4>
+
 <p>Use control structures appropriately. Only use <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">while</code> or <code class="language-plaintext highlighter-rouge">for</code> loops when necessary.</p>
 
 <h3 id="think-about-reproducibility">Think about reproducibility</h3>
