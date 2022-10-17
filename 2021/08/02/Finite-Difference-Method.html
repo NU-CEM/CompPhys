@@ -143,10 +143,12 @@ window.onload = wrap_img;
 <p>Questions:</p>
 <ul>
 <li>How do I use a finite difference method to calculate derivatives? </li>
+<li>What is the Laplacian operator?</li>
 </ul>
 <p>Objectives:</p>
 <ul>
 <li>Use the finite difference method to calculate the derivative of an unknown function</li>
+<li>Express the Laplacian as a differential operator</li>
 </ul>
 <hr />
 
@@ -155,7 +157,17 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="A-numerical-derivative-can-be-calculated-using-the-forward,-backward-or-central-difference">A numerical derivative can be calculated using the forward, backward or central difference<a class="anchor-link" href="#A-numerical-derivative-can-be-calculated-using-the-forward,-backward-or-central-difference"> </a></h3><p>The standard definition of a derivative is</p>
+<h3 id="Finite-difference-methods-are-a-family-of-techniques-used-to-calculate-derivatives">Finite difference methods are a family of techniques used to calculate derivatives<a class="anchor-link" href="#Finite-difference-methods-are-a-family-of-techniques-used-to-calculate-derivatives"> </a></h3><p>Finite-difference methods are a class of numerical techniques for solving differential equations by approximating derivatives with finite differences. They are widely used for solving ordinary and partial differential equations, as they can convert equations that are unsolvable analytically into a set of linear equations that can be solved on a computer.</p>
+<p>They rely on the idea of discretization: breaking a domain (for example, the space domain) into a finite number of discrete elements.</p>
+<p><a title="User:Mintz l, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Finite_Differences.svg"><img width="256" alt="Finite Differences" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Finite_Differences.svg/512px-Finite_Differences.svg.png" /></a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="A-numerical-derivative-can-be-calculated-using-the-forward,-backward-or-central-difference-methods">A numerical derivative can be calculated using the forward, backward or central difference methods<a class="anchor-link" href="#A-numerical-derivative-can-be-calculated-using-the-forward,-backward-or-central-difference-methods"> </a></h3><p><a title="Kakitc, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Finite_difference_method.svg"><img width="512" alt="Finite difference method" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Finite_difference_method.svg/512px-Finite_difference_method.svg.png" /></a></p>
+<p>The standard definition of a derivative is</p>
 \begin{equation}
 \frac{\mathrm{d} f}{\mathrm{d} x} = \lim_{h\to0}\frac{f(x+h)-f(x)}{h}.
 \end{equation}<p>To calculate the derivative numerically we make $h$ very small and calculate</p>
@@ -167,21 +179,192 @@ window.onload = wrap_img;
 \frac{\mathrm{d} f}{\mathrm{d} x} \simeq \frac{f(x)-f(x-h)}{h},
 \end{equation}<p>and the <mark>central difference</mark> uses both the forwards and backwards directions around $x$:</p>
 \begin{equation}
-\frac{\mathrm{d} f}{\mathrm{d} x} \simeq \frac{f(x+\frac{h}{h2})-f(x-\frac{h}{2})}{h},
-\end{equation}<p><div class="flash flash-warn">
-    <svg class="octicon octicon-zap" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
-    <strong>Important: </strong>The central difference is in general more accurate than the forward or backward differences, but im all cases we need to carefully converge with respect to the step size $h$
-</div></p>
+\frac{\mathrm{d} f}{\mathrm{d} x} \simeq \frac{f(x+\frac{h}{h2})-f(x-\frac{h}{2})}{h}.
+\end{equation}<p>Let's start with a simple example - let's use the forward difference method to calculate the derivative of $x^2$ at $x=5$ with $h=0.01$.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">x_squared</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">forward_difference</span><span class="p">(</span><span class="n">f_x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f_x</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f_x</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span>
+    
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">forward_difference</span><span class="p">(</span><span class="n">x_squared</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>20.019999999999527</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="We-need-to-converge-with-respect-to-the-step-size-$h$">We need to converge with respect to the step size $h$<a class="anchor-link" href="#We-need-to-converge-with-respect-to-the-step-size-$h$"> </a></h3><p>Our expressions above are approximations as they are only exactly equal to the derivative when the step size $h$ is zero. Whether using forwards, backwards or central differences it is important to converge with respect to a decreasing step size $h$.</p>
+<p>Note that in the next tutorial we will see that it is also possible to make $h$ too small!</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Second-order-derivatives,-partial-derivatives-and-the-Laplacian-can-be-calculated-using-the-same-approach">Second-order derivatives, partial derivatives and the Laplacian can be calculated using the same approach<a class="anchor-link" href="#Second-order-derivatives,-partial-derivatives-and-the-Laplacian-can-be-calculated-using-the-same-approach"> </a></h3><p>The second derivative is a derivative of a derivative, and so we can calculate it be applying the first derivative formulas twice. The resulting expression (after application of central differences) is:</p>
+<p>As we can see from the example in the image at the top of the page, the central difference is (in general) more accurate than the forward or backward differences.
+<mark> In fact, the error is order $h$ for the forwards and backwards methods, and order $h^2$ for the central difference. </mark></p>
+<p>Let's test this idea using our simple $2x^2$ example that we started above:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">exact_answer</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="k">def</span> <span class="nf">calculate_x2_error</span><span class="p">(</span><span class="n">h</span><span class="p">):</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="n">exact_answer</span> <span class="o">-</span> <span class="n">forward_difference</span><span class="p">(</span><span class="n">x_squared</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;error for h=</span><span class="si">{}</span><span class="s2"> is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">error</span><span class="p">,</span><span class="mi">10</span><span class="p">)))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">calculate_x2_error</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">calculate_x2_error</span><span class="p">(</span><span class="mf">0.005</span><span class="p">)</span>
+<span class="n">calculate_x2_error</span><span class="p">(</span><span class="mf">0.0025</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>error for h=0.01 is -0.02
+error for h=0.005 is -0.01
+error for h=0.0025 is -0.005
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see that as the step size $h$ is halved, the error halves.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Second-order-derivatives-can-be-calculated-using-finite-differences">Second-order derivatives can be calculated using finite differences<a class="anchor-link" href="#Second-order-derivatives-can-be-calculated-using-finite-differences"> </a></h3><p>The second derivative is a derivative of a derivative, and so we can calculate it be applying the first derivative formulas twice. The resulting expression (after application of central differences) is:</p>
 \begin{equation}
-\frac{\mathrm{d} ^2f}{\mathrm{d} x^2} \simeq \frac{f(x+h)-2f(x)+f(x-h)}{h^2}.
-\end{equation}<p>The extension to partial derivatives is straight-forward:</p>
+\frac{\mathrm{d}^2f}{\mathrm{d} x^2} \simeq \frac{f(x+h)-2f(x)+f(x-h)}{h^2}.
+\end{equation}<p>Let's test this out using the $2x^2$ example that we started above:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">second_order_forward_difference</span><span class="p">(</span><span class="n">f_x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f_x</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">f_x</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">f_x</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">h</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">h</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>second_order_forward_difference(x_squared, 5, 0.01)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The second derivative of $2x^2$ is 4, so the implementation appears correct.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Partial-derivatives-can-be-calculated-using-finite-differences">Partial derivatives can be calculated using finite differences<a class="anchor-link" href="#Partial-derivatives-can-be-calculated-using-finite-differences"> </a></h3><p>The extension to partial derivatives is also relatively straight-forward. At this point we also consider a second dependent variable, $y$.</p>
 \begin{equation}
 \frac{\partial f}{\partial x} \simeq \frac{f(x+\frac{h}{2},y)-f(x-\frac{h}{2},y)}{h},
 \end{equation}\begin{equation}
@@ -190,7 +373,93 @@ window.onload = wrap_img;
 \frac{\partial ^2f}{\partial x^2} \simeq \frac{f(x+h,y)-2f(x,y)+f(x-h,y)}{h^2},
 \end{equation}\begin{equation}
 \frac{\partial ^2f}{\partial y^2} \simeq \frac{f(x,y+h)-2f(x,y)+f(x,y-h)}{h^2}.
-\end{equation}<p>By adding the two equations above, the Laplacian in two dimensions is:</p>
+\end{equation}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's consider another example, where we calculate the $x$-component of a force $F$ in a potential energy $U = x^2+y^2$, at $x=5,y=10$. We know that the force and potential energy are calculated as follows:</p>
+<p>$F_x = \frac{\partial U}{\partial x}$</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">potential_energy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">partial_dfdx</span><span class="p">(</span><span class="n">f_x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f_x</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="n">y</span><span class="p">)</span> <span class="o">-</span> <span class="n">f_x</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="n">y</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">partial_dfdx</span><span class="p">(</span><span class="n">potential_energy</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>10.000000000000853</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Which is close to the analytic answer of 10.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-Laplacian-operator-corresponds-to-an-average-rate-of-change">The Laplacian operator corresponds to an average rate of change<a class="anchor-link" href="#The-Laplacian-operator-corresponds-to-an-average-rate-of-change"> </a></h3><p>The <mark>Laplacian operator</mark> $\nabla^2$ is a very important differential operator in physics. We will see it later in the course, when studying partial differential equations. It is used to mathematically describe a variety of physical processes, including diffusion, gravitational potentials, wave propogation and fluid flow.</p>
+<p>When applied to $f$ and written in full for a two dimensional cartesian coordinate system with dependent variables $x$ and $y$ it takes the following form:</p>
+\begin{equation}
+\nabla^2\phi = \frac{\partial^2\phi}{\partial x^2} + \frac{\partial^2\phi}{\partial y^2} + \frac{\partial^2\phi}{\partial z^2}.
+\end{equation}<p>With equivalent expressions for a single dimension or extension to higher dimensions.</p>
+<p>We can think of the laplacian as encoding an average rate of change. To develop an intuition for how the laplacian can be interpreted physically, we need to understand two related operators - div and curl. We will not explore these operators further in this lesson, but a related video is below:
+
+<center class="youtube-iframe-wrapper">
+    <iframe width="730" height="315" src="https://www.youtube.com/embed/EW08rD-GFh0" frameborder="0" allowfullscreen=""></iframe>
+</center>
+</p>
+<h3 id="The-Laplacian-can-be-calculated-using-finite-differences">The Laplacian can be calculated using finite differences<a class="anchor-link" href="#The-Laplacian-can-be-calculated-using-finite-differences"> </a></h3><p>By adding the two equations for second order partial derivatives (Equations 8 and 9), we find that the Laplacian in two dimensions is:</p>
 \begin{equation}
 \frac{\partial ^2f}{\partial x^2} + \frac{\partial ^2f}{\partial y^2} \simeq \frac{f(x+h,y)+f(x-h,y)+f(x,y+h)+f(x,y-h)-4f(x,y)}{h^2},
 \end{equation}<p>The expression above is known as a <mark>five-point stencil</mark> as it uses five points to calculate the Laplacian.</p>
@@ -205,7 +474,9 @@ window.onload = wrap_img;
 <ul>
 <li>Finite difference methods are a family of techniques used to calculate derivatives</li>
 <li>A numerical derivative can be calculated using the forward, backward or central finite difference</li>
+<li>We need to converge with respect to the step size $h$</li>
 <li>Second-order derivatives, partial derivatives and the Laplacian can also be calculated using finite differences</li>
+<li>The Laplacian operator corresponds to an average rate of change</li>
 </ul>
 
 </div>

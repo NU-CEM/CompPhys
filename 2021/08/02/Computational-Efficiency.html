@@ -154,6 +154,7 @@ window.onload = wrap_img;
 <li>Measure the length of time a Notebook cell takes to run using the <code>%time</code> magic.</li>
 </ul>
 <hr />
+<h3 id="Finite-difference-methods-have-two-sources-of-error">Finite difference methods have two sources of error<a class="anchor-link" href="#Finite-difference-methods-have-two-sources-of-error"> </a></h3><p>The error in a method's solution is defined as the difference between the approximation and the exact analytical solution. The two sources of error in finite difference methods are round-off error, the loss of precision due to computer rounding of decimal quantities, and truncation error or discretization error, the difference between the exact solution of the original differential equation and the exact quantity assuming perfect arithmetic (that is, assuming no round-off).</p>
 <h3 id="Computers-have-inherent-limitations-that-lead-to-rounding-errors">Computers have inherent limitations that lead to rounding errors<a class="anchor-link" href="#Computers-have-inherent-limitations-that-lead-to-rounding-errors"> </a></h3><ul>
 <li>We have seen how computer programming can be used to model physical systems. However computers have inherent limitations - they cannot store real numbers with an infinite number of decimal places.</li>
 <li>In many cases this is not a problem, but it is something to be aware of. For example, take the following piece of code:</li>
@@ -364,18 +365,26 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Finite-difference-methods-have-two-sources-of-error">Finite difference methods have two sources of error<a class="anchor-link" href="#Finite-difference-methods-have-two-sources-of-error"> </a></h3><ul>
-<li>There are two sources of errors for finite difference methods. The first is the rounding error introduced at the start of this tutorial. The second is from the approximation that the step size $h$ is small but not zero.</li>
-<li>One way of improving the finite-$h$ approximation is to decrease the step size in space (use a higher number of points on our real space grid). However when the step size is decreased the programme will run more slowly.</li>
-<li>We also need to think about the rounding errors associated with finite differences. Counter-intuitively, these errors can increase as we decrease the step size $h$. </li>
+<h3 id="The-finite-difference-discretisation-error-is-associated-with-step-size-$h$">The finite difference discretisation error is associated with step size $h$<a class="anchor-link" href="#The-finite-difference-discretisation-error-is-associated-with-step-size-$h$"> </a></h3><ul>
+<li>The finite difference method is only exact in the limit that $h$ is zero. This is not possible, so the differences we calculate do not give exact derivatives.</li>
+<li>However one way of improving the finite-$h$ approximation is to decrease the step size in space (use a higher number of points on our real space grid). </li>
+<li>To demonstrate this, consider the Taylor expansion of $f(x)$ about $x$:</li>
 </ul>
-<p>To demonstrate this, consider the Taylor expansion of $f(x)$ about $x$:</p>
 \begin{equation}
 f(x+h) = f(x) + hf'(x) +\frac{1}{2}h^2f''(x) + \ldots
-\end{equation}<p>Re-arrange the expression to get the expression for the forward difference method:</p>
+\end{equation}<ul>
+<li>Re-arranging gives an expression for the forward difference method:</li>
+</ul>
 \begin{equation}
-f'(x) = \frac{f(x+h)}{h} - \frac{1}{2}hf''(x)+\ldots
-\end{equation}<p>A computer can typically store a number $f(x)$ to an accuracy of 16 significant figures, or $Cf(x)$ where $C=10^{-16}$. In the worst case, this makes the error $\epsilon$ on our derivative:</p>
+f'(x) = \frac{f(x+h) - f(x)}{h} - \frac{1}{2}h^2f''(x) + \ldots
+\end{equation}<ul>
+<li>When we calculate the forward difference method we ignore all terms $f''(x)$ and higher. The size of the neglected terms gives the approximation error. We can see from above that the error us linear in $h$ so, as we would expect, the approximation generally improves as we decrease step size $h$.</li>
+<li>Note however that when the step size is decreased the programme will run more slowly.</li>
+</ul>
+<h3 id="It-is-possible-to-make-the-step-size-$h$-too-small">It is possible to make the step size $h$ too small<a class="anchor-link" href="#It-is-possible-to-make-the-step-size-$h$-too-small"> </a></h3><ul>
+<li>We also need to think about the rounding errors associated with finite differences. Counter-intuitively, these errors can increase as we decrease the step size $h$. </li>
+</ul>
+<p>A computer can typically store a number $f(x)$ to an accuracy of 16 significant figures, or $Cf(x)$ where $C=10^{-16}$. In the worst case, this makes the error $\epsilon$ on our derivative:</p>
 \begin{equation}
 \epsilon = \frac{2C|f(x)|}{h} + \frac{1}{2}h|f''(x)|.
 \end{equation}<p>We want to find the value of $h$ which minimises this error so we differentiate with respect to $h$ and set the result equal to zero.</p>
@@ -441,9 +450,11 @@ h = \sqrt{4C\lvert\frac{f(x)}{f''(x)}\rvert}
 <hr />
 <p>Keypoints:</p>
 <ul>
+<li>Finite difference methods have two sources of error</li>
 <li>Computers have inherent limitations that lead to rounding errors</li>
 <li>Do not test for the equality of two floats</li>
-<li>Finite difference methods have two sources of error</li>
+<li>The finite difference discretisation error is associated with step size  ℎ</li>
+<li>It is possible to make the step size  ℎ  too smal</li>
 <li>Use the <code>%time</code> magic to measure the length of time a Jupyter Notebook cell takes to run </li>
 </ul>
 
