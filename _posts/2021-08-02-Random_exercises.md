@@ -13,7 +13,7 @@ $I(\omega) = \frac{\hbar}{4\pi^2\mathrm{c}^2}\frac{\omega}{(\mathrm{e}^{\frac{\h
 
 The quantum theory of modern physics was born with Planck's law. Up until this point, an outstanding problem in physics was the ultra-violet catastrophe, a prediction from classical physics that a black body at thermal equilibrium would emit an unbounded quantity of energy as wavelength decreased into the ultraviolet range. This was in stark contrast to what was being measured experimentally. To resolve this, Planck assumed that electromagnetic radiation can only be absorbed or emitted in discrete packets (quanta) and from this derives Planck's law as shown above. Planck's law was in agreement with experimental results and the Stefan-Boltzmann law, which states:
 
-$W = \sigmaT^4$
+$W = \sigma T^4$
 
 where $\sigma$ is the Stefan-Boltzmann constant.
 
