@@ -11,7 +11,7 @@ We have seen that performing an integral over one variable requires us to take s
 
 The volume of a sphere with unit radius in three dimensions is given by:
 
-$$V = \int\int\int_{-1}^1f(x,y,z)\mathrm{d}x\mathrm{d}y\mathrm{d}z$$
+$V = \int\int\int_{-1}^1f(x,y,z)\mathrm{d}x\mathrm{d}y\mathrm{d}z$
 
 where $f(x,y,z)=1$ everywhere inside the sphere and zero everywhere outside.
 
@@ -26,13 +26,13 @@ c) By considering how many points would need to be sampled, estimate the length 
 
 In the [lesson exercise](https://nu-cem.github.io/CompPhys/2021/08/02/Random_exercises) we use rectangular slices to estimate the Stefan-Boltzmann constant to three significant figures. The trapezoidal rule is a neat extension to rectangular slices, where the value at the start and end of each segment is considered. It can be expressed as
 
-$$\int^b_af(x)\mathrm{d}x = h\left[\frac{1}{2}f(a)+\frac{1}{2}f(b)+\sum_{k=1}^{N-1}f(a+kh)\right]$$
+$\int^b_af(x)\mathrm{d}x = h\left[\frac{1}{2}f(a)+\frac{1}{2}f(b)+\sum_{k=1}^{N-1}f(a+kh)\right]$
 
 a) Use the trapezoidal rule to re-calculate the Stefan-Boltzmann constant to three significant figures
 
 b) Demonstrate that the error scales quadratically with $h^2$, and that the trapezoidal rule is more computationally efficient than using rectangular slices
 
-c) The absolute error $\epsilon_n$ on the n^{th} estimate of an integral is given by $\epsilon_n = |\frac{1}{3}(I_n-I_{n-1})|$. Using this expression, write a programme that calculates the Stefan-Boltzmann with a maximum error of 1E-5.
+c) The absolute error $\epsilon_n$ on the nth estimate of an integral is given by $\epsilon_n = |\frac{1}{3}(I_n-I_{n-1})|$. Using this expression, write a programme that calculates the Stefan-Boltzmann with a maximum error of 1E-5.
 
 
 
