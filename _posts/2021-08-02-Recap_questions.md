@@ -44,7 +44,7 @@ a) Read in the photoelectric measurement data from the file [Planck.txt](https:/
 
 The least-squares method is very commonly used for fitting a polynomial to a set of data. As it is so prevalent in physics and engineering, you are encouraged to watch [this video](https://www.youtube.com/watch?v=YwZYSTQs-Hk) which give an intuitive and mathematical description of the method. 
 
-b) Fit a straight line (polynomial of degree one) to the data using the least-squares method implemented in [`numpy.polyfit`](https://numpy.org/doc/stable/reference/generated/numpy.linalg.lstsq.html). Overlay this line on your data points. 
+b) Fit a straight line (polynomial of degree one) to the data using the least-squares method implemented in [`numpy.polyfit`](https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html). Overlay this line on your data points. 
 
 c) Using the gradient of the fitted line calculate a value for Planck's constant. Compare this to values you can find online.
 
