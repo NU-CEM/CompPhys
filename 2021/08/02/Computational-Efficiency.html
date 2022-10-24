@@ -376,7 +376,7 @@ f(x+h) = f(x) + hf'(x) +\frac{1}{2}h^2f''(x) + \ldots
 <li>Re-arranging gives an expression for the forward difference method:</li>
 </ul>
 \begin{equation}
-f'(x) = \frac{f(x+h) - f(x)}{h} - \frac{1}{2}h^2f''(x) + \ldots
+f'(x) = \frac{f(x+h) - f(x)}{h} - \frac{1}{2}hf''(x) + \ldots
 \end{equation}<ul>
 <li>When we calculate the forward difference method we ignore all terms $f''(x)$ and higher. The size of the neglected terms gives the approximation error. We can see from above that the error us linear in $h$ so, as we would expect, the approximation generally improves as we decrease step size $h$.</li>
 <li>Note however that when the step size is decreased the programme will run more slowly.</li>
