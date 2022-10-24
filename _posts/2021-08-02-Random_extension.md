@@ -32,7 +32,7 @@ a) Use the trapezoidal rule to re-calculate the Stefan-Boltzmann constant to thr
 
 b) Demonstrate that the error scales quadratically with $h^2$, and that the trapezoidal rule is more computationally efficient than using rectangular slices
 
-c) The absolute error $\epsilon_n$ on the nth estimate of an integral is given by $\epsilon_n = |\frac{1}{3}(I_n-I_{n-1})|$. Using this expression, write a programme that calculates the Stefan-Boltzmann with a maximum error of 1E-5.
+c) The error $\epsilon_n$ on the nth estimate of an integral is given by $\epsilon_n = \frac{1}{3}(I_n-I_{n-1})$. Using this expression, write a programme that calculates the Stefan-Boltzmann with a maximum absolute error of 1E-5.
 
 
 
