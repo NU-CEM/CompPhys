@@ -30,8 +30,5 @@ Please see the [Setup](https://nu-cem.github.io/CompPhys/2021/08/02/Setup) page 
 
 ### Resources
 
-- [Lesson exercises](https://nu-cem.github.io/CompPhys/2021/08/02/Derivatives_exercises)
-<!---
-- [Extension exercise](https://nu-cem.github.io/CompPhys/2021/08/02/Derivatives_extension)
-- [Presentation](https://nu-cem.github.io/CompPhys/slides/Derivatives_slides)
--->
+- [Lesson exercise](https://nu-cem.github.io/CompPhys/2021/08/02/Derivatives_exercise)
+
