@@ -22,10 +22,10 @@ Plot $x(t)$ up to $t=100$, using 1000 steps.
 Use Euler's method to solve the differential equation
 
 \begin{equation}
-\frac{\mathrm{d}y}{\mathrm{d}x} = \mathrm{cos}(x)\mathrm{sin}(y)
+\frac{\mathrm{d}y}{\mathrm{d}x} = \mathrm{cos}(x)\mathrm{sin}(y) + \mathrm{cos}(y)
 \end{equation}
 
-with the initial condition $x=3$ at $t=0$.
+with the initial condition $x=1$ at $t=0$.
 
 Plot $x(t)$ up to $t=100$, using 1000 steps.
 
