@@ -15,7 +15,19 @@ Use Euler's method to solve the differential equation
 
 with the initial condition $x=0$ at $t=0$.
 
-Plot $x(t)$ for a number of steps $N$ equal to 10, 20, 50 and 1000.
+Plot $x(t)$ up to $t=100$, using 1000 steps.
+
+## Euler's method II
+
+Use Euler's method to solve the differential equation
+
+\begin{equation}
+\frac{\mathrm{d}y}{\mathrm{d}x} = \mathrm{cos} x\mathrm{sin} y
+\end{equation}
+
+with the initial condition $x=3$ at $t=0$.
+
+Plot $x(t)$ up to $t=100$, using 1000 steps.
 
 ## Second order Runge-Kutta method
 
@@ -27,7 +39,7 @@ Use a second order Runge-Kutta method to solve the differential equation
 
 with the initial condition $x=0$ at $t=0$.
 
-Plot $x(t)$ for a number of steps $N$ equal to 10, 20, 50 and 1000. How does convergence compare to that when using Euler's method?
+Plot $x(t)$ up to $t=100$, using 1000 steps. Investigate convergence with respect to the number of steps, and compare this to the performance of Euler's method.
 
 ## Modelling a non-linear pendulum
 
